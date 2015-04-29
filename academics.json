@@ -1,0 +1,48 @@
+{
+    "name": "Academics",
+    "children": [
+        {
+            "name": "B.Tech - BioTechnology",
+            "children": [
+                {
+                    "name": "Dry Labs"
+                }, {
+                    "name": "BioInformatics"
+                }
+            ]
+        }, {
+            "name": "MS - Computer Science",
+            "children": [
+                {
+                    "name": "Algorithm"
+                }, {
+                    "name": "Design of Programming language"
+                }, {
+                    "name": "Data Visualization"
+                }, {
+                    "name": "Internet and websytems"
+                }, {
+                    "name": "Artificial Intelligence"
+                }, {
+                    "name": "Computer Graphics"
+                }, {
+                    "name": "Software design Pattern"
+                }, {
+                    "name": "Database"
+                }
+            ]
+        }, {
+            "name": "PhD - Computer Science",
+            "children": [
+                {
+                    "name": "Data Visualization"
+                }, {
+                    "name": "Visual Analytics"
+                }, {
+                    "name": "Scientific Data Visualization"
+                }
+            ]
+        }
+
+     ]
+}

@@ -11,11 +11,47 @@
     <script src="js/jquery.poptrox.min.js"></script>
     <script src="js/skel.min.js"></script>
     <script src="js/init.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
     <noscript>
         <link rel="stylesheet" href="css/skel-noscript.css" />
         <link rel="stylesheet" href="css/style.css" />
 
     </noscript>
+    <style>
+        .node circle {
+            fill: #fff;
+            stroke: steelblue;
+            stroke-width: 1.5px;
+        }
+
+        .node {
+            font: 10px sans-serif;
+        }
+
+        .link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 1.5px;
+        }
+
+        .svg-container {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            /* aspect ratio */
+
+            vertical-align: top;
+            overflow: hidden;
+        }
+
+        .svg-content-responsive {
+            display: inline-block;
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+    </style>
     <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 </head>
 
@@ -36,7 +72,7 @@
                 </li>
                 <li><a href="#two">Work</a>
                 </li>
-                <li><a href="#work">My Projects</a>
+                <li><a href="#work">Projects</a>
                 </li>
                 <li><a href="#contact">Publications</a>
                 </li>
@@ -57,8 +93,8 @@
                         <h2>Sanjay Krishna</h2>
                     </header>
 
-                    <p>I started my academic career in India as Bio-Technologist focused on dry labs, then travelled to USA for Masters in Bioinformatics for specialization in Comp. Sci, but over the peroid of time to widen my spectrum , I turned my masters into Comp. Sci, focusing on Bio-Visualization. Fianlly I joined IVPR Research lab for Phd in Data visualisation, which shifted me into a world of data and its computation. And here I am</p>
-                    <p>" <em>Software development in Data visualization framework</em> "</p>
+
+                    <p>" <em>Software developer in Data visualization framework</em> "</p>
 
                 </div>
             </div>
@@ -74,23 +110,8 @@
             <header>
                 <h2>Building Blocks</h2>
             </header>
-            <div class="row">
-                <div class="4u">
-                    <h3>Phd - Data Visualization</h3> (2010 - present)
-                    <p> My research works are focused on Visualization Frameworks, application integration, Personal Data Visualization and Mobile apps</p>
-                </div>
-                <div class="4u">
-                    <h3>MS - Computer Science</h3> (2007 - 2010)
+            <div class="row" id="academics">
 
-                    <p>​Graduated as Masters in Computer Science. Courses covered Algorithm, Design of Programmimg language, Foundation of computer science, Data Visualization, Internet and Websytems, Database, Computer graphics, Aritficial intelligence, Bioinformatics, Software Design pattern</p>
-
-                </div>
-                <div class="4u">
-                    <h3>B.Tech - BioTechnology</h3> (2002 - 2006)
-
-                    <p> Graduated as B.Tech Bio-Technolgy, course work are targeted mostly on dry lab. </p>
-
-                </div>
             </div>
         </div>
         <a href="#two" class="button style2 down anchored">Next</a>
@@ -218,6 +239,193 @@
         </ul>
 
     </footer>
+
+    <script type="text/javascript">
+        var w = 600,
+            h = 300,
+            i = 0,
+            root;
+
+        var tree = d3.layout.tree()
+            .size([h, w - 200]);
+
+        var diagonal = d3.svg.diagonal()
+            .projection(function (d) {
+                return [d.y, d.x];
+            });
+
+        var vis = d3.select("#academics")
+            .classed("svg-container", true) //container class to make it responsive
+            .append("svg")
+            .attr("preserveAspectRatio", "xMinYMin meet") //responsive SVG needs these 2 attributes and no width and height attr
+            .attr("viewBox", "0 0 600 600")
+            .classed("svg-content-responsive", true) //class to make it responsive
+            .append("g")
+            .attr("transform", "translate( 60 ,0)");
+
+        d3.json("academics.json", function (json) {
+            root = json;
+            root.x0 = h / 2;
+            root.y0 = 0;
+
+            function toggleAll(d) {
+                if (d.children) {
+                    d.children.forEach(toggleAll);
+                    toggle(d);
+                }
+            }
+
+            // Initialize the display to show a few nodes.
+            // root.children.forEach(toggleAll);
+            toggle(root);
+            // toggle(root.children[1].children[2]);
+            // toggle(root.children[9]);
+            //toggle(root.children[9].children[0]);
+
+            update(root);
+        });
+
+        function update(source) {
+            var duration = d3.event && d3.event.altKey ? 5000 : 500;
+
+            // Compute the new tree layout.
+            var nodes = tree.nodes(root).reverse();
+
+            // Normalize for fixed-depth.
+            nodes.forEach(function (d) {
+                d.y = d.depth * 180;
+            });
+
+            // Update the nodes…
+            var node = vis.selectAll("g.node")
+                .data(nodes, function (d) {
+                    return d.id || (d.id = ++i);
+                });
+
+            // Enter any new nodes at the parent's previous position.
+            var nodeEnter = node.enter().append("svg:g")
+                .attr("class", "node")
+                .attr("transform", function (d) {
+                    return "translate(" + source.y0 + "," + source.x0 + ")";
+                })
+                .on("click", function (d) {
+                    toggle(d);
+                    update(d);
+                });
+
+            nodeEnter.append("svg:circle")
+                .attr("r", 1e-6)
+                .style("fill", function (d) {
+                    return d._children ? "lightsteelblue" : "#fff";
+                });
+
+            nodeEnter.append("svg:text")
+                .attr("x", function (d) {
+                    return d.children || d._children ? -10 : 10;
+                })
+                .attr("dy", ".35em")
+                .attr("text-anchor", function (d) {
+                    return d.children || d._children ? "end" : "start";
+                })
+                .text(function (d) {
+                    return d.name;
+                })
+                .style("fill-opacity", 1e-6)
+                .style("fill", 'white');
+
+            // Transition nodes to their new position.
+            var nodeUpdate = node.transition()
+                .duration(duration)
+                .attr("transform", function (d) {
+                    return "translate(" + d.y + "," + d.x + ")";
+                });
+
+            nodeUpdate.select("circle")
+                .attr("r", 4.5)
+                .style("fill", function (d) {
+                    return d._children ? "lightsteelblue" : "#fff";
+                });
+
+            nodeUpdate.select("text")
+                .style("fill-opacity", 1);
+
+            // Transition exiting nodes to the parent's new position.
+            var nodeExit = node.exit().transition()
+                .duration(duration)
+                .attr("transform", function (d) {
+                    return "translate(" + source.y + "," + source.x + ")";
+                })
+                .remove();
+
+            nodeExit.select("circle")
+                .attr("r", 1e-6);
+
+            nodeExit.select("text")
+                .style("fill-opacity", 1e-6);
+
+            // Update the links…
+            var link = vis.selectAll("path.link")
+                .data(tree.links(nodes), function (d) {
+                    return d.target.id;
+                });
+
+            // Enter any new links at the parent's previous position.
+            link.enter().insert("svg:path", "g")
+                .attr("class", "link")
+                .attr("d", function (d) {
+                    var o = {
+                        x: source.x0,
+                        y: source.y0
+                    };
+                    return diagonal({
+                        source: o,
+                        target: o
+                    });
+                })
+                .transition()
+                .duration(duration)
+                .attr("d", diagonal);
+
+            // Transition links to their new position.
+            link.transition()
+                .duration(duration)
+                .attr("d", diagonal);
+
+            // Transition exiting nodes to the parent's new position.
+            link.exit().transition()
+                .duration(duration)
+                .attr("d", function (d) {
+                    var o = {
+                        x: source.x,
+                        y: source.y
+                    };
+                    return diagonal({
+                        source: o,
+                        target: o
+                    });
+                })
+                .remove();
+
+            // Stash the old positions for transition.
+            nodes.forEach(function (d) {
+                d.x0 = d.x;
+                d.y0 = d.y;
+            });
+        }
+
+        // Toggle children.
+        function toggle(d) {
+            if (d.children) {
+                d._children = d.children;
+                d.children = null;
+            } else {
+                d.children = d._children;
+                d._children = null;
+            }
+        }
+
+        // d3.select('#academics').style("height", height + "px");
+    </script>
 
 </body>
 
