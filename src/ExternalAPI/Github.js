@@ -10,6 +10,8 @@
         XMLHttpRequest = window.XMLHttpRequest;
     }
 
+
+    // Method that performs the ajax request
     function _request(method, path, data, cb, raw, sync) {
         function getURL() {
             var url = path.indexOf('//') >= 0 ? path : API_URL + path;
@@ -23,43 +25,70 @@
             return url + '&' + (new Date()).getTime();
         }
 
-        var xhr = new XMLHttpRequest();
+        // Creating a promise
+        var promise = new Promise(function (resolve, reject) {
+
+            // Instantiates the XMLHttpRequest
+            var client = new XMLHttpRequest();
+            var uri = getURL();
 
 
-        xhr.open(method, getURL(), !sync);
-        if (!sync) {
-            xhr.onreadystatechange = function () {
-                if (this.readyState === 4) {
-                    if (this.status >= 200 && this.status < 300 || this.status === 304) {
-                        cb(null, raw ? this.responseText : this.responseText ? JSON.parse(this.responseText) : true, this);
-                    } else {
-                        cb({
-                            path: path,
-                            request: this,
-                            error: this.status
-                        });
+            client.open(method, getURL(), !sync);
+
+            /*if (!sync) {
+                client.onreadystatechange = function () {
+                    if (this.readyState === 4) {
+                        if (this.status >= 200 && this.status < 300 || this.status === 304) {
+                            cb(null, raw ? this.responseText : this.responseText ? JSON.parse(this.responseText) : true, this);
+                        } else {
+                            cb({
+                                path: path,
+                                request: this,
+                                error: this.status
+                            });
+                        }
                     }
+                };
+            }*/
+
+            if (!raw) {
+                client.dataType = 'json';
+                client.setRequestHeader('Accept', 'application/vnd.github.v3+json');
+            } else {
+                client.setRequestHeader('Accept', 'application/vnd.github.v3.raw+json');
+            }
+
+            client.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+
+
+
+            if (data) {
+                client.send(JSON.stringify(data));
+            } else {
+                client.send();
+            }
+
+            client.onload = function () {
+                if (this.status >= 200 && this.status < 300) {
+                    // Performs the function "resolve" when this.status is equal to 2xx
+                    resolve(this.response);
+                } else {
+                    // Performs the function "reject" when this.status is different than 2xx
+                    reject(this.statusText);
                 }
             };
-        }
+            client.onerror = function () {
+                reject(this.statusText);
+            };
 
-        if (!raw) {
-            xhr.dataType = 'json';
-            xhr.setRequestHeader('Accept', 'application/vnd.github.v3+json');
-        } else {
-            xhr.setRequestHeader('Accept', 'application/vnd.github.v3.raw+json');
-        }
+            /* if (sync) {
+                 return client.response;
+             }*/
+        });
 
-        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+        // Return the promise
+        return promise;
 
-        if (data) {
-            xhr.send(JSON.stringify(data));
-        } else {
-            xhr.send();
-        }
-        if (sync) {
-            return xhr.response;
-        }
     }
 
     function _requestAllPages(path, cb) {
@@ -135,11 +164,11 @@
     Github.User = function (username) {
         this.userName = username;
 
-
-        this.userInfo = function (cb) {
-            _request("GET", '/users/' + this.userName, null, function (err, res) {
-                cb(err, res);
-            });
+        /*function (err, res) {
+            cb(err, res);
+        }*/
+        this.userInfo = function () {
+            return _request("GET", '/users/' + this.userName, null);
         };
 
         // List user organizations
@@ -155,12 +184,17 @@
         // List user repositories
         // -------
 
-        this.repos = function (cb) {
+        this.repos = function () {
+            // Github does not always honor the 1000 limit so we want to iterate over the data set.
+            return _request("GET", '/users/' + this.userName + '/repos');
+        };
+
+        /*this.repos = function (cb) {
             // Github does not always honor the 1000 limit so we want to iterate over the data set.
             _requestAllPages('/users/' + this.userName + '/repos?type=all&per_page=1000&sort=updated', function (err, res) {
                 cb(err, res);
             });
-        };
+        };*/
 
         // List a user's gists
         // -------

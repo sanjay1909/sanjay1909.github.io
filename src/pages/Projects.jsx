@@ -4,34 +4,66 @@ var GithubSession = require('../ExternalAPI/GithubSession.js');
 
 
 
+import * as Github from '../ExternalAPI/Github.js';
+
+
+
 class Projects extends React.Component {
     constructor() {
         super()
         this.gitHub = WeaveAPI.globalHashMap.requestObject("gitHub", GithubSession);
+
+        this._promise = WeaveAPI.SessionManager.registerLinkableChild(this.gitHub, new weavecore.LinkablePromise(this._getUserRepos.bind(this), this.describePromise.bind(this), true));
+
+
         this.state = {
-            repos: this.gitHub.repos
+            repos: []
         }
 
         this._setReactState = this._setReactState.bind(this);
+        this._getUserRepos = this._getUserRepos.bind(this);
 
     }
 
+    describePromise () {
+        return console.log("Running For User: ", this.gitHub.user.value);
+    }
+
+    _getUserRepos () {
+        var usr = new Github.User(this.gitHub.user.value);
+        return usr.repos();
+    }
+
     componentDidMount() {
-        this.gitHub._reposUserName.addImmediateCallback(this, this._setReactState);
+
+        this._promise.depend(this.gitHub.user);
+        WeaveAPI.SessionManager.getCallbackCollection(this._promise).addImmediateCallback(null,this._setReactState.bind(this));
     }
 
 
     componentWillUnmount() {
-        this.gitHub._reposUserName.removeCallback(this._setReactState);
+    WeaveAPI.SessionManager.getCallbackCollection(this._promise).removeCallback(this._setReactState.bind(this));
+         this._promise.dispose();
     }
 
 
     _setReactState() {
+        if(this._promise.result){
+            this.setState({
+                repos: JSON.parse(this._promise.result)
+            });
+        }
+        else{
+            console.log(this._promise.error)
+            this.setState({
+                repos: []
+            });
+        }
 
-        this.setState({
-        repos: this.gitHub.repos
-        });
+
     }
+
+
 
     render() {
 

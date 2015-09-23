@@ -17,10 +17,12 @@ class Navigation extends React.Component {
 			</div>
 			<nav className="navbar-collapse collapse" role="navigation" id="bs-navbar-collapse">
                 <ul className="nav navbar-nav navbar-right responsive-nav main-nav-list">
-                    <li><a href="#home">I</a></li>
-                    <li><a href="#academics">Path</a></li>
-                    <li><a href="#publications">Foot-Prints</a></li>
-                    <li><a href="#projects">Seeds</a></li>
+                    <li><a href="#home">About-Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#publications">Publicaitons</a></li>
+                    <li><a href="#contributions">Contributions</a></li>
+                    <li><a href="#academics">Academics</a></li>
+
                 </ul>
 			</nav>
 		</div>

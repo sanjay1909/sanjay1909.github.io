@@ -2,6 +2,8 @@ import * as React from "react";
 import Home from './pages/Home';
 import Academic from './pages/Academic';
 import Projects from './pages/Projects';
+import Publications from './pages/Publications';
+import Contributions from './pages/Contributions';
 
 class Content extends React.Component {
 
@@ -13,7 +15,9 @@ class Content extends React.Component {
             '/': < Home / > ,
             'home': < Home / > ,
             'academics': < Academic / > ,
-            'projects': < Projects / >
+            'projects': < Projects / > ,
+            'publications': < Publications / > ,
+            'contributions': < Contributions / >
         };
 
 

@@ -53,11 +53,13 @@ var Portfolio =
 	exports.Home = __webpack_require__(4);
 	exports.Academic = __webpack_require__(5);
 	exports.Projects = __webpack_require__(9);
+	exports.Publications = __webpack_require__(12);
+	exports.Contributions = __webpack_require__(13);
 
 	exports.ReacTree = __webpack_require__(6);
 
-	exports.Github = __webpack_require__(11);
-	exports.GithubSession = __webpack_require__(10);
+	exports.Github = __webpack_require__(10);
+	exports.GithubSession = __webpack_require__(11);
 
 /***/ },
 /* 1 */
@@ -130,25 +132,7 @@ var Portfolio =
 	                                React.createElement(
 	                                    "a",
 	                                    { href: "#home" },
-	                                    "I"
-	                                )
-	                            ),
-	                            React.createElement(
-	                                "li",
-	                                null,
-	                                React.createElement(
-	                                    "a",
-	                                    { href: "#academics" },
-	                                    "Path"
-	                                )
-	                            ),
-	                            React.createElement(
-	                                "li",
-	                                null,
-	                                React.createElement(
-	                                    "a",
-	                                    { href: "#publications" },
-	                                    "Foot-Prints"
+	                                    "About-Me"
 	                                )
 	                            ),
 	                            React.createElement(
@@ -157,7 +141,34 @@ var Portfolio =
 	                                React.createElement(
 	                                    "a",
 	                                    { href: "#projects" },
-	                                    "Seeds"
+	                                    "Projects"
+	                                )
+	                            ),
+	                            React.createElement(
+	                                "li",
+	                                null,
+	                                React.createElement(
+	                                    "a",
+	                                    { href: "#publications" },
+	                                    "Publicaitons"
+	                                )
+	                            ),
+	                            React.createElement(
+	                                "li",
+	                                null,
+	                                React.createElement(
+	                                    "a",
+	                                    { href: "#contributions" },
+	                                    "Contributions"
+	                                )
+	                            ),
+	                            React.createElement(
+	                                "li",
+	                                null,
+	                                React.createElement(
+	                                    "a",
+	                                    { href: "#academics" },
+	                                    "Academics"
 	                                )
 	                            )
 	                        )
@@ -212,6 +223,14 @@ var Portfolio =
 
 	var _pagesProjects2 = _interopRequireDefault(_pagesProjects);
 
+	var _pagesPublications = __webpack_require__(12);
+
+	var _pagesPublications2 = _interopRequireDefault(_pagesPublications);
+
+	var _pagesContributions = __webpack_require__(13);
+
+	var _pagesContributions2 = _interopRequireDefault(_pagesContributions);
+
 	var Content = (function (_React$Component) {
 	    _inherits(Content, _React$Component);
 
@@ -225,7 +244,9 @@ var Portfolio =
 	            '/': React.createElement(_pagesHome2['default'], null),
 	            'home': React.createElement(_pagesHome2['default'], null),
 	            'academics': React.createElement(_pagesAcademic2['default'], null),
-	            'projects': React.createElement(_pagesProjects2['default'], null)
+	            'projects': React.createElement(_pagesProjects2['default'], null),
+	            'publications': React.createElement(_pagesPublications2['default'], null),
+	            'contributions': React.createElement(_pagesContributions2['default'], null)
 	        };
 
 	        this.state = {
@@ -714,7 +735,11 @@ var Portfolio =
 
 	var React = _interopRequireWildcard(_react);
 
-	var GithubSession = __webpack_require__(10);
+	var _ExternalAPIGithubJs = __webpack_require__(10);
+
+	var Github = _interopRequireWildcard(_ExternalAPIGithubJs);
+
+	var GithubSession = __webpack_require__(11);
 
 	var Projects = (function (_React$Component) {
 	    _inherits(Projects, _React$Component);
@@ -724,30 +749,54 @@ var Portfolio =
 
 	        _get(Object.getPrototypeOf(Projects.prototype), 'constructor', this).call(this);
 	        this.gitHub = WeaveAPI.globalHashMap.requestObject("gitHub", GithubSession);
+
+	        this._promise = WeaveAPI.SessionManager.registerLinkableChild(this.gitHub, new weavecore.LinkablePromise(this._getUserRepos.bind(this), this.describePromise.bind(this), true));
+
 	        this.state = {
-	            repos: this.gitHub.repos
+	            repos: []
 	        };
 
 	        this._setReactState = this._setReactState.bind(this);
+	        this._getUserRepos = this._getUserRepos.bind(this);
 	    }
 
 	    _createClass(Projects, [{
+	        key: 'describePromise',
+	        value: function describePromise() {
+	            return console.log("Running For User: ", this.gitHub.user.value);
+	        }
+	    }, {
+	        key: '_getUserRepos',
+	        value: function _getUserRepos() {
+	            var usr = new Github.User(this.gitHub.user.value);
+	            return usr.repos();
+	        }
+	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
-	            this.gitHub._reposUserName.addImmediateCallback(this, this._setReactState);
+
+	            this._promise.depend(this.gitHub.user);
+	            WeaveAPI.SessionManager.getCallbackCollection(this._promise).addImmediateCallback(null, this._setReactState.bind(this));
 	        }
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
-	            this.gitHub._reposUserName.removeCallback(this._setReactState);
+	            WeaveAPI.SessionManager.getCallbackCollection(this._promise).removeCallback(this._setReactState.bind(this));
+	            this._promise.dispose();
 	        }
 	    }, {
 	        key: '_setReactState',
 	        value: function _setReactState() {
-
-	            this.setState({
-	                repos: this.gitHub.repos
-	            });
+	            if (this._promise.result) {
+	                this.setState({
+	                    repos: JSON.parse(this._promise.result)
+	                });
+	            } else {
+	                console.log(this._promise.error);
+	                this.setState({
+	                    repos: []
+	                });
+	            }
 	        }
 	    }, {
 	        key: 'render',
@@ -806,87 +855,6 @@ var Portfolio =
 
 	'use strict';
 
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
-
-	var _GithubJs = __webpack_require__(11);
-
-	var Github = _interopRequireWildcard(_GithubJs);
-
-	console.log(Github);
-	(function () {
-	    Object.defineProperty(GithubSession, 'NS', {
-	        value: 'Portfolio'
-	    });
-
-	    Object.defineProperty(GithubSession, 'CLASS_NAME', {
-	        value: 'GithubSession'
-	    });
-
-	    function GithubSession() {
-	        Object.defineProperty(this, 'sessionable', {
-	            value: true
-	        });
-
-	        Object.defineProperty(this, 'user', {
-	            value: WeaveAPI.SessionManager.registerLinkableChild(this, new weavecore.LinkableString('sanjay1909'))
-	        });
-
-	        Object.defineProperty(this, '_userInfoName', {
-	            value: new weavecore.LinkableString('')
-	        });
-	        Object.defineProperty(this, '_reposUserName', {
-	            value: new weavecore.LinkableString('')
-	        });
-	        Object.defineProperty(this, '_orgsUserName', {
-	            value: new weavecore.LinkableString('')
-	        });
-
-	        this.userInfo;
-	        this.repos;
-	        this.orgs;
-
-	        initialize.call(this);
-	    }
-
-	    function initialize() {
-	        this.user.addImmediateCallback(this, updateUser.bind(this), true);
-	    }
-
-	    function updateUser() {
-	        var usr = new Github.User(this.user.value);
-	        usr.userInfo((function (err, res) {
-	            this.userInfo = res;
-	            this._userInfoName.value = this.user.value;
-	        }).bind(this));
-
-	        usr.repos((function (err, res) {
-	            this.repos = res;
-	            this._reposUserName.value = this.user.value;
-	        }).bind(this));
-
-	        usr.orgs((function (err, res) {
-	            this.orgs = res;
-	            this._orgsUserName.value = this.user.value;
-	        }).bind(this));
-	    }
-
-	    var p = GithubSession.prototype;
-
-	    if (true) {
-	        module.exports = GithubSession;
-	    } else {
-	        console.log('window is used');
-	        window.Portfolio = window.Portfolio ? window.Portfolio : {};
-	        window.Portfolio.GithubSession = GithubSession;
-	    }
-	})();
-
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
 	(function () {
 	    'use strict';
 
@@ -898,6 +866,7 @@ var Portfolio =
 	        XMLHttpRequest = window.XMLHttpRequest;
 	    }
 
+	    // Method that performs the ajax request
 	    function _request(method, path, data, cb, raw, sync) {
 	        function getURL() {
 	            var url = path.indexOf('//') >= 0 ? path : API_URL + path;
@@ -911,42 +880,66 @@ var Portfolio =
 	            return url + '&' + new Date().getTime();
 	        }
 
-	        var xhr = new XMLHttpRequest();
+	        // Creating a promise
+	        var promise = new Promise(function (resolve, reject) {
 
-	        xhr.open(method, getURL(), !sync);
-	        if (!sync) {
-	            xhr.onreadystatechange = function () {
-	                if (this.readyState === 4) {
-	                    if (this.status >= 200 && this.status < 300 || this.status === 304) {
-	                        cb(null, raw ? this.responseText : this.responseText ? JSON.parse(this.responseText) : true, this);
-	                    } else {
-	                        cb({
-	                            path: path,
-	                            request: this,
-	                            error: this.status
-	                        });
+	            // Instantiates the XMLHttpRequest
+	            var client = new XMLHttpRequest();
+	            var uri = getURL();
+
+	            client.open(method, getURL(), !sync);
+
+	            /*if (!sync) {
+	                client.onreadystatechange = function () {
+	                    if (this.readyState === 4) {
+	                        if (this.status >= 200 && this.status < 300 || this.status === 304) {
+	                            cb(null, raw ? this.responseText : this.responseText ? JSON.parse(this.responseText) : true, this);
+	                        } else {
+	                            cb({
+	                                path: path,
+	                                request: this,
+	                                error: this.status
+	                            });
+	                        }
 	                    }
+	                };
+	            }*/
+
+	            if (!raw) {
+	                client.dataType = 'json';
+	                client.setRequestHeader('Accept', 'application/vnd.github.v3+json');
+	            } else {
+	                client.setRequestHeader('Accept', 'application/vnd.github.v3.raw+json');
+	            }
+
+	            client.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+
+	            if (data) {
+	                client.send(JSON.stringify(data));
+	            } else {
+	                client.send();
+	            }
+
+	            client.onload = function () {
+	                if (this.status >= 200 && this.status < 300) {
+	                    // Performs the function "resolve" when this.status is equal to 2xx
+	                    resolve(this.response);
+	                } else {
+	                    // Performs the function "reject" when this.status is different than 2xx
+	                    reject(this.statusText);
 	                }
 	            };
-	        }
+	            client.onerror = function () {
+	                reject(this.statusText);
+	            };
 
-	        if (!raw) {
-	            xhr.dataType = 'json';
-	            xhr.setRequestHeader('Accept', 'application/vnd.github.v3+json');
-	        } else {
-	            xhr.setRequestHeader('Accept', 'application/vnd.github.v3.raw+json');
-	        }
+	            /* if (sync) {
+	                 return client.response;
+	             }*/
+	        });
 
-	        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-
-	        if (data) {
-	            xhr.send(JSON.stringify(data));
-	        } else {
-	            xhr.send();
-	        }
-	        if (sync) {
-	            return xhr.response;
-	        }
+	        // Return the promise
+	        return promise;
 	    }
 
 	    function _requestAllPages(path, cb) {
@@ -1018,10 +1011,11 @@ var Portfolio =
 	    Github.User = function (username) {
 	        this.userName = username;
 
-	        this.userInfo = function (cb) {
-	            _request("GET", '/users/' + this.userName, null, function (err, res) {
-	                cb(err, res);
-	            });
+	        /*function (err, res) {
+	            cb(err, res);
+	        }*/
+	        this.userInfo = function () {
+	            return _request("GET", '/users/' + this.userName, null);
 	        };
 
 	        // List user organizations
@@ -1036,12 +1030,17 @@ var Portfolio =
 	        // List user repositories
 	        // -------
 
-	        this.repos = function (cb) {
+	        this.repos = function () {
+	            // Github does not always honor the 1000 limit so we want to iterate over the data set.
+	            return _request("GET", '/users/' + this.userName + '/repos');
+	        };
+
+	        /*this.repos = function (cb) {
 	            // Github does not always honor the 1000 limit so we want to iterate over the data set.
 	            _requestAllPages('/users/' + this.userName + '/repos?type=all&per_page=1000&sort=updated', function (err, res) {
 	                cb(err, res);
 	            });
-	        };
+	        };*/
 
 	        // List a user's gists
 	        // -------
@@ -1199,6 +1198,163 @@ var Portfolio =
 	        window.Portfolio.Github = Github;
 	    }
 	}).call(undefined);
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	(function () {
+	    Object.defineProperty(GithubSession, 'NS', {
+	        value: 'Portfolio'
+	    });
+
+	    Object.defineProperty(GithubSession, 'CLASS_NAME', {
+	        value: 'GithubSession'
+	    });
+
+	    function GithubSession() {
+	        Object.defineProperty(this, 'sessionable', {
+	            value: true
+	        });
+
+	        Object.defineProperty(this, 'user', {
+	            value: WeaveAPI.SessionManager.registerLinkableChild(this, new weavecore.LinkableString('sanjay1909'))
+	        });
+	    }
+
+	    var p = GithubSession.prototype;
+
+	    if (true) {
+	        module.exports = GithubSession;
+	    } else {
+	        console.log('window is used');
+	        window.Portfolio = window.Portfolio ? window.Portfolio : {};
+	        window.Portfolio.GithubSession = GithubSession;
+	    }
+	})();
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj["default"] = obj; return newObj; } }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(2);
+
+	var React = _interopRequireWildcard(_react);
+
+	var Publications = (function (_React$Component) {
+	    _inherits(Publications, _React$Component);
+
+	    function Publications() {
+	        _classCallCheck(this, Publications);
+
+	        _get(Object.getPrototypeOf(Publications.prototype), "constructor", this).apply(this, arguments);
+	    }
+
+	    _createClass(Publications, [{
+	        key: "render",
+	        value: function render() {
+	            return React.createElement(
+	                "div",
+	                { className: "row" },
+	                React.createElement(
+	                    "div",
+	                    { className: "col-md-8" },
+	                    React.createElement(
+	                        "h2",
+	                        null,
+	                        " Will Update Soon "
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Publications;
+	})(React.Component);
+
+	module.exports = Publications;
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj["default"] = obj; return newObj; } }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(2);
+
+	var React = _interopRequireWildcard(_react);
+
+	var Contributions = (function (_React$Component) {
+	    _inherits(Contributions, _React$Component);
+
+	    function Contributions() {
+	        _classCallCheck(this, Contributions);
+
+	        _get(Object.getPrototypeOf(Contributions.prototype), "constructor", this).apply(this, arguments);
+	    }
+
+	    _createClass(Contributions, [{
+	        key: "render",
+	        value: function render() {
+	            return React.createElement(
+	                "div",
+	                { className: "row" },
+	                React.createElement(
+	                    "ul",
+	                    null,
+	                    React.createElement(
+	                        "li",
+	                        null,
+	                        React.createElement(
+	                            "a",
+	                            { href: "http://blog.asanjay.com/", target: "_blanck" },
+	                            React.createElement("i", { className: "fa fa-newspaper-o" }),
+	                            "Blog"
+	                        )
+	                    ),
+	                    React.createElement(
+	                        "li",
+	                        null,
+	                        React.createElement(
+	                            "a",
+	                            { href: "http://sanjay1909.github.io/Tutorials/", target: "_blanck" },
+	                            React.createElement("i", { className: "fa fa-book" }),
+	                            "Tutorials"
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Contributions;
+	})(React.Component);
+
+	module.exports = Contributions;
 
 /***/ }
 /******/ ]);
