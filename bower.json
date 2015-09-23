@@ -1,0 +1,24 @@
+{
+  "name": "sanjay1909.github.io",
+  "version": "1.0.0",
+  "homepage": "https://github.com/sanjay1909/sanjay1909.github.io",
+  "authors": [
+    "Sanjay krishna anbalagan <sanjay1909@gmail.com>"
+  ],
+  "description": "Pesonal Website",
+  "main": "index.js",
+  "keywords": [
+    "Sanjay",
+    "Krishna",
+    "Anbalagan",
+    "sanjay1909"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

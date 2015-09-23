@@ -1,45 +1,65 @@
 {
     "name": "Academics",
+    "id": 1,
     "children": [
         {
             "name": "B.Tech - BioTechnology",
+            "id": 11,
             "children": [
                 {
-                    "name": "Dry Labs"
+                    "name": "Dry Labs",
+                    "id": 111
                 }, {
-                    "name": "BioInformatics"
+                    "name": "BioInformatics",
+                    "id": 112
                 }
             ]
         }, {
             "name": "MS - Computer Science",
+            "id": 12,
             "children": [
                 {
-                    "name": "Algorithm"
+                    "name": "Algorithm",
+                    "id": 121
                 }, {
-                    "name": "Design of Programming language"
+                    "name": "Design of Programming language",
+                    "id": 122
                 }, {
-                    "name": "Data Visualization"
+                    "name": "Data Visualization",
+                    "id": 123
                 }, {
-                    "name": "Internet and websytems"
+                    "name": "Internet and websytems",
+                    "id": 124
                 }, {
-                    "name": "Artificial Intelligence"
+                    "name": "Artificial Intelligence",
+                    "id": 125
                 }, {
-                    "name": "Computer Graphics"
+                    "name": "Computer Graphics",
+                    "id": 126
                 }, {
-                    "name": "Software design Pattern"
+                    "name": "Software design Pattern",
+                    "id": 127
                 }, {
-                    "name": "Database"
+                    "name": "Database",
+                    "id": 128
                 }
             ]
         }, {
             "name": "PhD - Computer Science",
+            "id": 13,
             "children": [
                 {
-                    "name": "Data Visualization"
+                    "name": "Data Visualization",
+                    "id": 131
                 }, {
-                    "name": "Visual Analytics"
+                    "name": "Visual Analytics",
+                    "id": 132
                 }, {
-                    "name": "Scientific Data Visualization"
+                    "name": "Scientific Data Visualization",
+                    "id": 133
+                }, {
+                    "name": "Personal Data Visualization",
+                    "id": 134
                 }
             ]
         }
