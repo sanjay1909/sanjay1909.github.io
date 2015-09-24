@@ -27,30 +27,14 @@ function build(myConfig, cb) {
 
 gulp.task("demo", ["build"], function (cb) {
 
-    //var replace = require("gulp-replace");
-    /*eslint-disable */
 
-    /* gulp.src("./docs/*.html")
-      .pipe(replace(/<!-- *custom:jsinclude *([^ ]*) *-->/g,
-          '<script type="text/javascript" src="$1"></script>'))
-      .pipe(replace(/<!-- *custom:cssinclude *([^ ]*) *-->/g,
-          '<link href="$1" rel="stylesheet">'))
-      .pipe(replace(/<!-- *custom:remove(.|\n)*?endcustom -->/g,
-          ""))
-      .pipe(gulp.dest("./build"));*/
-    /*eslint-enable */
+
 
     // run webpack
     var webpackConfig = require("../../webpack.config.demo.js");
     var myConfig = Object.create(webpackConfig);
 
-    gulp.src(["./demo/images/*"])
-        .pipe(gulp.dest("build/images"));
 
-    gulp.src(["./demo/data/*"])
-        .pipe(gulp.dest("build/data"));
-    gulp.src(["./bower_components/**/build/dist/*.js", "./bower_components/**/build/dist/*.js.map"])
-        .pipe(gulp.dest("build/libs"));
 
     build(myConfig, cb);
 });

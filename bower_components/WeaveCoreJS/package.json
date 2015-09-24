@@ -1,0 +1,58 @@
+{
+  "name": "weavecore",
+  "version": "1.0.0",
+  "description": "Test File",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sanjay Krishna Anbalagan",
+  "license": "MPL-1.0",
+  "devDependencies": {
+    "browser-sync": "^2.8.0",
+    "browserify": "^11.0.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-uglify": "^0.7.0",
+    "gulp": "^3.9.0",
+    "gulp-bump": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-gh-pages": "^0.5.2",
+    "gulp-jshint": "^1.11.2",
+    "gulp-json-editor": "^2.2.1",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-order": "^1.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.6",
+    "gulp-yuidoc": "^0.1.2",
+    "lodash": "^3.10.0",
+    "merge-stream": "^0.1.8",
+    "pretty-hrtime": "^1.0.0",
+    "require-dir": "^0.3.0",
+    "underscore": "^1.8.3",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.3.0"
+  },
+  "main": "build/weavecore.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-uglify": "^0.7.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-json-editor": "^2.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://sanjay1909:momndad19@github.com/sanjay1909/WeaveCoreJS.git"
+  },
+  "keywords": [
+    "['Session",
+    "Framework'",
+    "'Data",
+    "Layer']"
+  ],
+  "bugs": {
+    "url": "https://github.com/sanjay1909/WeaveCoreJS/issues"
+  },
+  "homepage": "https://github.com/sanjay1909/WeaveCoreJS#readme"
+}

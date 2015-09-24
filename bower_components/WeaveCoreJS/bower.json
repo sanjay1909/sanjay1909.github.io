@@ -1,0 +1,25 @@
+{
+    "name": "WeaveCoreJS",
+    "version": "0.0.1",
+    "homepage": "https://github.com/sanjay1909/WeaveCoreJS",
+    "authors": [
+    "adufillie",
+    "Sanjay krishna anbalagan <sanjay1909@gmail.com>'"
+  ],
+    "description": "Session Framework for session states",
+    "main": "weavecore.js",
+    "moduleType": [
+    "es6"
+  ],
+    "keywords": [
+    "weave",
+    "ivpr",
+    "session"
+  ],
+    "license": "MIT",
+    "ignore": [
+    "**/.*",
+    "node_modules"
+  ]
+
+}
