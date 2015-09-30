@@ -95,10 +95,15 @@ window.sanjay = window.sanjay ? window.sanjay : {};
 
     }
 
+
+
+
+
     function toggleAll(data) {
         if (data.children) {
-            data.children.forEach(toggleAll);
-            toggle(data);
+            data._children = data.children;
+            data._children.forEach(toggleAll);
+            data.children = null;
         }
     }
 
@@ -109,12 +114,13 @@ window.sanjay = window.sanjay ? window.sanjay : {};
         this.root.x0 = height / 2;
         this.root.y0 = 0;
 
-
+        //root.children.forEach(collapse);
         // Initialize the display to show a few nodes.
         // root.children.forEach(toggleAll);
-        toggle(this.root);
+
 
         this.update(this.root);
+        this.root.children.forEach(toggleAll);
     }
 
     p.update = function (source) {
@@ -165,7 +171,7 @@ window.sanjay = window.sanjay ? window.sanjay : {};
                 return d.name;
             })
             .style("fill-opacity", 1e-6)
-            .style("fill", 'black');
+            .style("fill", '#f8b45c');
 
         // Transition nodes to their new position.
         var nodeUpdate = node.transition()

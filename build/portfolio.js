@@ -594,8 +594,9 @@ var Portfolio =
 
 	    function toggleAll(data) {
 	        if (data.children) {
-	            data.children.forEach(toggleAll);
-	            toggle(data);
+	            data._children = data.children;
+	            data._children.forEach(toggleAll);
+	            data.children = null;
 	        }
 	    }
 
@@ -606,11 +607,12 @@ var Portfolio =
 	        this.root.x0 = height / 2;
 	        this.root.y0 = 0;
 
+	        //root.children.forEach(collapse);
 	        // Initialize the display to show a few nodes.
 	        // root.children.forEach(toggleAll);
-	        toggle(this.root);
 
 	        this.update(this.root);
+	        this.root.children.forEach(toggleAll);
 	    };
 
 	    p.update = function (source) {
@@ -649,7 +651,7 @@ var Portfolio =
 	            return d.children || d._children ? "end" : "start";
 	        }).text(function (d) {
 	            return d.name;
-	        }).style("fill-opacity", 1e-6).style("fill", 'black');
+	        }).style("fill-opacity", 1e-6).style("fill", '#f8b45c');
 
 	        // Transition nodes to their new position.
 	        var nodeUpdate = node.transition().duration(duration).attr("transform", function (d) {
@@ -1340,27 +1342,57 @@ var Portfolio =
 	        value: function render() {
 	            return React.createElement(
 	                "div",
-	                { className: "row" },
+	                { className: "row contributions text-center" },
 	                React.createElement(
-	                    "ul",
-	                    null,
+	                    "div",
+	                    { className: "col-md-4 col-sm-6 contribution " },
 	                    React.createElement(
-	                        "li",
-	                        null,
-	                        React.createElement(
-	                            "a",
-	                            { href: "http://blog.asanjay.com/", target: "_blanck" },
-	                            React.createElement("i", { className: "fa fa-newspaper-o" }),
-	                            "Blog"
-	                        )
+	                        "a",
+	                        { href: "http://blog.asanjay.com/", target: "_blanck" },
+	                        React.createElement("i", { className: "fa fa-newspaper-o" })
 	                    ),
 	                    React.createElement(
-	                        "li",
+	                        "h4",
 	                        null,
 	                        React.createElement(
-	                            "a",
-	                            { href: "http://sanjay1909.github.io/Tutorials/", target: "_blanck" },
-	                            React.createElement("i", { className: "fa fa-book" }),
+	                            "strong",
+	                            null,
+	                            "Blog"
+	                        )
+	                    )
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "col-md-4 col-sm-6 contribution " },
+	                    React.createElement(
+	                        "a",
+	                        { href: "https://www.behance.net/sanjay1909", target: "_blanck" },
+	                        React.createElement("i", { className: "fa fa-camera" })
+	                    ),
+	                    React.createElement(
+	                        "h4",
+	                        null,
+	                        React.createElement(
+	                            "strong",
+	                            null,
+	                            "Photoshop"
+	                        )
+	                    )
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "col-md-4 col-sm-6 contribution " },
+	                    React.createElement(
+	                        "a",
+	                        { href: "http://sanjay1909.github.io/Tutorials/", target: "_blanck" },
+	                        React.createElement("i", { className: "fa fa-book" })
+	                    ),
+	                    React.createElement(
+	                        "h4",
+	                        null,
+	                        React.createElement(
+	                            "strong",
+	                            null,
 	                            "Tutorials"
 	                        )
 	                    )
