@@ -12,16 +12,17 @@ class Navigation extends React.Component {
                     <span className="icon-bar"></span>
 				</button>
 				<div className="navbar-brand">
-                    Sanjay Krishna Anbalagan
+                    <span className="colorOne">Sanjay Krishna</span><span  className="colorTwo"> Anbalagan </span>
 				</div>
 			</div>
 			<div className="collapse navbar-collapse" id="bs-navbar-collapse-1">
                 <ul className="nav navbar-nav navbar-right responsive-nav ">
                     <li><a href="#home">About-Me</a></li>
+                    <li><a href="#academics">Academics</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#publications">Publicaitons</a></li>
                     <li><a href="#contributions">Contributions</a></li>
-                    <li><a href="#academics">Academics</a></li>
+
 
                 </ul>
 			</div>

@@ -117,7 +117,16 @@ var Portfolio =
 	                        React.createElement(
 	                            "div",
 	                            { className: "navbar-brand" },
-	                            "Sanjay Krishna Anbalagan"
+	                            React.createElement(
+	                                "span",
+	                                { className: "colorOne" },
+	                                "Sanjay Krishna"
+	                            ),
+	                            React.createElement(
+	                                "span",
+	                                { className: "colorTwo" },
+	                                " Anbalagan "
+	                            )
 	                        )
 	                    ),
 	                    React.createElement(
@@ -133,6 +142,15 @@ var Portfolio =
 	                                    "a",
 	                                    { href: "#home" },
 	                                    "About-Me"
+	                                )
+	                            ),
+	                            React.createElement(
+	                                "li",
+	                                null,
+	                                React.createElement(
+	                                    "a",
+	                                    { href: "#academics" },
+	                                    "Academics"
 	                                )
 	                            ),
 	                            React.createElement(
@@ -160,15 +178,6 @@ var Portfolio =
 	                                    "a",
 	                                    { href: "#contributions" },
 	                                    "Contributions"
-	                                )
-	                            ),
-	                            React.createElement(
-	                                "li",
-	                                null,
-	                                React.createElement(
-	                                    "a",
-	                                    { href: "#academics" },
-	                                    "Academics"
 	                                )
 	                            )
 	                        )
@@ -323,10 +332,10 @@ var Portfolio =
 	        value: function render() {
 	            return React.createElement(
 	                "div",
-	                { className: "row" },
+	                { className: "row home" },
 	                React.createElement(
 	                    "div",
-	                    { className: "col-md-4" },
+	                    { className: "col-md-4 text-center" },
 	                    React.createElement(
 	                        "span",
 	                        null,

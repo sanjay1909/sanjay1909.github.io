@@ -11,6 +11,8 @@
     <title>Sanjay</title>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="bower_components/WeaveCoreJS/weavecore.js"></script>
     <script type="text/javascript" src="build/portfolio.js"></script>
 
@@ -38,6 +40,13 @@
 
 
     <script type="text/javascript" src="build/portfolio-demo.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".navbar-nav li a").click(function (event) {
+                $(".navbar-collapse").collapse('hide');
+            });
+        });
+    </script>
 
 </body>
 

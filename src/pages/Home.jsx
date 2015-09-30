@@ -2,8 +2,8 @@ import * as React from 'react';
 
 class Home extends React.Component {
     render() {
-        return <div className = "row" >
-                < div className = "col-md-4" >
+        return <div className = "row home" >
+                < div className = "col-md-4 text-center" >
                      < span > < img src = "images/me.PNG" / > < /span>
                 < /div >
                 < div className = "col-md-8" >
