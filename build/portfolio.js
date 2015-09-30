@@ -94,17 +94,17 @@ var Portfolio =
 	        key: "render",
 	        value: function render() {
 	            return React.createElement(
-	                "div",
-	                { id: "main-nav", className: "navbar navbar-inverse bs-docs-nav", role: "banner" },
+	                "nav",
+	                { className: "navbar navbar-default portfolio-menu", role: "navigation" },
 	                React.createElement(
 	                    "div",
-	                    { className: "container" },
+	                    { className: "container-fluid" },
 	                    React.createElement(
 	                        "div",
 	                        { className: "navbar-header responsive-logo" },
 	                        React.createElement(
 	                            "button",
-	                            { className: "navbar-toggle collapsed", type: "button", "data-toggle": "collapse", "data-target": "#bs-navbar-collapse" },
+	                            { className: "navbar-toggle collapsed", type: "button", "data-toggle": "collapse", "data-target": "#bs-navbar-collapse-1" },
 	                            React.createElement(
 	                                "span",
 	                                { className: "sr-only" },
@@ -121,11 +121,11 @@ var Portfolio =
 	                        )
 	                    ),
 	                    React.createElement(
-	                        "nav",
-	                        { className: "navbar-collapse collapse", role: "navigation", id: "bs-navbar-collapse" },
+	                        "div",
+	                        { className: "collapse navbar-collapse", id: "bs-navbar-collapse-1" },
 	                        React.createElement(
 	                            "ul",
-	                            { className: "nav navbar-nav navbar-right responsive-nav main-nav-list" },
+	                            { className: "nav navbar-nav navbar-right responsive-nav " },
 	                            React.createElement(
 	                                "li",
 	                                null,
@@ -341,7 +341,16 @@ var Portfolio =
 	                    React.createElement(
 	                        "h2",
 	                        null,
-	                        " Sanjay Krishna "
+	                        React.createElement(
+	                            "span",
+	                            { className: "colorOne" },
+	                            " Sanjay "
+	                        ),
+	                        React.createElement(
+	                            "span",
+	                            { className: "colorTwo" },
+	                            "Krishna "
+	                        )
 	                    )
 	                )
 	            );
@@ -813,24 +822,33 @@ var Portfolio =
 	                    { className: 'col-md-4' },
 	                    React.createElement(
 	                        'div',
-	                        { className: 'panel panel-default' },
+	                        { className: 'card card--medium' },
 	                        React.createElement(
 	                            'div',
-	                            { className: 'panel-body' },
+	                            null,
 	                            React.createElement(
-	                                'h4',
-	                                null,
+	                                'h3',
+	                                { className: 'card__title' },
 	                                name
 	                            ),
-	                            description
+	                            React.createElement(
+	                                'p',
+	                                { className: 'card__text' },
+	                                description
+	                            )
 	                        ),
 	                        React.createElement(
 	                            'div',
-	                            { className: 'panel-footer' },
+	                            { className: 'card__action-bar' },
 	                            React.createElement(
-	                                'a',
-	                                { href: url, target: '_blank' },
-	                                'Read More..'
+	                                'span',
+	                                { className: 'card__button' },
+	                                ' ',
+	                                React.createElement(
+	                                    'a',
+	                                    { href: url, target: '_blank' },
+	                                    'Read More..'
+	                                )
 	                            )
 	                        )
 	                    )

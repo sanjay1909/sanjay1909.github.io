@@ -75,12 +75,12 @@ class Projects extends React.Component {
 
             if(name === 'ui-slider' ||name === 'as-me' ||name === 'FormVisualization'  ||name === 'sanjay1909.github.io' )return null;
             return <div className="col-md-4">
-                        <div className="panel panel-default">
-                            <div className="panel-body">
-                            <h4>{name}</h4>
-                            {description}
+                        <div className="card card--medium">
+                            <div>
+                            <h3 className="card__title">{name}</h3>
+                            <p className="card__text">{description}</p>
                             </div>
-                            <div className="panel-footer"><a href={url} target='_blank'>Read More..</a></div>
+                            <div className="card__action-bar"><span className="card__button"> <a href={url} target='_blank'>Read More..</a></span></div>
                         </div>
                     </div>;
 

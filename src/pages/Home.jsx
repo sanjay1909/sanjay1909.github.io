@@ -7,7 +7,7 @@ class Home extends React.Component {
                      < span > < img src = "images/me.PNG" / > < /span>
                 < /div >
                 < div className = "col-md-8" >
-                    < h2 > Sanjay Krishna < /h2>
+                < h2 ><span className="colorOne"> Sanjay </span><span  className="colorTwo">Krishna </span>< /h2>
                  </div >
             < /div > ;
     }
