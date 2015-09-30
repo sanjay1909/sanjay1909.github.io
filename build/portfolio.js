@@ -818,6 +818,9 @@ var Portfolio =
 	                });
 	            }
 	        }
+
+	        //TO-DO add Wiki page links and extract readme - file directly
+	        // provide agear box where user can view their projects
 	    }, {
 	        key: 'render',
 	        value: function render() {
@@ -826,8 +829,10 @@ var Portfolio =
 	                var name = repo['name'];
 	                var description = repo['description'];
 	                var url = repo['html_url'];
+	                var demoURL;
+	                if (name === 'VizAdapter') demoURL = 'https://' + repo.owner.login + ".github.io/" + name;else demoURL = 'https://' + repo.owner.login + ".github.io/" + name + '/demo';
 
-	                if (name === 'ui-slider' || name === 'as-me' || name === 'FormVisualization' || name === 'sanjay1909.github.io') return null;
+	                if (name === 'ui-slider' || name === 'as-me' || name === 'FormVisualization' || name === 'sanjay1909.github.io' || name === 'Tutorials') return null;
 	                return React.createElement(
 	                    'div',
 	                    { className: 'col-md-4' },
@@ -854,11 +859,20 @@ var Portfolio =
 	                            React.createElement(
 	                                'span',
 	                                { className: 'card__button' },
-	                                ' ',
 	                                React.createElement(
 	                                    'a',
 	                                    { href: url, target: '_blank' },
 	                                    'Read More..'
+	                                )
+	                            ),
+	                            React.createElement(
+	                                'span',
+	                                { className: 'card__button pull-right' },
+	                                React.createElement(
+	                                    'a',
+	                                    { href: demoURL, target: '_blank' },
+	                                    React.createElement('i', { className: 'fa fa-external-link' }),
+	                                    ' Demo'
 	                                )
 	                            )
 	                        )

@@ -64,7 +64,8 @@ class Projects extends React.Component {
     }
 
 
-
+//TO-DO add Wiki page links and extract readme - file directly
+// provide agear box where user can view their projects
     render() {
 
 
@@ -72,15 +73,28 @@ class Projects extends React.Component {
             var name = repo['name'];
             var description = repo['description'];
             var url = repo['html_url'];
+             var demoURL;
+            if(name === 'VizAdapter' )
+                demoURL = 'https://' + repo.owner.login +".github.io/" +name;
+            else
+                demoURL = 'https://' + repo.owner.login +".github.io/" +name + '/demo';
 
-            if(name === 'ui-slider' ||name === 'as-me' ||name === 'FormVisualization'  ||name === 'sanjay1909.github.io' )return null;
+
+            if(name === 'ui-slider' ||name === 'as-me' ||name === 'FormVisualization'  ||name === 'sanjay1909.github.io' || name === 'Tutorials' )return null;
             return <div className="col-md-4">
                         <div className="card card--medium">
                             <div>
                             <h3 className="card__title">{name}</h3>
                             <p className="card__text">{description}</p>
                             </div>
-                            <div className="card__action-bar"><span className="card__button"> <a href={url} target='_blank'>Read More..</a></span></div>
+                            <div className="card__action-bar">
+                                <span className="card__button">
+                                    <a href={url} target='_blank'>Read More..</a>
+                                </span>
+                                <span className="card__button pull-right">
+                                    <a href={demoURL} target='_blank'><i className="fa fa-external-link"></i> Demo</a>
+                                </span>
+                            </div>
                         </div>
                     </div>;
 
