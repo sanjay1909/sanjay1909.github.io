@@ -17,11 +17,14 @@ class Projects extends React.Component {
 
 
         this.state = {
-            repos: []
+            repos: [],
+            showUserName:false
         }
 
         this._setReactState = this._setReactState.bind(this);
         this._getUserRepos = this._getUserRepos.bind(this);
+        this.toggleUI = this.toggleUI.bind(this);
+        this.updateUserName = this.updateUserName.bind(this);
 
     }
 
@@ -53,7 +56,8 @@ class Projects extends React.Component {
                 repos: JSON.parse(this._promise.result)
             });
         }
-        else{
+        else if(this._promise.error){
+
             console.log(this._promise.error)
             this.setState({
                 repos: []
@@ -61,6 +65,16 @@ class Projects extends React.Component {
         }
 
 
+    }
+
+    toggleUI(){
+        this.setState({
+                showUserName: !this.state.showUserName
+        });
+    }
+
+     updateUserName(){
+        this.gitHub.user.value = React.findDOMNode(this.refs.githubUser).value;
     }
 
 
@@ -74,13 +88,22 @@ class Projects extends React.Component {
             var description = repo['description'];
             var url = repo['html_url'];
              var demoURL;
-            if(name === 'VizAdapter' )
+
+             if(repo.owner.login === 'sanjay1909'){
+                if(name === 'ui-slider' ||name === 'as-me' ||name === 'FormVisualization'  ||name === 'sanjay1909.github.io' || name === 'Tutorials' )return null;
+
+                if(name === 'VizAdapter' )
+                    demoURL = 'https://' + repo.owner.login +".github.io/" +name;
+                else
+                    demoURL = 'https://' + repo.owner.login +".github.io/" +name + '/demo';
+             }
+             else{
                 demoURL = 'https://' + repo.owner.login +".github.io/" +name;
-            else
-                demoURL = 'https://' + repo.owner.login +".github.io/" +name + '/demo';
+             }
 
 
-            if(name === 'ui-slider' ||name === 'as-me' ||name === 'FormVisualization'  ||name === 'sanjay1909.github.io' || name === 'Tutorials' )return null;
+
+
             return <div className="col-md-4">
                         <div className="card card--medium">
                             <div>
@@ -98,11 +121,19 @@ class Projects extends React.Component {
                         </div>
                     </div>;
 
-                    }) :[];
-        return <div className = "row" >
-        {repoList}
+            }) :[];
+        var userUI;
+        if(this.state.showUserName)userUI = <span><input ref="githubUser" type="text" placeholder="GitHub UserName"/><i className="fa fa-refresh" onClick={this.updateUserName}></i></span>;
+        return <div className='projects'>
+                    <div>
+                        <p><span className="colorOne">The contents are populated from <span  className="colorTwo"> gitHub API </span>calls. Feel yourself home by clicking the bottom right <span  className="colorTwo">gear</span> box</span></p>
 
-            < /div> ;
+                        <span  className='controllers'>{userUI}<i className="fa fa-cog" onClick={this.toggleUI} ></i></span>
+                    </div>
+                    <div className = "row" >
+                        {repoList}
+                    < /div>
+               < /div>;
     }
 }
 

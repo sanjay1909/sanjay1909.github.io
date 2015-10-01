@@ -98,7 +98,7 @@ ol {
     /* W3C */
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#66000000', GradientType=0);
     /* IE6-9 */
-    height: 750px;
+    height: 1500px;
     background-attachment: fixed;
 }
 
@@ -149,14 +149,6 @@ ol {
     background-color: #FFF;
 }
 
-.navbar-brand .colorOne {
-    color: #e2dfdd;
-}
-
-.navbar-brand .colorTwo {
-    color: #FCAC45;
-}
-
 .contributions {
     padding-top: 20%
 }
@@ -167,11 +159,11 @@ ol {
     }
 }
 
-.home .colorOne {
+.colorOne {
     color: #e2dfdd;
 }
 
-.home .colorTwo {
+.colorTwo {
     color: #FCAC45;
 }
 
@@ -194,9 +186,6 @@ ol {
         padding-top: 16px;
         text-align: center;
     }
-    .navbar-brand {
-        text-transform: uppercase;
-    }
 }
 
 @media (max-width: 767px) {
@@ -211,9 +200,6 @@ ol {
         padding-top: 16px;
         text-align: center;
     }
-    .navbar-brand {
-        text-transform: uppercase;
-    }
 }
 
 @media (max-width: 480px) {
@@ -227,9 +213,6 @@ ol {
     .home h2 {
         padding-top: 8px;
         text-align: center;
-    }
-    .navbar-brand {
-        text-transform: uppercase;
     }
 }
 
@@ -261,4 +244,43 @@ ol {
 
 .contributions p {
     color: #e6e6e6;
+}
+
+.projects .controllers {
+    position: fixed;
+    bottom: 20px;
+    right: 20px
+}
+
+.projects .colorOne {
+    color: #a0a0a0;
+    font-size: 14px;
+    font-style: italic
+}
+
+.projects .controllers i.fa.fa-cog {
+    font-size: 24px;
+    width: 30px;
+    height: 32px;
+    transition: all 0.5s;
+    margin-left: 24px;
+    color: #f8b45c;
+    cursor: pointer;
+}
+
+.projects .controllers i.fa.fa-refresh {
+    font-size: 24px;
+    width: 20px;
+    height: 32px;
+    padding-left: 12px;
+    color: #a8ff50;
+}
+
+.projects .controllers input {
+    font-size: 14px;
+    border-radius: 20px;
+    height: 30px;
+    transition: all 0.5s;
+    color: #6e6f6e;
+    text-align: center;
 }

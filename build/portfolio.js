@@ -773,11 +773,14 @@ var Portfolio =
 	        this._promise = WeaveAPI.SessionManager.registerLinkableChild(this.gitHub, new weavecore.LinkablePromise(this._getUserRepos.bind(this), this.describePromise.bind(this), true));
 
 	        this.state = {
-	            repos: []
+	            repos: [],
+	            showUserName: false
 	        };
 
 	        this._setReactState = this._setReactState.bind(this);
 	        this._getUserRepos = this._getUserRepos.bind(this);
+	        this.toggleUI = this.toggleUI.bind(this);
+	        this.updateUserName = this.updateUserName.bind(this);
 	    }
 
 	    _createClass(Projects, [{
@@ -811,12 +814,25 @@ var Portfolio =
 	                this.setState({
 	                    repos: JSON.parse(this._promise.result)
 	                });
-	            } else {
+	            } else if (this._promise.error) {
+
 	                console.log(this._promise.error);
 	                this.setState({
 	                    repos: []
 	                });
 	            }
+	        }
+	    }, {
+	        key: 'toggleUI',
+	        value: function toggleUI() {
+	            this.setState({
+	                showUserName: !this.state.showUserName
+	            });
+	        }
+	    }, {
+	        key: 'updateUserName',
+	        value: function updateUserName() {
+	            this.gitHub.user.value = React.findDOMNode(this.refs.githubUser).value;
 	        }
 
 	        //TO-DO add Wiki page links and extract readme - file directly
@@ -830,9 +846,15 @@ var Portfolio =
 	                var description = repo['description'];
 	                var url = repo['html_url'];
 	                var demoURL;
-	                if (name === 'VizAdapter') demoURL = 'https://' + repo.owner.login + ".github.io/" + name;else demoURL = 'https://' + repo.owner.login + ".github.io/" + name + '/demo';
 
-	                if (name === 'ui-slider' || name === 'as-me' || name === 'FormVisualization' || name === 'sanjay1909.github.io' || name === 'Tutorials') return null;
+	                if (repo.owner.login === 'sanjay1909') {
+	                    if (name === 'ui-slider' || name === 'as-me' || name === 'FormVisualization' || name === 'sanjay1909.github.io' || name === 'Tutorials') return null;
+
+	                    if (name === 'VizAdapter') demoURL = 'https://' + repo.owner.login + ".github.io/" + name;else demoURL = 'https://' + repo.owner.login + ".github.io/" + name + '/demo';
+	                } else {
+	                    demoURL = 'https://' + repo.owner.login + ".github.io/" + name;
+	                }
+
 	                return React.createElement(
 	                    'div',
 	                    { className: 'col-md-4' },
@@ -879,10 +901,52 @@ var Portfolio =
 	                    )
 	                );
 	            }) : [];
+	            var userUI;
+	            if (this.state.showUserName) userUI = React.createElement(
+	                'span',
+	                null,
+	                React.createElement('input', { ref: 'githubUser', type: 'text', placeholder: 'GitHub UserName' }),
+	                React.createElement('i', { className: 'fa fa-refresh', onClick: this.updateUserName })
+	            );
 	            return React.createElement(
 	                'div',
-	                { className: 'row' },
-	                repoList
+	                { className: 'projects' },
+	                React.createElement(
+	                    'div',
+	                    null,
+	                    React.createElement(
+	                        'p',
+	                        null,
+	                        React.createElement(
+	                            'span',
+	                            { className: 'colorOne' },
+	                            'The contents are populated from ',
+	                            React.createElement(
+	                                'span',
+	                                { className: 'colorTwo' },
+	                                ' gitHub API '
+	                            ),
+	                            'calls. Feel yourself home by clicking the bottom right ',
+	                            React.createElement(
+	                                'span',
+	                                { className: 'colorTwo' },
+	                                'gear'
+	                            ),
+	                            ' box'
+	                        )
+	                    ),
+	                    React.createElement(
+	                        'span',
+	                        { className: 'controllers' },
+	                        userUI,
+	                        React.createElement('i', { className: 'fa fa-cog', onClick: this.toggleUI })
+	                    )
+	                ),
+	                React.createElement(
+	                    'div',
+	                    { className: 'row' },
+	                    repoList
+	                )
 	            );
 	        }
 	    }]);
