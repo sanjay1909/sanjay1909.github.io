@@ -934,18 +934,18 @@ var Portfolio =
 	                            ),
 	                            ' box'
 	                        )
-	                    ),
-	                    React.createElement(
-	                        'span',
-	                        { className: 'controllers' },
-	                        userUI,
-	                        React.createElement('i', { className: 'fa fa-cog', onClick: this.toggleUI })
 	                    )
 	                ),
 	                React.createElement(
 	                    'div',
 	                    { className: 'row' },
 	                    repoList
+	                ),
+	                React.createElement(
+	                    'span',
+	                    { className: 'controllers' },
+	                    userUI,
+	                    React.createElement('i', { className: 'fa fa-cog', onClick: this.toggleUI })
 	                )
 	            );
 	        }

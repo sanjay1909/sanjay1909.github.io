@@ -128,11 +128,12 @@ class Projects extends React.Component {
                     <div>
                         <p><span className="colorOne">The contents are populated from <span  className="colorTwo"> gitHub API </span>calls. Feel yourself home by clicking the bottom right <span  className="colorTwo">gear</span> box</span></p>
 
-                        <span  className='controllers'>{userUI}<i className="fa fa-cog" onClick={this.toggleUI} ></i></span>
+
                     </div>
                     <div className = "row" >
                         {repoList}
                     < /div>
+                    <span  className='controllers'>{userUI}<i className="fa fa-cog" onClick={this.toggleUI} ></i></span>
                < /div>;
     }
 }
