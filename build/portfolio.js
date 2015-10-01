@@ -926,7 +926,7 @@ var Portfolio =
 	                                { className: 'colorTwo' },
 	                                ' gitHub API '
 	                            ),
-	                            'calls. Feel yourself home by clicking the bottom right ',
+	                            'calls. Personalize with your own Git user name by clicking the bottom right ',
 	                            React.createElement(
 	                                'span',
 	                                { className: 'colorTwo' },

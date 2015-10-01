@@ -126,7 +126,7 @@ class Projects extends React.Component {
         if(this.state.showUserName)userUI = <span><input ref="githubUser" type="text" placeholder="GitHub UserName"/><i className="fa fa-refresh" onClick={this.updateUserName}></i></span>;
         return <div className='projects'>
                     <div>
-                        <p><span className="colorOne">The contents are populated from <span  className="colorTwo"> gitHub API </span>calls. Feel yourself home by clicking the bottom right <span  className="colorTwo">gear</span> box</span></p>
+                        <p><span className="colorOne">The contents are populated from <span  className="colorTwo"> gitHub API </span>calls. Personalize with your own Git user name by clicking the bottom right <span  className="colorTwo">gear</span> box</span></p>
 
 
                     </div>
