@@ -542,7 +542,7 @@ var Portfolio =
 	                };
 	            } else {
 	                //to-do check its dom element if so, get its ID too
-	                if (config.container.constructor.name === 'HTMLDivElement' || config.container.constructor === HTMLDivElementConstructor) {
+	                if (config.container.constructor.name ? config.container.constructor.name === 'HTMLDivElement' : config.container.constructor === HTMLDivElementConstructor) {
 	                    this.config.container = {
 	                        'element': config.container,
 	                        'id': config.container.id
