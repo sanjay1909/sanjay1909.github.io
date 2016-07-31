@@ -319,89 +319,165 @@ var Portfolio =
 	var React = _interopRequireWildcard(_react);
 	
 	var Home = (function (_React$Component) {
-	    _inherits(Home, _React$Component);
+		_inherits(Home, _React$Component);
 	
-	    function Home() {
-	        _classCallCheck(this, Home);
+		function Home() {
+			_classCallCheck(this, Home);
 	
-	        _get(Object.getPrototypeOf(Home.prototype), "constructor", this).apply(this, arguments);
-	    }
+			_get(Object.getPrototypeOf(Home.prototype), "constructor", this).apply(this, arguments);
+		}
 	
-	    _createClass(Home, [{
-	        key: "render",
-	        value: function render() {
-	            return React.createElement(
-	                "div",
-	                { className: "row home" },
-	                React.createElement(
-	                    "div",
-	                    { className: "col-md-4 text-center" },
-	                    React.createElement(
-	                        "span",
-	                        null,
-	                        " ",
-	                        React.createElement("img", { src: "images/me.PNG" }),
-	                        " "
-	                    )
-	                ),
-	                React.createElement(
-	                    "div",
-	                    { className: "col-md-8" },
-	                    React.createElement(
-	                        "h2",
-	                        null,
-	                        React.createElement(
-	                            "span",
-	                            { className: "colorOne" },
-	                            " Sanjay "
-	                        ),
-	                        React.createElement(
-	                            "span",
-	                            { className: "colorTwo" },
-	                            "Krishna "
-	                        )
-	                    ),
-	                    React.createElement("br", null),
-	                    React.createElement(
-	                        "span",
-	                        null,
-	                        React.createElement(
-	                            "span",
-	                            { className: "colorTwo" },
-	                            " Digital "
-	                        ),
-	                        React.createElement(
-	                            "a",
-	                            { className: "colorOne", target: "_blank", href: "weave/Embed.html" },
-	                            "Resume"
-	                        ),
-	                        " "
-	                    ),
-	                    React.createElement("br", null),
-	                    React.createElement("br", null),
-	                    React.createElement("br", null),
-	                    React.createElement(
-	                        "span",
-	                        null,
-	                        React.createElement(
-	                            "a",
-	                            { className: "colorOne", target: "_blank", href: "weave/index.html?file=SanjayResume.weave" },
-	                            "Click here to see how the digital resume is created"
-	                        ),
-	                        " "
-	                    ),
-	                    React.createElement("br", null),
-	                    React.createElement(
-	                        "span",
-	                        { className: "colorTwo" },
-	                        " Use the History Button in the menu bar to see the steps ......."
-	                    )
-	                )
-	            );
-	        }
-	    }]);
+		_createClass(Home, [{
+			key: "render",
+			value: function render() {
+				var functionText = "function ShowReport(data)\n {\nreturn visualization;\n}\n";
 	
-	    return Home;
+				return React.createElement(
+					"div",
+					{ className: "row home" },
+					React.createElement(
+						"div",
+						{ className: "col-md-4 text-center" },
+						React.createElement(
+							"span",
+							null,
+							" ",
+							React.createElement("img", { src: "images/me.PNG" }),
+							" "
+						)
+					),
+					React.createElement(
+						"div",
+						{ className: "col-md-8" },
+						React.createElement(
+							"h2",
+							null,
+							React.createElement(
+								"span",
+								{ className: "colorOne" },
+								" Sanjay "
+							),
+							React.createElement(
+								"span",
+								{ className: "colorTwo" },
+								"Krishna "
+							)
+						),
+						React.createElement("br", null),
+						React.createElement("br", null),
+						React.createElement("br", null),
+						React.createElement("br", null),
+						React.createElement(
+							"div",
+							{ className: "colorOne", style: { width: "460px", textAlign: "justify" } },
+							React.createElement(
+								"span",
+								null,
+								"I consider myself as a ",
+								React.createElement(
+									"span",
+									{ className: "colorTwo" },
+									"Software Engineer"
+								),
+								" actively involved in open source projects."
+							),
+							React.createElement(
+								"span",
+								null,
+								"This site is the result of our Data framework - ",
+								React.createElement(
+									"a",
+									{ target: "_blank", href: "weave/index.html?file=SanjayResume.weave", className: "colorTwo" },
+									"WeaveCoreJS"
+								),
+								" and Facebook UI framework - ",
+								React.createElement(
+									"span",
+									{ className: "colorTwo" },
+									"ReactJS"
+								)
+							),
+							React.createElement(
+								"span",
+								null,
+								" To give a taste of what i have been part of last few years, i prepared a use case using our open source project."
+							)
+						),
+						React.createElement("br", null),
+						React.createElement(
+							"div",
+							{ className: "colorOne", style: { width: "480px" } },
+							React.createElement(
+								"div",
+								{ style: { display: "flex" } },
+								React.createElement(
+									"div",
+									{ className: "colorTwo", style: { paddingRight: "8px", whiteSpace: "nowrap" } },
+									"Link 1:"
+								),
+								React.createElement(
+									"span",
+									null,
+									React.createElement(
+										"a",
+										{ style: { fontSize: "18px", fontWeight: "bold" }, className: "colorOne", target: "_blank", href: "weave/Embed.html" },
+										" INTERACTIVE RESUME"
+									),
+									"  (Report Mode)"
+								)
+							),
+							React.createElement(
+								"div",
+								{ style: { display: "flex" } },
+								React.createElement(
+									"div",
+									{ className: "colorTwo", style: { paddingRight: "8px", whiteSpace: "nowrap" } },
+									"Link 2:"
+								),
+								React.createElement(
+									"div",
+									null,
+									React.createElement(
+										"div",
+										null,
+										React.createElement(
+											"a",
+											{ className: "colorOne", target: "_blank", href: "weave/index.html?file=SanjayResume.weave" },
+											" ",
+											React.createElement(
+												"span",
+												{ style: { fontSize: "18px", fontWeight: "bold" } },
+												"DATA",
+												React.createElement(
+													"span",
+													{ className: "colorTwo" },
+													" ↦"
+												),
+												" VISUALIZATION"
+											)
+										),
+										"  (Dashboard Mode)"
+									),
+									React.createElement(
+										"span",
+										{ className: "colorOne" },
+										" (Use the ",
+										React.createElement(
+											"span",
+											{ className: "colorTwo" },
+											"History Button "
+										),
+										" in the menu bar to experience the steps involved)"
+									)
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+	
+		return Home;
 	})(React.Component);
 	
 	module.exports = Home;
