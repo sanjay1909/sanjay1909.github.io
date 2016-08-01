@@ -17,8 +17,8 @@ class Home extends React.Component {
 	                <br/>
 	                <div className="colorOne" style={{width:"460px",textAlign:"justify"}}>
 		                <span>I consider myself as a <span className="colorTwo">Software Engineer</span> actively involved in open source projects.</span>
-	                    <span>This site is the result of our Data framework - <a target="_blank" href="weave/index.html?file=SanjayResume.weave" className="colorTwo">WeaveCoreJS</a> and Facebook UI framework - <span className="colorTwo">ReactJS</span></span>
-		                <span> To give a taste of what i have been part of last few years, i prepared a use case using our open source project.</span>
+	                    <span>This site is the result of my lab's Data framework - <span className="colorTwo">WeaveCoreJS</span> and Facebook UI framework - <span className="colorTwo">ReactJS</span></span>
+		                <span> To showcase my work on last few years, i have prepared a use case scenario created using our open source project.</span>
 
 	                </div>
 	                <br/>
@@ -32,6 +32,12 @@ class Home extends React.Component {
 			                <div>
 				                <div><a  className="colorOne" target="_blank" href="weave/index.html?file=SanjayResume.weave"> <span style={{fontSize:"18px",fontWeight: "bold"}}>DATA<span className="colorTwo"> &#8614;</span> VISUALIZATION</span></a>  (Dashboard Mode)</div>
 		                        <span className="colorOne"> (Use the <span className="colorTwo">History Button </span> in the menu bar to experience the steps involved)</span>
+		                    </div>
+	                    </div>
+		                <div style={{display:"flex"}}>
+			                <div className="colorTwo" style={{paddingRight:"8px",whiteSpace: "nowrap"}}>PDF: </div>
+			                <div>
+				                <div><a  className="colorOne" target="_blank" href="resume.pdf"> <span style={{fontSize:"18px",fontWeight: "bold"}}>RESUME</span></a> </div>
 		                    </div>
 	                    </div>
 	                
