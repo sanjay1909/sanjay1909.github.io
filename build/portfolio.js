@@ -498,6 +498,62 @@ var Portfolio =
 										" "
 									)
 								)
+							),
+							React.createElement(
+								"div",
+								{ style: { display: "flex" } },
+								React.createElement(
+									"div",
+									{ className: "colorTwo", style: { paddingRight: "8px", whiteSpace: "nowrap" } },
+									"Video: "
+								),
+								React.createElement(
+									"div",
+									null,
+									React.createElement(
+										"div",
+										null,
+										React.createElement(
+											"a",
+											{ className: "colorOne", target: "_blank", href: "https://www.youtube.com/playlist?list=PLWXF6pKVhgPOVhY3hHnv6jKCqsrRqAYHU" },
+											" ",
+											React.createElement(
+												"span",
+												{ style: { fontSize: "18px", fontWeight: "bold" } },
+												"FEATURES"
+											)
+										),
+										" (You tube links to my recent works) "
+									)
+								)
+							),
+							React.createElement(
+								"div",
+								{ style: { display: "flex" } },
+								React.createElement(
+									"div",
+									{ className: "colorTwo", style: { paddingRight: "8px", whiteSpace: "nowrap" } },
+									"Video: "
+								),
+								React.createElement(
+									"div",
+									null,
+									React.createElement(
+										"div",
+										null,
+										React.createElement(
+											"a",
+											{ className: "colorOne", target: "_blank", href: "https://www.youtube.com/watch?v=l2euJhhdwJE" },
+											" ",
+											React.createElement(
+												"span",
+												{ style: { fontSize: "18px", fontWeight: "bold" } },
+												"THESIS"
+											)
+										),
+										" (You tube link to my thesis demo) "
+									)
+								)
 							)
 						)
 					)

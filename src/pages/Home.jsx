@@ -40,6 +40,18 @@ class Home extends React.Component {
 				                <div><a  className="colorOne" target="_blank" href="resume.pdf"> <span style={{fontSize:"18px",fontWeight: "bold"}}>RESUME</span></a> </div>
 		                    </div>
 	                    </div>
+		                <div style={{display:"flex"}}>
+			                <div className="colorTwo" style={{paddingRight:"8px",whiteSpace: "nowrap"}}>Video: </div>
+			                <div>
+				                <div><a  className="colorOne" target="_blank" href="https://www.youtube.com/playlist?list=PLWXF6pKVhgPOVhY3hHnv6jKCqsrRqAYHU"> <span style={{fontSize:"18px",fontWeight: "bold"}}>FEATURES</span></a> (You tube links to my recent works) </div>
+			                </div>
+		                </div>
+		                <div style={{display:"flex"}}>
+			                <div className="colorTwo" style={{paddingRight:"8px",whiteSpace: "nowrap"}}>Video: </div>
+			                <div>
+				                <div><a  className="colorOne" target="_blank" href="https://www.youtube.com/watch?v=l2euJhhdwJE"> <span style={{fontSize:"18px",fontWeight: "bold"}}>THESIS</span></a> (You tube link to my thesis demo) </div>
+			                </div>
+		                </div>
 	                
                     </div>
                  </div>
