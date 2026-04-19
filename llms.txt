@@ -1,0 +1,55 @@
+# Sanjay Krishna Anbalagan
+
+> Senior Engineer @ AWS · PhD in Computer Science. Builds open-source developer abstractions that make enterprise generative-AI applications explainable by construction.
+
+The canonical machine-readable view of this site is available at:
+https://sanjay1909.github.io/?view=source
+
+It can be served as JSON, YAML, or MDX via the `format` query parameter.
+
+## Identity
+
+- Name: Sanjay Krishna Anbalagan
+- Role: Senior Engineer at Amazon Web Services (AWS)
+- Education: PhD, Computer Science, University of Massachusetts Lowell
+- Username: sanjay1909 (GitHub, Medium, LinkedIn)
+- Homepage: https://sanjay1909.github.io/
+
+## Thesis
+
+Explainability is a property of the substrate, not a feature layered on top. If a backend can produce a causal trace of every decision it made, the same artifact is debuggable by engineers, reasonable-over by models, and auditable by regulators. This portfolio is itself an instance of that thesis — the page is narrative, index, graph, and machine-readable source at the same time.
+
+## Journey (the "About" section)
+
+I have been shipping LLM-backed applications since the early days of GPT-3, growing alongside the models through every era. Four eras, four lessons:
+
+1. **2020 — Highlight era (baby bot).** Wrap every important fact in `<highlight>` tags or the model forgot it before the end of its own sentence.
+2. **2022 — Chain-of-Thought era (toddler).** "Think step by step." One rung at a time.
+3. **2023 — Tree-of-Thought era (high-schooler).** Generate three candidate plans, score each, prune the rest.
+4. **2024 → now — Orchestration era (junior employee).** Tool graphs, ReAct, RAG, routing, evaluation per iteration. Emit a causal trace so the audit passes.
+
+Every prompt-engineering hack we invented to teach the model became baked-in instinct in the next generation of weights. The prompts died. The shape they were compensating for did not — a graph of decisions, each with a cause. **FootPrint** is that graph, honest. **agentfootprint** is what happens when you let the graph host an LLM as one of its operators. Both are the condensed form of what a decade of raising these applications taught me. Companion essay: https://medium.com/data-science-collective/llms-from-baby-bots-to-expert-employees-e99aa5553ed6
+
+## Projects
+
+- [FootPrint](https://github.com/sanjay1909/footprintjs) — 2024 — TypeScript framework that turns backend business logic into a directed graph and produces causal execution traces. `npm install footprintjs`.
+- [agentfootprint](https://github.com/sanjay1909/agentfootprint) — 2025 — TypeScript framework for explainable AI agents, built on FootPrint. Supports LLM Call / ReAct / RAG / Sequential / Parallel / Routing patterns with per-iteration evaluation. `npm install agentfootprint`.
+
+## Papers
+
+- "Bridging UI Design and Chatbot Interactions" — HCI International 2025, Springer Proceedings.
+- "Visible Reasoning" — HCI International 2026, Springer Proceedings (accepted). A framework for deterministic LLM agent transparency.
+
+## Writing
+
+Newsletter: *Enterprise Gen AI Application* on LinkedIn, 320+ subscribers.
+
+- № 01 · From Supply-Driven to Demand-Driven — the chatbot should drive the UX, not assist it.
+- № 02 · Make Search the First Tool — STAY/SWITCH plus a Focus Token for multi-turn agent sessions.
+- № 03 · The Flowchart Pattern — why backend code should be designed as a graph the model can read.
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/in/sanjay-krishna-anbalagan/
+- GitHub: https://github.com/sanjay1909
+- Medium: https://medium.com/@sanjay1909
