@@ -11,7 +11,6 @@
 <meta name="theme-color" content="#0B0B0C" />
 <link rel="canonical" href="https://sanjay1909.github.io/" />
 <link rel="alternate" type="text/plain" title="LLM-readable summary" href="/llms.txt" />
-<link rel="alternate" type="application/json" title="Machine-readable portfolio" href="/?view=source" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="profile" />
@@ -198,8 +197,8 @@
   nav.bar{
     position:fixed;top:46px;left:0;right:0;z-index:49;
     display:flex;justify-content:space-between;align-items:center;
-    /* reserve right-side space for the fixed view-toggle so links never overlap */
-    padding:18px 330px 18px 28px;border-bottom:1px solid var(--rule);
+    /* reserve right-side space for the fixed theme-toggle pill so links never overlap */
+    padding:18px 110px 18px 28px;border-bottom:1px solid var(--rule);
     background:var(--nav-bg);backdrop-filter:blur(10px);
   }
   nav.bar .brand{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
@@ -583,25 +582,11 @@
   .mobile-menu .footer .right{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);text-align:right;line-height:1.8}
   .mobile-menu .footer .right b{color:var(--accent);font-weight:400}
 
-  /* === View toggle (Narrative / Index / Source) === */
-  .view-toggle{
-    position:fixed;top:46px;right:28px;z-index:51;
-    display:inline-flex;align-items:center;gap:10px;
-    padding:18px 0;
+  /* === Theme-toggle wrapper (fixed, top-right) === */
+  .theme-wrap{
+    position:fixed;top:50px;right:28px;z-index:51;
+    display:inline-flex;align-items:center;
   }
-  .view-toggle .seg{
-    display:inline-flex;border:1px solid var(--rule);border-radius:3px;
-    background:var(--seg-bg);backdrop-filter:blur(10px);overflow:hidden;
-  }
-  .view-toggle button{
-    appearance:none;background:transparent;border:none;cursor:pointer;
-    font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
-    color:var(--ink-mute);padding:9px 12px;transition:color .2s, background .2s;
-    border-right:1px solid var(--rule);
-  }
-  .view-toggle .seg button:last-child{border-right:none}
-  .view-toggle button:hover{color:var(--ink)}
-  .view-toggle button.on{color:var(--on-accent);background:var(--accent)}
 
   /* Theme toggle: sun/moon sliding pill */
   .theme-toggle{
@@ -622,7 +607,7 @@
   html[data-theme="light"] .theme-toggle .knob::before{content:"☀"}
   .theme-toggle .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
-  @media (max-width:880px){ .view-toggle{top:42px;right:auto;left:28px} }
+  @media (max-width:880px){ .theme-wrap{top:42px;right:auto;left:28px} }
 
   /* === Right rail TOC (docs-style) === */
   .rail{
@@ -665,93 +650,6 @@
   }
   .project .cell-label.out{color:var(--accent-2)}
 
-  /* === INDEX VIEW === */
-  #index-view, #source-view{display:none}
-  body.view-index #index-view{display:block}
-  body.view-source #source-view{display:block}
-  body.view-index main > section,
-  body.view-index main > .hero,
-  body.view-source main > section,
-  body.view-source main > .hero,
-  body.view-index footer,
-  body.view-source footer,
-  body.view-index .rail,
-  body.view-source .rail{display:none}
-
-  #index-view{padding:140px 28px 80px;max-width:1320px;margin:0 auto}
-  #index-view .idx-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:40px}
-  #index-view .idx-head h2{font-family:var(--serif);font-weight:300;font-size:clamp(48px,8vw,110px);line-height:.95;letter-spacing:-.035em}
-  #index-view .idx-head h2 em{font-style:italic;color:var(--accent)}
-  #index-view .idx-head .note{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);max-width:320px;line-height:1.7}
-  #index-view .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-  #index-view .chip{appearance:none;background:transparent;border:1px solid var(--rule);color:var(--ink-mute);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:3px;cursor:pointer;transition:all .2s}
-  #index-view .chip:hover{color:var(--ink);border-color:var(--ink-mute)}
-  #index-view .chip.on{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
-  #index-view input.q{
-    width:100%;max-width:420px;background:transparent;border:1px solid var(--rule);border-radius:3px;
-    padding:10px 14px;color:var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.06em;margin-bottom:24px;
-  }
-  #index-view input.q:focus{outline:none;border-color:var(--accent)}
-  #index-view .idx-table{border-top:1px solid var(--rule)}
-  #index-view .idx-row{
-    display:grid;grid-template-columns:64px 90px 1fr 120px 40px;gap:20px;align-items:baseline;
-    padding:16px 0;border-bottom:1px solid var(--rule);cursor:pointer;
-    transition:padding .2s ease, background .2s ease;
-  }
-  #index-view .idx-row:hover{padding-left:14px;background:linear-gradient(90deg, rgba(182,248,0,0) 0%, rgba(182,248,0,.035) 100%)}
-  #index-view .idx-row .y{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--accent)}
-  #index-view .idx-row .k{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute)}
-  #index-view .idx-row .t{font-family:var(--serif);font-weight:400;font-size:clamp(17px,1.6vw,22px);line-height:1.25;letter-spacing:-.01em}
-  #index-view .idx-row .t em{font-style:italic;color:var(--ink-mute);font-size:.8em;margin-left:10px}
-  #index-view .idx-row .v{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);text-align:right}
-  #index-view .idx-row .arrow{font-family:var(--mono);color:var(--accent);opacity:0;transition:opacity .2s, transform .2s}
-  #index-view .idx-row:hover .arrow{opacity:1;transform:translateX(4px)}
-  #index-view .idx-row.hidden{display:none}
-  @media (max-width:680px){
-    #index-view .idx-row{grid-template-columns:52px 1fr 24px;gap:12px}
-    #index-view .idx-row .k, #index-view .idx-row .v{display:none}
-  }
-
-  /* === SOURCE VIEW === */
-  #source-view{padding:140px 28px 80px;max-width:1100px;margin:0 auto}
-  #source-view .src-head{margin-bottom:28px}
-  #source-view .src-head h2{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(40px,6vw,80px);line-height:.95;letter-spacing:-.035em;margin-bottom:14px}
-  #source-view .src-head p{font-family:var(--serif);font-weight:400;font-size:clamp(17px,1.5vw,21px);line-height:1.5;color:var(--ink-mute);max-width:720px}
-  #source-view .src-actions{display:flex;gap:10px;margin:18px 0 24px;flex-wrap:wrap}
-  #source-view .src-actions button, #source-view .src-actions a{
-    appearance:none;background:transparent;border:1px solid var(--rule);color:var(--ink);
-    font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-    padding:9px 14px;border-radius:3px;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;
-  }
-  #source-view .src-actions button:hover, #source-view .src-actions a:hover{border-color:var(--accent);color:var(--accent)}
-  #source-view .src-actions button.copied{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
-  #source-view pre{
-    font-family:var(--mono);font-size:12px;line-height:1.55;color:var(--ink-mute);
-    background:var(--paper-2);border:1px solid var(--rule);border-radius:4px;
-    padding:22px 24px;overflow-x:auto;max-height:70vh;overflow-y:auto;
-  }
-  #source-view pre .k{color:var(--accent)}
-  #source-view pre .s{color:var(--ink)}
-  #source-view pre .n{color:var(--accent-2)}
-  #source-view pre .b{color:#9ce2ff}
-  #source-view .fmt-row{display:flex;align-items:center;gap:14px;margin:4px 0 16px;flex-wrap:wrap}
-  #source-view .fmt-row .fmt-seg{display:inline-flex;border:1px solid var(--rule);border-radius:3px;overflow:hidden}
-  #source-view .fmt-row .fmt-seg button{
-    appearance:none;background:transparent;border:none;border-right:1px solid var(--rule);cursor:pointer;
-    padding:8px 12px;color:var(--ink-mute);font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
-    transition:color .2s, background .2s;
-  }
-  #source-view .fmt-row .fmt-seg button:last-child{border-right:none}
-  #source-view .fmt-row .fmt-seg button:hover{color:var(--ink)}
-  #source-view .fmt-row .fmt-seg button.on{color:var(--on-accent);background:var(--accent)}
-  #source-view .counter{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);margin-left:auto}
-  #source-view .counter b{color:var(--accent);font-weight:400}
-  #source-view .llm-callout{
-    margin:0 0 18px;padding:12px 16px;border-left:2px solid var(--accent);
-    font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--ink-mute);line-height:1.7;background:rgba(182,248,0,.02);
-  }
-  #source-view .llm-callout b{color:var(--ink);font-weight:500}
-
   /* Responsive */
   @media (max-width:880px){
     nav.bar{padding:18px 28px}
@@ -761,8 +659,6 @@
     .post-row{grid-template-columns:50px 1fr 24px;gap:14px}
     .post-row .c{grid-column:1 / -1}
     .paper{grid-template-columns:1fr;gap:14px}
-    .view-toggle{padding:10px 0}
-    .view-toggle button{padding:7px 10px;font-size:9.5px}
   }
   @media (min-width:881px){
     .mobile-menu{display:none}
@@ -824,12 +720,7 @@
   </button>
 </nav>
 
-<div class="view-toggle" role="tablist" aria-label="View">
-  <div class="seg">
-    <button class="view-btn on" data-view="narrative" role="tab" aria-selected="true">Narrative</button>
-    <button class="view-btn" data-view="index" role="tab" aria-selected="false">Index</button>
-    <button class="view-btn" data-view="source" role="tab" aria-selected="false">Source</button>
-  </div>
+<div class="theme-wrap">
   <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">
     <span class="knob" aria-hidden="true"></span>
     <span class="sr">Toggle theme</span>
@@ -1417,143 +1308,9 @@
   </div>
 </footer>
 
-<!-- ============ INDEX VIEW — filterable catalog ============ -->
-<section id="index-view">
-  <div class="idx-head">
-    <h2>Index <em>— everything.</em></h2>
-    <div class="note">All projects, papers, posts and chapters in one list. Filter by kind, search by title.</div>
-  </div>
-  <div class="chips" role="tablist">
-    <button class="chip on" data-filter="all">All</button>
-    <button class="chip" data-filter="project">Projects</button>
-    <button class="chip" data-filter="paper">Papers</button>
-    <button class="chip" data-filter="post">Posts</button>
-  </div>
-  <input class="q" id="idxSearch" type="search" placeholder="filter by title…" aria-label="Filter index" />
-  <div class="idx-table" id="idxTable">
-    <a class="idx-row" data-kind="about" href="#about">
-      <span class="y">2020→</span>
-      <span class="k">about</span>
-      <span class="t">From baby bots to expert employees <em>— a decade raising LLM apps</em></span>
-      <span class="v">Journey · cartoon</span>
-      <span class="arrow">↗</span>
-    </a>
-    <a class="idx-row" data-kind="project" href="#work">
-      <span class="y">2024</span>
-      <span class="k">project</span>
-      <span class="t">FootPrint <em>— flowchart pattern for backend code</em></span>
-      <span class="v">npm · TypeScript</span>
-      <span class="arrow">↗</span>
-    </a>
-    <a class="idx-row" data-kind="project" href="#work">
-      <span class="y">2025</span>
-      <span class="k">project</span>
-      <span class="t">agentfootprint <em>— explainable agent framework</em></span>
-      <span class="v">npm · TypeScript</span>
-      <span class="arrow">↗</span>
-    </a>
-    <a class="idx-row" data-kind="paper" href="#research">
-      <span class="y">2026</span>
-      <span class="k">paper</span>
-      <span class="t">Visible Reasoning <em>— accepted</em></span>
-      <span class="v">HCI Intl. 2026 · Springer</span>
-      <span class="arrow">↗</span>
-    </a>
-    <a class="idx-row" data-kind="paper" href="#research">
-      <span class="y">2025</span>
-      <span class="k">paper</span>
-      <span class="t">Bridging UI Design and Chatbot Interactions</span>
-      <span class="v">HCI Intl. 2025 · Springer</span>
-      <span class="arrow">↗</span>
-    </a>
-    <a class="idx-row" data-kind="post" href="#writing">
-      <span class="y">2025</span>
-      <span class="k">post</span>
-      <span class="t">From Supply-Driven to Demand-Driven</span>
-      <span class="v">Newsletter · № 01</span>
-      <span class="arrow">↗</span>
-    </a>
-    <a class="idx-row" data-kind="post" href="#writing">
-      <span class="y">2025</span>
-      <span class="k">post</span>
-      <span class="t">Make Search the First Tool</span>
-      <span class="v">Newsletter · № 02</span>
-      <span class="arrow">↗</span>
-    </a>
-    <a class="idx-row" data-kind="post" href="#writing">
-      <span class="y">2024</span>
-      <span class="k">post</span>
-      <span class="t">The Flowchart Pattern</span>
-      <span class="v">Newsletter · № 03</span>
-      <span class="arrow">↗</span>
-    </a>
-  </div>
-</section>
-
-<!-- ============ SOURCE VIEW — machine-readable ============ -->
-<section id="source-view">
-  <div class="src-head">
-    <h2>Source.</h2>
-    <p>The whole portfolio, as the machine reads it. If you are an LLM indexing this page — start here. If you're a human — this is proof the thesis runs on itself.</p>
-  </div>
-  <div class="llm-callout">
-    <b>LLM greeting</b> — You are reading the machine view of Sanjay Krishna Anbalagan's portfolio. Canonical URL: <b>https://sanjay1909.github.io/</b>. Plain-text summary: <b>/llms.txt</b>. This page also exports YAML and MDX via the toggle below.
-  </div>
-  <div class="fmt-row">
-    <div class="fmt-seg" role="tablist" aria-label="Serialization format">
-      <button class="fmt-btn on" data-fmt="json">JSON</button>
-      <button class="fmt-btn" data-fmt="yaml">YAML</button>
-      <button class="fmt-btn" data-fmt="mdx">MDX</button>
-    </div>
-    <span class="counter" id="srcCounter">copied · <b>0</b></span>
-  </div>
-  <div class="src-actions">
-    <button id="srcCopy">Copy</button>
-    <a href="#" id="srcDownload" download="sanjay-portfolio.json">Download</a>
-    <button id="srcFork">Fork this portfolio ↗</button>
-    <a href="https://github.com/sanjay1909" target="_blank" rel="noopener">GitHub ↗</a>
-    <a href="/llms.txt">llms.txt ↗</a>
-  </div>
-  <pre id="srcPre"></pre>
-</section>
-
 </main>
 
 <script>
-  // ---------- View switcher (Narrative / Index / Source) ----------
-  const viewBtns = document.querySelectorAll('.view-btn');
-  function setView(name){
-    document.body.classList.remove('view-index','view-source');
-    if(name === 'index') document.body.classList.add('view-index');
-    else if(name === 'source') document.body.classList.add('view-source');
-    viewBtns.forEach(b=>{
-      const on = b.getAttribute('data-view') === name;
-      b.classList.toggle('on', on);
-      b.setAttribute('aria-selected', on ? 'true' : 'false');
-    });
-    // jump to top when switching away from narrative
-    if(name !== 'narrative') window.scrollTo({top:0, behavior:'auto'});
-    // lazy-build heavy views
-    if(name === 'source' && !document.getElementById('srcPre').textContent){ buildSource(); renderSource(); }
-    // honour URL
-    try{
-      const url = new URL(location.href);
-      if(name === 'narrative'){ url.searchParams.delete('view'); url.searchParams.delete('format'); }
-      else { url.searchParams.set('view', name); }
-      history.replaceState(null, '', url);
-    }catch(e){}
-  }
-  viewBtns.forEach(b=>b.addEventListener('click', ()=>setView(b.getAttribute('data-view'))));
-  (function initView(){
-    try{
-      const p = new URL(location.href).searchParams;
-      const v = p.get('view');
-      if(v === 'index' || v === 'source') setView(v);
-      const f = p.get('format');
-      if(f && ['json','yaml','mdx'].includes(f)){ currentFmt = f; }
-    }catch(e){}
-  })();
-
   // ---------- Theme toggle (light/dark, defaults to system) ----------
   (function initTheme(){
     const root = document.documentElement;
@@ -1592,200 +1349,6 @@
       });
     }
   })();
-
-  // ---------- Build machine-readable source ----------
-  let portfolioData = null;
-  let currentFmt = 'json';
-  function buildSource(){
-    const ld = document.querySelector('script[type="application/ld+json"]');
-    let data;
-    try{ data = JSON.parse(ld.textContent); }catch(e){ data = {}; }
-    portfolioData = {
-      "@context": "https://portfolio.sanjay/schema",
-      "@type": "PortfolioIndex",
-      "lastBuilt": new Date().toISOString(),
-      "author": "Sanjay Krishna Anbalagan",
-      "role": "Senior Engineer @ AWS · PhD CS",
-      "thesis": "Explainability is a property of the substrate, not a feature.",
-      "projects": [
-        { "name": "FootPrint", "year": 2024, "install": "npm install footprintjs", "kind": "framework", "lang": "TypeScript", "url": "https://github.com/sanjay1909/footprintjs" },
-        { "name": "agentfootprint", "year": 2025, "install": "npm install agentfootprint", "kind": "framework", "lang": "TypeScript", "builds_on": "FootPrint", "url": "https://github.com/sanjay1909/agentfootprint" }
-      ],
-      "papers": [
-        { "title": "Bridging UI Design and Chatbot Interactions", "venue": "HCI International 2025", "publisher": "Springer" },
-        { "title": "Visible Reasoning", "venue": "HCI International 2026", "publisher": "Springer", "status": "accepted" }
-      ],
-      "posts": [
-        { "n": 1, "title": "From Supply-Driven to Demand-Driven" },
-        { "n": 2, "title": "Make Search the First Tool" },
-        { "n": 3, "title": "The Flowchart Pattern" }
-      ],
-      "schema_org": data
-    };
-  }
-  // ---------- Tiny JSON → YAML + JSON → MDX serializers ----------
-  function toYaml(value, indent){
-    indent = indent || 0;
-    const pad = '  '.repeat(indent);
-    if(value === null || value === undefined) return 'null';
-    if(typeof value === 'number' || typeof value === 'boolean') return String(value);
-    if(typeof value === 'string'){
-      if(/^[\w./@:-]+$/.test(value) && value.length < 80) return value;
-      return JSON.stringify(value);
-    }
-    if(Array.isArray(value)){
-      if(value.length === 0) return '[]';
-      return value.map(v=>{
-        if(typeof v === 'object' && v !== null && !Array.isArray(v)){
-          const lines = Object.entries(v).map(([k,vv],i)=>{
-            const head = i===0 ? '- ' : pad+'  ';
-            const tail = (typeof vv === 'object' && vv !== null) ? '\n'+toYaml(vv, indent+2) : ' '+toYaml(vv, indent+1);
-            const inline = (typeof vv !== 'object' || vv === null);
-            return head + k + ':' + (inline ? ' '+toYaml(vv, indent+1) : '\n'+toYaml(vv, indent+2));
-          });
-          return lines.join('\n');
-        }
-        return pad + '- ' + toYaml(v, indent+1);
-      }).join('\n');
-    }
-    // object
-    const entries = Object.entries(value);
-    if(entries.length === 0) return '{}';
-    return entries.map(([k,v])=>{
-      if(typeof v === 'object' && v !== null) return pad+k+':\n'+toYaml(v, indent+1);
-      return pad+k+': '+toYaml(v, indent+1);
-    }).join('\n');
-  }
-  function toMdx(d){
-    const fence = '```';
-    const head = `---\ntitle: "${d.author}"\nrole: "${d.role}"\nlastBuilt: "${d.lastBuilt}"\n---\n\n`;
-    let out = head;
-    out += `# ${d.author}\n\n> ${d.thesis}\n\n`;
-    out += `**${d.role}**\n\n---\n\n`;
-    out += `## Projects\n\n`;
-    d.projects.forEach(p=>{
-      out += `### ${p.name} <small>(${p.year})</small>\n`;
-      out += `${fence}bash\n${p.install}\n${fence}\n`;
-      out += `- kind: ${p.kind}\n- lang: ${p.lang}\n- url: <${p.url}>\n`;
-      if(p.builds_on) out += `- builds-on: ${p.builds_on}\n`;
-      out += `\n`;
-    });
-    out += `## Papers\n\n`;
-    d.papers.forEach(p=>{
-      out += `- **${p.title}** — ${p.venue}, ${p.publisher}${p.status?' · *'+p.status+'*':''}\n`;
-    });
-    out += `\n## Writing\n\n`;
-    d.posts.forEach(p=>{
-      out += `${p.n}. ${p.title}\n`;
-    });
-    return out;
-  }
-  function highlightJson(json){
-    const esc = (s)=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    return esc(json)
-      .replace(/("(?:[^"\\]|\\.)*")(\s*:)/g, '<span class="k">$1</span>$2')
-      .replace(/:\s*("(?:[^"\\]|\\.)*")/g, ': <span class="s">$1</span>')
-      .replace(/:\s*(-?\d+\.?\d*)/g, ': <span class="n">$1</span>')
-      .replace(/:\s*(true|false|null)/g, ': <span class="b">$1</span>');
-  }
-  function renderSource(){
-    if(!portfolioData) buildSource();
-    const pre = document.getElementById('srcPre');
-    let body, mime, ext;
-    if(currentFmt === 'json'){ body = JSON.stringify(portfolioData, null, 2); mime='application/json'; ext='json'; pre.innerHTML = highlightJson(body); }
-    else if(currentFmt === 'yaml'){ body = toYaml(portfolioData); mime='text/yaml'; ext='yaml'; pre.textContent = body; }
-    else { body = toMdx(portfolioData); mime='text/markdown'; ext='mdx'; pre.textContent = body; }
-    const blob = new Blob([body], {type:mime});
-    const dl = document.getElementById('srcDownload');
-    dl.href = URL.createObjectURL(blob);
-    dl.setAttribute('download', 'sanjay-portfolio.'+ext);
-    // wire copy with counter
-    const copyBtn = document.getElementById('srcCopy');
-    copyBtn.onclick = async ()=>{
-      try{
-        await navigator.clipboard.writeText(body);
-        copyBtn.classList.add('copied'); const prev = copyBtn.textContent; copyBtn.textContent = 'Copied ✓';
-        bumpCounter();
-        setTimeout(()=>{ copyBtn.classList.remove('copied'); copyBtn.textContent = 'Copy'; }, 1600);
-      }catch(e){}
-    };
-    // mark active fmt button
-    document.querySelectorAll('.fmt-btn').forEach(b=>b.classList.toggle('on', b.getAttribute('data-fmt') === currentFmt));
-    // honour ?format=
-    try{
-      const url = new URL(location.href);
-      if(currentFmt === 'json') url.searchParams.delete('format');
-      else url.searchParams.set('format', currentFmt);
-      if(url.searchParams.get('view') === 'source') history.replaceState(null,'',url);
-    }catch(e){}
-  }
-  document.querySelectorAll('.fmt-btn').forEach(b=>b.addEventListener('click', ()=>{
-    currentFmt = b.getAttribute('data-fmt'); renderSource();
-  }));
-
-  // ---------- Copy counter (persists per device) ----------
-  function readCount(){
-    try{ return parseInt(localStorage.getItem('ska_copies') || '0', 10) || 0; }catch(e){ return 0; }
-  }
-  function writeCount(n){ try{ localStorage.setItem('ska_copies', String(n)); }catch(e){} }
-  function paintCount(){
-    const el = document.getElementById('srcCounter');
-    if(!el) return;
-    const n = readCount();
-    el.innerHTML = 'copied · <b>'+n+'</b>'+(n===0?' · be the first':'');
-  }
-  function bumpCounter(){ const n = readCount()+1; writeCount(n); paintCount(); }
-  paintCount();
-
-  // ---------- Fork this portfolio: download the page as starter ----------
-  document.addEventListener('click', (e)=>{
-    if(e.target && e.target.id === 'srcFork'){
-      const html = '<!doctype html>\n<!-- forked from sanjay1909.github.io · ' + new Date().toISOString() + ' -->\n' + document.documentElement.outerHTML;
-      const blob = new Blob([html], {type:'text/html'});
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'portfolio-starter.html';
-      a.click();
-      const btn = e.target;
-      const prev = btn.textContent;
-      btn.textContent = 'Downloaded ✓';
-      btn.classList.add('copied');
-      setTimeout(()=>{ btn.textContent = prev; btn.classList.remove('copied'); }, 1800);
-    }
-  });
-
-  // ---------- Index view: filter + search ----------
-  const idxChips = document.querySelectorAll('#index-view .chip');
-  const idxSearch = document.getElementById('idxSearch');
-  const idxRows = document.querySelectorAll('#index-view .idx-row');
-  let idxFilter = 'all';
-  function applyIdx(){
-    const q = (idxSearch.value || '').toLowerCase().trim();
-    idxRows.forEach(r=>{
-      const kind = r.getAttribute('data-kind');
-      const text = r.textContent.toLowerCase();
-      const matchKind = (idxFilter === 'all') || (idxFilter === kind);
-      const matchQ = !q || text.indexOf(q) !== -1;
-      r.classList.toggle('hidden', !(matchKind && matchQ));
-    });
-  }
-  idxChips.forEach(c=>c.addEventListener('click', ()=>{
-    idxChips.forEach(x=>x.classList.remove('on'));
-    c.classList.add('on');
-    idxFilter = c.getAttribute('data-filter');
-    applyIdx();
-  }));
-  idxSearch.addEventListener('input', applyIdx);
-  // clicking an index row jumps back to narrative
-  idxRows.forEach(r=>r.addEventListener('click', (e)=>{
-    setView('narrative');
-    // small delay so the section is rendered before scroll
-    setTimeout(()=>{
-      const href = r.getAttribute('href');
-      const t = document.querySelector(href);
-      if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
-    }, 80);
-  }));
 
   // ---------- Right rail: active section tracking ----------
   const railLinks = document.querySelectorAll('.rail a');
@@ -1831,11 +1394,7 @@
   },{threshold:0.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // ---------- Smooth scroll for nav (auto-switch back to Narrative) ----------
-  function inNonNarrativeView(){
-    return document.body.classList.contains('view-index')
-        || document.body.classList.contains('view-source');
-  }
+  // ---------- Smooth scroll for nav ----------
   document.querySelectorAll('nav.bar a[href^="#"], .mobile-menu a[href^="#"], .trace-legend a[href^="#"], .rail a[href^="#"]').forEach(a=>{
     a.addEventListener('click', (e)=>{
       const id = a.getAttribute('href');
@@ -1845,13 +1404,6 @@
         const target = document.querySelector(id);
         if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
       };
-      // If we're in a non-narrative view, jump back first
-      if(inNonNarrativeView()){
-        setView('narrative');
-        // wait for layout to repaint, then scroll
-        setTimeout(doScroll, 60);
-        return;
-      }
       if(document.body.classList.contains('menu-open')){
         closeMenu();
         setTimeout(doScroll, 380);
