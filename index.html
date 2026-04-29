@@ -3,20 +3,25 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Sanjay Krishna Anbalagan — Explainable AI systems · Senior Engineer @ AWS · PhD CS</title>
-<meta name="description" content="Sanjay Krishna Anbalagan is a Senior Engineer at AWS and PhD in Computer Science building FootPrint and agentfootprint — open-source TypeScript frameworks that make enterprise generative-AI applications explainable, auditable, and AI-readable." />
+<title>Sanjay Krishna Anbalagan — Context Engineering · Explainable AI Agents · Senior Engineer @ AWS · PhD CS</title>
+<meta name="description" content="Sanjay Krishna Anbalagan — Senior Engineer at AWS and PhD in Computer Science. Author of agentfootprint and footprintjs, the open-source TypeScript framework that introduced declarative context engineering for LLM agents: a single Injection primitive over 3 slots × 4 triggers, Causal Memory that turns the trace into a cache of the agent's thinking, and replayable typed-event traces that double as audit trail, cheap-model triage cache, and SFT/DPO training data." />
 <meta name="author" content="Sanjay Krishna Anbalagan" />
-<meta name="keywords" content="Sanjay Krishna Anbalagan, sanjay1909, FootPrint, agentfootprint, footprintjs, explainable AI, AI agents, LLM observability, ReAct, RAG, AWS engineer, generative AI, AI-readable code, deterministic agents, HCI International, UMass Lowell, enterprise AI, TypeScript agent framework" />
+<meta name="keywords" content="Sanjay Krishna Anbalagan, sanjay1909, agentfootprint, footprintjs, FootPrint, context engineering, context engineering framework, declarative context engineering, agent context engineering, LLM context management, slot-based prompt composition, prompt slot abstraction, declarative LLM injection, Injection primitive, slot trigger taxonomy, three slots four triggers, declarative agent framework, agent observability, agent replay, agent checkpoints, replayable agent traces, causal memory, decision-evidence snapshot, agent trace as training data, agent traces as SFT trajectories, SFT trajectories, DPO trajectories, process RL agent training, mocks-first agent development, zero API cost agent dev, explainable AI agents, auditable AI agents, deterministic AI agents, LangChain alternative, LangGraph alternative, CrewAI alternative, Vercel AI SDK alternative, ReAct framework, RAG framework, MCP client TypeScript, multi-agent TypeScript framework, autograd for context engineering, flowchart pattern backend, AI-readable code, AWS Senior Engineer, PhD HCI, HCI International 2025, UMass Lowell, enterprise AI" />
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 <meta name="theme-color" content="#0B0B0C" />
 <link rel="canonical" href="https://sanjay1909.github.io/" />
 <link rel="alternate" type="text/plain" title="LLM-readable summary" href="/llms.txt" />
 
+<!-- Chalkboard handwriting font for the About diorama -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" />
+
 <!-- Open Graph -->
 <meta property="og:type" content="profile" />
 <meta property="og:site_name" content="Sanjay Krishna Anbalagan" />
-<meta property="og:title" content="Sanjay Krishna Anbalagan — Explainable AI systems" />
-<meta property="og:description" content="Senior Engineer @ AWS · PhD CS. Building FootPrint and agentfootprint — making enterprise generative-AI explainable by construction." />
+<meta property="og:title" content="Sanjay Krishna Anbalagan — Context Engineering · Explainable AI Agents" />
+<meta property="og:description" content="Senior Engineer @ AWS · PhD CS. Author of agentfootprint + footprintjs — the framework that brought declarative context engineering to LLM agents: one Injection primitive over 3 slots × 4 triggers, Causal Memory, and replayable traces that double as audit trail and SFT training data." />
 <meta property="og:url" content="https://sanjay1909.github.io/" />
 <meta property="og:image" content="https://sanjay1909.github.io/og.png" />
 <meta property="og:image:alt" content="Sanjay Krishna Anbalagan — I make complex systems legible." />
@@ -29,8 +34,8 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Sanjay Krishna Anbalagan — Explainable AI systems" />
-<meta name="twitter:description" content="Senior Engineer @ AWS · PhD CS. Building FootPrint and agentfootprint." />
+<meta name="twitter:title" content="Sanjay Krishna Anbalagan — Context Engineering · Explainable AI Agents" />
+<meta name="twitter:description" content="Senior Engineer @ AWS · PhD CS. agentfootprint + footprintjs — declarative context engineering for LLM agents: Injection primitive · Causal Memory · replayable traces." />
 <meta name="twitter:image" content="https://sanjay1909.github.io/og.png" />
 <meta name="twitter:creator" content="@sanjay1909" />
 
@@ -51,15 +56,17 @@
       "worksFor": { "@type": "Organization", "name": "Amazon Web Services (AWS)" },
       "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Massachusetts Lowell" },
       "knowsAbout": [
+        "Context Engineering", "Declarative Agent Frameworks", "Slot-based Prompt Composition",
+        "Causal Memory", "Replayable Agent Traces", "Agent Observability",
         "Explainable AI", "LLM Agents", "Generative AI", "Software Architecture",
-        "TypeScript", "Human-Computer Interaction", "Observability"
+        "TypeScript", "Human-Computer Interaction", "Backend Flowchart Pattern"
       ],
       "sameAs": [
         "https://github.com/sanjay1909",
         "https://www.linkedin.com/in/sanjay-krishna-anbalagan/",
         "https://medium.com/@sanjay1909"
       ],
-      "description": "Senior Engineer at AWS and PhD in Computer Science building developer abstractions that make enterprise generative-AI systems explainable and AI-readable."
+      "description": "Senior Engineer at AWS and PhD in Computer Science. Author of agentfootprint and footprintjs — the open-source TypeScript framework that introduced declarative context engineering for LLM agents (a single Injection primitive over 3 prompt slots × 4 activation triggers), Causal Memory that turns the agent trace into a cache of its own thinking, and replayable typed-event checkpoints that double as production audit trail and SFT/DPO training data."
     },
     {
       "@type": "WebSite",
@@ -76,7 +83,7 @@
       "codeRepository": "https://github.com/footprintjs/footPrint",
       "programmingLanguage": "TypeScript",
       "author": { "@id": "https://sanjay1909.github.io/#person" },
-      "description": "The flowchart pattern for backend code — self-explainable systems that AI can reason about. Causal traces, auto-generated tool descriptions, transactional state."
+      "description": "The flowchart pattern for backend code — self-explainable systems that AI can reason about. The substrate underneath agentfootprint: causal decision-evidence traces, narrative recording, time-travel checkpointing, auto-generated tool descriptions, transactional state. Same way autograd's forward-pass traversal makes gradient inspection automatic, footprintjs's flowchart traversal makes declarative context engineering, replayable agent traces, and SFT-ready trajectory exports automatic."
     },
     {
       "@type": "SoftwareSourceCode",
@@ -84,7 +91,7 @@
       "codeRepository": "https://github.com/footprintjs/agentfootprint",
       "programmingLanguage": "TypeScript",
       "author": { "@id": "https://sanjay1909.github.io/#person" },
-      "description": "The explainable agent framework — build AI agents you can explain, audit, and trust. Built on FootPrint."
+      "description": "Context engineering, abstracted. A declarative TypeScript agent framework: 3 slots × 4 triggers × 1 Injection primitive. Every iteration is a replayable typed-event stream — audit trails, cheap-model triage, and SFT/DPO training trajectories all read from one recording. Built on FootPrint."
     },
     {
       "@type": "ScholarlyArticle",
@@ -340,87 +347,157 @@
   .about h2 em{font-style:italic;color:var(--accent)}
   .about .sub{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(18px,1.8vw,24px);line-height:1.4;color:var(--ink-mute);max-width:820px;margin-bottom:36px}
 
-  /* Stage — one character on a shared ground line, with thought-bubble copy beside it */
+  /* Stage — now the whole thing is ONE board. Text is handwritten on it next
+     to the cartoon figure, so everything reads as a single teacher's sketch.
+     · Dark theme (page is black)  → WHITEBOARD: off-white panel, black marker
+     · Light theme (page is grey)  → CHALKBOARD:  slate panel, white chalk    */
   .grow-stage{
-    position:relative;display:grid;grid-template-columns:1fr 460px;gap:60px;align-items:stretch;
-    border:1px solid var(--rule);border-radius:10px;padding:28px 32px 22px;
-    background:radial-gradient(900px 320px at 80% 100%, rgba(182,248,0,.04), transparent 60%),
-               radial-gradient(640px 240px at 10% 0%, rgba(255,92,43,.03), transparent 60%);
+    position:relative;display:grid;grid-template-columns:1fr 460px;gap:28px;align-items:stretch;
+    padding:44px 36px 26px;
+    border-radius:10px;
     overflow:hidden;
+    /* default (dark theme) — whiteboard */
+    --board-bg:#F4EFE6;
+    --board-tint-a:rgba(0,0,0,.03);
+    --board-tint-b:rgba(0,0,0,.02);
+    --board-inner-shadow:rgba(0,0,0,.08);
+    --board-frame:rgba(0,0,0,.1);
+    --dust-col:rgba(0,0,0,.18);
+    --label-col:rgba(20,20,24,.72);
+    --chalk:#121214;            /* marker ink */
+    --chalk-dim:#3A3A3F;
+    --chalk-hot:#C23A00;        /* active → warm marker */
+    --chalk-pop:#0E6A3D;        /* active accent → green marker */
+    --chalk-hot-glow:rgba(194,58,0,.22);
+    --chalk-hl:rgba(255,233,138,.55);   /* highlighter swipe for active note */
+    background:
+      radial-gradient(900px 320px at 20% 0%, var(--board-tint-a), transparent 60%),
+      radial-gradient(600px 260px at 85% 100%, var(--board-tint-b), transparent 60%),
+      var(--board-bg);
+    box-shadow:
+      inset 0 0 0 1px var(--board-frame),
+      inset 0 0 80px var(--board-inner-shadow),
+      0 1px 0 rgba(0,0,0,.35);
   }
-  @media (max-width:980px){ .grow-stage{grid-template-columns:1fr;gap:24px} }
+  /* Light theme → swap to dark chalkboard (so it contrasts with grey page) */
+  html[data-theme="light"] .grow-stage{
+    --board-bg:#14201C;
+    --board-tint-a:rgba(255,255,255,.035);
+    --board-tint-b:rgba(255,255,255,.02);
+    --board-inner-shadow:rgba(0,0,0,.55);
+    --board-frame:rgba(255,255,255,.06);
+    --dust-col:rgba(255,255,255,.16);
+    --label-col:rgba(244,239,230,.72);
+    --chalk:#F4EFE6;
+    --chalk-dim:#B9B3A4;
+    --chalk-hot:#FFE98A;
+    --chalk-pop:#FF8A5C;
+    --chalk-hot-glow:rgba(255,233,138,.35);
+    --chalk-hl:rgba(255,233,138,.22);
+  }
+  @media (max-width:980px){ .grow-stage{grid-template-columns:1fr;gap:8px;padding:36px 22px 18px} }
 
-  /* LEFT: era label + typewriter bubble */
-  .grow-text{display:flex;flex-direction:column;gap:18px;justify-content:center;min-height:340px;padding:8px 0}
+  /* sprinkled chalk/marker dust — on the full board */
+  .grow-stage::before{
+    content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, var(--dust-col), transparent 60%),
+      radial-gradient(1px 1px at 78% 34%, var(--dust-col), transparent 60%),
+      radial-gradient(1px 1px at 42% 72%, var(--dust-col), transparent 60%),
+      radial-gradient(1px 1px at 88% 82%, var(--dust-col), transparent 60%),
+      radial-gradient(1px 1px at 30% 88%, var(--dust-col), transparent 60%);
+    opacity:.6;
+  }
+  /* corner handwritten label — "about" like a teacher wrote it on the board */
+  .grow-stage::after{
+    content:"about · a decade of raising apps ✎";
+    position:absolute;top:12px;left:20px;z-index:2;
+    font-family:"Kalam","Caveat","Comic Sans MS",cursive;
+    font-size:13px;letter-spacing:.02em;color:var(--label-col);
+    pointer-events:none;
+  }
+
+  /* LEFT: era label + handwritten note — written directly on the board */
+  .grow-text{position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;justify-content:center;min-height:340px;padding:8px 0}
+  @media (max-width:980px){ .grow-text{min-height:0;gap:10px;padding:0} .grow-actor{height:260px;align-items:center;margin-top:-6px} }
   .grow-text .grow-era{
-    font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);
-    transition:color .4s;
+    font-family:"Kalam","Caveat","Comic Sans MS",cursive;
+    font-size:15px;letter-spacing:.02em;color:var(--chalk);opacity:.8;
+    transition:color .4s, opacity .4s;
   }
-  .grow-text .grow-era b{color:var(--ink);font-weight:500;letter-spacing:.14em}
+  .grow-text .grow-era b{color:var(--chalk-hot);font-weight:700;letter-spacing:.02em;margin-right:6px}
   .grow-bubble{
-    position:relative;padding:18px 22px;border:1px solid var(--rule);border-radius:10px;
-    background:rgba(255,255,255,.018);
-    font-family:var(--serif);font-size:clamp(20px,2.1vw,28px);line-height:1.45;color:var(--ink);letter-spacing:-.005em;
-    min-height:120px;max-width:520px;
-    transition:border-color .5s, background .5s;
+    position:relative;padding:4px 0 6px 14px;
+    background:transparent;border:none;border-left:2px dashed transparent;
+    font-family:"Kalam","Caveat","Comic Sans MS",cursive;
+    font-size:clamp(22px,2.3vw,30px);line-height:1.35;color:var(--chalk);letter-spacing:.005em;
+    min-height:0;max-width:520px;
+    transition:color .5s, border-color .5s;
   }
-  .grow-bubble.lit{border-color:var(--accent);background:linear-gradient(180deg, rgba(182,248,0,.04), rgba(255,92,43,.012))}
-  .grow-bubble::after{
-    content:"";position:absolute;right:-8px;top:42px;width:14px;height:14px;
-    background:var(--paper);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
-    transform:rotate(-45deg);
+  .grow-bubble.lit{border-left-color:var(--chalk-hot)}
+  .grow-bubble code{
+    font-family:"Kalam","Caveat","Comic Sans MS",cursive;font-size:.92em;font-weight:700;
+    color:var(--chalk-hot);background:transparent;padding:0 2px;border:1.5px dashed var(--chalk-hot);border-radius:4px;
   }
-  .grow-bubble.lit::after{border-color:var(--accent)}
-  @media (max-width:980px){ .grow-bubble::after{display:none} }
-  .grow-bubble code{font-family:var(--mono);font-size:.78em;color:var(--accent);background:rgba(182,248,0,.08);padding:2px 6px;border-radius:3px}
   .grow-bubble .hl{
-    background:linear-gradient(180deg, transparent 60%, rgba(182,248,0,.32) 60%);
-    padding:0 3px;color:var(--ink);
+    background:linear-gradient(180deg, transparent 62%, var(--chalk-hl) 62%);
+    padding:0 3px;color:var(--chalk);
   }
   .grow-bubble .caret{
-    display:inline-block;width:.5ch;height:1em;vertical-align:-2px;margin-left:2px;
-    background:var(--accent);animation:caret 1s steps(1) infinite;
+    display:inline-block;width:.55ch;height:.95em;vertical-align:-2px;margin-left:3px;
+    background:var(--chalk-hot);animation:caret 1s steps(1) infinite;
   }
   @keyframes caret{50%{opacity:0}}
   .grow-tag{
-    font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute);
+    font-family:"Kalam","Caveat","Comic Sans MS",cursive;
+    font-size:13px;letter-spacing:.02em;color:var(--chalk);opacity:.72;
   }
-  .grow-tag .swap{color:var(--accent-2)}
+  .grow-tag .swap{color:var(--chalk-pop);font-weight:700}
 
-  /* RIGHT: SVG actor + ground line */
+  /* RIGHT: SVG actor sits on the same board, no extra panel */
   .grow-actor{
-    position:relative;height:380px;display:flex;align-items:flex-end;justify-content:center;
+    position:relative;z-index:1;height:380px;display:flex;align-items:flex-end;justify-content:center;
+    background:transparent;border:none;padding:0;box-shadow:none;
   }
   .grow-svg{
     width:100%;height:100%;display:block;overflow:visible;
   }
-  .grow-svg .ground{stroke:var(--rule);stroke-width:1;stroke-dasharray:3 5}
-  .grow-svg .ground-tick{stroke:var(--ink-mute);stroke-width:1;opacity:.45}
-  .grow-svg .ground-label{font-family:var(--mono);font-size:9px;letter-spacing:.18em;fill:var(--ink-mute);text-transform:uppercase;opacity:.7}
+  .grow-svg .ground{stroke:var(--chalk);stroke-width:2;stroke-dasharray:4 6;stroke-linecap:round;opacity:.75}
+  .grow-svg .ground-tick{stroke:var(--chalk);stroke-width:1.6;opacity:.55;stroke-linecap:round}
+  .grow-svg .ground-label{
+    font-family:"Kalam","Caveat","Comic Sans MS",cursive;font-size:13px;letter-spacing:.06em;
+    fill:var(--chalk);text-transform:none;opacity:.85;
+  }
 
   .grow-svg .figure{opacity:0;transform-origin:180px 346px;transform:scale(.94);transition:opacity .9s cubic-bezier(.4,.2,.2,1), transform .9s cubic-bezier(.2,.7,.2,1.1)}
   .grow-svg .figure.on{opacity:1;transform:scale(1)}
-  /* shared shape colors */
-  .grow-svg .skin{fill:var(--paper-2);stroke:var(--ink);stroke-width:2;stroke-linejoin:round}
-  .grow-svg .figure.on .skin{stroke:var(--accent)}
-  .grow-svg .eye{fill:var(--ink);transition:transform .3s}
+
+  /* shared shape colors — all chalk, bold cartoon line */
+  .grow-svg .skin{fill:none;stroke:var(--chalk);stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
+  .grow-svg .eye{fill:var(--chalk);transition:transform .3s}
   .grow-svg .figure.on .eye{animation:blink 3.6s steps(2) infinite;transform-origin:center}
   @keyframes blink{0%,93%{transform:scaleY(1)} 96%{transform:scaleY(.08)} 100%{transform:scaleY(1)}}
-  .grow-svg .mouth{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-  .grow-svg .figure.on .mouth{stroke:var(--accent)}
-  .grow-svg .acc{fill:var(--ink-mute);stroke:none}
-  .grow-svg .figure.on .acc{fill:var(--accent-2)}
-  .grow-svg .acc-line{stroke:var(--ink-mute);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
-  .grow-svg .figure.on .acc-line{stroke:var(--accent-2)}
-  .grow-svg .body{fill:var(--paper-2);fill-opacity:.6;stroke:var(--ink);stroke-width:2;stroke-linejoin:round}
-  .grow-svg .figure.on .body{stroke:var(--accent)}
+  .grow-svg .mouth{fill:none;stroke:var(--chalk);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+  .grow-svg .acc{fill:var(--chalk);stroke:none;opacity:.92}
+  .grow-svg .acc-line{stroke:var(--chalk);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.92}
+  .grow-svg .body{fill:none;stroke:var(--chalk);stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
 
-  /* idle wobble on the active figure */
+  /* inactive figures drawn faintly (still visible as chalk ghost) */
+  .grow-svg .figure{opacity:0}
+  .grow-svg .figure.on{opacity:1}
+  .grow-svg .figure.on .skin,
+  .grow-svg .figure.on .body,
+  .grow-svg .figure.on .mouth{stroke:var(--chalk-hot);filter:drop-shadow(0 0 1.5px var(--chalk-hot-glow))}
+  .grow-svg .figure.on .acc,
+  .grow-svg .figure.on .eye{fill:var(--chalk-hot)}
+  .grow-svg .figure.on .acc-line{stroke:var(--chalk-pop)}
+
+  /* idle wobble on the active figure — like a kid's unsteady drawing */
   .grow-svg .figure.on .wobble{transform-origin:center bottom;animation:wobble 4s ease-in-out infinite}
   @keyframes wobble{0%,100%{transform:rotate(-1.2deg)} 50%{transform:rotate(1.2deg)}}
 
-  /* growth halo — soft glow that grows with the character */
-  .grow-svg .halo{fill:rgba(182,248,0,.05);opacity:0;transition:opacity .6s}
+  /* growth halo — faint chalk smudge around the active figure */
+  .grow-svg .halo{fill:var(--chalk-hot-glow);opacity:0;transition:opacity .6s}
   .grow-svg .figure.on .halo{opacity:1}
 
   /* Timeline track */
@@ -691,13 +768,13 @@
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Now shipping <b>FootPrint v1</b></span><span>—</span>
-    <span>320+ subscribers · Enterprise Gen AI Application</span><span>—</span>
+    <span>Now shipping <b>agentfootprint</b> · context engineering, abstracted</span><span>—</span>
+    <span><b>FootPrint v1</b> · the flowchart pattern for backend code · 320+ subscribers</span><span>—</span>
     <span>Accepted at <b>HCII 2026</b></span><span>—</span>
     <span>Senior Engineer @ AWS</span><span>—</span>
     <span>PhD CS · UMass Lowell</span><span>—</span>
-    <span>Now shipping <b>FootPrint v1</b></span><span>—</span>
-    <span>320+ subscribers · Enterprise Gen AI Application</span><span>—</span>
+    <span>Now shipping <b>agentfootprint</b> · context engineering, abstracted</span><span>—</span>
+    <span><b>FootPrint v1</b> · the flowchart pattern for backend code · 320+ subscribers</span><span>—</span>
     <span>Accepted at <b>HCII 2026</b></span><span>—</span>
     <span>Senior Engineer @ AWS</span><span>—</span>
     <span>PhD CS · UMass Lowell</span><span>—</span>
@@ -906,6 +983,14 @@
       <!-- RIGHT: SVG actor on a shared ground -->
       <div class="grow-actor">
         <svg class="grow-svg" viewBox="0 0 360 380" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+          <!-- chalk-roughen filter: distorts edges so strokes read as chalk -->
+          <defs>
+            <filter id="chalk" x="-5%" y="-5%" width="110%" height="110%">
+              <feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" seed="4" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.1"/>
+            </filter>
+          </defs>
+          <g filter="url(#chalk)">
           <!-- shared ground line + ticks -->
           <line class="ground" x1="20" y1="346" x2="340" y2="346"/>
           <line class="ground-tick" x1="60"  y1="346" x2="60"  y2="352"/>
@@ -1081,6 +1166,7 @@
               <path class="mouth" d="M166 162 Q180 170 194 162"/>
             </g>
           </g>
+          </g>
         </svg>
       </div>
     </div>
@@ -1147,7 +1233,7 @@
               <li><b>Parallel fork/join</b> · streaming · patch-based state</li>
               <li><b>Time-travel replay</b> across the entire execution graph</li>
             </ul>
-            <p class="cite" style="margin-top:18px"><a href="https://github.com/sanjay1909/footprintjs#readme" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px dashed var(--accent)">Read on GitHub ↗</a> &nbsp;·&nbsp; <a href="https://www.npmjs.com/package/footprintjs" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">npm ↗</a></p>
+            <p class="cite" style="margin-top:18px"><a href="https://github.com/footprintjs/footPrint#readme" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px dashed var(--accent)">Read on GitHub ↗</a> &nbsp;·&nbsp; <a href="https://www.npmjs.com/package/footprintjs" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">npm ↗</a></p>
           </div>
         </details>
       </div>
@@ -1158,26 +1244,26 @@
         <span class="cell-label">In[2] — intent</span>
         <div class="id">No. 02 / Open source · npm</div>
         <h3>agentfootprint <em>·</em></h3>
-        <h3 style="font-style:italic;color:var(--ink-mute);font-size:.6em;margin-top:4px">the explainable agent framework</h3>
+        <h3 style="font-style:italic;color:var(--ink-mute);font-size:.6em;margin-top:4px">context engineering, abstracted</h3>
         <div class="tag">
-          <span>TypeScript</span>·<span>★ 4</span>·<span>⑂ 1</span>·<b>built on FootPrint</b>
+          <span>TypeScript</span>·<span>MIT</span>·<b>built on FootPrint</b>
         </div>
         <div class="install">$ npm install agentfootprint</div>
       </div>
       <div>
         <span class="cell-label out">Out[2] — artifact</span>
-        <p class="desc">Build AI agents you can <em style="font-family:var(--serif);font-style:italic">explain, audit, and trust</em>. Design the agent, watch it run, verify it wasn't hallucinating.</p>
+        <p class="desc">PyTorch's autograd abstracted gradients. React abstracted the DOM. <em style="font-family:var(--serif);font-style:italic">agentfootprint is that move applied to context engineering</em> — declare what content lands in which slot of an LLM call and when. The framework owns the iteration loop, so the typed-event stream and replayable checkpoints come for free.</p>
         <details class="disclose">
           <summary>See the spec</summary>
           <div class="reveal-body">
             <ul>
-              <li><b>6 agent patterns</b> — LLM Call · ReAct · RAG · Sequential · Parallel · Routing</li>
-              <li><b>Per-iteration evaluation</b> via <code style="font-family:var(--mono);color:var(--accent)">obs.explain()</code> — connected context, decisions, sources, claims</li>
-              <li><b>Conditional behavior</b> activated by accumulated state — not hard-coded if/else</li>
-              <li><b>$0 test suite</b> via mock() adapter · Anthropic · OpenAI · Bedrock · Ollama</li>
-              <li><b>Live Playground</b> with time-travel across all observability tabs</li>
+              <li><b>One mental model</b> — 3 slots (<code style="font-family:var(--mono);color:var(--accent)">system</code> · <code style="font-family:var(--mono);color:var(--accent)">messages</code> · <code style="font-family:var(--mono);color:var(--accent)">tools</code>) × 4 triggers (<i>always · rule · on-tool-return · llm-activated</i>) × 1 Injection primitive. Every named pattern (Skills, RAG, Reflexion, ToT) reduces to this.</li>
+              <li><b>The trace is a cache of the agent's thinking</b> — Causal Memory persists decision evidence as JSON, so audit answers, cheap-model follow-ups, and SFT/DPO training trajectories all read from one recording.</li>
+              <li><b>2 primitives + 4 compositions</b> — <code style="font-family:var(--mono);color:var(--accent)">LLMCall</code>, <code style="font-family:var(--mono);color:var(--accent)">Agent</code>; <code style="font-family:var(--mono);color:var(--accent)">Sequence</code>, <code style="font-family:var(--mono);color:var(--accent)">Parallel</code>, <code style="font-family:var(--mono);color:var(--accent)">Conditional</code>, <code style="font-family:var(--mono);color:var(--accent)">Loop</code></li>
+              <li><b>6 providers · MCP · 47 typed events across 13 domains</b> — Anthropic · OpenAI · Bedrock · Ollama · Browser · Mock; pause/resume on a different server hours later via JSON-serializable checkpoints</li>
+              <li><b>Mocks first, prod second</b> — build the entire agent against in-memory mocks at $0 API cost, swap one boundary at a time for production</li>
             </ul>
-            <p class="cite" style="margin-top:18px"><a href="https://github.com/sanjay1909/agentfootprint#readme" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px dashed var(--accent)">Read on GitHub ↗</a> &nbsp;·&nbsp; <a href="./agentfootprint.html" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">live page ↗</a></p>
+            <p class="cite" style="margin-top:18px"><a href="https://github.com/footprintjs/agentfootprint#readme" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px dashed var(--accent)">Read on GitHub ↗</a> &nbsp;·&nbsp; <a href="https://www.npmjs.com/package/agentfootprint" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">npm ↗</a></p>
           </div>
         </details>
       </div>
