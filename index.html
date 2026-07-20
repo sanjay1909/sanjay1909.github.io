@@ -4,9 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Sanjay Krishna Anbalagan — Context Engineering · Explainable AI Agents · Senior Engineer @ AWS · PhD CS</title>
-<meta name="description" content="Sanjay Krishna Anbalagan — Senior Engineer at AWS and PhD in Computer Science. Author of agentfootprint and footprintjs, the open-source TypeScript framework that introduced declarative context engineering for LLM agents: a single Injection primitive over 3 slots × 4 triggers, Causal Memory that turns the trace into a cache of the agent's thinking, and replayable typed-event traces that double as audit trail, cheap-model triage cache, and SFT/DPO training data." />
+<meta name="description" content="Sanjay Krishna Anbalagan — Senior Engineer at AWS and PhD in Computer Science. Author of agentfootprint and footprintjs — the open-source TypeScript frameworks that brought declarative context engineering to LLM agents: a single Injection primitive over 3 slots × 4 triggers, Causal Memory that turns the trace into a cache of the agent's thinking, and replayable typed-event traces that double as audit trail, cheap-model triage cache, and SFT/DPO training data — and hcifootprint, which turns any web app agent-operable over MCP." />
 <meta name="author" content="Sanjay Krishna Anbalagan" />
-<meta name="keywords" content="Sanjay Krishna Anbalagan, sanjay1909, agentfootprint, footprintjs, FootPrint, context engineering, context engineering framework, declarative context engineering, agent context engineering, LLM context management, slot-based prompt composition, prompt slot abstraction, declarative LLM injection, Injection primitive, slot trigger taxonomy, three slots four triggers, declarative agent framework, agent observability, agent replay, agent checkpoints, replayable agent traces, causal memory, decision-evidence snapshot, agent trace as training data, agent traces as SFT trajectories, SFT trajectories, DPO trajectories, process RL agent training, mocks-first agent development, zero API cost agent dev, explainable AI agents, auditable AI agents, deterministic AI agents, LangChain alternative, LangGraph alternative, CrewAI alternative, Vercel AI SDK alternative, ReAct framework, RAG framework, MCP client TypeScript, multi-agent TypeScript framework, autograd for context engineering, flowchart pattern backend, AI-readable code, AWS Senior Engineer, PhD HCI, HCI International 2025, UMass Lowell, enterprise AI" />
+<meta name="keywords" content="Sanjay Krishna Anbalagan, sanjay1909, agentfootprint, footprintjs, FootPrint, context engineering, context engineering framework, declarative context engineering, agent context engineering, LLM context management, slot-based prompt composition, prompt slot abstraction, declarative LLM injection, Injection primitive, slot trigger taxonomy, three slots four triggers, declarative agent framework, agent observability, agent replay, agent checkpoints, replayable agent traces, causal memory, decision-evidence snapshot, agent trace as training data, agent traces as SFT trajectories, SFT trajectories, DPO trajectories, process RL agent training, mocks-first agent development, zero API cost agent dev, explainable AI agents, auditable AI agents, deterministic AI agents, LangChain alternative, LangGraph alternative, CrewAI alternative, Vercel AI SDK alternative, ReAct framework, RAG framework, MCP client TypeScript, multi-agent TypeScript framework, autograd for context engineering, flowchart pattern backend, AI-readable code, AWS Senior Engineer, PhD HCI, HCI International 2025, UMass Lowell, enterprise AI, hcifootprint, agent-operable apps, agent-computer interface, ACI, MCP skill graph, computer use alternative, context-bug localization, causal localization, backward slicing, why-this-tool, llms.txt" />
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 <meta name="theme-color" content="#0B0B0C" />
 <link rel="canonical" href="https://sanjay1909.github.io/" />
@@ -21,7 +21,7 @@
 <meta property="og:type" content="profile" />
 <meta property="og:site_name" content="Sanjay Krishna Anbalagan" />
 <meta property="og:title" content="Sanjay Krishna Anbalagan — Context Engineering · Explainable AI Agents" />
-<meta property="og:description" content="Senior Engineer @ AWS · PhD CS. Author of agentfootprint + footprintjs — the framework that brought declarative context engineering to LLM agents: one Injection primitive over 3 slots × 4 triggers, Causal Memory, and replayable traces that double as audit trail and SFT training data." />
+<meta property="og:description" content="Senior Engineer @ AWS · PhD CS. Author of agentfootprint + footprintjs — declarative context engineering for LLM agents (one Injection primitive over 3 slots × 4 triggers, Causal Memory, replayable traces that double as audit trail and SFT training data) — and hcifootprint, which turns any web app agent-operable over MCP." />
 <meta property="og:url" content="https://sanjay1909.github.io/" />
 <meta property="og:image" content="https://sanjay1909.github.io/og.png" />
 <meta property="og:image:alt" content="Sanjay Krishna Anbalagan — I make complex systems legible." />
@@ -35,7 +35,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Sanjay Krishna Anbalagan — Context Engineering · Explainable AI Agents" />
-<meta name="twitter:description" content="Senior Engineer @ AWS · PhD CS. agentfootprint + footprintjs — declarative context engineering for LLM agents: Injection primitive · Causal Memory · replayable traces." />
+<meta name="twitter:description" content="Senior Engineer @ AWS · PhD CS. agentfootprint + footprintjs + hcifootprint — declarative context engineering for LLM agents (Injection primitive · Causal Memory · replayable traces) and turn any web app agent-operable over MCP." />
 <meta name="twitter:image" content="https://sanjay1909.github.io/og.png" />
 <meta name="twitter:creator" content="@sanjay1909" />
 
@@ -91,7 +91,20 @@
       "codeRepository": "https://github.com/footprintjs/agentfootprint",
       "programmingLanguage": "TypeScript",
       "author": { "@id": "https://sanjay1909.github.io/#person" },
-      "description": "Context engineering, abstracted. A declarative TypeScript agent framework: 3 slots × 4 triggers × 1 Injection primitive. Every iteration is a replayable typed-event stream — audit trails, cheap-model triage, and SFT/DPO training trajectories all read from one recording. Built on FootPrint."
+      "description": "Context engineering, abstracted. A declarative TypeScript agent framework: 3 slots × 4 triggers × 1 Injection primitive. Every iteration is a replayable typed-event stream — audit trails, cheap-model triage, and SFT/DPO training trajectories all read from one recording. Context-bug localization pinpoints which injected context caused a bad answer, and 'why this tool?' scoring rates every tool the agent could have picked. Built on FootPrint."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "hcifootprint",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Cross-platform",
+      "url": "https://footprintjs.github.io/hcifootprint/",
+      "programmingLanguage": "TypeScript",
+      "license": "https://opensource.org/licenses/MIT",
+      "creator": { "@id": "https://sanjay1909.github.io/#person" },
+      "author": { "@id": "https://sanjay1909.github.io/#person" },
+      "sameAs": ["https://www.npmjs.com/package/hcifootprint"],
+      "description": "The agent-computer interface (ACI). hcifootprint turns a web app's interaction surface into a typed, traversable skill graph an LLM agent plans over and acts on, served over MCP — the agent operates the app as the signed-in user through the app's own handlers. Open-source TypeScript, MIT-licensed, with a read-only guide-mode adoption rung and llms.txt shipped for agent consumers. The same legibility as footprintjs and agentfootprint, pointed at apps agents can operate."
     },
     {
       "@type": "ScholarlyArticle",
@@ -1206,7 +1219,7 @@
     </div>
     <div class="projects-head" style="margin-top:14px">
       <h2 class="reveal">Work <em>— shipped.</em></h2>
-      <div class="count reveal">02 projects · open source · TypeScript</div>
+      <div class="count reveal">03 projects · open source · TypeScript</div>
     </div>
 
     <article class="project reveal">
@@ -1222,7 +1235,7 @@
       </div>
       <div>
         <span class="cell-label out">Out[1] — artifact</span>
-        <p class="desc">Business logic becomes a directed graph that produces causal traces an LLM can reason over. Self-explainable systems by construction — no telemetry retrofit required.</p>
+        <p class="desc">Business logic becomes a directed graph that produces causal traces an LLM can reason over. Self-explainable systems by construction — no telemetry retrofit required. <em style="font-family:var(--serif);font-style:italic">Variable-first backward slicing</em> walks any value back to the decision that produced it.</p>
         <details class="disclose">
           <summary>See the spec</summary>
           <div class="reveal-body">
@@ -1252,7 +1265,7 @@
       </div>
       <div>
         <span class="cell-label out">Out[2] — artifact</span>
-        <p class="desc">PyTorch's autograd abstracted gradients. React abstracted the DOM. <em style="font-family:var(--serif);font-style:italic">agentfootprint is that move applied to context engineering</em> — declare what content lands in which slot of an LLM call and when. The framework owns the iteration loop, so the typed-event stream and replayable checkpoints come for free.</p>
+        <p class="desc">PyTorch's autograd abstracted gradients. React abstracted the DOM. <em style="font-family:var(--serif);font-style:italic">agentfootprint is that move applied to context engineering</em> — declare what content lands in which slot of an LLM call and when. The framework owns the iteration loop, so the typed-event stream and replayable checkpoints come for free — and <em style="font-family:var(--serif);font-style:italic">context-bug localization</em> pinpoints which injected context caused a bad answer.</p>
         <details class="disclose">
           <summary>See the spec</summary>
           <div class="reveal-body">
@@ -1264,6 +1277,36 @@
               <li><b>Mocks first, prod second</b> — build the entire agent against in-memory mocks at $0 API cost, swap one boundary at a time for production</li>
             </ul>
             <p class="cite" style="margin-top:18px"><a href="https://github.com/footprintjs/agentfootprint#readme" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px dashed var(--accent)">Read on GitHub ↗</a> &nbsp;·&nbsp; <a href="https://www.npmjs.com/package/agentfootprint" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">npm ↗</a></p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <article class="project reveal">
+      <div>
+        <span class="cell-label">In[3] — intent</span>
+        <div class="id">No. 03 / Open source · npm</div>
+        <h3>hcifootprint <em>·</em></h3>
+        <h3 style="font-style:italic;color:var(--ink-mute);font-size:.6em;margin-top:4px">the agent-computer interface — apps agents can operate</h3>
+        <div class="tag">
+          <span>TypeScript</span>·<span>MIT</span>·<b>v0.2 · served over MCP</b>
+        </div>
+        <div class="install">$ npm install hcifootprint</div>
+      </div>
+      <div>
+        <span class="cell-label out">Out[3] — artifact</span>
+        <p class="desc">The same legibility, pointed at the interaction surface. hcifootprint turns a web app into a typed, traversable <em style="font-family:var(--serif);font-style:italic">skill graph</em> an LLM agent plans over and acts on — served over MCP, so the agent operates the app <em style="font-family:var(--serif);font-style:italic">as the signed-in user</em>, through the app's own handlers. Not screenshots and clicks — the app's real surface, made legible.</p>
+        <details class="disclose">
+          <summary>See the spec</summary>
+          <div class="reveal-body">
+            <ul>
+              <li><b>Agent-computer interface (ACI)</b> — a typed skill graph the agent plans over and acts on, calling the app's own handlers as the signed-in user</li>
+              <li><b>Served over MCP</b> — any MCP client can drive the app; <code style="font-family:var(--mono);color:var(--accent)">llms.txt</code> shipped so agent consumers discover the surface</li>
+              <li><b>Read-only guide mode</b> — the low-risk adoption rung; add write actions when you're ready</li>
+              <li><b>requiredStateKeys() projector API</b> · 281 tests</li>
+              <li><b>Dress-shop demo</b> — a vanilla e-commerce app becomes agent-operable in three commits</li>
+            </ul>
+            <p class="cite" style="margin-top:18px"><a href="https://footprintjs.github.io/hcifootprint/" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px dashed var(--accent)">Read the docs ↗</a> &nbsp;·&nbsp; <a href="https://www.npmjs.com/package/hcifootprint" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">npm ↗</a> &nbsp;·&nbsp; <a href="https://youtu.be/vx5amF94ipI" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">37s demo ↗</a> &nbsp;·&nbsp; <a href="https://github.com/footprintjs/hcifootprint-demo" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">demo source ↗</a></p>
           </div>
         </details>
       </div>

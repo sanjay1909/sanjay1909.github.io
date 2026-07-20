@@ -32,8 +32,9 @@ Every prompt-engineering hack we invented to teach the model became baked-in ins
 
 ## Projects
 
-- [FootPrint](https://github.com/sanjay1909/footprintjs) — 2024 — TypeScript framework that turns backend business logic into a directed graph and produces causal execution traces. `npm install footprintjs`.
-- [agentfootprint](https://github.com/sanjay1909/agentfootprint) — 2025 — TypeScript framework for explainable AI agents, built on FootPrint. Supports LLM Call / ReAct / RAG / Sequential / Parallel / Routing patterns with per-iteration evaluation. `npm install agentfootprint`.
+- [FootPrint](https://github.com/sanjay1909/footprintjs) — 2024 — TypeScript framework that turns backend business logic into a directed graph and produces causal execution traces. Variable-first backward slicing walks any variable back to its birth (sliceForKey); element provenance and pause/resume checkpoints included. `npm install footprintjs`.
+- [agentfootprint](https://github.com/sanjay1909/agentfootprint) — 2025 — TypeScript framework for explainable AI agents, built on FootPrint. Supports LLM Call / ReAct / RAG / Sequential / Parallel / Routing patterns with per-iteration evaluation. Context-bug localization pinpoints which injected context caused a bad answer; 'why this tool?' scoring rates every tool the agent could have picked. `npm install agentfootprint`.
+- [hcifootprint](https://footprintjs.github.io/hcifootprint/) — 2026 — TypeScript framework that turns a web app's interaction surface into a typed, traversable skill graph an LLM agent plans over and operates over MCP — the agent acts as the signed-in user through the app's own handlers. The agent-computer interface (ACI): read-only guide-mode adoption rung, llms.txt for agent consumers, requiredStateKeys() projector API. Dress-shop demo: a vanilla e-commerce app becomes agent-operable in three commits (37s video https://youtu.be/vx5amF94ipI). `npm install hcifootprint`.
 
 ## Papers
 
