@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Sanjay Krishna Anbalagan — Context Engineering · Explainable AI Agents · Senior Engineer @ AWS · PhD CS</title>
-<meta name="description" content="Sanjay Krishna Anbalagan — Senior Engineer at AWS and PhD in Computer Science. Author of agentfootprint and footprintjs — the open-source TypeScript frameworks that brought declarative context engineering to LLM agents: a single Injection primitive over 3 slots × 4 triggers, Causal Memory that turns the trace into a cache of the agent's thinking, and replayable typed-event traces that double as audit trail, cheap-model triage cache, and SFT/DPO training data — and hcifootprint, which turns any web app agent-operable over MCP." />
+<title>Sanjay Krishna Anbalagan — I make complex systems legible</title>
+<meta name="description" content="Senior Engineer at AWS, PhD CS. I build open-source frameworks that make AI agents explain themselves — footprintjs, agentfootprint, and hcifootprint." />
 <meta name="author" content="Sanjay Krishna Anbalagan" />
-<meta name="keywords" content="Sanjay Krishna Anbalagan, sanjay1909, agentfootprint, footprintjs, FootPrint, context engineering, context engineering framework, declarative context engineering, agent context engineering, LLM context management, slot-based prompt composition, prompt slot abstraction, declarative LLM injection, Injection primitive, slot trigger taxonomy, three slots four triggers, declarative agent framework, agent observability, agent replay, agent checkpoints, replayable agent traces, causal memory, decision-evidence snapshot, agent trace as training data, agent traces as SFT trajectories, SFT trajectories, DPO trajectories, process RL agent training, mocks-first agent development, zero API cost agent dev, explainable AI agents, auditable AI agents, deterministic AI agents, LangChain alternative, LangGraph alternative, CrewAI alternative, Vercel AI SDK alternative, ReAct framework, RAG framework, MCP client TypeScript, multi-agent TypeScript framework, autograd for context engineering, flowchart pattern backend, AI-readable code, AWS Senior Engineer, PhD HCI, HCI International 2025, UMass Lowell, enterprise AI, hcifootprint, agent-operable apps, agent-computer interface, ACI, MCP skill graph, computer use alternative, context-bug localization, causal localization, backward slicing, why-this-tool, llms.txt" />
+<meta name="keywords" content="Sanjay Krishna Anbalagan, sanjay1909, footprintjs, agentfootprint, hcifootprint, context engineering, explainable AI agents, agent observability, agent-computer interface, MCP, causal trace, context-bug localization, backward slicing, AWS Senior Engineer, PhD Computer Science" />
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 <meta name="theme-color" content="#1F2A26" />
 <link rel="canonical" href="https://sanjay1909.github.io/" />
@@ -156,17 +156,45 @@
   /* squiggle masks (hand-drawn rules & underlines) */
   --squig:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 10' preserveAspectRatio='none'><path d='M3 6 Q 48 2.5, 96 5 T 190 4.5 T 290 6.5 T 396 4' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'/></svg>");
   --uline:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 16' preserveAspectRatio='none'><path d='M4 10 Q 42 4, 88 9 T 196 8' fill='none' stroke='black' stroke-width='6' stroke-linecap='round'/></svg>");
+  /* light (paper) palette — the SINGLE source of the light values. Mapped, never
+     re-declared, in three places: [data-theme="light"], the no-JS prefers-light
+     fallback, and print. Change a colour HERE only. */
+  --lt-paper:#F5F3EA; --lt-paper-2:#ECEAE0;
+  --lt-ink:#26313B; --lt-ink-mute:#5D6873;
+  --lt-line:rgba(38,49,59,.4); --lt-line-soft:rgba(38,49,59,.2);
+  --lt-grid:rgba(51,99,142,.05); --lt-grid-major:rgba(51,99,142,.09);
+  --lt-cool:#33638E; --lt-hot:#B23325; --lt-rec:#C03A2B;
+  --lt-on-hot:#F5F3EA; --lt-on-cool:#F5F3EA;
+  --lt-hot-glow:rgba(178,51,37,.24); --lt-cool-glow:rgba(51,99,142,.24);
+  --lt-nav-bg:rgba(245,243,234,.85); --lt-panel:rgba(38,49,59,.032);
+  --lt-grain-opacity:.035; --lt-grain-blend:multiply;
 }
 html[data-theme="light"]{
-  --paper:#F5F3EA; --paper-2:#ECEAE0;
-  --ink:#26313B; --ink-mute:#5D6873;
-  --line:rgba(38,49,59,.4); --line-soft:rgba(38,49,59,.2);
-  --grid:rgba(51,99,142,.05); --grid-major:rgba(51,99,142,.09);
-  --cool:#33638E; --hot:#B23325; --rec:#C03A2B;
-  --on-hot:#F5F3EA; --on-cool:#F5F3EA;
-  --hot-glow:rgba(178,51,37,.24); --cool-glow:rgba(51,99,142,.24);
-  --nav-bg:rgba(245,243,234,.85); --panel:rgba(38,49,59,.032);
-  --grain-opacity:.035; --grain-blend:multiply;
+  --paper:var(--lt-paper); --paper-2:var(--lt-paper-2);
+  --ink:var(--lt-ink); --ink-mute:var(--lt-ink-mute);
+  --line:var(--lt-line); --line-soft:var(--lt-line-soft);
+  --grid:var(--lt-grid); --grid-major:var(--lt-grid-major);
+  --cool:var(--lt-cool); --hot:var(--lt-hot); --rec:var(--lt-rec);
+  --on-hot:var(--lt-on-hot); --on-cool:var(--lt-on-cool);
+  --hot-glow:var(--lt-hot-glow); --cool-glow:var(--lt-cool-glow);
+  --nav-bg:var(--lt-nav-bg); --panel:var(--lt-panel);
+  --grain-opacity:var(--lt-grain-opacity); --grain-blend:var(--lt-grain-blend);
+}
+/* no-JS fallback: html:not([data-theme]) can only match when the theme bootstrap
+   never ran (the bootstrap always stamps data-theme, even in its catch) — so with
+   JS on, behavior is untouched; without JS, the theme follows the OS. */
+@media (prefers-color-scheme: light){
+  html:not([data-theme]){
+    --paper:var(--lt-paper); --paper-2:var(--lt-paper-2);
+    --ink:var(--lt-ink); --ink-mute:var(--lt-ink-mute);
+    --line:var(--lt-line); --line-soft:var(--lt-line-soft);
+    --grid:var(--lt-grid); --grid-major:var(--lt-grid-major);
+    --cool:var(--lt-cool); --hot:var(--lt-hot); --rec:var(--lt-rec);
+    --on-hot:var(--lt-on-hot); --on-cool:var(--lt-on-cool);
+    --hot-glow:var(--lt-hot-glow); --cool-glow:var(--lt-cool-glow);
+    --nav-bg:var(--lt-nav-bg); --panel:var(--lt-panel);
+    --grain-opacity:var(--lt-grain-opacity); --grain-blend:var(--lt-grain-blend);
+  }
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -346,7 +374,8 @@ body.menu-open .mobile-menu ol li:nth-child(6){transition-delay:.38s}
 #trExport.ok{background:var(--cool);color:var(--on-cool);border-color:var(--cool)}
 .tr-chip{position:fixed;left:16px;bottom:16px;z-index:60;display:none;align-items:center;gap:9px;cursor:pointer;
   font:700 12.5px var(--mono);color:var(--ink);background:var(--nav-bg);backdrop-filter:blur(9px);
-  border:1.5px solid var(--line);border-radius:999px;padding:10px 15px}
+  border:1.5px solid var(--line);border-radius:999px;padding:10px 15px;transition:opacity .3s var(--ease)}
+.tr-chip.scrolled-away{opacity:0;pointer-events:none} /* steps aside while the reader scrolls down; back after the scroll settles */
 .tr-chip .dot{width:8px;height:8px;border-radius:50%;background:var(--rec);animation:recblink 1.3s steps(2) infinite}
 .tr-chip span{font-weight:400;color:var(--ink-mute)}
 @media (max-width:1339px){
@@ -373,6 +402,7 @@ h1.thesis.typing .h1caret{display:inline-block}
 .headline-row{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:end}
 .hero .status-note{margin-top:26px;font:400 15.5px/1.55 var(--hand);color:var(--ink-mute);transform:rotate(-.6deg);max-width:480px}
 .hero .status-note b{color:var(--hot);font-weight:700}
+.hero .avail{margin-top:14px;align-self:start}
 @media (max-width:880px){
   .headline-row{grid-template-columns:1fr;gap:26px}
   .hero .stack{text-align:left}
@@ -386,6 +416,7 @@ h1.thesis.typing .h1caret{display:inline-block}
 .cmd-head .file{color:var(--ink)}
 .cmd-head .sec-n{margin-left:14px}
 .cmd-head .link{cursor:pointer;background:none;padding:2px 7px;border:1px dashed transparent;border-radius:2px;transition:all .2s}
+.cmd-head .link:focus-visible{outline:2.5px dashed var(--hot);outline-offset:3px;border-radius:2px}
 .cmd-head .link:hover{color:var(--cool);border-color:var(--line)}
 .cmd-head .link.copied{color:var(--on-cool);background:var(--cool);border-color:var(--cool)}
 
@@ -401,7 +432,7 @@ h1.thesis.typing .h1caret{display:inline-block}
 .trace-prompt{font:400 14px var(--mono);color:var(--ink);padding:10px 14px;border:1.5px dashed var(--line);border-radius:4px;margin-bottom:10px;min-height:40px;display:flex;align-items:center;gap:10px}
 .trace-prompt .q{color:var(--hot);font-weight:700}
 .trace-prompt .caret{display:inline-block;width:7px;height:15px;background:var(--hot);margin-left:2px;animation:caret 1s steps(2) infinite}
-.trace-svg{width:100%;height:auto;display:block;margin-top:6px}
+.trace-svg{width:100%;height:auto;display:block;margin-top:6px;pointer-events:none} /* decorative — the nodes are not clickable; the legend link below is the one affordance */
 .trace-svg .edge{stroke:var(--line);stroke-width:1.4;fill:none}
 .trace-svg .edge.live{stroke:var(--cool);stroke-width:1.7;stroke-dasharray:4 5;animation:dashmove 2.4s linear infinite}
 @keyframes dashmove{to{stroke-dashoffset:-18}}
@@ -675,6 +706,42 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
   .rp-readout{text-align:left;min-width:0;flex-basis:100%}
   .replay-panel.pinned{left:8px;right:8px;bottom:8px}
 }
+
+/* ---- print: a static paper record — light ink, fixed chrome off, nothing hidden ---- */
+@media print{
+  :root{ /* whatever theme is up, paper prints as paper — same mapping as the light theme */
+    --paper:var(--lt-paper); --paper-2:var(--lt-paper-2);
+    --ink:var(--lt-ink); --ink-mute:var(--lt-ink-mute);
+    --line:var(--lt-line); --line-soft:var(--lt-line-soft);
+    --grid:var(--lt-grid); --grid-major:var(--lt-grid-major);
+    --cool:var(--lt-cool); --hot:var(--lt-hot); --rec:var(--lt-rec);
+    --on-hot:var(--lt-on-hot); --on-cool:var(--lt-on-cool);
+    --hot-glow:var(--lt-hot-glow); --cool-glow:var(--lt-cool-glow);
+    --nav-bg:var(--lt-nav-bg); --panel:var(--lt-panel);
+    --grain-opacity:var(--lt-grain-opacity); --grain-blend:var(--lt-grain-blend);
+    /* the chalkboards can't count on their dark backgrounds surviving print — their chalk goes to ink */
+    --fb-bg:transparent; --fb-ink:var(--lt-ink); --fb-dim:var(--lt-ink-mute);
+    --fb-hot:var(--lt-hot); --fb-pop:var(--lt-cool);
+    --fb-line:var(--lt-line-soft); --fb-glow:var(--lt-hot-glow);
+  }
+  html,body{background:#fff}
+  body::before,body::after{display:none} /* grid + grain layers */
+  /* fixed chrome off the page */
+  nav.bar,.theme-wrap,.mobile-menu,.trace-rail,.tr-chip,.progress,.skip,
+  .replay-slot,.replay-panel.pinned{display:none !important}
+  /* every reveal-hidden block forced visible — and no transition to wait out: print is instant */
+  .reveal{opacity:1 !important;transform:none !important;transition:none !important;animation:none !important}
+  h2.reveal .hand-note,.hero .status-note.reveal{clip-path:none !important;animation:none !important}
+  .chalk-u.undrawn::after{clip-path:inset(0 0 0 0)}
+  h1.thesis .h1caret,.trace-prompt .caret{display:none !important}
+  /* html:root prefix out-specifies the html:not([data-theme="light"]) dark-board overrides */
+  html:root .chalkboard{background:transparent;box-shadow:inset 0 0 0 1px var(--lt-line-soft)}
+  html:root .grow-stage{--board-bg:transparent;--board-tint-a:transparent;--board-tint-b:transparent;
+    --board-inner-shadow:transparent;--board-frame:var(--lt-line-soft);--dust-col:rgba(0,0,0,.14);
+    --label-col:var(--lt-ink-mute);--chalk:var(--lt-ink);--chalk-dim:var(--lt-ink-mute);
+    --chalk-hot:var(--lt-hot);--chalk-pop:var(--lt-cool);
+    --chalk-hot-glow:var(--lt-hot-glow);--chalk-hl:var(--lt-hot-glow);box-shadow:none}
+}
 </style>
 
 <!-- Theme bootstrap: runs before body renders to prevent flash-of-wrong-theme -->
@@ -716,7 +783,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
     <li><a href="#work">Work</a></li>
     <li><a href="#writing">Writing</a></li>
     <li><a href="#research">Research</a></li>
-    <li><a href="#contact" class="cta">Get in touch ↗</a></li>
+    <li><a href="#contact" class="cta">Get in touch ↓</a></li>
   </ul>
   <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
     <span id="menuLabel">Menu</span>
@@ -768,7 +835,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
     <li><a href="#work" data-nav>Work</a></li>
     <li><a href="#writing" data-nav>Writing</a></li>
     <li><a href="#research" data-nav>Research</a></li>
-    <li><a href="#contact" data-nav style="color:var(--hot)">Get in touch ↗</a></li>
+    <li><a href="#contact" data-nav style="color:var(--hot)">Get in touch ↓</a></li>
   </ol>
   <div class="footer">
     <div class="left">
@@ -812,6 +879,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
     <div class="headline-row">
       <p class="status-note reveal">now: shipping <b>agentfootprint</b> — context engineering, abstracted · <b>FootPrint v1</b> — the flowchart pattern for backend code · 320+ subscribers · published at <b>HCII 2026</b></p>
       <p class="lede">Ten years on a single problem — making the internal state of complex systems readable to whoever needs to understand them. First humans. <em>Now AI.</em></p>
+      <p class="avail mono reveal">open to: speaking · advisory · collaborations</p>
     </div>
 
     <!-- LIVE TRACE: the attention hook -->
@@ -1363,7 +1431,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
     <div class="chalkboard reveal">
       <div class="portrait-row reveal">
       <div class="portrait">
-        <img src="./portrait.png" alt="Portrait of Sanjay Krishna Anbalagan" width="180" height="180" loading="lazy" />
+        <img src="./portrait.webp" alt="Portrait of Sanjay Krishna Anbalagan" width="180" height="180" loading="lazy" />
       </div>
       <div class="portrait-meta">
         <span class="name">Sanjay Krishna Anbalagan</span>
@@ -1379,7 +1447,6 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
         <a href="https://www.linkedin.com/in/sanjay-krishna-anbalagan/" target="_blank" rel="noopener">LinkedIn — sanjay-krishna-anbalagan</a>
         <a href="https://medium.com/@sanjay1909" target="_blank" rel="noopener">Medium — @sanjay1909</a>
         <a href="https://github.com/sanjay1909" target="_blank" rel="noopener">GitHub — sanjay1909</a>
-        <a href="http://sanjay1909.github.io/" target="_blank" rel="noopener">Personal site — sanjay1909.github.io</a>
         <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar — research record</a>
       </div>
       <div class="meta">
@@ -1736,6 +1803,27 @@ if(drawerMq && typeof drawerMq.addEventListener === 'function'){
 if(chip) chip.addEventListener('click', function(){ rail.classList.contains('open') ? closeDrawer() : openDrawer(); });
 if(trClose) trClose.addEventListener('click', closeDrawer);
 
+/* the chip fades out while the reader scrolls DOWN (it sits over body text), and
+   returns ~600ms after the scroll settles — or immediately on any upward scroll */
+(function chipAutoHide(){
+  if(!chip) return;
+  var lastY = window.pageYOffset || 0, backTimer = null;
+  document.addEventListener('scroll', function(){
+    var y = window.pageYOffset || 0;
+    var dy = y - lastY;
+    lastY = y;
+    if(rail.classList.contains('open')) return;   /* drawer up: the chip is not in the way */
+    if(dy > 2){
+      chip.classList.add('scrolled-away');
+      clearTimeout(backTimer);
+      backTimer = setTimeout(function(){ chip.classList.remove('scrolled-away'); }, 600);
+    } else if(dy < -2){
+      clearTimeout(backTimer);
+      chip.classList.remove('scrolled-away');
+    }
+  }, { passive: true });
+})();
+
 /* ---------- Export the trace ---------- */
 var exportBtn = document.getElementById('trExport');
 if(exportBtn){
@@ -1857,52 +1945,63 @@ document.querySelectorAll('[data-row]').forEach(function(row){
       requestAnimationFrame(step);
     });
   }
+  /* loop only while the CARD is on screen AND the tab is visible; an in-flight cycle
+     halts at its next step instead of mutating an offscreen DOM, and the loop restarts
+     the cycle when the card scrolls back / the tab returns */
+  var cardVisible = false, cardStarted = false, cardPending = false;
+  function bail(){
+    if(cardVisible && !document.hidden) return false;
+    cardPending = true;   /* park; the observers below resume */
+    reset();
+    return true;
+  }
   async function run(){
     reset();
-    await sleep(400);
-    await typePrompt();
+    await sleep(400);            if(bail()) return;
+    await typePrompt();          if(bail()) return;
     await sleep(350);
     nodes[0].classList.add('on');
-    await sleep(380);
+    await sleep(380);            if(bail()) return;
     edges[0].classList.add('live');
     await animatePacket(packets[0], edges[0], 900);
+    if(bail()) return;
     nodes[1].classList.add('on');
     badges[0].classList.add('show');
-    await sleep(520);
+    await sleep(520);            if(bail()) return;
     edges[1].classList.add('live');
     await animatePacket(packets[1], edges[1], 900);
+    if(bail()) return;
     nodes[2].classList.add('on');
     badges[1].classList.add('show');
-    await sleep(520);
+    await sleep(520);            if(bail()) return;
     edges[2].classList.add('live');
     await animatePacket(packets[2], edges[2], 800);
+    if(bail()) return;
     nodes[3].classList.add('on');
     badges[2].classList.add('show');
-    await sleep(3200);
+    await sleep(3200);           if(bail()) return;
     nodes.forEach(function(x){ x.classList.remove('on'); });
     edges.forEach(function(e){ e.classList.remove('live'); });
     badges.forEach(function(x){ x.classList.remove('show'); });
     await sleep(700);
     scheduleNext();
   }
-  /* loop only while the card is on screen AND the tab is visible — resume where it left off */
-  var heroVisible = false, heroStarted = false, heroPending = false;
   function scheduleNext(){
-    if(heroVisible && !document.hidden){ run(); }
-    else { heroPending = true; }
+    if(cardVisible && !document.hidden){ run(); }
+    else { cardPending = true; }
   }
-  var hero = document.querySelector('.hero');
-  var heroIo = new IntersectionObserver(function(ents){
+  var card = document.querySelector('.trace-card');
+  var cardIo = new IntersectionObserver(function(ents){
     ents.forEach(function(e){
-      heroVisible = e.isIntersecting;
-      if(heroVisible && !document.hidden && (!heroStarted || heroPending)){
-        heroStarted = true; heroPending = false; run();
+      cardVisible = e.isIntersecting;
+      if(cardVisible && !document.hidden && (!cardStarted || cardPending)){
+        cardStarted = true; cardPending = false; run();
       }
     });
-  }, { threshold: 0.2 });
-  heroIo.observe(hero);
+  }, { threshold: 0.15 });
+  if(card) cardIo.observe(card);
   document.addEventListener('visibilitychange', function(){
-    if(!document.hidden && heroVisible && heroPending){ heroPending = false; run(); }
+    if(!document.hidden && cardVisible && cardPending){ cardPending = false; run(); }
   });
 })();
 

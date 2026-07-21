@@ -2,10 +2,9 @@
 
 > Senior Engineer @ AWS · PhD in Computer Science. Builds open-source developer abstractions that make enterprise generative-AI applications explainable by construction.
 
-The canonical machine-readable view of this site is available at:
-https://sanjay1909.github.io/?view=source
-
-It can be served as JSON, YAML, or MDX via the `format` query parameter.
+This file is the canonical machine-readable summary of this site. The page at
+https://sanjay1909.github.io/ carries the same content for humans, with JSON-LD
+structured data embedded for machines.
 
 ## Identity
 
