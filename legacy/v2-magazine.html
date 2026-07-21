@@ -1,0 +1,1827 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sanjay Krishna Anbalagan — Context Engineering · Explainable AI Agents · Senior Engineer @ AWS · PhD CS</title>
+<meta name="description" content="Sanjay Krishna Anbalagan — Senior Engineer at AWS and PhD in Computer Science. Author of agentfootprint and footprintjs — the open-source TypeScript frameworks that brought declarative context engineering to LLM agents: a single Injection primitive over 3 slots × 4 triggers, Causal Memory that turns the trace into a cache of the agent's thinking, and replayable typed-event traces that double as audit trail, cheap-model triage cache, and SFT/DPO training data — and hcifootprint, which turns any web app agent-operable over MCP." />
+<meta name="author" content="Sanjay Krishna Anbalagan" />
+<meta name="keywords" content="Sanjay Krishna Anbalagan, sanjay1909, agentfootprint, footprintjs, FootPrint, context engineering, context engineering framework, declarative context engineering, agent context engineering, LLM context management, slot-based prompt composition, prompt slot abstraction, declarative LLM injection, Injection primitive, slot trigger taxonomy, three slots four triggers, declarative agent framework, agent observability, agent replay, agent checkpoints, replayable agent traces, causal memory, decision-evidence snapshot, agent trace as training data, agent traces as SFT trajectories, SFT trajectories, DPO trajectories, process RL agent training, mocks-first agent development, zero API cost agent dev, explainable AI agents, auditable AI agents, deterministic AI agents, LangChain alternative, LangGraph alternative, CrewAI alternative, Vercel AI SDK alternative, ReAct framework, RAG framework, MCP client TypeScript, multi-agent TypeScript framework, autograd for context engineering, flowchart pattern backend, AI-readable code, AWS Senior Engineer, PhD HCI, HCI International 2025, UMass Lowell, enterprise AI, hcifootprint, agent-operable apps, agent-computer interface, ACI, MCP skill graph, computer use alternative, context-bug localization, causal localization, backward slicing, why-this-tool, llms.txt" />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+<meta name="theme-color" content="#0B0B0C" />
+<link rel="canonical" href="https://sanjay1909.github.io/" />
+<link rel="alternate" type="text/plain" title="LLM-readable summary" href="/llms.txt" />
+
+<!-- Chalkboard handwriting font for the About diorama -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content="Sanjay Krishna Anbalagan" />
+<meta property="og:title" content="Sanjay Krishna Anbalagan — Context Engineering · Explainable AI Agents" />
+<meta property="og:description" content="Senior Engineer @ AWS · PhD CS. Author of agentfootprint + footprintjs — declarative context engineering for LLM agents (one Injection primitive over 3 slots × 4 triggers, Causal Memory, replayable traces that double as audit trail and SFT training data) — and hcifootprint, which turns any web app agent-operable over MCP." />
+<meta property="og:url" content="https://sanjay1909.github.io/" />
+<meta property="og:image" content="https://sanjay1909.github.io/og.png" />
+<meta property="og:image:alt" content="Sanjay Krishna Anbalagan — I make complex systems legible." />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+<meta property="profile:first_name" content="Sanjay" />
+<meta property="profile:last_name" content="Krishna Anbalagan" />
+<meta property="profile:username" content="sanjay1909" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Sanjay Krishna Anbalagan — Context Engineering · Explainable AI Agents" />
+<meta name="twitter:description" content="Senior Engineer @ AWS · PhD CS. agentfootprint + footprintjs + hcifootprint — declarative context engineering for LLM agents (Injection primitive · Causal Memory · replayable traces) and turn any web app agent-operable over MCP." />
+<meta name="twitter:image" content="https://sanjay1909.github.io/og.png" />
+<meta name="twitter:creator" content="@sanjay1909" />
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230B0B0C'/><text x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='34' fill='%23B6F800'>s</text></svg>" />
+
+<!-- JSON-LD structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://sanjay1909.github.io/#person",
+      "name": "Sanjay Krishna Anbalagan",
+      "alternateName": ["sanjay1909", "Sanjay Anbalagan"],
+      "url": "https://sanjay1909.github.io/",
+      "jobTitle": "Senior Engineer",
+      "worksFor": { "@type": "Organization", "name": "Amazon Web Services (AWS)" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Massachusetts Lowell" },
+      "knowsAbout": [
+        "Context Engineering", "Declarative Agent Frameworks", "Slot-based Prompt Composition",
+        "Causal Memory", "Replayable Agent Traces", "Agent Observability",
+        "Explainable AI", "LLM Agents", "Generative AI", "Software Architecture",
+        "TypeScript", "Human-Computer Interaction", "Backend Flowchart Pattern"
+      ],
+      "sameAs": [
+        "https://github.com/sanjay1909",
+        "https://www.linkedin.com/in/sanjay-krishna-anbalagan/",
+        "https://medium.com/@sanjay1909"
+      ],
+      "description": "Senior Engineer at AWS and PhD in Computer Science. Author of agentfootprint and footprintjs — the open-source TypeScript framework that introduced declarative context engineering for LLM agents (a single Injection primitive over 3 prompt slots × 4 activation triggers), Causal Memory that turns the agent trace into a cache of its own thinking, and replayable typed-event checkpoints that double as production audit trail and SFT/DPO training data."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sanjay1909.github.io/#website",
+      "url": "https://sanjay1909.github.io/",
+      "name": "Sanjay Krishna Anbalagan — Portfolio",
+      "publisher": { "@id": "https://sanjay1909.github.io/#person" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "FootPrint",
+      "alternateName": "footprintjs",
+      "codeRepository": "https://github.com/footprintjs/footPrint",
+      "programmingLanguage": "TypeScript",
+      "author": { "@id": "https://sanjay1909.github.io/#person" },
+      "description": "The flowchart pattern for backend code — self-explainable systems that AI can reason about. The substrate underneath agentfootprint: causal decision-evidence traces, narrative recording, time-travel checkpointing, auto-generated tool descriptions, transactional state. Same way autograd's forward-pass traversal makes gradient inspection automatic, footprintjs's flowchart traversal makes declarative context engineering, replayable agent traces, and SFT-ready trajectory exports automatic."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "agentfootprint",
+      "codeRepository": "https://github.com/footprintjs/agentfootprint",
+      "programmingLanguage": "TypeScript",
+      "author": { "@id": "https://sanjay1909.github.io/#person" },
+      "description": "Context engineering, abstracted. A declarative TypeScript agent framework: 3 slots × 4 triggers × 1 Injection primitive. Every iteration is a replayable typed-event stream — audit trails, cheap-model triage, and SFT/DPO training trajectories all read from one recording. Context-bug localization pinpoints which injected context caused a bad answer, and 'why this tool?' scoring rates every tool the agent could have picked. Built on FootPrint."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "hcifootprint",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Cross-platform",
+      "url": "https://footprintjs.github.io/hcifootprint/",
+      "programmingLanguage": "TypeScript",
+      "license": "https://opensource.org/licenses/MIT",
+      "creator": { "@id": "https://sanjay1909.github.io/#person" },
+      "author": { "@id": "https://sanjay1909.github.io/#person" },
+      "sameAs": ["https://www.npmjs.com/package/hcifootprint"],
+      "description": "The agent-computer interface (ACI). hcifootprint turns a web app's interaction surface into a typed, traversable skill graph an LLM agent plans over and acts on, served over MCP — the agent operates the app as the signed-in user through the app's own handlers. Open-source TypeScript, MIT-licensed, with a read-only guide-mode adoption rung and llms.txt shipped for agent consumers. The same legibility as footprintjs and agentfootprint, pointed at apps agents can operate."
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Bridging UI Design and Chatbot Interactions",
+      "author": { "@id": "https://sanjay1909.github.io/#person" },
+      "datePublished": "2025",
+      "isPartOf": { "@type": "PublicationVolume", "name": "HCI International 2025 — Springer Proceedings" }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Visible Reasoning",
+      "author": { "@id": "https://sanjay1909.github.io/#person" },
+      "datePublished": "2026",
+      "isPartOf": { "@type": "PublicationVolume", "name": "HCI International 2026 — Springer Proceedings" }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* DARK (default) — the originals */
+    --ink:#F2EEE3;
+    --ink-mute:#9B978D;
+    --paper:#0B0B0C;
+    --paper-2:#121214;
+    --rule:#23231F;
+    --accent:#B6F800;
+    --accent-2:#FF5C2B;
+    --on-accent:#000000;     /* text color that sits on top of --accent backgrounds */
+    --on-accent-2:#FFFFFF;   /* text color that sits on top of --accent-2 backgrounds */
+    /* film-grain + background-glow layered over --paper; redeclared per theme */
+    --grain-opacity:.06;
+    --grain-blend:overlay;
+    --glow-accent:rgba(182,248,0,.06);
+    --glow-accent-2:rgba(255,92,43,.04);
+    --bubble-bg:rgba(182,248,0,.04);
+    --nav-bg:rgba(11,11,12,.55);
+    --seg-bg:rgba(11,11,12,.7);
+    --serif:'Fraunces', 'Times New Roman', serif;
+    --sans:'Inter', system-ui, sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
+  }
+  /* LIGHT theme — pure black ink on light grey paper.
+     Accent shifts to a deep forest/olive green so highlighted words stay legible.
+     On-accent flips so buttons with accent BG still read cleanly. */
+  html[data-theme="light"]{
+    --ink:#000000;
+    --ink-mute:#5A5A5E;
+    --paper:#EDEDED;
+    --paper-2:#E3E3E5;
+    --rule:#C4C4C7;
+    --accent:#3F6B00;        /* deep forest green, readable on light grey */
+    --accent-2:#C23A00;      /* deeper vermillion for light-mode contrast */
+    --on-accent:#F4F4F2;     /* near-white text on top of dark-green bg */
+    --on-accent-2:#FFFFFF;
+    --grain-opacity:.04;
+    --grain-blend:multiply;
+    --glow-accent:rgba(63,107,0,.06);
+    --glow-accent-2:rgba(194,58,0,.05);
+    --bubble-bg:rgba(63,107,0,.06);
+    --nav-bg:rgba(237,237,237,.72);
+    --seg-bg:rgba(237,237,237,.88);
+  }
+  /* selection text stays black on lime for both themes — no override needed */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  html{scroll-behavior:smooth}
+  body{
+    background-image:
+      radial-gradient(1200px 600px at 80% -10%, var(--glow-accent), transparent 60%),
+      radial-gradient(900px 500px at -10% 30%, var(--glow-accent-2), transparent 60%);
+    overflow-x:hidden;
+    transition:background-color .35s ease, color .35s ease;
+  }
+  /* film grain */
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:1000;
+    mix-blend-mode:var(--grain-blend);opacity:var(--grain-opacity);
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:var(--on-accent)}
+
+  /* Typography scale */
+  .display{
+    font-family:var(--serif);
+    font-weight:300;
+    font-style:italic;
+    font-variation-settings:"opsz" 144,"SOFT" 100;
+    letter-spacing:-.04em;
+    line-height:.92;
+  }
+  .display-roman{font-family:var(--serif);font-style:normal;font-weight:400;letter-spacing:-.035em;line-height:.95}
+  .mono{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-mute)}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute)}
+  .lede{font-family:var(--serif);font-weight:400;font-size:clamp(20px,2.2vw,28px);line-height:1.35;letter-spacing:-.01em;color:var(--ink)}
+  .body{font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.6;color:var(--ink)}
+
+  /* Marquee */
+  .marquee{position:fixed;top:0;left:0;right:0;z-index:50;border-bottom:1px solid var(--rule);background:var(--nav-bg);backdrop-filter:blur(10px);padding:14px 0;overflow:hidden}
+  .marquee-track{display:flex;gap:60px;white-space:nowrap;animation:slide 40s linear infinite}
+  .marquee-track span{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute)}
+  .marquee-track span b{color:var(--accent);font-weight:400}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* Top bar */
+  nav.bar{
+    position:fixed;top:46px;left:0;right:0;z-index:49;
+    display:flex;justify-content:space-between;align-items:center;
+    /* reserve right-side space for the fixed theme-toggle pill so links never overlap */
+    padding:18px 110px 18px 28px;border-bottom:1px solid var(--rule);
+    background:var(--nav-bg);backdrop-filter:blur(10px);
+  }
+  nav.bar .brand{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+  nav.bar .brand b{color:var(--accent);font-weight:500}
+  nav.bar ul{display:flex;gap:24px;list-style:none;flex-wrap:nowrap}
+  nav.bar a{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);transition:color .2s}
+  nav.bar a:hover{color:var(--ink)}
+  nav.bar a.cta{color:var(--accent)}
+
+  /* Scroll progress rail */
+  .progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0;z-index:60;box-shadow:0 0 12px rgba(182,248,0,.5);transition:width .06s linear}
+
+  main{padding-top:108px}
+
+  /* === BEAT: one idea per viewport === */
+  section.beat{
+    min-height:100vh;
+    padding:120px 28px;
+    border-bottom:1px solid var(--rule);
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  @media (max-width:880px){
+    section.beat{min-height:auto;padding:80px 22px}
+  }
+  .wrap{max-width:1320px;margin:0 auto;width:100%}
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:18px}
+  .section-num{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute)}
+  .section-num b{color:var(--accent);font-weight:400}
+
+  /* Hero */
+  .hero{padding:40px 28px 80px;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between}
+  .hero .meta-row{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:300;
+    font-size:clamp(48px,9.2vw,148px);
+    line-height:.86;
+    letter-spacing:-.045em;
+    margin-top:32px;
+  }
+  .hero h1 em{font-style:italic;font-weight:300}
+  .hero h1 .accent{color:var(--accent);font-style:italic;font-weight:400}
+  .hero .stack{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);text-align:right;line-height:1.9}
+  .hero .stack b{color:var(--ink);font-weight:500}
+  .hero .headline-row{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end;margin-top:24px}
+  @media (max-width:880px){
+    .hero .headline-row{grid-template-columns:1fr;gap:32px}
+    .hero .stack{text-align:left}
+  }
+
+  .scrambler{display:inline-block}
+
+  /* === LIVE TRACE (hero attention hook) === */
+  .trace-card{
+    margin-top:56px;
+    border:1px solid var(--rule);
+    border-radius:6px;
+    background:linear-gradient(180deg, rgba(182,248,0,.02), rgba(255,92,43,.015));
+    padding:24px 28px 20px;
+    overflow:hidden;
+    position:relative;
+  }
+  .trace-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:14px}
+  .trace-head .left{display:flex;align-items:center;gap:14px}
+  .trace-head .rec{width:8px;height:8px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 8px var(--accent-2);animation:recblink 1.2s steps(2) infinite}
+  @keyframes recblink{50%{opacity:.25}}
+  .trace-head .label{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute)}
+  .trace-head .label b{color:var(--ink);font-weight:500}
+  .trace-head .right{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute)}
+  .trace-head .right b{color:var(--accent);font-weight:400}
+  .trace-prompt{
+    font-family:var(--mono);font-size:13px;color:var(--ink);
+    padding:10px 14px;background:rgba(255,255,255,.02);
+    border:1px solid var(--rule);border-radius:4px;
+    margin-bottom:8px;min-height:38px;display:flex;align-items:center;gap:10px;
+  }
+  .trace-prompt .q{color:var(--ink-mute)}
+  .trace-prompt .typed{color:var(--ink)}
+  .trace-prompt .caret{display:inline-block;width:7px;height:14px;background:var(--accent);margin-left:2px;animation:caret 1s steps(2) infinite}
+  @keyframes caret{50%{opacity:0}}
+  .trace-svg{width:100%;height:auto;display:block;margin-top:4px}
+  .trace-svg .edge{stroke:var(--rule);stroke-width:1.2;fill:none}
+  .trace-svg .edge.live{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:4 5;animation:dash 2.4s linear infinite}
+  @keyframes dash{to{stroke-dashoffset:-18}}
+  .trace-svg .node circle{fill:var(--paper-2);stroke:var(--ink-mute);stroke-width:1;transition:stroke .35s ease, fill .35s ease, filter .35s ease}
+  .trace-svg .node.on circle{stroke:var(--accent);stroke-width:1.5;fill:rgba(182,248,0,.04);filter:drop-shadow(0 0 10px rgba(182,248,0,.35))}
+  .trace-svg .node text{font-family:var(--serif);font-size:14px;letter-spacing:-.005em;fill:var(--ink);text-anchor:middle;font-weight:400}
+  .trace-svg .node .sub{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;fill:var(--ink-mute)}
+  .trace-svg .packet{fill:var(--accent);filter:drop-shadow(0 0 6px rgba(182,248,0,.7));opacity:0}
+  .trace-svg .packet.fire{opacity:1}
+  .trace-svg .badge{opacity:0;transition:opacity .4s ease}
+  .trace-svg .badge.show{opacity:1}
+  .trace-svg .badge rect{fill:var(--accent-2);rx:3;ry:3}
+  .trace-svg .badge text{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;fill:var(--on-accent-2);font-weight:500;text-anchor:middle}
+  .trace-legend{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);flex-wrap:wrap;gap:12px}
+  .trace-legend b{color:var(--accent);font-weight:400}
+  .trace-legend a{color:var(--ink);border-bottom:1px dashed var(--ink-mute);transition:color .2s, border-color .2s}
+  .trace-legend a:hover{color:var(--accent);border-color:var(--accent)}
+  @media (max-width:680px){
+    .trace-card{padding:18px 18px 16px}
+    .trace-svg .node text{font-size:12px}
+    .trace-svg .node .sub{font-size:8.5px}
+  }
+
+  /* === Manifesto beat === */
+  .manifesto h2{font-family:var(--serif);font-weight:300;font-size:clamp(40px,7vw,96px);line-height:.98;letter-spacing:-.035em;margin:14px 0 28px;max-width:1100px}
+  .manifesto h2 em{font-style:italic;color:var(--accent)}
+  .manifesto .sub{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(20px,2vw,26px);line-height:1.4;color:var(--ink-mute);max-width:780px;margin-bottom:24px}
+
+  /* Native disclosure component */
+  details.disclose{border-top:1px solid var(--rule);padding:16px 0;max-width:820px}
+  details.disclose[open]{padding-bottom:28px}
+  details.disclose summary{
+    list-style:none;cursor:pointer;
+    font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+    display:inline-flex;align-items:center;gap:10px;
+    transition:color .2s;
+  }
+  details.disclose summary::-webkit-details-marker{display:none}
+  details.disclose summary::after{content:"↘";transition:transform .3s ease;display:inline-block}
+  details.disclose[open] summary::after{transform:rotate(90deg)}
+  details.disclose summary:hover{color:var(--ink)}
+  details.disclose .reveal-body{padding-top:20px;animation:drop .5s ease both}
+  @keyframes drop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+  details.disclose .reveal-body p{font-family:var(--serif);font-weight:400;font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:var(--ink);margin-bottom:16px;max-width:720px}
+  details.disclose .reveal-body p.cite{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);margin-top:10px}
+  details.disclose .reveal-body ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:8px;max-width:720px}
+  details.disclose .reveal-body ul li{font-family:var(--mono);font-size:12px;color:var(--ink-mute);letter-spacing:.04em;padding-left:20px;position:relative}
+  details.disclose .reveal-body ul li::before{content:"→";position:absolute;left:0;color:var(--accent)}
+  details.disclose .reveal-body ul li b{color:var(--ink);font-weight:500}
+
+  /* === About / Journey beat — single character grows up === */
+  .about h2{font-family:var(--serif);font-weight:300;font-size:clamp(40px,7vw,96px);line-height:.98;letter-spacing:-.035em;margin:14px 0 18px;max-width:1100px}
+  .about h2 em{font-style:italic;color:var(--accent)}
+  .about .sub{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(18px,1.8vw,24px);line-height:1.4;color:var(--ink-mute);max-width:820px;margin-bottom:36px}
+
+  /* Stage — now the whole thing is ONE board. Text is handwritten on it next
+     to the cartoon figure, so everything reads as a single teacher's sketch.
+     · Dark theme (page is black)  → WHITEBOARD: off-white panel, black marker
+     · Light theme (page is grey)  → CHALKBOARD:  slate panel, white chalk    */
+  .grow-stage{
+    position:relative;display:grid;grid-template-columns:1fr 460px;gap:28px;align-items:stretch;
+    padding:44px 36px 26px;
+    border-radius:10px;
+    overflow:hidden;
+    /* default (dark theme) — whiteboard */
+    --board-bg:#F4EFE6;
+    --board-tint-a:rgba(0,0,0,.03);
+    --board-tint-b:rgba(0,0,0,.02);
+    --board-inner-shadow:rgba(0,0,0,.08);
+    --board-frame:rgba(0,0,0,.1);
+    --dust-col:rgba(0,0,0,.18);
+    --label-col:rgba(20,20,24,.72);
+    --chalk:#121214;            /* marker ink */
+    --chalk-dim:#3A3A3F;
+    --chalk-hot:#C23A00;        /* active → warm marker */
+    --chalk-pop:#0E6A3D;        /* active accent → green marker */
+    --chalk-hot-glow:rgba(194,58,0,.22);
+    --chalk-hl:rgba(255,233,138,.55);   /* highlighter swipe for active note */
+    background:
+      radial-gradient(900px 320px at 20% 0%, var(--board-tint-a), transparent 60%),
+      radial-gradient(600px 260px at 85% 100%, var(--board-tint-b), transparent 60%),
+      var(--board-bg);
+    box-shadow:
+      inset 0 0 0 1px var(--board-frame),
+      inset 0 0 80px var(--board-inner-shadow),
+      0 1px 0 rgba(0,0,0,.35);
+  }
+  /* Light theme → swap to dark chalkboard (so it contrasts with grey page) */
+  html[data-theme="light"] .grow-stage{
+    --board-bg:#14201C;
+    --board-tint-a:rgba(255,255,255,.035);
+    --board-tint-b:rgba(255,255,255,.02);
+    --board-inner-shadow:rgba(0,0,0,.55);
+    --board-frame:rgba(255,255,255,.06);
+    --dust-col:rgba(255,255,255,.16);
+    --label-col:rgba(244,239,230,.72);
+    --chalk:#F4EFE6;
+    --chalk-dim:#B9B3A4;
+    --chalk-hot:#FFE98A;
+    --chalk-pop:#FF8A5C;
+    --chalk-hot-glow:rgba(255,233,138,.35);
+    --chalk-hl:rgba(255,233,138,.22);
+  }
+  @media (max-width:980px){ .grow-stage{grid-template-columns:1fr;gap:8px;padding:36px 22px 18px} }
+
+  /* sprinkled chalk/marker dust — on the full board */
+  .grow-stage::before{
+    content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, var(--dust-col), transparent 60%),
+      radial-gradient(1px 1px at 78% 34%, var(--dust-col), transparent 60%),
+      radial-gradient(1px 1px at 42% 72%, var(--dust-col), transparent 60%),
+      radial-gradient(1px 1px at 88% 82%, var(--dust-col), transparent 60%),
+      radial-gradient(1px 1px at 30% 88%, var(--dust-col), transparent 60%);
+    opacity:.6;
+  }
+  /* corner handwritten label — "about" like a teacher wrote it on the board */
+  .grow-stage::after{
+    content:"about · a decade of raising apps ✎";
+    position:absolute;top:12px;left:20px;z-index:2;
+    font-family:"Kalam","Caveat","Comic Sans MS",cursive;
+    font-size:13px;letter-spacing:.02em;color:var(--label-col);
+    pointer-events:none;
+  }
+
+  /* LEFT: era label + handwritten note — written directly on the board */
+  .grow-text{position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;justify-content:center;min-height:340px;padding:8px 0}
+  @media (max-width:980px){ .grow-text{min-height:0;gap:10px;padding:0} .grow-actor{height:260px;align-items:center;margin-top:-6px} }
+  .grow-text .grow-era{
+    font-family:"Kalam","Caveat","Comic Sans MS",cursive;
+    font-size:15px;letter-spacing:.02em;color:var(--chalk);opacity:.8;
+    transition:color .4s, opacity .4s;
+  }
+  .grow-text .grow-era b{color:var(--chalk-hot);font-weight:700;letter-spacing:.02em;margin-right:6px}
+  .grow-bubble{
+    position:relative;padding:4px 0 6px 14px;
+    background:transparent;border:none;border-left:2px dashed transparent;
+    font-family:"Kalam","Caveat","Comic Sans MS",cursive;
+    font-size:clamp(22px,2.3vw,30px);line-height:1.35;color:var(--chalk);letter-spacing:.005em;
+    min-height:0;max-width:520px;
+    transition:color .5s, border-color .5s;
+  }
+  .grow-bubble.lit{border-left-color:var(--chalk-hot)}
+  .grow-bubble code{
+    font-family:"Kalam","Caveat","Comic Sans MS",cursive;font-size:.92em;font-weight:700;
+    color:var(--chalk-hot);background:transparent;padding:0 2px;border:1.5px dashed var(--chalk-hot);border-radius:4px;
+  }
+  .grow-bubble .hl{
+    background:linear-gradient(180deg, transparent 62%, var(--chalk-hl) 62%);
+    padding:0 3px;color:var(--chalk);
+  }
+  .grow-bubble .caret{
+    display:inline-block;width:.55ch;height:.95em;vertical-align:-2px;margin-left:3px;
+    background:var(--chalk-hot);animation:caret 1s steps(1) infinite;
+  }
+  @keyframes caret{50%{opacity:0}}
+  .grow-tag{
+    font-family:"Kalam","Caveat","Comic Sans MS",cursive;
+    font-size:13px;letter-spacing:.02em;color:var(--chalk);opacity:.72;
+  }
+  .grow-tag .swap{color:var(--chalk-pop);font-weight:700}
+
+  /* RIGHT: SVG actor sits on the same board, no extra panel */
+  .grow-actor{
+    position:relative;z-index:1;height:380px;display:flex;align-items:flex-end;justify-content:center;
+    background:transparent;border:none;padding:0;box-shadow:none;
+  }
+  .grow-svg{
+    width:100%;height:100%;display:block;overflow:visible;
+  }
+  .grow-svg .ground{stroke:var(--chalk);stroke-width:2;stroke-dasharray:4 6;stroke-linecap:round;opacity:.75}
+  .grow-svg .ground-tick{stroke:var(--chalk);stroke-width:1.6;opacity:.55;stroke-linecap:round}
+  .grow-svg .ground-label{
+    font-family:"Kalam","Caveat","Comic Sans MS",cursive;font-size:13px;letter-spacing:.06em;
+    fill:var(--chalk);text-transform:none;opacity:.85;
+  }
+
+  .grow-svg .figure{opacity:0;transform-origin:180px 346px;transform:scale(.94);transition:opacity .9s cubic-bezier(.4,.2,.2,1), transform .9s cubic-bezier(.2,.7,.2,1.1)}
+  .grow-svg .figure.on{opacity:1;transform:scale(1)}
+
+  /* shared shape colors — all chalk, bold cartoon line */
+  .grow-svg .skin{fill:none;stroke:var(--chalk);stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
+  .grow-svg .eye{fill:var(--chalk);transition:transform .3s}
+  .grow-svg .figure.on .eye{animation:blink 3.6s steps(2) infinite;transform-origin:center}
+  @keyframes blink{0%,93%{transform:scaleY(1)} 96%{transform:scaleY(.08)} 100%{transform:scaleY(1)}}
+  .grow-svg .mouth{fill:none;stroke:var(--chalk);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+  .grow-svg .acc{fill:var(--chalk);stroke:none;opacity:.92}
+  .grow-svg .acc-line{stroke:var(--chalk);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.92}
+  .grow-svg .body{fill:none;stroke:var(--chalk);stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
+
+  /* inactive figures drawn faintly (still visible as chalk ghost) */
+  .grow-svg .figure{opacity:0}
+  .grow-svg .figure.on{opacity:1}
+  .grow-svg .figure.on .skin,
+  .grow-svg .figure.on .body,
+  .grow-svg .figure.on .mouth{stroke:var(--chalk-hot);filter:drop-shadow(0 0 1.5px var(--chalk-hot-glow))}
+  .grow-svg .figure.on .acc,
+  .grow-svg .figure.on .eye{fill:var(--chalk-hot)}
+  .grow-svg .figure.on .acc-line{stroke:var(--chalk-pop)}
+
+  /* idle wobble on the active figure — like a kid's unsteady drawing */
+  .grow-svg .figure.on .wobble{transform-origin:center bottom;animation:wobble 4s ease-in-out infinite}
+  @keyframes wobble{0%,100%{transform:rotate(-1.2deg)} 50%{transform:rotate(1.2deg)}}
+
+  /* growth halo — faint chalk smudge around the active figure */
+  .grow-svg .halo{fill:var(--chalk-hot-glow);opacity:0;transition:opacity .6s}
+  .grow-svg .figure.on .halo{opacity:1}
+
+  /* Timeline track */
+  .journey-track{
+    position:relative;margin:38px 12px 6px;height:42px;
+  }
+  .journey-track .rail{
+    position:absolute;left:0;right:0;top:50%;height:2px;background:var(--rule);transform:translateY(-50%);
+  }
+  .journey-track .rail .fill{
+    position:absolute;left:0;top:0;height:100%;background:linear-gradient(90deg, var(--accent), var(--accent-2));
+    width:0;transition:width 4.2s linear;
+    box-shadow:0 0 10px rgba(182,248,0,.4);
+  }
+  .journey-track .pin{
+    position:absolute;top:50%;width:12px;height:12px;border-radius:50%;background:var(--paper);border:1.5px solid var(--ink-mute);
+    transform:translate(-50%,-50%);transition:border-color .5s, background .5s, box-shadow .5s, transform .5s;
+    cursor:pointer;
+  }
+  .journey-track .pin:hover{border-color:var(--ink)}
+  .journey-track .pin.on{border-color:var(--accent);background:var(--accent);box-shadow:0 0 14px rgba(182,248,0,.6);transform:translate(-50%,-50%) scale(1.25)}
+  .journey-track .pin .yr{
+    position:absolute;top:18px;left:50%;transform:translateX(-50%);
+    font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--ink-mute);white-space:nowrap;text-transform:uppercase;
+  }
+  .journey-track .pin .yr b{display:block;color:var(--ink);margin-bottom:1px;letter-spacing:.18em}
+  .journey-track .pin.on .yr{color:var(--accent)}
+  .journey-track .pin.on .yr b{color:var(--accent)}
+
+  .about .lesson-row{margin-top:54px;display:grid;grid-template-columns:1fr;gap:18px;max-width:880px}
+
+  /* === Work beat === */
+  .projects-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;flex-wrap:wrap;gap:24px}
+  .projects-head h2{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(48px,8vw,120px);line-height:.9;letter-spacing:-.04em}
+  .projects-head h2 em{font-style:italic;color:var(--accent)}
+  .projects-head .count{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute)}
+
+  .project{
+    display:grid;grid-template-columns:1fr 2fr;gap:60px;
+    padding:32px 0;border-top:1px solid var(--rule);
+    transition:background .25s ease;
+  }
+  .project:last-child{border-bottom:1px solid var(--rule)}
+  .project:hover{background:linear-gradient(90deg, rgba(182,248,0,0) 0%, rgba(182,248,0,.04) 100%)}
+  .project .id{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:8px}
+  .project .install{font-family:var(--mono);font-size:12px;color:var(--accent);margin-top:16px}
+  .project h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.6vw,64px);line-height:1;letter-spacing:-.03em;margin-bottom:8px}
+  .project h3 em{font-style:italic;color:var(--ink-mute)}
+  .project .tag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);margin-top:6px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .project .tag b{color:var(--accent);font-weight:400}
+  .project .desc{font-family:var(--serif);font-weight:400;font-size:clamp(18px,1.6vw,22px);line-height:1.45;color:var(--ink);margin-bottom:4px}
+
+  /* === Writing beat (hover-reveal rows) === */
+  .writing-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:36px;flex-wrap:wrap;gap:18px}
+  .writing-head h2{font-family:var(--serif);font-weight:300;font-size:clamp(40px,6vw,84px);line-height:.95;letter-spacing:-.03em}
+  .writing-head h2 em{font-style:italic;color:var(--accent)}
+  .post-row{display:grid;grid-template-columns:80px 1fr auto;gap:32px;align-items:baseline;padding:24px 0;border-top:1px solid var(--rule);transition:padding .25s ease;cursor:pointer;position:relative}
+  .post-row:last-of-type{border-bottom:1px solid var(--rule)}
+  .post-row:hover{padding-left:18px;background:linear-gradient(90deg, rgba(182,248,0,0) 0%, rgba(182,248,0,.035) 100%)}
+  .post-row .n{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--ink-mute)}
+  .post-row .t{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(22px,2.6vw,36px);line-height:1.1;letter-spacing:-.02em;color:var(--ink)}
+  .post-row .arrow{font-family:var(--mono);font-size:14px;color:var(--accent);opacity:0;transition:opacity .2s, transform .2s}
+  .post-row:hover .arrow{opacity:1;transform:translateX(4px)}
+  .post-row .c{
+    grid-column:2 / 3;
+    font-family:var(--sans);font-size:14px;line-height:1.55;color:var(--ink-mute);
+    max-height:0;overflow:hidden;opacity:0;
+    transition:max-height .4s ease, opacity .3s ease, margin-top .3s ease;
+    max-width:640px;
+  }
+  .post-row.open .c, .post-row:hover .c{max-height:120px;opacity:1;margin-top:10px}
+  .news-cta{margin-top:40px;display:inline-flex;align-items:center;gap:12px;padding:14px 18px;border:1px solid var(--rule);font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);transition:all .2s}
+  .news-cta:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+  .news-cta b{color:var(--accent);font-weight:400;margin-left:6px;transition:color .2s}
+  .news-cta:hover b{color:var(--on-accent)}
+
+  /* === Research beat === */
+  .research{background:var(--paper-2)}
+  .res-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:36px;flex-wrap:wrap;gap:18px}
+  .res-head h2{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(48px,7vw,100px);line-height:.92;letter-spacing:-.03em}
+  .paper{display:grid;grid-template-columns:120px 1fr;gap:40px;padding:32px 0;border-top:1px solid var(--rule)}
+  .paper:last-of-type{border-bottom:1px solid var(--rule)}
+  .paper .y{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--accent)}
+  .paper h4{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3vw,40px);line-height:1.1;letter-spacing:-.02em;margin-bottom:10px}
+  .paper .venue{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);margin-top:4px;margin-bottom:14px}
+  .paper details.disclose{max-width:800px;border-top:none;padding-top:0}
+  .paper details.disclose .reveal-body p{font-family:var(--sans);font-size:15px;line-height:1.6;color:var(--ink-mute);max-width:760px}
+
+  /* Footer */
+  footer{padding:120px 28px 60px;background:var(--paper)}
+  footer .portrait-row{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:end;margin-bottom:60px;padding-bottom:48px;border-bottom:1px solid var(--rule)}
+  footer .portrait{width:200px;height:200px;flex-shrink:0;position:relative}
+  footer .portrait img{width:100%;height:100%;object-fit:contain;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .4s ease}
+  footer .portrait:hover img{filter:grayscale(0%) contrast(1.02)}
+  footer .portrait-meta{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);line-height:1.9}
+  footer .portrait-meta .name{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.01em;text-transform:none;color:var(--ink);line-height:1;margin-bottom:14px;display:block}
+  footer .portrait-meta b{color:var(--ink);font-weight:500}
+  @media (max-width:680px){
+    footer .portrait-row{grid-template-columns:1fr;gap:18px}
+    footer .portrait{width:140px;height:140px}
+  }
+  footer .colossal{font-family:var(--serif);font-weight:300;font-size:clamp(80px,16vw,260px);line-height:.85;letter-spacing:-.05em;color:var(--ink)}
+  footer .colossal em{font-style:italic;color:var(--accent)}
+  footer .row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:60px;flex-wrap:wrap;gap:32px}
+  footer .links{display:flex;flex-direction:column;gap:14px}
+  footer .links a{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);transition:color .2s;display:inline-flex;align-items:center;gap:10px}
+  footer .links a:hover{color:var(--accent)}
+  footer .links a::before{content:"→";color:var(--accent)}
+  footer .meta{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);text-align:right;line-height:1.9}
+  footer .terminal{margin-top:80px;padding-top:24px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)}
+  footer .terminal .blink{color:var(--accent);animation:blink 1s steps(2) infinite}
+  @keyframes blink{50%{opacity:0}}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease, transform .9s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* Mobile menu */
+  .menu-toggle{
+    display:none;background:none;border:none;cursor:pointer;padding:6px 0;
+    font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);
+  }
+  .menu-toggle .bars{display:inline-flex;flex-direction:column;gap:4px;margin-left:10px;vertical-align:middle}
+  .menu-toggle .bars span{display:block;width:22px;height:1px;background:var(--ink);transition:transform .25s ease, opacity .2s ease}
+  body.menu-open .menu-toggle .bars span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+  body.menu-open .menu-toggle .bars span:nth-child(2){opacity:0}
+  body.menu-open .menu-toggle .bars span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+
+  .mobile-menu{
+    position:fixed;inset:0;z-index:48;
+    background:var(--paper);
+    background-image:
+      radial-gradient(800px 500px at 80% 10%, rgba(182,248,0,.10), transparent 60%),
+      radial-gradient(700px 400px at 0% 90%, rgba(255,92,43,.06), transparent 60%);
+    transform:translateY(-100%);
+    transition:transform .55s cubic-bezier(.7,0,.2,1);
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:140px 28px 40px;
+    pointer-events:none;
+  }
+  body.menu-open .mobile-menu{transform:translateY(0);pointer-events:auto}
+  .mobile-menu ol{list-style:none;display:flex;flex-direction:column;gap:6px;counter-reset:m}
+  .mobile-menu ol li{counter-increment:m;border-top:1px solid var(--rule);padding:18px 0;display:flex;align-items:baseline;gap:18px;opacity:0;transform:translateY(20px);transition:opacity .5s ease, transform .5s ease}
+  .mobile-menu ol li:last-child{border-bottom:1px solid var(--rule)}
+  body.menu-open .mobile-menu ol li{opacity:1;transform:translateY(0)}
+  body.menu-open .mobile-menu ol li:nth-child(1){transition-delay:.10s}
+  body.menu-open .mobile-menu ol li:nth-child(2){transition-delay:.16s}
+  body.menu-open .mobile-menu ol li:nth-child(3){transition-delay:.22s}
+  body.menu-open .mobile-menu ol li:nth-child(4){transition-delay:.28s}
+  body.menu-open .mobile-menu ol li:nth-child(5){transition-delay:.34s}
+  body.menu-open .mobile-menu ol li:nth-child(6){transition-delay:.40s}
+  .mobile-menu ol li::before{content:"0" counter(m);font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--accent)}
+  .mobile-menu ol li a{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(36px,9vw,64px);line-height:1;letter-spacing:-.02em;color:var(--ink);flex:1}
+  .mobile-menu ol li a em{font-style:italic}
+  .mobile-menu .footer{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .mobile-menu .footer .left{display:flex;flex-direction:column;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute)}
+  .mobile-menu .footer .left a{color:var(--ink)}
+  .mobile-menu .footer .left a:hover{color:var(--accent)}
+  .mobile-menu .footer .right{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);text-align:right;line-height:1.8}
+  .mobile-menu .footer .right b{color:var(--accent);font-weight:400}
+
+  /* === Theme-toggle wrapper (fixed, top-right) === */
+  .theme-wrap{
+    position:fixed;top:50px;right:28px;z-index:51;
+    display:inline-flex;align-items:center;
+  }
+
+  /* Theme toggle: sun/moon sliding pill */
+  .theme-toggle{
+    appearance:none;cursor:pointer;border:1px solid var(--rule);border-radius:999px;
+    background:var(--seg-bg);backdrop-filter:blur(10px);
+    width:56px;height:28px;padding:0;position:relative;
+    transition:background .25s, border-color .25s;
+  }
+  .theme-toggle:hover{border-color:var(--ink-mute)}
+  .theme-toggle .knob{
+    position:absolute;top:2px;left:2px;width:22px;height:22px;border-radius:50%;
+    background:var(--ink);transition:transform .3s cubic-bezier(.4,.2,.2,1), background .25s;
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;line-height:1;color:var(--paper);
+  }
+  html[data-theme="light"] .theme-toggle .knob{transform:translateX(28px)}
+  .theme-toggle .knob::before{content:"☾"}
+  html[data-theme="light"] .theme-toggle .knob::before{content:"☀"}
+  .theme-toggle .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+  @media (max-width:880px){ .theme-wrap{top:42px;right:auto;left:28px} }
+
+  /* === Right rail TOC (docs-style) === */
+  .rail{
+    position:fixed;right:28px;top:240px;z-index:40;
+    display:flex;flex-direction:column;gap:10px;
+    width:180px;
+  }
+  .rail .label{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:6px}
+  .rail a{
+    display:flex;align-items:center;gap:10px;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-mute);padding:6px 0;
+    border-left:1px solid var(--rule);padding-left:14px;margin-left:2px;
+    transition:color .2s, border-color .2s;
+  }
+  .rail a .n{color:var(--ink-mute);font-size:9.5px;min-width:28px}
+  .rail a:hover{color:var(--ink);border-left-color:var(--ink-mute)}
+  .rail a.active{color:var(--accent);border-left-color:var(--accent)}
+  .rail a.active .n{color:var(--accent)}
+  @media (max-width:1340px){ .rail{display:none} }
+
+  /* === Terminal-style section headers === */
+  .cmd-head{
+    font-family:var(--mono);font-size:12px;letter-spacing:.1em;
+    color:var(--ink-mute);margin-bottom:28px;display:flex;align-items:center;gap:12px;
+    padding:10px 14px;border:1px solid var(--rule);border-radius:3px;
+    background:rgba(255,255,255,.012);max-width:fit-content;
+  }
+  .cmd-head .dollar{color:var(--accent)}
+  .cmd-head .file{color:var(--ink);text-transform:none;letter-spacing:.02em}
+  .cmd-head .link{color:var(--ink-mute);text-decoration:none;border:1px solid transparent;padding:2px 6px;border-radius:2px;cursor:pointer;transition:color .2s, border-color .2s, background .2s}
+  .cmd-head .link:hover{color:var(--accent);border-color:var(--rule)}
+  .cmd-head .link.copied{color:var(--on-accent);background:var(--accent);border-color:var(--accent)}
+
+  /* === Notebook cell for project (In / Out) === */
+  .project{position:relative}
+  .project .cell-label{
+    font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:6px;display:block;
+  }
+  .project .cell-label.out{color:var(--accent-2)}
+
+  /* Responsive */
+  @media (max-width:880px){
+    nav.bar{padding:18px 28px}
+    nav.bar ul{display:none}
+    .menu-toggle{display:inline-flex;align-items:center}
+    .project{grid-template-columns:1fr;gap:18px}
+    .post-row{grid-template-columns:50px 1fr 24px;gap:14px}
+    .post-row .c{grid-column:1 / -1}
+    .paper{grid-template-columns:1fr;gap:14px}
+  }
+  @media (min-width:881px){
+    .mobile-menu{display:none}
+  }
+</style>
+
+<!-- Theme bootstrap: runs before body renders to prevent flash-of-wrong-theme -->
+<script>
+(function(){
+  try{
+    var stored = localStorage.getItem('theme');
+    var theme;
+    if(stored === 'light' || stored === 'dark'){
+      theme = stored;
+    } else {
+      theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+    }
+    document.documentElement.setAttribute('data-theme', theme);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if(meta) meta.setAttribute('content', theme === 'light' ? '#EDEDED' : '#0B0B0C');
+  }catch(e){
+    document.documentElement.setAttribute('data-theme','dark');
+  }
+})();
+</script>
+</head>
+<body>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Now shipping <b>agentfootprint</b> · context engineering, abstracted</span><span>—</span>
+    <span><b>FootPrint v1</b> · the flowchart pattern for backend code · 320+ subscribers</span><span>—</span>
+    <span>Accepted at <b>HCII 2026</b></span><span>—</span>
+    <span>Senior Engineer @ AWS</span><span>—</span>
+    <span>PhD CS · UMass Lowell</span><span>—</span>
+    <span>Now shipping <b>agentfootprint</b> · context engineering, abstracted</span><span>—</span>
+    <span><b>FootPrint v1</b> · the flowchart pattern for backend code · 320+ subscribers</span><span>—</span>
+    <span>Accepted at <b>HCII 2026</b></span><span>—</span>
+    <span>Senior Engineer @ AWS</span><span>—</span>
+    <span>PhD CS · UMass Lowell</span><span>—</span>
+  </div>
+</div>
+
+<nav class="bar">
+  <div class="brand">Sanjay Krishna <b>//</b> Anbalagan</div>
+  <ul>
+    <li><a href="#manifesto">Manifesto</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#contact" class="cta">Get in touch ↗</a></li>
+  </ul>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span id="menuLabel">Menu</span>
+    <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+  </button>
+</nav>
+
+<div class="theme-wrap">
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">
+    <span class="knob" aria-hidden="true"></span>
+    <span class="sr">Toggle theme</span>
+  </button>
+</div>
+
+<aside class="rail" aria-label="On this page">
+  <div class="label">On this page</div>
+  <a href="#manifesto" data-rail="manifesto"><span class="n">§ 01</span> Manifesto</a>
+  <a href="#about" data-rail="about"><span class="n">§ 02</span> About</a>
+  <a href="#work" data-rail="work"><span class="n">§ 03</span> Work</a>
+  <a href="#writing" data-rail="writing"><span class="n">§ 04</span> Writing</a>
+  <a href="#research" data-rail="research"><span class="n">§ 05</span> Research</a>
+</aside>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <ol>
+    <li><a href="#manifesto" data-nav>Manifesto</a></li>
+    <li><a href="#about" data-nav>About</a></li>
+    <li><a href="#work" data-nav>Work</a></li>
+    <li><a href="#writing" data-nav><em>Writing</em></a></li>
+    <li><a href="#research" data-nav>Research</a></li>
+    <li><a href="#contact" data-nav style="color:var(--accent)">Get in touch ↗</a></li>
+  </ol>
+  <div class="footer">
+    <div class="left">
+      <a href="https://www.linkedin.com/in/sanjay-krishna-anbalagan/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://medium.com/@sanjay1909" target="_blank" rel="noopener">Medium ↗</a>
+      <a href="https://github.com/sanjay1909" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="right">
+      <div><b>2026</b></div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ============ HERO — attention hook is the live trace ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="meta-row">
+      <div class="left">
+        <div class="eyebrow">Sanjay Krishna Anbalagan</div>
+        <div class="mono" style="margin-top:12px">A portfolio in three acts: build · write · research</div>
+      </div>
+      <div class="stack">
+        <div><b>2026</b></div>
+        <div>SR. ENGINEER &nbsp;·&nbsp; <b>AWS</b></div>
+        <div>PHD CS &nbsp;·&nbsp; <b>UMASS LOWELL</b></div>
+      </div>
+    </div>
+
+    <div class="headline-row">
+      <h1>
+        <span class="display-roman">I make</span><br/>
+        <em class="display">complex systems</em><br/>
+        <span class="accent">legible.</span>
+      </h1>
+      <p class="lede" style="max-width:420px">
+        Ten years on a single problem — making the internal state of complex systems readable to whoever needs to understand them. First humans. <em style="font-family:var(--serif);font-style:italic">Now AI.</em>
+      </p>
+    </div>
+
+    <!-- LIVE TRACE: the attention hook -->
+    <div class="trace-card" aria-label="Live FootPrint trace demonstration">
+      <div class="trace-head">
+        <div class="left">
+          <span class="rec" aria-hidden="true"></span>
+          <span class="label">live trace · <b>footprint v1</b></span>
+        </div>
+        <div class="right">causal · auditable · <b>AI-readable</b></div>
+      </div>
+      <div class="trace-prompt" aria-live="polite">
+        <span class="q">›</span><span class="typed" id="tracePrompt"></span><span class="caret" id="traceCaret"></span>
+      </div>
+      <svg class="trace-svg" viewBox="0 0 1200 210" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <!-- edges -->
+        <path id="edge1" class="edge" d="M 160 100 C 260 100, 300 100, 400 100" />
+        <path id="edge2" class="edge" d="M 520 100 C 620 100, 660 100, 760 100" />
+        <path id="edge3" class="edge" d="M 880 100 C 980 100, 1020 100, 1080 100" />
+
+        <!-- nodes -->
+        <g class="node" id="n1">
+          <circle cx="100" cy="100" r="50"/>
+          <text x="100" y="96">Query</text>
+          <text class="sub" x="100" y="114">input</text>
+          <text class="sub" x="100" y="176">user · step 1</text>
+        </g>
+        <g class="node" id="n2">
+          <circle cx="460" cy="100" r="50"/>
+          <text x="460" y="96">RAG</text>
+          <text class="sub" x="460" y="114">retrieve</text>
+          <text class="sub" x="460" y="176">policy corpus</text>
+        </g>
+        <g class="node" id="n3">
+          <circle cx="820" cy="100" r="50"/>
+          <text x="820" y="96">Tool</text>
+          <text class="sub" x="820" y="114">call</text>
+          <text class="sub" x="820" y="176">coverage.check()</text>
+        </g>
+        <g class="node" id="n4">
+          <circle cx="1140" cy="100" r="50"/>
+          <text x="1140" y="96">Trace</text>
+          <text class="sub" x="1140" y="114">explain</text>
+          <text class="sub" x="1140" y="176">causal graph</text>
+        </g>
+
+        <!-- evidence badges -->
+        <g class="badge" id="b1" transform="translate(420 34)">
+          <rect width="80" height="20" rx="3" ry="3"/>
+          <text x="40" y="14">§ 4.2</text>
+        </g>
+        <g class="badge" id="b2" transform="translate(780 34)">
+          <rect width="84" height="20" rx="3" ry="3"/>
+          <text x="42" y="14">TOOL ✓</text>
+        </g>
+        <g class="badge" id="b3" transform="translate(1100 34)">
+          <rect width="80" height="20" rx="3" ry="3"/>
+          <text x="40" y="14">AUDIT</text>
+        </g>
+
+        <!-- packets -->
+        <circle class="packet" id="pkt1" r="5" cx="-10" cy="-10"/>
+        <circle class="packet" id="pkt2" r="5" cx="-10" cy="-10"/>
+        <circle class="packet" id="pkt3" r="5" cx="-10" cy="-10"/>
+      </svg>
+      <div class="trace-legend">
+        <div>every decision → <b>traceable</b> · every answer → <b>citable</b></div>
+        <div><a href="#work">see how it works ↓</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ § 01 MANIFESTO — one sentence visible, argument hidden ============ -->
+<section id="manifesto" class="beat manifesto">
+  <div class="wrap">
+    <div class="cmd-head reveal" data-perma="manifesto">
+      <span class="dollar">$</span>
+      <span>cat</span>
+      <span class="file">./manifesto.md</span>
+      <span style="margin-left:auto">§ 01</span>
+      <span class="link" data-copy="manifesto">↘ permalink</span>
+    </div>
+    <h2 class="reveal">Most enterprise AI ships <em>hallucinating</em>, opaque, and untestable. <br/>It doesn't have to.</h2>
+    <p class="sub reveal">A working thesis, restated continuously through code and writing.</p>
+    <details class="disclose reveal">
+      <summary>Read the argument</summary>
+      <div class="reveal-body">
+        <p>I build the developer abstractions that make production generative-AI applications explainable by construction. Not after the fact. Not by adding a logging layer. By making the system itself self-describing.</p>
+        <p>If a backend can produce a causal trace of every decision it made, then a model can reason over it, an engineer can debug it, and a regulator can audit it. The same artifact serves all three readers.</p>
+        <p class="cite">— Explainability isn't a feature. It's a property of the substrate.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ ABOUT — cartoon evolution of LLMs and my apps alongside ============ -->
+<section id="about" class="beat about">
+  <div class="wrap">
+    <div class="cmd-head reveal" data-perma="about">
+      <span class="dollar">$</span>
+      <span>whoami</span>
+      <span class="file">--story</span>
+      <span style="margin-left:auto">§ 02</span>
+      <span class="link" data-copy="about">↘ permalink</span>
+    </div>
+    <h2 class="reveal">I've been here <em>since the baby days.</em></h2>
+    <p class="sub reveal">A decade shipping apps on top of language models — from the era when an LLM forgot its own middle sentence, to the era when it runs a tool graph with a boss. FootPrint and agentfootprint are the <em>shape of what that apprenticeship taught me.</em></p>
+
+    <!-- GROW STAGE — single character that actually grows up -->
+    <div class="grow-stage reveal" id="journey" aria-label="One character growing from baby LLM to shipping professional across four eras">
+      <!-- LEFT: era copy + typewriter bubble -->
+      <div class="grow-text">
+        <div class="grow-era"><b id="growYear">2020</b> &nbsp;·&nbsp; <span id="growEra">Highlight era</span></div>
+        <div class="grow-bubble" id="growBubble">
+          <span id="growText"></span><span class="caret" aria-hidden="true"></span>
+        </div>
+        <div class="grow-tag">What the app was doing: <span class="swap" id="growDoing">wrapping the world in tags</span></div>
+      </div>
+
+      <!-- RIGHT: SVG actor on a shared ground -->
+      <div class="grow-actor">
+        <svg class="grow-svg" viewBox="0 0 360 380" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+          <!-- chalk-roughen filter: distorts edges so strokes read as chalk -->
+          <defs>
+            <filter id="chalk" x="-5%" y="-5%" width="110%" height="110%">
+              <feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" seed="4" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.1"/>
+            </filter>
+          </defs>
+          <g filter="url(#chalk)">
+          <!-- shared ground line + ticks -->
+          <line class="ground" x1="20" y1="346" x2="340" y2="346"/>
+          <line class="ground-tick" x1="60"  y1="346" x2="60"  y2="352"/>
+          <line class="ground-tick" x1="140" y1="346" x2="140" y2="352"/>
+          <line class="ground-tick" x1="220" y1="346" x2="220" y2="352"/>
+          <line class="ground-tick" x1="300" y1="346" x2="300" y2="352"/>
+          <text class="ground-label" x="20"  y="370">2020</text>
+          <text class="ground-label" x="320" y="370" text-anchor="end">2024 →</text>
+
+          <!-- ====== BABY — era 0 — short, round, sits low ====== -->
+          <g class="figure" data-era="0">
+            <ellipse class="halo" cx="180" cy="290" rx="86" ry="74"/>
+            <g class="wobble">
+              <!-- little feet poking out -->
+              <ellipse class="acc" cx="162" cy="340" rx="14" ry="6"/>
+              <ellipse class="acc" cx="198" cy="340" rx="14" ry="6"/>
+              <!-- round sitting body -->
+              <ellipse class="body" cx="180" cy="312" rx="44" ry="32"/>
+              <!-- bib -->
+              <path class="acc-line" d="M146 298 Q180 322 214 298 L210 312 Q180 326 150 312 Z"/>
+              <text x="168" y="314" font-family="monospace" font-size="12" class="acc">&lt;/&gt;</text>
+              <!-- short arms -->
+              <path class="acc-line" d="M140 306 Q118 312 116 322"/>
+              <path class="acc-line" d="M220 306 Q242 312 244 322"/>
+              <!-- giant head -->
+              <ellipse class="skin" cx="180" cy="238" rx="56" ry="58"/>
+              <!-- ear tufts -->
+              <path class="acc-line" d="M156 184 Q160 170 170 176"/>
+              <path class="acc-line" d="M200 182 Q210 170 212 184"/>
+              <!-- eyes -->
+              <circle class="eye" cx="160" cy="238" r="5.5"/>
+              <circle class="eye" cx="200" cy="238" r="5.5"/>
+              <!-- cheek blush -->
+              <circle class="acc" cx="138" cy="258" r="4"/>
+              <circle class="acc" cx="222" cy="258" r="4"/>
+              <!-- tooth smile -->
+              <path class="mouth" d="M160 268 Q180 282 200 268"/>
+              <rect class="acc" x="175" y="273" width="10" height="7" rx="1"/>
+            </g>
+          </g>
+
+          <!-- ====== TODDLER — era 1 — stands up, wobbly, holds blocks ====== -->
+          <g class="figure" data-era="1">
+            <ellipse class="halo" cx="180" cy="260" rx="90" ry="100"/>
+            <g class="wobble">
+              <!-- legs -->
+              <path class="acc-line" d="M166 344 L166 298"/>
+              <path class="acc-line" d="M194 344 L194 298"/>
+              <ellipse class="acc" cx="160" cy="344" rx="12" ry="5"/>
+              <ellipse class="acc" cx="200" cy="344" rx="12" ry="5"/>
+              <!-- body (chubby rounded square) -->
+              <path class="body" d="M140 252 Q140 236 156 236 L204 236 Q220 236 220 252 L220 296 Q220 306 210 306 L150 306 Q140 306 140 296 Z"/>
+              <!-- arm holding a block -->
+              <path class="acc-line" d="M140 268 Q122 276 118 294"/>
+              <path class="acc-line" d="M220 268 Q240 272 248 286"/>
+              <!-- stacked blocks (thought steps: 1 → 2 → 3) -->
+              <g transform="translate(252 260)">
+                <rect class="acc-line" width="18" height="18" x="0" y="0"/>
+                <rect class="acc-line" width="18" height="18" x="0" y="-20"/>
+                <rect class="acc-line" width="18" height="18" x="0" y="-40"/>
+                <text x="6"  y="14"  font-family="monospace" font-size="10" class="acc">1</text>
+                <text x="6"  y="-6"  font-family="monospace" font-size="10" class="acc">2</text>
+                <text x="6"  y="-26" font-family="monospace" font-size="10" class="acc">3</text>
+              </g>
+              <!-- head -->
+              <ellipse class="skin" cx="180" cy="198" rx="44" ry="46"/>
+              <!-- hair tuft -->
+              <path class="acc" d="M162 158 Q180 142 200 158 Q190 152 180 156 Q170 152 162 158 Z"/>
+              <!-- eyes -->
+              <circle class="eye" cx="164" cy="198" r="4"/>
+              <circle class="eye" cx="196" cy="198" r="4"/>
+              <!-- raised brow -->
+              <path class="acc-line" d="M156 185 Q164 180 172 185"/>
+              <path class="acc-line" d="M188 185 Q196 180 204 185"/>
+              <!-- "oh!" mouth -->
+              <ellipse class="mouth" cx="180" cy="222" rx="6" ry="8" style="fill:rgba(255,92,43,.18)"/>
+            </g>
+          </g>
+
+          <!-- ====== STUDENT — era 2 — taller, cap, glasses, tree-of-thought branch ====== -->
+          <g class="figure" data-era="2">
+            <ellipse class="halo" cx="180" cy="220" rx="108" ry="130"/>
+            <g class="wobble">
+              <!-- legs (longer) -->
+              <path class="acc-line" d="M166 344 L166 266"/>
+              <path class="acc-line" d="M194 344 L194 266"/>
+              <ellipse class="acc" cx="160" cy="344" rx="12" ry="5"/>
+              <ellipse class="acc" cx="200" cy="344" rx="12" ry="5"/>
+              <!-- hoodie/sweatshirt body -->
+              <path class="body" d="M134 216 Q134 200 152 200 L208 200 Q226 200 226 216 L226 272 Q226 282 216 282 L144 282 Q134 282 134 272 Z"/>
+              <!-- hoodie pocket line -->
+              <path class="acc-line" d="M150 248 Q180 258 210 248"/>
+              <!-- arms -->
+              <path class="acc-line" d="M134 224 Q112 248 110 270"/>
+              <path class="acc-line" d="M226 224 Q250 242 256 266"/>
+              <!-- papers held in hand with tree of candidates -->
+              <g transform="translate(246 250)">
+                <rect class="acc-line" width="34" height="40" rx="2"/>
+                <line x1="8"  y1="10" x2="16" y2="10" class="acc-line"/>
+                <line x1="8"  y1="20" x2="26" y2="20" class="acc-line"/>
+                <line x1="8"  y1="30" x2="20" y2="30" class="acc-line"/>
+              </g>
+              <!-- head -->
+              <ellipse class="skin" cx="180" cy="162" rx="40" ry="42"/>
+              <!-- graduation cap -->
+              <path class="acc" d="M134 128 L180 112 L226 128 L180 144 Z"/>
+              <path class="acc-line" d="M216 130 L216 146 Q216 152 210 152"/>
+              <circle class="acc" cx="210" cy="152" r="2.2"/>
+              <!-- glasses -->
+              <rect class="acc-line" x="156" y="158" width="16" height="12" rx="2"/>
+              <rect class="acc-line" x="188" y="158" width="16" height="12" rx="2"/>
+              <line x1="172" y1="164" x2="188" y2="164" class="acc-line"/>
+              <circle class="eye" cx="164" cy="164" r="2.5"/>
+              <circle class="eye" cx="196" cy="164" r="2.5"/>
+              <!-- smirk -->
+              <path class="mouth" d="M166 188 Q180 194 194 188"/>
+              <!-- tree of thought branching out to the side -->
+              <g transform="translate(96 150)">
+                <circle class="acc" r="3"/>
+                <line x1="0" y1="0" x2="-20" y2="-16" class="acc-line"/>
+                <line x1="0" y1="0" x2="-22" y2="0"  class="acc-line"/>
+                <line x1="0" y1="0" x2="-20" y2="16" class="acc-line"/>
+                <circle class="acc" cx="-22" cy="-16" r="2.2"/>
+                <circle class="acc" cx="-24" cy="0"  r="2.2"/>
+                <circle class="acc" cx="-22" cy="16" r="2.2"/>
+              </g>
+            </g>
+          </g>
+
+          <!-- ====== PRO — era 3 — tall, glasses, tie, ID badge, tool graph in hand ====== -->
+          <g class="figure" data-era="3">
+            <ellipse class="halo" cx="180" cy="200" rx="124" ry="154"/>
+            <g class="wobble">
+              <!-- legs (full length) -->
+              <path class="acc-line" d="M166 344 L166 240"/>
+              <path class="acc-line" d="M194 344 L194 240"/>
+              <ellipse class="acc" cx="160" cy="344" rx="13" ry="5"/>
+              <ellipse class="acc" cx="200" cy="344" rx="13" ry="5"/>
+              <!-- blazer/shirt -->
+              <path class="body" d="M128 196 Q128 180 146 180 L214 180 Q232 180 232 196 L232 258 Q232 268 222 268 L138 268 Q128 268 128 258 Z"/>
+              <!-- lapels + tie -->
+              <path class="acc-line" d="M158 180 L180 204 L202 180"/>
+              <path class="acc" d="M174 204 L186 204 L184 234 L176 234 Z"/>
+              <!-- arms -->
+              <path class="acc-line" d="M128 202 Q108 232 106 260"/>
+              <path class="acc-line" d="M232 202 Q254 230 258 258"/>
+              <!-- tool graph in hand (agent flow) -->
+              <g transform="translate(246 248)">
+                <circle class="acc" cx="0"  cy="0"  r="3"/>
+                <circle class="acc" cx="18" cy="-10" r="3"/>
+                <circle class="acc" cx="18" cy="10"  r="3"/>
+                <circle class="acc" cx="36" cy="0"  r="3"/>
+                <line class="acc-line" x1="3"  y1="0"  x2="15" y2="-10"/>
+                <line class="acc-line" x1="3"  y1="0"  x2="15" y2="10"/>
+                <line class="acc-line" x1="21" y1="-10" x2="33" y2="0"/>
+                <line class="acc-line" x1="21" y1="10"  x2="33" y2="0"/>
+              </g>
+              <!-- id badge -->
+              <path class="acc-line" d="M180 180 L170 214"/>
+              <rect class="acc-line" x="154" y="214" width="32" height="20" rx="2"/>
+              <text x="158" y="228" font-family="monospace" font-size="9" class="acc" style="fill:var(--accent)">v1</text>
+              <!-- head -->
+              <ellipse class="skin" cx="180" cy="140" rx="38" ry="40"/>
+              <!-- glasses (round frames) -->
+              <circle class="acc-line" cx="164" cy="140" r="8"/>
+              <circle class="acc-line" cx="196" cy="140" r="8"/>
+              <line class="acc-line" x1="172" y1="140" x2="188" y2="140"/>
+              <circle class="eye" cx="164" cy="140" r="2.2"/>
+              <circle class="eye" cx="196" cy="140" r="2.2"/>
+              <!-- brow + confident smile -->
+              <path class="acc-line" d="M156 124 Q164 120 172 124"/>
+              <path class="acc-line" d="M188 124 Q196 120 204 124"/>
+              <path class="mouth" d="M166 162 Q180 170 194 162"/>
+            </g>
+          </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- JOURNEY TRACK — timeline (click to jump) -->
+    <div class="journey-track reveal" id="journeyTrack">
+      <div class="rail"><div class="fill" id="journeyFill"></div></div>
+      <button class="pin" data-pin="0" style="left:12.5%" aria-label="Jump to 2020, Baby era"><span class="yr"><b>'20</b>baby</span></button>
+      <button class="pin" data-pin="1" style="left:37.5%" aria-label="Jump to 2022, Toddler era"><span class="yr"><b>'22</b>toddler</span></button>
+      <button class="pin" data-pin="2" style="left:62.5%" aria-label="Jump to 2023, Student era"><span class="yr"><b>'23</b>student</span></button>
+      <button class="pin" data-pin="3" style="left:87.5%" aria-label="Jump to 2024+, Pro era"><span class="yr"><b>'24+</b>pro</span></button>
+    </div>
+
+    <div class="lesson-row reveal">
+      <details class="disclose">
+        <summary>The lesson — why I built FootPrint and agentfootprint</summary>
+        <div class="reveal-body">
+          <p>I raised these apps the way you raise a kid. In 2020 the LLM was a baby — I had to <em style="font-family:var(--serif);font-style:italic">wrap</em> every important fact in <code style="font-family:var(--mono);color:var(--accent)">&lt;highlight&gt;</code> tags and pray it didn't wander off mid-sentence. In 2022 I was teaching it to count — <em>think step by step</em>, one rung at a time. In 2023 I was reviewing its homework — three candidate plans, score each, pick the best. By 2024 I wasn't parenting anymore. I was onboarding a junior employee: here's the tool belt, here's the graph of when to use what, <em>emit a trace so your work can be audited.</em></p>
+          <p>Every prompt hack we invented to scaffold the model — highlight tags, step-by-step, tree-of-thought, ReAct, routing — became built-in instinct in the next generation of weights. The <em>prompts</em> died. The <em>shape</em> they were compensating for did not. That shape is a graph of decisions, each with a cause. The model grew into it. <em>The apps still have to carry it.</em></p>
+          <p>FootPrint is that graph, honest — directed, causal, inspectable. agentfootprint is what happens when you let the graph host an LLM as one of its operators. Both are the condensed form of what a decade of raising these babies taught me: <em style="font-family:var(--serif);font-style:italic">if you can't trace the reasoning, you haven't built the system yet.</em></p>
+          <p class="cite" style="margin-top:18px"><a href="https://medium.com/data-science-collective/llms-from-baby-bots-to-expert-employees-e99aa5553ed6" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px dashed var(--accent)">Read the full essay on Medium ↗</a></p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ § 03 WORK — project cards, specs collapsed ============ -->
+<section id="work" class="beat">
+  <div class="wrap">
+    <div class="cmd-head reveal" data-perma="work">
+      <span class="dollar">$</span>
+      <span>ls</span>
+      <span class="file">./work/</span>
+      <span style="margin-left:auto">§ 03</span>
+      <span class="link" data-copy="work">↘ permalink</span>
+    </div>
+    <div class="projects-head" style="margin-top:14px">
+      <h2 class="reveal">Work <em>— shipped.</em></h2>
+      <div class="count reveal">03 projects · open source · TypeScript</div>
+    </div>
+
+    <article class="project reveal">
+      <div>
+        <span class="cell-label">In[1] — intent</span>
+        <div class="id">No. 01 / Open source · npm</div>
+        <h3>FootPrint <em>·</em></h3>
+        <h3 style="font-style:italic;color:var(--ink-mute);font-size:.6em;margin-top:4px">the flowchart pattern for backend code</h3>
+        <div class="tag">
+          <span>TypeScript</span>·<span>★ 7</span>·<span>⑂ 2</span>·<b>v1</b>
+        </div>
+        <div class="install">$ npm install footprintjs</div>
+      </div>
+      <div>
+        <span class="cell-label out">Out[1] — artifact</span>
+        <p class="desc">Business logic becomes a directed graph that produces causal traces an LLM can reason over. Self-explainable systems by construction — no telemetry retrofit required. <em style="font-family:var(--serif);font-style:italic">Variable-first backward slicing</em> walks any value back to the decision that produced it.</p>
+        <details class="disclose">
+          <summary>See the spec</summary>
+          <div class="reveal-body">
+            <ul>
+              <li><b>7 flow patterns</b> · transactional state · PII redaction</li>
+              <li><b>Auto-generated</b> tool descriptions for agents</li>
+              <li><b>6 modular libraries</b> — memory · builder · scope · engine · runner · contract</li>
+              <li><b>Parallel fork/join</b> · streaming · patch-based state</li>
+              <li><b>Time-travel replay</b> across the entire execution graph</li>
+            </ul>
+            <p class="cite" style="margin-top:18px"><a href="https://github.com/footprintjs/footPrint#readme" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px dashed var(--accent)">Read on GitHub ↗</a> &nbsp;·&nbsp; <a href="https://www.npmjs.com/package/footprintjs" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">npm ↗</a></p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <article class="project reveal">
+      <div>
+        <span class="cell-label">In[2] — intent</span>
+        <div class="id">No. 02 / Open source · npm</div>
+        <h3>agentfootprint <em>·</em></h3>
+        <h3 style="font-style:italic;color:var(--ink-mute);font-size:.6em;margin-top:4px">context engineering, abstracted</h3>
+        <div class="tag">
+          <span>TypeScript</span>·<span>MIT</span>·<b>built on FootPrint</b>
+        </div>
+        <div class="install">$ npm install agentfootprint</div>
+      </div>
+      <div>
+        <span class="cell-label out">Out[2] — artifact</span>
+        <p class="desc">PyTorch's autograd abstracted gradients. React abstracted the DOM. <em style="font-family:var(--serif);font-style:italic">agentfootprint is that move applied to context engineering</em> — declare what content lands in which slot of an LLM call and when. The framework owns the iteration loop, so the typed-event stream and replayable checkpoints come for free — and <em style="font-family:var(--serif);font-style:italic">context-bug localization</em> pinpoints which injected context caused a bad answer.</p>
+        <details class="disclose">
+          <summary>See the spec</summary>
+          <div class="reveal-body">
+            <ul>
+              <li><b>One mental model</b> — 3 slots (<code style="font-family:var(--mono);color:var(--accent)">system</code> · <code style="font-family:var(--mono);color:var(--accent)">messages</code> · <code style="font-family:var(--mono);color:var(--accent)">tools</code>) × 4 triggers (<i>always · rule · on-tool-return · llm-activated</i>) × 1 Injection primitive. Every named pattern (Skills, RAG, Reflexion, ToT) reduces to this.</li>
+              <li><b>The trace is a cache of the agent's thinking</b> — Causal Memory persists decision evidence as JSON, so audit answers, cheap-model follow-ups, and SFT/DPO training trajectories all read from one recording.</li>
+              <li><b>2 primitives + 4 compositions</b> — <code style="font-family:var(--mono);color:var(--accent)">LLMCall</code>, <code style="font-family:var(--mono);color:var(--accent)">Agent</code>; <code style="font-family:var(--mono);color:var(--accent)">Sequence</code>, <code style="font-family:var(--mono);color:var(--accent)">Parallel</code>, <code style="font-family:var(--mono);color:var(--accent)">Conditional</code>, <code style="font-family:var(--mono);color:var(--accent)">Loop</code></li>
+              <li><b>6 providers · MCP · 47 typed events across 13 domains</b> — Anthropic · OpenAI · Bedrock · Ollama · Browser · Mock; pause/resume on a different server hours later via JSON-serializable checkpoints</li>
+              <li><b>Mocks first, prod second</b> — build the entire agent against in-memory mocks at $0 API cost, swap one boundary at a time for production</li>
+            </ul>
+            <p class="cite" style="margin-top:18px"><a href="https://github.com/footprintjs/agentfootprint#readme" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px dashed var(--accent)">Read on GitHub ↗</a> &nbsp;·&nbsp; <a href="https://www.npmjs.com/package/agentfootprint" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">npm ↗</a></p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <article class="project reveal">
+      <div>
+        <span class="cell-label">In[3] — intent</span>
+        <div class="id">No. 03 / Open source · npm</div>
+        <h3>hcifootprint <em>·</em></h3>
+        <h3 style="font-style:italic;color:var(--ink-mute);font-size:.6em;margin-top:4px">the agent-computer interface — apps agents can operate</h3>
+        <div class="tag">
+          <span>TypeScript</span>·<span>MIT</span>·<b>v0.2 · served over MCP</b>
+        </div>
+        <div class="install">$ npm install hcifootprint</div>
+      </div>
+      <div>
+        <span class="cell-label out">Out[3] — artifact</span>
+        <p class="desc">The same legibility, pointed at the interaction surface. hcifootprint turns a web app into a typed, traversable <em style="font-family:var(--serif);font-style:italic">skill graph</em> an LLM agent plans over and acts on — served over MCP, so the agent operates the app <em style="font-family:var(--serif);font-style:italic">as the signed-in user</em>, through the app's own handlers. Not screenshots and clicks — the app's real surface, made legible.</p>
+        <details class="disclose">
+          <summary>See the spec</summary>
+          <div class="reveal-body">
+            <ul>
+              <li><b>Agent-computer interface (ACI)</b> — a typed skill graph the agent plans over and acts on, calling the app's own handlers as the signed-in user</li>
+              <li><b>Served over MCP</b> — any MCP client can drive the app; <code style="font-family:var(--mono);color:var(--accent)">llms.txt</code> shipped so agent consumers discover the surface</li>
+              <li><b>Read-only guide mode</b> — the low-risk adoption rung; add write actions when you're ready</li>
+              <li><b>requiredStateKeys() projector API</b> · 281 tests</li>
+              <li><b>Dress-shop demo</b> — a vanilla e-commerce app becomes agent-operable in three commits</li>
+            </ul>
+            <p class="cite" style="margin-top:18px"><a href="https://footprintjs.github.io/hcifootprint/" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px dashed var(--accent)">Read the docs ↗</a> &nbsp;·&nbsp; <a href="https://www.npmjs.com/package/hcifootprint" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">npm ↗</a> &nbsp;·&nbsp; <a href="https://youtu.be/vx5amF94ipI" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">37s demo ↗</a> &nbsp;·&nbsp; <a href="https://github.com/footprintjs/hcifootprint-demo" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">demo source ↗</a></p>
+          </div>
+        </details>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ § 04 WRITING — titles only, descriptions on hover/tap ============ -->
+<section id="writing" class="beat">
+  <div class="wrap">
+    <div class="cmd-head reveal" data-perma="writing">
+      <span class="dollar">$</span>
+      <span>cat</span>
+      <span class="file">./writing/*.md</span>
+      <span style="margin-left:auto">§ 04</span>
+      <span class="link" data-copy="writing">↘ permalink</span>
+    </div>
+    <div class="writing-head" style="margin-top:14px">
+      <h2 class="reveal">Writing <em>— in public.</em></h2>
+      <div class="mono reveal">Enterprise Gen AI Application · 320+ subscribers</div>
+    </div>
+
+    <div class="post-row reveal" data-row tabindex="0" role="button" aria-expanded="false">
+      <div class="n">№ 01</div>
+      <div class="t">From Supply-Driven to Demand-Driven</div>
+      <div class="arrow">↗</div>
+      <div class="c">The chatbot should drive the UX, not assist it. A re-framing of how conversational interfaces should orchestrate the surface area of an enterprise app.</div>
+    </div>
+
+    <div class="post-row reveal" data-row tabindex="0" role="button" aria-expanded="false">
+      <div class="n">№ 02</div>
+      <div class="t">Make Search the First Tool</div>
+      <div class="arrow">↗</div>
+      <div class="c">A protocol — STAY / SWITCH plus a Focus Token — for keeping retrieval interactions coherent across multi-turn agent sessions.</div>
+    </div>
+
+    <div class="post-row reveal" data-row tabindex="0" role="button" aria-expanded="false">
+      <div class="n">№ 03</div>
+      <div class="t">The Flowchart Pattern</div>
+      <div class="arrow">↗</div>
+      <div class="c">Why backend code should be designed as a graph the model can read. The thesis behind FootPrint, written for an enterprise audience.</div>
+    </div>
+
+    <a class="news-cta reveal" href="https://www.linkedin.com/in/sanjay-krishna-anbalagan/" target="_blank" rel="noopener">Subscribe to the newsletter <b>↗</b></a>
+  </div>
+</section>
+
+<!-- ============ § 05 RESEARCH — titles visible, abstracts collapsed ============ -->
+<section id="research" class="beat research">
+  <div class="wrap">
+    <div class="cmd-head reveal" data-perma="research">
+      <span class="dollar">$</span>
+      <span>cat</span>
+      <span class="file">./research/*.bib</span>
+      <span style="margin-left:auto">§ 05</span>
+      <span class="link" data-copy="research">↘ permalink</span>
+    </div>
+    <div class="res-head" style="margin-top:14px">
+      <h2 class="reveal">Research</h2>
+      <div class="mono reveal">Peer-reviewed · Springer · HCI International</div>
+    </div>
+
+    <article class="paper reveal">
+      <div class="y">2025</div>
+      <div>
+        <h4>Bridging UI Design and Chatbot Interactions</h4>
+        <div class="venue">HCI International 2025 · Springer Proceedings</div>
+        <details class="disclose">
+          <summary>Read the abstract</summary>
+          <div class="reveal-body">
+            <p>Applying form-based interaction principles — Submit/Reset → STAY/SWITCH — to the design of conversational agents. A bridge between fifty years of GUI affordances and the new conversational surface.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <article class="paper reveal">
+      <div class="y">2026</div>
+      <div>
+        <h4>Visible Reasoning</h4>
+        <div class="venue">Accepted · HCI International 2026 · Springer Proceedings</div>
+        <details class="disclose">
+          <summary>Read the abstract</summary>
+          <div class="reveal-body">
+            <p>A framework for deterministic LLM agent transparency — proposed as a third paradigm distinct from chain-of-thought and LLM-as-judge. The academic backbone of agentfootprint.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="portrait-row reveal">
+      <div class="portrait">
+        <img src="./portrait.png" alt="Portrait of Sanjay Krishna Anbalagan" width="180" height="180" loading="lazy" />
+      </div>
+      <div class="portrait-meta">
+        <span class="name">Sanjay Krishna Anbalagan</span>
+        <div>Senior Engineer · <b>AWS</b></div>
+        <div>PhD CS · <b>UMass Lowell</b></div>
+      </div>
+    </div>
+
+    <div class="colossal reveal">Let's<br/>build<br/><em>something</em><br/>legible.</div>
+
+    <div class="row">
+      <div class="links">
+        <a href="https://www.linkedin.com/in/sanjay-krishna-anbalagan/" target="_blank" rel="noopener">LinkedIn — sanjay-krishna-anbalagan</a>
+        <a href="https://medium.com/@sanjay1909" target="_blank" rel="noopener">Medium — @sanjay1909</a>
+        <a href="https://github.com/sanjay1909" target="_blank" rel="noopener">GitHub — sanjay1909</a>
+        <a href="http://sanjay1909.github.io/" target="_blank" rel="noopener">Personal site — sanjay1909.github.io</a>
+        <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar — research record</a>
+      </div>
+      <div class="meta">
+        <div>Open to —</div>
+        <div style="color:var(--ink)">Speaking · Advisory</div>
+        <div style="color:var(--ink)">Collaborations on explainable AI</div>
+      </div>
+    </div>
+
+    <div class="terminal">
+      <div>$ sanjay — © 2026<span class="blink">_</span></div>
+      <div><a href="./legacy/" style="color:var(--ink-mute);text-decoration:none;border-bottom:1px dashed var(--ink-mute)">v1 portfolio (2015 archive) ↗</a> &nbsp;·&nbsp; built as a demonstration of the thesis</div>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<script>
+  // ---------- Theme toggle (light/dark, defaults to system) ----------
+  (function initTheme(){
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const meta = document.querySelector('meta[name="theme-color"]');
+    const mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: light)') : null;
+
+    function apply(theme, persist){
+      root.setAttribute('data-theme', theme);
+      if(meta) meta.setAttribute('content', theme === 'light' ? '#EDEDED' : '#0B0B0C');
+      if(btn){
+        btn.setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+        btn.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+      }
+      if(persist){ try{ localStorage.setItem('theme', theme); }catch(e){} }
+    }
+
+    // Sync the button label/state with whatever the early bootstrap applied
+    apply(root.getAttribute('data-theme') || 'dark', false);
+
+    if(btn){
+      btn.addEventListener('click', ()=>{
+        const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        apply(next, true);
+      });
+    }
+
+    // If the user hasn't explicitly chosen, track system changes live
+    if(mq && typeof mq.addEventListener === 'function'){
+      mq.addEventListener('change', (e)=>{
+        let stored = null;
+        try{ stored = localStorage.getItem('theme'); }catch(err){}
+        if(stored !== 'light' && stored !== 'dark'){
+          apply(e.matches ? 'light' : 'dark', false);
+        }
+      });
+    }
+  })();
+
+  // ---------- Right rail: active section tracking ----------
+  const railLinks = document.querySelectorAll('.rail a');
+  const beats = document.querySelectorAll('section.beat');
+  const railIo = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const id = e.target.id;
+        railLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('data-rail') === id));
+      }
+    });
+  }, {rootMargin: '-40% 0px -55% 0px', threshold: 0});
+  beats.forEach(b=>railIo.observe(b));
+
+  // ---------- Permalink copy on cmd-head ----------
+  document.querySelectorAll('.cmd-head .link').forEach(link=>{
+    link.addEventListener('click', async ()=>{
+      const id = link.getAttribute('data-copy');
+      const url = location.origin + location.pathname + '#' + id;
+      try{
+        await navigator.clipboard.writeText(url);
+        const prev = link.textContent;
+        link.classList.add('copied');
+        link.textContent = '✓ copied';
+        setTimeout(()=>{ link.classList.remove('copied'); link.textContent = prev; }, 1400);
+      }catch(e){}
+    });
+  });
+
+  // ---------- Scroll progress rail ----------
+  const progress = document.getElementById('progress');
+  function updateProgress(){
+    const h = document.documentElement;
+    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
+    progress.style.width = Math.min(100, Math.max(0, pct * 100)) + '%';
+  }
+  document.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+
+  // ---------- Scroll reveal ----------
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ---------- Smooth scroll for nav ----------
+  document.querySelectorAll('nav.bar a[href^="#"], .mobile-menu a[href^="#"], .trace-legend a[href^="#"], .rail a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const id = a.getAttribute('href');
+      if(!id || id.length<=1) return;
+      e.preventDefault();
+      const doScroll = ()=>{
+        const target = document.querySelector(id);
+        if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      };
+      if(document.body.classList.contains('menu-open')){
+        closeMenu();
+        setTimeout(doScroll, 380);
+      } else {
+        doScroll();
+      }
+    });
+  });
+
+  // ---------- Mobile menu toggle ----------
+  const toggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('mobileMenu');
+  const label = document.getElementById('menuLabel');
+  function openMenu(){
+    document.body.classList.add('menu-open');
+    document.body.style.overflow = 'hidden';
+    toggle.setAttribute('aria-expanded','true');
+    menu.setAttribute('aria-hidden','false');
+    label.textContent = 'Close';
+  }
+  function closeMenu(){
+    document.body.classList.remove('menu-open');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded','false');
+    menu.setAttribute('aria-hidden','true');
+    label.textContent = 'Menu';
+  }
+  toggle.addEventListener('click', ()=>{
+    document.body.classList.contains('menu-open') ? closeMenu() : openMenu();
+  });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && document.body.classList.contains('menu-open')) closeMenu(); });
+
+  // ---------- Subtle scramble on "legible." ----------
+  (function scramble(){
+    const el = document.querySelector('.hero h1 .accent');
+    if(!el) return;
+    const final = 'legible.';
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&@*$';
+    let frame = 0;
+    const total = 28;
+    const interval = setInterval(()=>{
+      let out = '';
+      for(let i=0;i<final.length;i++){
+        if(i < (frame/total) * final.length){
+          out += final[i];
+        } else if(final[i] === ' ' || final[i] === '.'){
+          out += final[i];
+        } else {
+          out += chars[Math.floor(Math.random()*chars.length)];
+        }
+      }
+      el.textContent = out;
+      frame++;
+      if(frame > total){ el.textContent = final; clearInterval(interval); }
+    }, 55);
+  })();
+
+  // ---------- Writing rows: tap to expand ----------
+  document.querySelectorAll('[data-row]').forEach(row=>{
+    const toggle = ()=>{
+      const wasOpen = row.classList.toggle('open');
+      row.setAttribute('aria-expanded', wasOpen ? 'true' : 'false');
+    };
+    row.addEventListener('click', toggle);
+    row.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
+  // ---------- LIVE TRACE ORCHESTRATION ----------
+  // Typewriter prompt + sequential node lighting + packets + evidence badges.
+  (function trace(){
+    const prompt = 'does the policy cover pre-existing conditions?';
+    const promptEl = document.getElementById('tracePrompt');
+    const caretEl = document.getElementById('traceCaret');
+    const n = id => document.getElementById(id);
+    const nodes = ['n1','n2','n3','n4'].map(n);
+    const badges = ['b1','b2','b3'].map(n);
+    const packets = ['pkt1','pkt2','pkt3'].map(n);
+    const edges = ['edge1','edge2','edge3'].map(n);
+    const sleep = ms => new Promise(r=>setTimeout(r,ms));
+
+    function reset(){
+      promptEl.textContent = '';
+      nodes.forEach(x=>x.classList.remove('on'));
+      badges.forEach(x=>x.classList.remove('show'));
+      edges.forEach(e=>e.classList.remove('live'));
+      packets.forEach(p=>p.classList.remove('fire'));
+    }
+
+    async function typePrompt(){
+      for(let i=0;i<=prompt.length;i++){
+        promptEl.textContent = prompt.slice(0,i);
+        await sleep(26 + Math.random()*24);
+      }
+    }
+
+    function animatePacket(packet, path, duration){
+      return new Promise(resolve=>{
+        packet.classList.add('fire');
+        const length = path.getTotalLength();
+        const start = performance.now();
+        function step(now){
+          const t = Math.min(1, (now-start)/duration);
+          const p = path.getPointAtLength(length * t);
+          packet.setAttribute('cx', p.x);
+          packet.setAttribute('cy', p.y);
+          if(t < 1){ requestAnimationFrame(step); }
+          else { packet.classList.remove('fire'); resolve(); }
+        }
+        requestAnimationFrame(step);
+      });
+    }
+
+    async function run(){
+      reset();
+      await sleep(400);
+      await typePrompt();
+      await sleep(350);
+
+      nodes[0].classList.add('on');
+      await sleep(380);
+
+      edges[0].classList.add('live');
+      await animatePacket(packets[0], edges[0], 900);
+      nodes[1].classList.add('on');
+      badges[0].classList.add('show');
+      await sleep(520);
+
+      edges[1].classList.add('live');
+      await animatePacket(packets[1], edges[1], 900);
+      nodes[2].classList.add('on');
+      badges[1].classList.add('show');
+      await sleep(520);
+
+      edges[2].classList.add('live');
+      await animatePacket(packets[2], edges[2], 800);
+      nodes[3].classList.add('on');
+      badges[2].classList.add('show');
+
+      await sleep(3200);
+      // fade out and loop
+      nodes.forEach(x=>x.classList.remove('on'));
+      edges.forEach(e=>e.classList.remove('live'));
+      badges.forEach(x=>x.classList.remove('show'));
+      await sleep(700);
+      run();
+    }
+    // kick off once the hero is visible
+    const hero = document.querySelector('.hero');
+    const heroIo = new IntersectionObserver((ents)=>{
+      ents.forEach(e=>{ if(e.isIntersecting){ run(); heroIo.disconnect(); }});
+    },{threshold:0.2});
+    heroIo.observe(hero);
+  })();
+
+  // ---------- About: single character grows up, bubble typewrites ----------
+  (function journey(){
+    const figures = Array.from(document.querySelectorAll('#journey .figure'));
+    const pins    = Array.from(document.querySelectorAll('#journeyTrack .pin'));
+    const fill    = document.getElementById('journeyFill');
+    const bubble  = document.getElementById('growBubble');
+    const textEl  = document.getElementById('growText');
+    const yearEl  = document.getElementById('growYear');
+    const eraEl   = document.getElementById('growEra');
+    const doingEl = document.getElementById('growDoing');
+    if(!figures.length || !fill || !textEl) return;
+
+    // Each era: year, era name, tagline ("what the app was doing"), bubble content (HTML-safe tokens)
+    const ERAS = [
+      { year:'2020', era:'Highlight era',        doing:'wrapping the world in tags',
+        html:'Wrap the facts in &lt;highlight&gt; or I&rsquo;ll forget them before the end of this sentence.' },
+      { year:'2022', era:'Chain-of-Thought era', doing:'teaching it to count out loud',
+        html:'Let&rsquo;s think <span class="hl">step by step</span>. One thing. Then the next. Then the one after that.' },
+      { year:'2023', era:'Tree-of-Thought era',  doing:'grading three candidate plans',
+        html:'Generate three candidate paths. Score each. Keep the winner, prune the rest.' },
+      { year:'2024+', era:'Orchestration era',   doing:'shipping apps with causal traces',
+        html:'Call <code>search()</code> &rarr; verify &rarr; respond. Emit a causal trace so the audit passes.' }
+    ];
+    // distances along the 0–100% rail for the 4 pins (match CSS left:% values)
+    const pinPct = [12.5, 37.5, 62.5, 87.5];
+
+    let idx = 0;
+    let running = false;
+    let stepTimer = null;
+    let typeTimer = null;
+
+    // Tokenize "html" into an array of units: either a single visible character OR an HTML tag
+    // This way the typewriter renders whole tags atomically and never breaks markup.
+    function tokenize(html){
+      const out = [];
+      let i = 0;
+      while(i < html.length){
+        if(html[i] === '<'){
+          const end = html.indexOf('>', i);
+          if(end === -1) break;
+          out.push(html.slice(i, end+1));
+          i = end+1;
+        } else if(html[i] === '&'){
+          const end = html.indexOf(';', i);
+          if(end === -1){ out.push(html[i]); i++; }
+          else { out.push(html.slice(i, end+1)); i = end+1; }
+        } else {
+          out.push(html[i]);
+          i++;
+        }
+      }
+      return out;
+    }
+    // Visible chars count (skip tags, count entities as one)
+    function isVisible(tok){ return !(tok.length > 1 && tok[0] === '<'); }
+
+    function typewrite(html, done){
+      clearInterval(typeTimer);
+      const toks = tokenize(html);
+      textEl.innerHTML = '';
+      let k = 0;
+      typeTimer = setInterval(()=>{
+        if(k >= toks.length){ clearInterval(typeTimer); if(done) done(); return; }
+        // advance at least until we've consumed one visible token
+        do {
+          textEl.innerHTML += toks[k++];
+        } while(k < toks.length && !isVisible(toks[k-1]));
+      }, 22);
+    }
+
+    function showEra(i){
+      idx = ((i % ERAS.length) + ERAS.length) % ERAS.length;
+      const e = ERAS[idx];
+      // Character
+      figures.forEach((f, k)=> f.classList.toggle('on', k === idx));
+      // Bubble + labels
+      yearEl.textContent = e.year;
+      eraEl.textContent = e.era;
+      doingEl.textContent = e.doing;
+      bubble.classList.add('lit');
+      typewrite(e.html);
+      // Timeline — fill ends exactly at the current year pin, grows slowly
+      // from the previous pin to the current one during the era.
+      pins.forEach((p, k)=> p.classList.toggle('on', k <= idx));
+      fill.style.width = pinPct[idx] + '%';
+    }
+    function advance(){ showEra(idx + 1); }
+
+    function start(){
+      if(running) return; running = true;
+      showEra(0);
+      stepTimer = setInterval(advance, 4600);
+    }
+    function stop(){
+      running = false;
+      clearInterval(stepTimer); stepTimer = null;
+      clearInterval(typeTimer); typeTimer = null;
+    }
+    function pauseThenResume(ms){
+      stop();
+      setTimeout(()=>{ if(!document.hidden) start(); }, ms);
+    }
+
+    // Respect reduced-motion: jump to the final era and stop there
+    const rm = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if(rm.matches){ showEra(3); return; }
+
+    // Start once About enters view, pause when it leaves
+    const io = new IntersectionObserver((ents)=>{
+      ents.forEach(e=>{
+        if(e.isIntersecting) start();
+        else stop();
+      });
+    }, {threshold: 0.25});
+    const about = document.getElementById('about');
+    if(about) io.observe(about);
+
+    // Pause on tab hidden
+    document.addEventListener('visibilitychange', ()=>{
+      if(document.hidden) stop();
+      else if(about){
+        const r = about.getBoundingClientRect();
+        if(r.top < window.innerHeight && r.bottom > 0) start();
+      }
+    });
+
+    // Timeline pins: click to jump, then continue from there
+    pins.forEach((p, k)=>{
+      p.addEventListener('click', ()=>{
+        stop(); showEra(k); pauseThenResume(3800);
+      });
+    });
+  })();
+</script>
+</body>
+</html>

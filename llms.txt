@@ -39,7 +39,7 @@ Every prompt-engineering hack we invented to teach the model became baked-in ins
 ## Papers
 
 - "Bridging UI Design and Chatbot Interactions" — HCI International 2025, Springer Proceedings.
-- "Visible Reasoning" — HCI International 2026, Springer Proceedings (accepted). A framework for deterministic LLM agent transparency.
+- "Visible Reasoning" — HCI International 2026, LNCS 16745, pp. 3–21, Springer, Cham (published). https://doi.org/10.1007/978-3-032-30849-8_1 — A framework for deterministic LLM agent transparency.
 
 ## Writing
 
