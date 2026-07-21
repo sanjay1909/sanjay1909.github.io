@@ -168,6 +168,10 @@
   --lt-hot-glow:rgba(178,51,37,.24); --lt-cool-glow:rgba(51,99,142,.24);
   --lt-nav-bg:rgba(245,243,234,.85); --lt-panel:rgba(38,49,59,.032);
   --lt-grain-opacity:.035; --lt-grain-blend:multiply;
+  /* portrait duotone (hero chart strip): chalk-blue/screen on slate, red-ink/multiply on paper.
+     --portrait-prep readies the grayscale base for the blend (multiply needs a LIGHT base) */
+  --portrait-tint:var(--cool); --portrait-blend:screen;
+  --portrait-prep:grayscale(1) brightness(0.82) contrast(1.65);
 }
 html[data-theme="light"]{
   --paper:var(--lt-paper); --paper-2:var(--lt-paper-2);
@@ -179,6 +183,8 @@ html[data-theme="light"]{
   --hot-glow:var(--lt-hot-glow); --cool-glow:var(--lt-cool-glow);
   --nav-bg:var(--lt-nav-bg); --panel:var(--lt-panel);
   --grain-opacity:var(--lt-grain-opacity); --grain-blend:var(--lt-grain-blend);
+  --portrait-tint:var(--hot); --portrait-blend:multiply; /* --hot is red ink here */
+  --portrait-prep:grayscale(1) brightness(1.55) contrast(1.02);
 }
 /* no-JS fallback: html:not([data-theme]) can only match when the theme bootstrap
    never ran (the bootstrap always stamps data-theme, even in its catch) — so with
@@ -194,6 +200,8 @@ html[data-theme="light"]{
     --hot-glow:var(--lt-hot-glow); --cool-glow:var(--lt-cool-glow);
     --nav-bg:var(--lt-nav-bg); --panel:var(--lt-panel);
     --grain-opacity:var(--lt-grain-opacity); --grain-blend:var(--lt-grain-blend);
+    --portrait-tint:var(--hot); --portrait-blend:multiply;
+    --portrait-prep:grayscale(1) brightness(1.55) contrast(1.02);
   }
 }
 
@@ -479,6 +487,44 @@ h1.thesis.typing .h1caret{display:inline-block}
   .tr-chip .dot{width:7px;height:7px}
 }
 
+/* ============ YOU ARE ON THIS CHART — mobile hero strip ============
+   The visit itself, drawn as a chart: [me] → ◇ worth explaining? —yes→ [explained ✓],
+   with a no→retry loop back. Mobile/tablet only (≤880px): at 1470×900 the desktop hero
+   is content-packed (hero > viewport), so ANY in-flow insertion moves the trace card —
+   and desktop already shows the live rail + trace card in the same viewport.
+   The SVG is decorative (aria-hidden); the caption + tick line are real content. */
+.hero-chart{margin-top:20px}
+.hc-svg{display:block;width:100%;max-width:396px;height:auto;color:var(--ink)} /* scribble ring rides currentColor */
+.hc-svg .hc-line{stroke:var(--ink-mute);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.hc-svg .hc-shape{stroke:var(--ink);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.hc-svg .hc-ring{stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;opacity:.85}
+.hc-svg .hc-arrow{stroke:var(--ink-mute);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.hc-svg .hc-mktick{stroke:var(--hot);stroke-width:1.5;fill:none;stroke-linecap:round}
+.hc-svg text{text-anchor:middle}
+.hc-svg .hc-hand{font-family:var(--hand);fill:var(--ink)}
+.hc-svg .hc-red{fill:var(--hot)}
+.hc-svg .hc-mono{font-family:var(--mono);font-weight:700;fill:var(--ink)}
+.hc-me{isolation:isolate} /* keep the duotone blend inside the portrait group */
+.hc-me image{filter:var(--portrait-prep)}
+.hc-me .hc-tint{fill:var(--portrait-tint);mix-blend-mode:var(--portrait-blend)}
+/* the ink-blot dot that is "you" — CSS offset-path (INLINE svg only; <img> svg freezes) */
+.hc-dot{display:none}
+@supports (offset-path: path('M 0 0 L 1 1')){
+  .hc-dot{display:block;fill:var(--hot);offset-rotate:0deg;
+    offset-path:path('M 78 52 C 98 50 118 54 137 52 L 170 52 L 208 52 C 221 50.5 234 53.5 247 52 L 257 52');
+    animation:hcDotWalk 3.5s ease-in-out infinite, hcDotInk 3.5s linear infinite}
+}
+.hero-chart.hc-paused .hc-dot{animation-play-state:paused}
+.hero-chart.hc-static .hc-dot{animation:none;offset-distance:100%;opacity:1} /* reduced motion: parked on explained ✓ */
+@keyframes hcDotWalk{from{offset-distance:0%}to{offset-distance:100%}}
+@keyframes hcDotInk{0%{opacity:0}6%{opacity:1}93%{opacity:1}100%{opacity:0}} /* soaks in at me, dries at explained */
+.hc-caption{margin-top:9px;font:400 14.5px/1.4 var(--hand);color:var(--ink-mute);min-height:21px}
+.hc-caption .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%)}
+.hc-caption .hc-caret{display:inline-block;width:.5ch;height:.9em;background:var(--hot);vertical-align:-2px;margin-left:3px;animation:caret 1s steps(1) infinite}
+.hero-chart.hc-static .hc-caret{display:none}
+.hc-tick{margin-top:3px;color:color-mix(in srgb, var(--ink-mute) 82%, var(--paper))} /* muted via color — opacity belongs to the reveal layer */
+@media (min-width:881px){.hero-chart{display:none}}
+
 /* ============ SECTIONS ============ */
 section.beat{padding:108px 0;position:relative}
 section.beat::after{content:"";position:absolute;bottom:0;left:0;width:min(460px,58%);height:10px;background:var(--ink-mute);opacity:.6;
@@ -755,7 +801,8 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
   body::before,body::after{display:none} /* grid + grain layers */
   /* fixed chrome off the page */
   nav.bar,.theme-wrap,.mobile-menu,.trace-rail,.tr-chip,.progress,.skip,
-  .replay-slot,.replay-panel.pinned{display:none !important}
+  .replay-slot,.replay-panel.pinned,
+  .hero-chart{display:none !important} /* live-motion strip — its caption is mid-type at print time */
   /* every reveal-hidden block forced visible — and no transition to wait out: print is instant */
   .reveal{opacity:1 !important;transform:none !important;transition:none !important;animation:none !important}
   h2.reveal .hand-note,.hero .status-note.reveal{clip-path:none !important;animation:none !important}
@@ -907,6 +954,68 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
       <span class="chalk-u undrawn" id="typedWord">legible.</span><span class="h1caret" aria-hidden="true"></span>
     </h1>
 
+    <!-- YOU ARE ON THIS CHART (mobile strip): presentational mirror of the real record.
+         Honesty rule — this block never calls record(); the tick line below READS the run.start event. -->
+    <div class="hero-chart" id="heroChart">
+      <svg class="hc-svg" viewBox="0 0 360 108" aria-hidden="true" focusable="false">
+        <defs>
+          <filter id="hcBristle" x="-25%" y="-25%" width="150%" height="150%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.11 0.6" numOctaves="1" seed="11" result="hcn"/>
+            <feDisplacementMap in="SourceGraphic" in2="hcn" scale="6"/>
+          </filter>
+          <!-- four short overlapping brush daubs, bristle-roughed once -->
+          <mask id="hcDaub" maskUnits="userSpaceOnUse" x="0" y="10" width="88" height="92">
+            <g filter="url(#hcBristle)" fill="none" stroke="#fff" stroke-linecap="round">
+              <path d="M 25 34 Q 41 27 57 32" stroke-width="13"/>
+              <path d="M 20 48 Q 40 41 61 45" stroke-width="16"/>
+              <path d="M 21 63 Q 42 56 60 59" stroke-width="16"/>
+              <path d="M 27 76 Q 43 71 56 72" stroke-width="13"/>
+            </g>
+          </mask>
+        </defs>
+
+        <!-- portrait node: grayscale + theme tint (multiply on paper / screen on slate) -->
+        <g class="hc-me">
+          <image href="./portrait.webp" x="4" y="16" width="72" height="72" preserveAspectRatio="xMidYMid slice" mask="url(#hcDaub)"/>
+          <rect class="hc-tint" x="4" y="16" width="72" height="72" mask="url(#hcDaub)"/>
+        </g>
+
+        <!-- wobble linework (same cheap rough filter as the trace card) -->
+        <g filter="url(#roughG)">
+          <path class="hc-ring" d="M 42 16 C 62 15 78 30 78 51 C 78 74 61 89 40 88 C 19 87 4 72 5 50 C 6 30 21 16 45 18"/>
+          <path class="hc-line" d="M 78 52 C 98 50 118 54 137 52"/>
+          <path class="hc-shape" d="M 132 52 L 170 26 L 208 52 L 170 78 Z"/>
+          <path class="hc-line" d="M 208 52 C 221 50.5 234 53.5 247 52"/>
+          <rect class="hc-shape" x="250" y="32" width="100" height="40" rx="7"/>
+          <path class="hc-line" d="M 170 78 C 170.6 81 169.6 83.5 170 85.5"/>
+          <rect class="hc-shape" x="144" y="87" width="52" height="16" rx="8"/>
+          <path class="hc-line" d="M 142 95 C 122 95.5 111 90 111 57"/>
+          <path class="hc-arrow" d="M 131 48.5 L 138.5 52 L 131 55.5"/>
+          <path class="hc-arrow" d="M 241 48.5 L 248.5 52 L 241 55.5"/>
+          <path class="hc-arrow" d="M 166.5 80 L 170 86.5 L 173.5 80"/>
+          <path class="hc-arrow" d="M 107.5 62 L 111 54.5 L 114.5 62"/>
+          <path class="hc-mktick" d="M 20 97 C 23 95 25.5 92.5 27.5 89.5"/>
+        </g>
+
+        <!-- labels (outside the filter: letterforms stay crisp) -->
+        <text class="hc-hand" x="170" y="48" font-size="10">worth</text>
+        <text class="hc-hand" x="170" y="61" font-size="9.5">explaining?</text>
+        <text class="hc-hand hc-red" x="227" y="45" font-size="11" transform="rotate(-3 227 45)">yes</text>
+        <text class="hc-hand hc-red" x="181" y="84" font-size="11">no</text>
+        <text class="hc-mono" x="300" y="56" font-size="11">explained ✓</text>
+        <text class="hc-hand" x="170" y="99" font-size="10">retry</text>
+        <text class="hc-hand hc-red" x="12" y="102" font-size="11">me</text>
+
+        <!-- the ink-blot that is "you" -->
+        <ellipse class="hc-dot" rx="3.4" ry="3"/>
+      </svg>
+      <p class="hc-caption">
+        <span class="sr">the chart narrates: recording structure, tracing your path, explaining why.</span>
+        <span aria-hidden="true"><span id="hcCap"></span><span class="hc-caret"></span></span>
+      </p>
+      <p class="hc-tick mono" id="hcTick" hidden></p>
+    </div>
+
     <div class="headline-row">
       <p class="status-note reveal">now: shipping <b>agentfootprint</b> — context engineering, abstracted · <b>FootPrint v1</b> — the flowchart pattern for backend code · 320+ subscribers · published at <b>HCII 2026</b></p>
       <p class="lede">Ten years on a single problem — making the internal state of complex systems readable to whoever needs to understand them. First humans. <em>Now AI.</em></p>
@@ -994,8 +1103,8 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
       <span class="sec-n">§ 01</span>
       <button type="button" class="link" data-copy="manifesto" aria-live="polite">↘ permalink</button>
     </div>
-    <h2 class="reveal">Most enterprise AI ships <em>hallucinating</em>, opaque, and untestable. <br/><span class="hand-note">It doesn't have to.</span></h2>
-    <p class="sub reveal">A working thesis, restated continuously through code and writing.</p>
+    <h2 class="reveal">The models stopped hallucinating so much. The mistakes didn't stop — they moved into the <em>context</em>. <br/><span class="hand-note">It doesn't have to be this way.</span></h2>
+    <p class="sub reveal">The wrong fact retrieved, the stale memory injected, the tool output nobody checked — and the systems still opaque, so no one can tell a model mistake from a context mistake. A working thesis, restated continuously through code and writing.</p>
     <details class="disclose reveal">
       <summary>Read the argument</summary>
       <div class="reveal-body">
@@ -1363,7 +1472,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
     </div>
     <div class="writing-head">
       <h2 class="reveal">Writing <em>— in public.</em></h2>
-      <div class="mono reveal">Enterprise Gen AI Application · 320+ subscribers</div>
+      <div class="mono reveal"><a href="https://www.linkedin.com/newsletters/enterprise-gen-ai-application-7270536688406802432/" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute);text-decoration:none">Enterprise Gen AI Application ↗</a> · 320+ subscribers</div>
     </div>
     <div class="post-row reveal" data-row tabindex="0" role="button" aria-expanded="false">
       <div class="n">01</div>
@@ -1524,6 +1633,7 @@ function esc(x){ return String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
 /* log lines TYPE themselves in (20ms/char), staggered so bursts read like a boot log;
    the red ink annotation arrives whole, only after its line settles */
 var typeBusyUntil = 0;
+var bubbleTyping = false;   /* true while the About diorama bubble typewrites — other typers yield */
 function typeLine(d){
   var vis = d.querySelector('.vis');
   if(!vis) return;
@@ -2077,6 +2187,7 @@ document.querySelectorAll('[data-row]').forEach(function(row){
 
   function typewrite(html, done){
     clearInterval(typeTimer); typeTimer = null;
+    bubbleTyping = true;
     /* Parse the full markup ONCE so tags stay intact (incremental innerHTML += auto-closes
        open tags and drops the closers), then reveal character-by-character inside the
        already-built text nodes. */
@@ -2092,7 +2203,7 @@ document.querySelectorAll('[data-row]').forEach(function(row){
     var ni = 0, ci = 0;
     typeTimer = setInterval(function(){
       while(ni < textNodes.length && ci >= textNodes[ni].full.length){ ni++; ci = 0; }
-      if(ni >= textNodes.length){ clearInterval(typeTimer); typeTimer = null; if(done) done(); return; }
+      if(ni >= textNodes.length){ clearInterval(typeTimer); typeTimer = null; bubbleTyping = false; if(done) done(); return; }
       ci++;
       textNodes[ni].node.data = textNodes[ni].full.slice(0, ci);
     }, 22);
@@ -2115,6 +2226,7 @@ document.querySelectorAll('[data-row]').forEach(function(row){
     running = false;
     clearInterval(stepTimer); stepTimer = null;
     clearInterval(typeTimer); typeTimer = null;
+    bubbleTyping = false;   /* the bubble is no longer typing — release the shared flag */
     clearTimeout(resumeTimer); resumeTimer = null;   /* no orphan resume once the section leaves view */
   }
   /* pause ONLY the auto-advance — never the typewriter a pin click just started */
@@ -2167,6 +2279,87 @@ document.querySelectorAll('[data-row]').forEach(function(row){
       record('journey.seek', ERAS[k].year + ' · ' + ERAS[k].era, 'you clicked the timeline');
     });
   });
+})();
+
+/* ---------- HERO: you are on this chart (mobile strip) ----------
+   Presentational mirror of the visit — reads the real record, never writes it:
+   this block does NOT call record(); the tick line is derived from the run.start
+   event already sitting in `events`. */
+(function heroChart(){
+  var box = document.getElementById('heroChart');
+  if(!box) return;
+  var dot = box.querySelector('.hc-dot');
+  var capEl = document.getElementById('hcCap');
+  var tickEl = document.getElementById('hcTick');
+
+  /* the visitor's REAL first event, restated on the wall clock */
+  if(tickEl && events.length){
+    var e0 = events[0];
+    var wall = new Date(Date.now() - (performance.now() - (T0 + e0.t*1000)));
+    tickEl.textContent = '• ' + pad(wall.getHours()) + ':' + pad(wall.getMinutes()) + ' you opened this page';
+    tickEl.hidden = false;
+  }
+
+  var LINES = ['recording structure…', 'tracing your path…', 'explaining why'];
+  if(rm){
+    box.classList.add('hc-static');   /* dot parked on explained ✓ (CSS), caption pre-typed, no timers */
+    if(capEl) capEl.textContent = LINES[2];
+    return;
+  }
+
+  var PATH_YES = "path('M 78 52 C 98 50 118 54 137 52 L 170 52 L 208 52 C 221 50.5 234 53.5 247 52 L 257 52')";
+  var PATH_NO  = "path('M 78 52 C 98 50 118 54 137 52 L 170 52 L 170 95 L 142 95 C 122 95.5 111 90 111 57 L 111 52 L 137 52 L 170 52 L 208 52 C 221 50.5 234 53.5 247 52 L 257 52')";
+
+  /* single-owner timers — every entry point clears before it schedules */
+  var capTimers = [], capType = null;
+  function clearLapTimers(){ capTimers.forEach(clearTimeout); capTimers = []; }
+  function stopTyping(){ if(capType){ clearInterval(capType); capType = null; } }
+  function setCaption(line){
+    stopTyping();
+    if(!capEl) return;
+    /* respect the page's typewriters: event log mid-type (typeBusyUntil) or the About
+       bubble typing → show the line whole rather than interleave; never queue */
+    if(performance.now() < typeBusyUntil || bubbleTyping){ capEl.textContent = line; return; }
+    var i = 0; capEl.textContent = '';
+    capType = setInterval(function(){
+      i++;
+      capEl.textContent = line.slice(0, i);
+      if(i >= line.length) stopTyping();
+    }, 28);
+  }
+  /* phrase beats follow the dot's arrivals: me ~0.2s · decider ~1.5s · explained ~2.65s */
+  function scheduleLap(){
+    clearLapTimers();
+    capTimers.push(setTimeout(function(){ setCaption(LINES[0]); }, 200));
+    capTimers.push(setTimeout(function(){ setCaption(LINES[1]); }, 1500));
+    capTimers.push(setTimeout(function(){ setCaption(LINES[2]); }, 2650));
+  }
+
+  var lap = 0;
+  if(dot){
+    dot.addEventListener('animationiteration', function(ev){
+      if(ev.animationName !== 'hcDotWalk') return;   /* the ink-fade animation ticks too — one owner */
+      lap++;
+      dot.style.offsetPath = (lap % 4 === 3) ? PATH_NO : PATH_YES;   /* every 4th lap: the no→retry wink */
+      if(!box.classList.contains('hc-paused')) scheduleLap();
+    });
+  }
+
+  /* no battery burn: pause offscreen + when the tab hides (trace-card precedent) */
+  var inView = true;
+  function sync(){
+    var run = inView && !document.hidden;
+    box.classList.toggle('hc-paused', !run);
+    if(!run){ clearLapTimers(); stopTyping(); }
+  }
+  var io = new IntersectionObserver(function(ents){
+    ents.forEach(function(en){ inView = en.isIntersecting; });
+    sync();
+  }, { threshold: 0.12 });
+  io.observe(box);
+  document.addEventListener('visibilitychange', sync);
+
+  scheduleLap();   /* lap 0 */
 })();
 
 /* ---------- REPLAY — walk the record backward (the page as-of any event) ----------
