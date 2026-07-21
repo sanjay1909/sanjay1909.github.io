@@ -302,8 +302,10 @@ html[data-theme="light"] .theme-toggle .w-paper{opacity:1}
   transition:left .3s var(--ease);box-shadow:0 1px 2px rgba(0,0,0,.3)}
 html[data-theme="light"] .theme-toggle .knob{left:4px}
 .theme-toggle .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-@media (max-width:880px){.theme-wrap{right:auto;left:24px;top:9px}}
-@media (max-width:880px){nav.bar{padding:13px 28px 13px 150px;justify-content:flex-end;gap:18px}nav.bar .brand{display:none}nav.bar ul{display:none}.menu-toggle{display:inline-flex;align-items:center}}
+/* ≤880: the top-right pill leaves the bar — its button node relocates into the mobile
+   menu's theme row (relocateThemeToggle), so the bar leads with the brand again */
+@media (max-width:880px){.theme-wrap{display:none}}
+@media (max-width:880px){nav.bar{padding:13px 20px;gap:18px}nav.bar .brand{font-size:12px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}nav.bar ul{display:none}.menu-toggle{display:inline-flex;align-items:center;flex-shrink:0}}
 
 /* ---- mobile menu ---- */
 .mobile-menu{position:fixed;inset:0;z-index:65;background:var(--paper);
@@ -328,6 +330,10 @@ body.menu-open .mobile-menu ol li:nth-child(6){transition-delay:.38s}
 .mobile-menu .footer .left a{color:var(--ink)}
 .mobile-menu .footer .right{font:400 13px var(--mono);color:var(--ink-mute);text-align:right}
 .mobile-menu .footer .right b{color:var(--hot)}
+/* theme row — hosts the ONE relocated theme-toggle button at ≤880px */
+.menu-theme-row{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:auto;margin-bottom:26px;
+  border-top:1.5px dashed var(--line-soft);border-bottom:1.5px dashed var(--line-soft);padding:14px 0;
+  font:400 13px var(--mono);color:var(--ink-mute)}
 @media (min-width:881px){.mobile-menu{display:none}}
 
 /* ============ SESSION TRACE (the signature) ============ */
@@ -405,8 +411,19 @@ h1.thesis.typing .h1caret{display:inline-block}
 .hero .avail{margin-top:14px;align-self:start}
 @media (max-width:880px){
   .headline-row{grid-template-columns:1fr;gap:26px}
-  .hero .stack{text-align:left}
-  .hero{padding-top:80px;justify-content:flex-start;min-height:auto}
+  .hero{padding-top:76px;justify-content:flex-start;min-height:auto}
+  /* compress the pre-headline pile: eyebrow + acts + ONE muted credentials line */
+  .hero .meta-row{gap:10px 22px}
+  .hero .acts{margin-top:5px}
+  .hero .stack{text-align:left;display:flex;flex-wrap:wrap;align-items:baseline;column-gap:8px;font-size:11px;line-height:1.7}
+  .hero .stack > div:first-child{display:none} /* decorative year — the same fact lives in the menu footer */
+  .hero .stack > div:nth-child(3)::before{content:"·";margin-right:8px}
+  .hero .cmd-head{margin-top:26px}
+  h1.thesis{margin-top:14px}
+}
+@media (max-width:560px){
+  /* 3-line thesis at phone widths — the 44px clamp floor was wrapping "complex systems" */
+  h1.thesis{font-size:clamp(33px,9.6vw,44px);letter-spacing:-.035em}
 }
 
 /* ---- terminal chips (kept pattern) ---- */
@@ -451,6 +468,16 @@ h1.thesis.typing .h1caret{display:inline-block}
 .trace-legend a{color:var(--ink);border-bottom:1.5px dashed var(--ink-mute)}
 .trace-legend a:hover{color:var(--cool);border-color:var(--cool)}
 @media (max-width:680px){.trace-card{padding:16px 16px 14px}.trace-svg .node text{font-size:12.5px}.trace-svg .node .sub{font-size:10px}}
+@media (max-width:680px){
+  .headline-row{gap:18px}
+  .hero{padding-bottom:88px} /* air under the hero so the resting trace chip sits over margin, not text */
+  /* the status note reads as a margin note, not a second paragraph
+     (muted via color, not opacity — the inkself reveal animation owns opacity) */
+  .hero .status-note{margin-top:18px;font-size:14px;line-height:1.45;color:color-mix(in srgb, var(--ink-mute) 72%, var(--paper))}
+  .hero .status-note b{color:color-mix(in srgb, var(--hot) 80%, var(--paper))}
+  .tr-chip{padding:7px 11px;font-size:11.5px;gap:7px}
+  .tr-chip .dot{width:7px;height:7px}
+}
 
 /* ============ SECTIONS ============ */
 section.beat{padding:108px 0;position:relative}
@@ -837,6 +864,10 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
     <li><a href="#research" data-nav>Research</a></li>
     <li><a href="#contact" data-nav style="color:var(--hot)">Get in touch ↓</a></li>
   </ol>
+  <div class="menu-theme-row" id="menuThemeRow">
+    <span>theme</span>
+    <!-- #themeToggle relocates here at ≤880px (relocateThemeToggle) -->
+  </div>
   <div class="footer">
     <div class="left">
       <a href="https://www.linkedin.com/in/sanjay-krishna-anbalagan/" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -1768,6 +1799,20 @@ if(menuMq && typeof menuMq.addEventListener === 'function'){
 menu.querySelectorAll('a[href^="#"]').forEach(function(a){
   a.addEventListener('click', function(){ closeMenu(); });
 });
+/* ONE theme toggle, two homes: the top-right pill at desktop, the menu's theme row
+   at ≤880px. The same node moves (listeners + aria state travel with it). */
+(function relocateThemeToggle(){
+  var btn = document.getElementById('themeToggle');
+  var home = document.querySelector('.theme-wrap');
+  var row = document.getElementById('menuThemeRow');
+  var mq = window.matchMedia ? window.matchMedia('(max-width:880px)') : null;
+  if(!btn || !home || !row || !mq) return;
+  function place(mobile){ (mobile ? row : home).appendChild(btn); }
+  place(mq.matches);
+  if(typeof mq.addEventListener === 'function'){
+    mq.addEventListener('change', function(e){ place(e.matches); });
+  }
+})();
 document.addEventListener('keydown', function(e){
   if(e.key === 'Escape'){
     if(document.body.classList.contains('menu-open')) closeMenu();
