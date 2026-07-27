@@ -12,6 +12,7 @@ structured data embedded for machines.
 - Role: Senior Engineer at Amazon Web Services (AWS)
 - Education: PhD, Computer Science, University of Massachusetts Lowell
 - Username: sanjay1909 (GitHub, Medium, LinkedIn)
+- ORCID: https://orcid.org/0000-0002-9083-2921
 - Homepage: https://sanjay1909.github.io/
 
 ## Thesis
