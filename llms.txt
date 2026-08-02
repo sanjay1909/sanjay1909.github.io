@@ -35,6 +35,12 @@ The footprintjs ecosystem applies that rule to four journeys:
 3. Application interaction — HACI Footprint
 4. Exploratory analysis — VizFootprint
 
+Three companion evidence lenses make those records understandable to people and developers:
+
+5. Backend execution lens — Explainable UI
+6. Agent debugging lens — AgentFootprint Lens
+7. Human-facing reasoning replay — Thinking UI
+
 ## Systems
 
 ### FootPrint — execution provenance
@@ -71,6 +77,28 @@ The footprintjs ecosystem applies that rule to four journeys:
 - Records exploratory visual analysis as an append-only, parent-linked trail shared by humans and agents.
 - Preserves abandoned branches instead of erasing them when an analysis changes direction.
 - Supports named paths, comparison, replay, adoption, archive/restore, and statistical memory across the complete history.
+
+## Evidence lenses
+
+### Explainable UI — backend execution lens
+
+- Demo: https://footprintjs.github.io/explainable-ui/
+- Source: https://github.com/footprintjs/explainable-ui
+- npm: https://www.npmjs.com/package/footprint-explainable-ui
+- React components for FootPrint flowchart traversal, transactional state inspection, time travel, and causal rewind.
+
+### AgentFootprint Lens — agent debugging lens
+
+- Source: https://github.com/footprintjs/agentfootprint-lens
+- npm: https://www.npmjs.com/package/agentfootprint-lens
+- Aligns messages, prompts, tools, decisions, causal slices, and cost on one execution cursor.
+
+### Thinking UI — human-facing reasoning replay
+
+- Demo: https://footprintjs.github.io/agentThinkingUI/
+- Source: https://github.com/footprintjs/agentThinkingUI
+- npm: https://www.npmjs.com/package/agentthinkingui
+- Replays agent reasoning, evidence, tool choices, and scored alternatives as a scrubbable, inspectable story.
 
 ## Research
 

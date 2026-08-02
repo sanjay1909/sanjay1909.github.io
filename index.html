@@ -4,9 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Sanjay Krishna Anbalagan — Provenance-native human–agent systems</title>
-<meta name="description" content="Senior Engineer at AWS and PhD in Computer Science building open-source systems that help people inspect, replay, challenge, and safely act with AI." />
+<meta name="description" content="Senior AWS engineer and PhD building FootPrint, AgentFootprint, HACI Footprint, VizFootprint, Explainable UI, AgentFootprint Lens, and Thinking UI." />
 <meta name="author" content="Sanjay Krishna Anbalagan" />
-<meta name="keywords" content="Sanjay Krishna Anbalagan, sanjay1909, footprintjs, agentfootprint, hcifootprint, vizfootprint, provenance-native systems, human-agent systems, context engineering, explainable AI agents, agent observability, agent-computer interface, MCP, causal trace, context-bug localization, backward slicing, AWS Senior Engineer, PhD Computer Science" />
+<meta name="keywords" content="Sanjay Krishna Anbalagan, sanjay1909, footprintjs, FootPrint, AgentFootprint, agentfootprint, HACI Footprint, hcifootprint, VizFootprint, vizfootprint, Explainable UI, footprint-explainable-ui, AgentFootprint Lens, agentfootprint-lens, Thinking UI, agentthinkingui, provenance-native systems, human-agent systems, context engineering, explainable AI agents, agent observability, agent-computer interface, evidence lenses, MCP, causal trace, context-bug localization, backward slicing, AWS Senior Engineer, PhD Computer Science" />
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 <meta name="theme-color" content="#1F2A26" />
 <link rel="canonical" href="https://sanjay1909.github.io/" />
@@ -15,7 +15,7 @@
 <meta property="og:type" content="profile" />
 <meta property="og:site_name" content="Sanjay Krishna Anbalagan" />
 <meta property="og:title" content="Sanjay Krishna Anbalagan — Provenance-native human–agent systems" />
-<meta property="og:description" content="I build software that records evidence as it runs, so humans and agents can inspect, replay, challenge, and safely act on what happened." />
+<meta property="og:description" content="Creator of seven open-source provenance systems and evidence lenses for backend execution, AI agents, application interaction, and exploratory analysis." />
 <meta property="og:url" content="https://sanjay1909.github.io/" />
 <meta property="og:image" content="https://sanjay1909.github.io/og.png" />
 <meta property="og:image:alt" content="Sanjay Krishna Anbalagan — I make complex systems legible." />
@@ -29,7 +29,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Sanjay Krishna Anbalagan — Provenance-native human–agent systems" />
-<meta name="twitter:description" content="Open-source systems for inspectable backend execution, agent reasoning, application interaction, and exploratory analysis." />
+<meta name="twitter:description" content="FootPrint, AgentFootprint, HACI Footprint, VizFootprint, Explainable UI, AgentFootprint Lens, and Thinking UI." />
 <meta name="twitter:image" content="https://sanjay1909.github.io/og.png" />
 <meta name="twitter:creator" content="@sanjay1909" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%231F2A26'/><text x='32' y='45' text-anchor='middle' font-family='Chalkboard SE,Comic Sans MS,cursive' font-size='38' fill='%23ECE8DC'>s</text></svg>" />
@@ -51,7 +51,8 @@
         "Provenance-native Systems", "Human-Agent Systems", "Context Engineering",
         "Causal Memory", "Replayable Agent Traces", "Agent Observability",
         "Explainable AI", "LLM Agents", "Generative AI", "Software Architecture",
-        "TypeScript", "Human-Computer Interaction", "Visual Analytics", "Backend Flowchart Pattern"
+        "TypeScript", "Human-Computer Interaction", "Visual Analytics", "Backend Flowchart Pattern",
+        "Execution Provenance", "Context Provenance", "Capability Graphs", "Exploration Provenance", "Evidence Lenses"
       ],
       "sameAs": [
         "https://orcid.org/0000-0002-9083-2921",
@@ -64,7 +65,7 @@
         "propertyID": "ORCID",
         "value": "https://orcid.org/0000-0002-9083-2921"
       },
-      "description": "Senior Engineer at AWS and PhD in Computer Science building provenance-native systems for human-agent software. Creator of FootPrint, AgentFootprint, HACI Footprint, and VizFootprint: open-source systems that record execution, context, capabilities, and exploration as inspectable evidence."
+      "description": "Senior Engineer at AWS and PhD in Computer Science building provenance-native systems for human-agent software. Creator of FootPrint, AgentFootprint, HACI Footprint, VizFootprint, Explainable UI, AgentFootprint Lens, and Thinking UI."
     },
     {
       "@type": "WebSite",
@@ -72,45 +73,116 @@
       "url": "https://sanjay1909.github.io/",
       "name": "Sanjay Krishna Anbalagan — Portfolio",
       "publisher": { "@id": "https://sanjay1909.github.io/#person" },
+      "about": { "@id": "https://sanjay1909.github.io/#person" },
+      "hasPart": [
+        { "@id": "https://sanjay1909.github.io/#footprint" },
+        { "@id": "https://sanjay1909.github.io/#agentfootprint" },
+        { "@id": "https://sanjay1909.github.io/#hcifootprint" },
+        { "@id": "https://sanjay1909.github.io/#vizfootprint" },
+        { "@id": "https://sanjay1909.github.io/#explainable-ui" },
+        { "@id": "https://sanjay1909.github.io/#agentfootprint-lens" },
+        { "@id": "https://sanjay1909.github.io/#thinking-ui" }
+      ],
       "inLanguage": "en-US"
     },
     {
       "@type": "SoftwareSourceCode",
+      "@id": "https://sanjay1909.github.io/#footprint",
       "name": "FootPrint",
       "alternateName": "footprintjs",
+      "url": "https://footprintjs.github.io/footPrint/",
       "codeRepository": "https://github.com/footprintjs/footPrint",
       "programmingLanguage": "TypeScript",
+      "license": "https://opensource.org/licenses/MIT",
+      "sameAs": ["https://www.npmjs.com/package/footprintjs"],
+      "isPartOf": { "@id": "https://sanjay1909.github.io/#website" },
       "author": { "@id": "https://sanjay1909.github.io/#person" },
       "description": "The flowchart pattern for backend code — self-explainable systems that AI can reason about. The substrate underneath agentfootprint: causal decision-evidence traces, narrative recording, time-travel checkpointing, auto-generated tool descriptions, transactional state. Same way autograd's forward-pass traversal makes gradient inspection automatic, footprintjs's flowchart traversal makes declarative context engineering, replayable agent traces, and SFT-ready trajectory exports automatic."
     },
     {
       "@type": "SoftwareSourceCode",
-      "name": "agentfootprint",
+      "@id": "https://sanjay1909.github.io/#agentfootprint",
+      "name": "AgentFootprint",
+      "alternateName": "agentfootprint",
+      "url": "https://footprintjs.github.io/agentfootprint/",
       "codeRepository": "https://github.com/footprintjs/agentfootprint",
       "programmingLanguage": "TypeScript",
+      "license": "https://opensource.org/licenses/MIT",
+      "sameAs": ["https://www.npmjs.com/package/agentfootprint"],
+      "isPartOf": { "@id": "https://sanjay1909.github.io/#website" },
       "author": { "@id": "https://sanjay1909.github.io/#person" },
       "description": "Context engineering, abstracted. A declarative TypeScript agent framework: 3 slots × 4 triggers × 1 Injection primitive. Every iteration is a replayable typed-event stream — audit trails, cheap-model triage, and SFT/DPO training trajectories all read from one recording. Context-bug localization pinpoints which injected context caused a bad answer, and 'why this tool?' scoring rates every tool the agent could have picked. Built on FootPrint."
     },
     {
       "@type": "SoftwareApplication",
-      "name": "hcifootprint",
+      "@id": "https://sanjay1909.github.io/#hcifootprint",
+      "name": "HACI Footprint",
+      "alternateName": "hcifootprint",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Cross-platform",
       "url": "https://footprintjs.github.io/hcifootprint/",
+      "codeRepository": "https://github.com/footprintjs/hcifootprint",
       "programmingLanguage": "TypeScript",
       "license": "https://opensource.org/licenses/MIT",
       "creator": { "@id": "https://sanjay1909.github.io/#person" },
       "author": { "@id": "https://sanjay1909.github.io/#person" },
-      "sameAs": ["https://www.npmjs.com/package/hcifootprint"],
+      "sameAs": ["https://www.npmjs.com/package/hcifootprint", "https://youtu.be/vx5amF94ipI"],
+      "isPartOf": { "@id": "https://sanjay1909.github.io/#website" },
       "description": "The agent-computer interface (ACI). hcifootprint turns a web app's interaction surface into a typed, traversable skill graph an LLM agent plans over and acts on, served over MCP — the agent operates the app as the signed-in user through the app's own handlers. Open-source TypeScript, MIT-licensed, with a read-only guide-mode adoption rung and llms.txt shipped for agent consumers. The same legibility as footprintjs and agentfootprint, pointed at apps agents can operate."
     },
     {
       "@type": "SoftwareSourceCode",
+      "@id": "https://sanjay1909.github.io/#vizfootprint",
       "name": "VizFootprint",
+      "url": "https://github.com/footprintjs/vizfootprint",
       "codeRepository": "https://github.com/footprintjs/vizfootprint",
       "programmingLanguage": "TypeScript",
+      "softwareVersion": "pre-alpha",
+      "isPartOf": { "@id": "https://sanjay1909.github.io/#website" },
       "author": { "@id": "https://sanjay1909.github.io/#person" },
       "description": "A pre-alpha provenance system for exploratory visual analysis. VizFootprint records human and agent interactions as append-only, parent-linked commits so branches can be compared, replayed, adopted, archived, and restored without erasing abandoned paths."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://sanjay1909.github.io/#explainable-ui",
+      "name": "Explainable UI",
+      "alternateName": "footprint-explainable-ui",
+      "url": "https://footprintjs.github.io/explainable-ui/",
+      "codeRepository": "https://github.com/footprintjs/explainable-ui",
+      "programmingLanguage": ["TypeScript", "React"],
+      "license": "https://opensource.org/licenses/MIT",
+      "sameAs": ["https://www.npmjs.com/package/footprint-explainable-ui"],
+      "isPartOf": { "@id": "https://sanjay1909.github.io/#website" },
+      "author": { "@id": "https://sanjay1909.github.io/#person" },
+      "description": "A React evidence lens for FootPrint execution records, with flowchart traversal, transactional state inspection, time travel, and causal rewind."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://sanjay1909.github.io/#agentfootprint-lens",
+      "name": "AgentFootprint Lens",
+      "alternateName": "agentfootprint-lens",
+      "url": "https://github.com/footprintjs/agentfootprint-lens",
+      "codeRepository": "https://github.com/footprintjs/agentfootprint-lens",
+      "programmingLanguage": ["TypeScript", "React"],
+      "license": "https://opensource.org/licenses/MIT",
+      "sameAs": ["https://www.npmjs.com/package/agentfootprint-lens"],
+      "isPartOf": { "@id": "https://sanjay1909.github.io/#website" },
+      "author": { "@id": "https://sanjay1909.github.io/#person" },
+      "description": "A React debugger for AgentFootprint runs that aligns messages, prompts, tool calls, decisions, causal slices, and cost on one execution cursor."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://sanjay1909.github.io/#thinking-ui",
+      "name": "Thinking UI",
+      "alternateName": ["agentThinkingUI", "agentthinkingui"],
+      "url": "https://footprintjs.github.io/agentThinkingUI/",
+      "codeRepository": "https://github.com/footprintjs/agentThinkingUI",
+      "programmingLanguage": ["TypeScript", "JavaScript"],
+      "license": "https://opensource.org/licenses/MIT",
+      "sameAs": ["https://www.npmjs.com/package/agentthinkingui"],
+      "isPartOf": { "@id": "https://sanjay1909.github.io/#website" },
+      "author": { "@id": "https://sanjay1909.github.io/#person" },
+      "description": "A scrubbable evidence lens that replays agent reasoning, supporting evidence, tool choices, and scored alternatives as an inspectable story."
     },
     {
       "@type": "ScholarlyArticle",
@@ -1677,7 +1749,7 @@ var PORTFOLIO_VIEW = viewParam === 'technical' ? 'technical' : 'product';
 var PORTFOLIO_COPY = {
   product: {
     title: 'Sanjay Krishna Anbalagan — Provenance-native human–agent systems',
-    description: 'Senior Engineer at AWS and PhD in Computer Science building open-source systems that help people inspect, replay, challenge, and safely act with AI.',
+    description: 'Creator of FootPrint, AgentFootprint, HACI Footprint, VizFootprint, Explainable UI, AgentFootprint Lens, and Thinking UI.',
     traceRailCaption: 'this page records its own run — every step, with its cause. like the systems I build.',
     heroStatus: 'now: building four provenance journeys — <b>backend execution</b> · agent reasoning · application interaction · visual analysis · published at <b>HCII 2026</b>',
     heroLede: 'I build software that records evidence as it runs — so people can understand what happened, challenge why it happened, and decide what to do next. <em>Across backends, agents, applications, and analysis.</em>',
@@ -1727,7 +1799,7 @@ var PORTFOLIO_COPY = {
   },
   technical: {
     title: 'Sanjay Krishna Anbalagan — Provenance runtimes and evidence systems',
-    description: 'Senior Engineer at AWS and PhD in Computer Science building provenance runtimes, context abstractions, capability graphs, and evidence lenses for human-agent systems.',
+    description: 'Technical portfolio for FootPrint, AgentFootprint, HACI Footprint, VizFootprint, Explainable UI, AgentFootprint Lens, and Thinking UI.',
     traceRailCaption: 'this page emits an append-only session trace — time, section, action, and cause stay attached.',
     heroStatus: 'now: shipping <b>AgentFootprint</b> context provenance · <b>HACI Footprint</b> capability graphs · VizFootprint exploration provenance · FootPrint v1',
     heroLede: 'I build provenance runtimes, context abstractions, capability graphs, and evidence lenses that make execution and interaction inspectable by construction. <em>The record is created inline, not inferred later.</em>',
