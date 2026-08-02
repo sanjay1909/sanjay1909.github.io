@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Sanjay Krishna Anbalagan — I make complex systems legible</title>
-<meta name="description" content="Senior Engineer at AWS, PhD CS. I build open-source frameworks that make AI agents explain themselves — footprintjs, agentfootprint, and hcifootprint." />
+<title>Sanjay Krishna Anbalagan — Provenance-native human–agent systems</title>
+<meta name="description" content="Senior Engineer at AWS and PhD in Computer Science building open-source systems that help people inspect, replay, challenge, and safely act with AI." />
 <meta name="author" content="Sanjay Krishna Anbalagan" />
-<meta name="keywords" content="Sanjay Krishna Anbalagan, sanjay1909, footprintjs, agentfootprint, hcifootprint, context engineering, explainable AI agents, agent observability, agent-computer interface, MCP, causal trace, context-bug localization, backward slicing, AWS Senior Engineer, PhD Computer Science" />
+<meta name="keywords" content="Sanjay Krishna Anbalagan, sanjay1909, footprintjs, agentfootprint, hcifootprint, vizfootprint, provenance-native systems, human-agent systems, context engineering, explainable AI agents, agent observability, agent-computer interface, MCP, causal trace, context-bug localization, backward slicing, AWS Senior Engineer, PhD Computer Science" />
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 <meta name="theme-color" content="#1F2A26" />
 <link rel="canonical" href="https://sanjay1909.github.io/" />
@@ -14,8 +14,8 @@
 <!-- Open Graph -->
 <meta property="og:type" content="profile" />
 <meta property="og:site_name" content="Sanjay Krishna Anbalagan" />
-<meta property="og:title" content="Sanjay Krishna Anbalagan — Context Engineering · Explainable AI Agents" />
-<meta property="og:description" content="Senior Engineer @ AWS · PhD CS. Author of agentfootprint + footprintjs — declarative context engineering for LLM agents (one Injection primitive over 3 slots × 4 triggers, Causal Memory, replayable traces that double as audit trail and SFT training data) — and hcifootprint, which turns any web app agent-operable over MCP." />
+<meta property="og:title" content="Sanjay Krishna Anbalagan — Provenance-native human–agent systems" />
+<meta property="og:description" content="I build software that records evidence as it runs, so humans and agents can inspect, replay, challenge, and safely act on what happened." />
 <meta property="og:url" content="https://sanjay1909.github.io/" />
 <meta property="og:image" content="https://sanjay1909.github.io/og.png" />
 <meta property="og:image:alt" content="Sanjay Krishna Anbalagan — I make complex systems legible." />
@@ -28,8 +28,8 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Sanjay Krishna Anbalagan — Context Engineering · Explainable AI Agents" />
-<meta name="twitter:description" content="Senior Engineer @ AWS · PhD CS. agentfootprint + footprintjs + hcifootprint — declarative context engineering for LLM agents (Injection primitive · Causal Memory · replayable traces) and turn any web app agent-operable over MCP." />
+<meta name="twitter:title" content="Sanjay Krishna Anbalagan — Provenance-native human–agent systems" />
+<meta name="twitter:description" content="Open-source systems for inspectable backend execution, agent reasoning, application interaction, and exploratory analysis." />
 <meta name="twitter:image" content="https://sanjay1909.github.io/og.png" />
 <meta name="twitter:creator" content="@sanjay1909" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%231F2A26'/><text x='32' y='45' text-anchor='middle' font-family='Chalkboard SE,Comic Sans MS,cursive' font-size='38' fill='%23ECE8DC'>s</text></svg>" />
@@ -48,10 +48,10 @@
       "worksFor": { "@type": "Organization", "name": "Amazon Web Services (AWS)" },
       "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Massachusetts Lowell" },
       "knowsAbout": [
-        "Context Engineering", "Declarative Agent Frameworks", "Slot-based Prompt Composition",
+        "Provenance-native Systems", "Human-Agent Systems", "Context Engineering",
         "Causal Memory", "Replayable Agent Traces", "Agent Observability",
         "Explainable AI", "LLM Agents", "Generative AI", "Software Architecture",
-        "TypeScript", "Human-Computer Interaction", "Backend Flowchart Pattern"
+        "TypeScript", "Human-Computer Interaction", "Visual Analytics", "Backend Flowchart Pattern"
       ],
       "sameAs": [
         "https://orcid.org/0000-0002-9083-2921",
@@ -64,7 +64,7 @@
         "propertyID": "ORCID",
         "value": "https://orcid.org/0000-0002-9083-2921"
       },
-      "description": "Senior Engineer at AWS and PhD in Computer Science. Author of agentfootprint and footprintjs — the open-source TypeScript framework that introduced declarative context engineering for LLM agents (a single Injection primitive over 3 prompt slots × 4 activation triggers), Causal Memory that turns the agent trace into a cache of its own thinking, and replayable typed-event checkpoints that double as production audit trail and SFT/DPO training data."
+      "description": "Senior Engineer at AWS and PhD in Computer Science building provenance-native systems for human-agent software. Creator of FootPrint, AgentFootprint, HACI Footprint, and VizFootprint: open-source systems that record execution, context, capabilities, and exploration as inspectable evidence."
     },
     {
       "@type": "WebSite",
@@ -103,6 +103,14 @@
       "author": { "@id": "https://sanjay1909.github.io/#person" },
       "sameAs": ["https://www.npmjs.com/package/hcifootprint"],
       "description": "The agent-computer interface (ACI). hcifootprint turns a web app's interaction surface into a typed, traversable skill graph an LLM agent plans over and acts on, served over MCP — the agent operates the app as the signed-in user through the app's own handlers. Open-source TypeScript, MIT-licensed, with a read-only guide-mode adoption rung and llms.txt shipped for agent consumers. The same legibility as footprintjs and agentfootprint, pointed at apps agents can operate."
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "VizFootprint",
+      "codeRepository": "https://github.com/footprintjs/vizfootprint",
+      "programmingLanguage": "TypeScript",
+      "author": { "@id": "https://sanjay1909.github.io/#person" },
+      "description": "A pre-alpha provenance system for exploratory visual analysis. VizFootprint records human and agent interactions as append-only, parent-linked commits so branches can be compared, replayed, adopted, archived, and restored without erasing abandoned paths."
     },
     {
       "@type": "ScholarlyArticle",
@@ -886,7 +894,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
     <div class="tr-head"><span class="tr-rec" aria-hidden="true"></span><span>$ tail -f session.trace</span></div>
     <button class="tr-close" id="trClose" aria-label="Close session trace">× close</button>
   </div>
-  <div class="tr-cap">this page records its own run — every step, with its cause. like the systems I build.</div>
+  <div class="tr-cap" data-view-copy="traceRailCaption">this page records its own run — every step, with its cause. like the systems I build.</div>
   <ol class="tr-flow" id="trFlow">
     <span class="tr-spine" id="trSpine" aria-hidden="true"></span>
     <li data-sec="top"><span class="tr-dot" aria-hidden="true"></span><a href="#top">§ 00 · intro</a><span class="tr-why"></span></li>
@@ -941,7 +949,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
     <div class="meta-row">
       <div class="left">
         <div class="eyebrow">Sanjay Krishna Anbalagan</div>
-        <div class="acts">a portfolio in three acts: build · write · research</div>
+        <div class="acts">view: <a href="?view=product" data-view-nav="product">[Product]</a> · <a href="?view=technical" data-view-nav="technical">Technical</a></div>
       </div>
       <div class="stack">
         <div><b>2026</b></div>
@@ -1023,8 +1031,8 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
     </div>
 
     <div class="headline-row">
-      <p class="status-note reveal">now: shipping <b>agentfootprint</b> — context engineering, abstracted · <b>FootPrint v1</b> — the flowchart pattern for backend code · 320+ subscribers · published at <b>HCII 2026</b></p>
-      <p class="lede">Ten years on a single problem — making the internal state of complex systems readable to whoever needs to understand them. First humans. <em>Now AI.</em></p>
+      <p class="status-note reveal" data-view-copy="heroStatus">now: building four provenance journeys — <b>backend execution</b> · agent reasoning · application interaction · visual analysis · published at <b>HCII 2026</b></p>
+      <p class="lede" data-view-copy="heroLede">I build software that records evidence as it runs — so people can understand what happened, challenge why it happened, and decide what to do next. <em>Across backends, agents, applications, and analysis.</em></p>
       <p class="avail mono reveal">open to: speaking · advisory · collaborations</p>
     </div>
 
@@ -1033,9 +1041,9 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
       <div class="trace-head">
         <div class="left">
           <span class="rec" aria-hidden="true"></span>
-          <span class="label">live trace · <b>footprint v1</b></span>
+          <span class="label" data-view-copy="traceLabel">live evidence · <b>footprint v1</b></span>
         </div>
-        <div class="right">causal · auditable · <b>AI-readable</b></div>
+        <div class="right" data-view-copy="traceTraits">understand · replay · <b>challenge</b></div>
       </div>
       <div class="trace-prompt" aria-live="polite">
         <span class="q">›</span><span class="typed" id="tracePrompt"></span><span class="caret" id="traceCaret"></span>
@@ -1092,7 +1100,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
         <circle class="packet" id="pkt3" r="5" cx="-10" cy="-10"/>
       </svg>
       <div class="trace-legend">
-        <div>every decision → <b>traceable</b> · every answer → <b>citable</b></div>
+        <div data-view-copy="traceLegend">every result → <b>explainable</b> · every path → <b>preserved</b></div>
         <div><a href="#work">see how it works ↓</a></div>
       </div>
     </div>
@@ -1109,14 +1117,14 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
       <span class="sec-n">§ 01</span>
       <button type="button" class="link" data-copy="manifesto" aria-live="polite">↘ permalink</button>
     </div>
-    <h2 class="reveal">The models stopped hallucinating so much. The mistakes didn't stop — they moved into the <em>context</em>. <br/><span class="hand-note">It doesn't have to be this way.</span></h2>
-    <p class="sub reveal">The wrong fact retrieved, the stale memory injected, the tool output nobody checked — and the systems still opaque, so no one can tell a model mistake from a context mistake. A working thesis, restated continuously through code and writing.</p>
+    <h2 class="reveal" data-view-copy="manifestoTitle">AI systems are becoming more capable. The people using them still deserve to know <em>what happened — and why.</em> <br/><span class="hand-note">Trust needs evidence.</span></h2>
+    <p class="sub reveal" data-view-copy="manifestoLead">A reliable system should not ask people to trust a story reconstructed afterward. It should preserve the real path as work happens: the information used, the choices made, the actions taken, and the causes behind the result.</p>
     <details class="disclose reveal">
       <summary>Read the argument</summary>
       <div class="reveal-body">
-        <p>I build the developer abstractions that make production generative-AI applications explainable by construction. Not after the fact. Not by adding a logging layer. By making the system itself self-describing.</p>
-        <p>If a backend can produce a causal trace of every decision it made, then a model can reason over it, an engineer can debug it, and a regulator can audit it. The same artifact serves all three readers.</p>
-        <p class="cite">— Explainability isn't a feature. It's a property of the substrate.</p>
+        <p data-view-copy="manifestoBodyOne">I build provenance-native systems for human–agent software: products that create trustworthy evidence during execution and interaction instead of trying to infer it later.</p>
+        <p data-view-copy="manifestoBodyTwo">The same evidence can help a person understand an outcome, an engineer debug a failure, an agent choose a safe next action, and an organization audit what occurred.</p>
+        <p class="cite" data-view-copy="manifestoQuote">— Record the path at the moment it happens. Never reconstruct it afterward.</p>
       </div>
     </details>
   </div>
@@ -1132,18 +1140,18 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
       <span class="sec-n">§ 02</span>
       <button type="button" class="link" data-copy="about" aria-live="polite">↘ permalink</button>
     </div>
-    <h2 class="reveal">I've been here <em>since the baby days.</em></h2>
-    <p class="sub reveal">A decade shipping apps on top of language models — from the era when an LLM forgot its own middle sentence, to the era when it runs a tool graph with a boss. FootPrint and agentfootprint are the <em>shape of what that apprenticeship taught me.</em></p>
+    <h2 class="reveal" data-view-copy="aboutTitle">The projects changed. <em>The question did not.</em></h2>
+    <p class="sub reveal" data-view-copy="aboutLead">My path moved from HCI and visual analytics, through state architecture and production engineering, into human–agent systems. At every stage I kept asking the same thing: <em>how can complex software make its path understandable?</em></p>
 
     <!-- GROW STAGE — single character that actually grows up -->
-    <div class="grow-stage reveal" id="journey" aria-label="One character growing from baby LLM to shipping professional across four eras">
+    <div class="grow-stage reveal" id="journey" aria-label="One engineer growing through four stages of a career focused on making complex systems understandable">
       <!-- LEFT: era copy + typewriter bubble -->
       <div class="grow-text">
-        <div class="grow-era"><b id="growYear">2020</b> &nbsp;·&nbsp; <span id="growEra">Highlight era</span></div>
+        <div class="grow-era"><b id="growYear">PhD</b> &nbsp;·&nbsp; <span id="growEra">HCI + visual analytics</span></div>
         <div class="grow-bubble" id="growBubble">
           <span id="growText"></span><span class="caret" aria-hidden="true"></span>
         </div>
-        <div class="grow-tag">What the app was doing: <span class="swap" id="growDoing">wrapping the world in tags</span></div>
+        <div class="grow-tag">What I was learning: <span class="swap" id="growDoing">making complex exploration understandable</span></div>
       </div>
 
       <!-- RIGHT: SVG actor on a shared ground -->
@@ -1163,8 +1171,8 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
           <line class="ground-tick" x1="140" y1="346" x2="140" y2="352"/>
           <line class="ground-tick" x1="220" y1="346" x2="220" y2="352"/>
           <line class="ground-tick" x1="300" y1="346" x2="300" y2="352"/>
-          <text class="ground-label" x="20"  y="370">2020</text>
-          <text class="ground-label" x="320" y="370" text-anchor="end">2024 →</text>
+          <text class="ground-label" x="20"  y="370">research</text>
+          <text class="ground-label" x="320" y="370" text-anchor="end">now →</text>
 
           <!-- ====== BABY — era 0 — short, round, sits low ====== -->
           <g class="figure" data-era="0">
@@ -1340,19 +1348,19 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
     <!-- JOURNEY TRACK — timeline (click to jump) -->
     <div class="journey-track reveal" id="journeyTrack">
       <div class="rail"><div class="fill" id="journeyFill"></div></div>
-      <button class="pin" data-pin="0" style="left:12.5%" aria-label="Jump to 2020, Baby era"><span class="yr"><b>'20</b>baby</span></button>
-      <button class="pin" data-pin="1" style="left:37.5%" aria-label="Jump to 2022, Toddler era"><span class="yr"><b>'22</b>toddler</span></button>
-      <button class="pin" data-pin="2" style="left:62.5%" aria-label="Jump to 2023, Student era"><span class="yr"><b>'23</b>student</span></button>
-      <button class="pin" data-pin="3" style="left:87.5%" aria-label="Jump to 2024+, Pro era"><span class="yr"><b>'24+</b>pro</span></button>
+      <button class="pin" data-pin="0" style="left:12.5%" aria-label="Jump to HCI and visual analytics"><span class="yr"><b>01</b>HCI</span></button>
+      <button class="pin" data-pin="1" style="left:37.5%" aria-label="Jump to state architecture"><span class="yr"><b>02</b>state</span></button>
+      <button class="pin" data-pin="2" style="left:62.5%" aria-label="Jump to production engineering"><span class="yr"><b>03</b>prod</span></button>
+      <button class="pin" data-pin="3" style="left:87.5%" aria-label="Jump to provenance-native systems"><span class="yr"><b>04</b>now</span></button>
     </div>
 
     <div class="lesson-row reveal">
       <details class="disclose">
-        <summary>The lesson — why I built FootPrint and agentfootprint</summary>
+        <summary data-view-copy="lessonSummary">The thread — how the work evolved</summary>
         <div class="reveal-body">
-          <p>I raised these apps the way you raise a kid. In 2020 the LLM was a baby — I had to <em style="font-family:var(--serif);font-style:italic">wrap</em> every important fact in <code style="font-family:var(--mono);color:var(--accent)">&lt;highlight&gt;</code> tags and pray it didn't wander off mid-sentence. In 2022 I was teaching it to count — <em>think step by step</em>, one rung at a time. In 2023 I was reviewing its homework — three candidate plans, score each, pick the best. By 2024 I wasn't parenting anymore. I was onboarding a junior employee: here's the tool belt, here's the graph of when to use what, <em>emit a trace so your work can be audited.</em></p>
-          <p>Every prompt hack we invented to scaffold the model — highlight tags, step-by-step, tree-of-thought, ReAct, routing — became built-in instinct in the next generation of weights. The <em>prompts</em> died. The <em>shape</em> they were compensating for did not. That shape is a graph of decisions, each with a cause. The model grew into it. <em>The apps still have to carry it.</em></p>
-          <p>FootPrint is that graph, honest — directed, causal, inspectable. agentfootprint is what happens when you let the graph host an LLM as one of its operators. Both are the condensed form of what a decade of raising these babies taught me: <em style="font-family:var(--serif);font-style:italic">if you can't trace the reasoning, you haven't built the system yet.</em></p>
+          <p data-view-copy="lessonBodyOne">My HCI and visual-analytics work began at the interface: help people understand a complex exploration. StateTree moved the question underneath the interface: make the state transitions behind that experience inspectable, comparable, and reversible. Production engineering made the same need operational at scale.</p>
+          <p data-view-copy="lessonBodyTwo">That path now spans four journeys. FootPrint preserves backend execution. AgentFootprint preserves agent context and decisions. HACI Footprint makes application capabilities safe and legible to agents. VizFootprint preserves open-ended human and agent analysis.</p>
+          <p data-view-copy="lessonBodyThree">The systems differ, but the design rule is the same: <em style="font-family:var(--serif);font-style:italic">record trustworthy evidence while the path is happening, then give each person or agent the right lens to inspect it.</em></p>
           <p class="cite" style="margin-top:18px"><a href="https://medium.com/data-science-collective/llms-from-baby-bots-to-expert-employees-e99aa5553ed6" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px dashed var(--accent)">Read the full essay on Medium ↗</a></p>
         </div>
       </details>
@@ -1371,15 +1379,15 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
       <button type="button" class="link" data-copy="work" aria-live="polite">↘ permalink</button>
     </div>
     <div class="projects-head">
-      <h2 class="reveal">Work <em>— shipped.</em></h2>
-      <div class="count reveal">03 projects · open source · TypeScript</div>
+      <h2 class="reveal" data-view-copy="workTitle">Work <em>— four journeys.</em></h2>
+      <div class="count reveal" data-view-copy="workCount">03 shipped · 01 pre-alpha · open source</div>
     </div>
     <article class="project reveal">
       <div>
         <span class="cell-label">In[1] — intent</span>
         <div class="id">No. 01 / Open source · npm</div>
         <h3>FootPrint <em>·</em></h3>
-        <h3 style="font-style:italic;color:var(--ink-mute);font-size:.6em;margin-top:4px">the flowchart pattern for backend code</h3>
+        <h3 style="font-style:italic;color:var(--ink-mute);font-size:.6em;margin-top:4px" data-view-copy="footprintTagline">understand why a backend produced a result</h3>
         <div class="tag">
           <span>TypeScript</span>·<span>★ 7</span>·<span>⑂ 2</span>·<b>v1</b>
         </div>
@@ -1387,9 +1395,9 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
       </div>
       <div>
         <span class="cell-label out">Out[1] — artifact</span>
-        <p class="desc">Business logic becomes a directed graph that produces causal traces an LLM can reason over. Self-explainable systems by construction — no telemetry retrofit required. <em style="font-family:var(--serif);font-style:italic">Variable-first backward slicing</em> walks any value back to the decision that produced it.</p>
+        <p class="desc" data-view-copy="footprintDescription">Turn backend logic into a path people and agents can inspect. Rewind any output or state value to the reads, writes, branches, and routing decisions that produced it — without reconstructing the story from logs.</p>
         <details class="disclose">
-          <summary>See the spec</summary>
+          <summary data-view-copy="projectSummary">See what it enables</summary>
           <div class="reveal-body">
             <ul>
               <li><b>7 flow patterns</b> · transactional state · PII redaction</li>
@@ -1409,7 +1417,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
         <span class="cell-label">In[2] — intent</span>
         <div class="id">No. 02 / Open source · npm</div>
         <h3>agentfootprint <em>·</em></h3>
-        <h3 style="font-style:italic;color:var(--ink-mute);font-size:.6em;margin-top:4px">context engineering, abstracted</h3>
+        <h3 style="font-style:italic;color:var(--ink-mute);font-size:.6em;margin-top:4px" data-view-copy="agentTagline">find the context that changed an answer</h3>
         <div class="tag">
           <span>TypeScript</span>·<span>MIT</span>·<b>built on FootPrint</b>
         </div>
@@ -1417,9 +1425,9 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
       </div>
       <div>
         <span class="cell-label out">Out[2] — artifact</span>
-        <p class="desc">PyTorch's autograd abstracted gradients. React abstracted the DOM. <em style="font-family:var(--serif);font-style:italic">agentfootprint is that move applied to context engineering</em> — declare what content lands in which slot of an LLM call and when. The framework owns the iteration loop, so the typed-event stream and replayable checkpoints come for free — and <em style="font-family:var(--serif);font-style:italic">context-bug localization</em> pinpoints which injected context caused a bad answer.</p>
+        <p class="desc" data-view-copy="agentDescription">Debug why an agent failed instead of guessing from its final answer. Find the context that changed the result, narrow the suspects, remove one, replay the run, and confirm whether it caused the failure.</p>
         <details class="disclose">
-          <summary>See the spec</summary>
+          <summary data-view-copy="projectSummary">See what it enables</summary>
           <div class="reveal-body">
             <ul>
               <li><b>One mental model</b> — 3 slots (<code style="font-family:var(--mono);color:var(--accent)">system</code> · <code style="font-family:var(--mono);color:var(--accent)">messages</code> · <code style="font-family:var(--mono);color:var(--accent)">tools</code>) × 4 triggers (<i>always · rule · on-tool-return · llm-activated</i>) × 1 Injection primitive. Every named pattern (Skills, RAG, Reflexion, ToT) reduces to this.</li>
@@ -1439,7 +1447,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
         <span class="cell-label">In[3] — intent</span>
         <div class="id">No. 03 / Open source · npm</div>
         <h3>hcifootprint <em>·</em></h3>
-        <h3 style="font-style:italic;color:var(--ink-mute);font-size:.6em;margin-top:4px">the agent-computer interface — apps agents can operate</h3>
+        <h3 style="font-style:italic;color:var(--ink-mute);font-size:.6em;margin-top:4px" data-view-copy="haciTagline">make applications safely agent-operable</h3>
         <div class="tag">
           <span>TypeScript</span>·<span>MIT</span>·<b>v0.2 · served over MCP</b>
         </div>
@@ -1447,9 +1455,9 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
       </div>
       <div>
         <span class="cell-label out">Out[3] — artifact</span>
-        <p class="desc">The same legibility, pointed at the interaction surface. hcifootprint turns a web app into a typed, traversable <em style="font-family:var(--serif);font-style:italic">skill graph</em> an LLM agent plans over and acts on — served over MCP, so the agent operates the app <em style="font-family:var(--serif);font-style:italic">as the signed-in user</em>, through the app's own handlers. Not screenshots and clicks — the app's real surface, made legible.</p>
+        <p class="desc" data-view-copy="haciDescription">Give agents a typed map of an application's real capabilities while preserving permissions, preconditions, confirmation gates, and the signed-in user's control. Start read-only, then add actions when the product is ready.</p>
         <details class="disclose">
-          <summary>See the spec</summary>
+          <summary data-view-copy="projectSummary">See what it enables</summary>
           <div class="reveal-body">
             <ul>
               <li><b>Agent-computer interface (ACI)</b> — a typed skill graph the agent plans over and acts on, calling the app's own handlers as the signed-in user</li>
@@ -1459,6 +1467,35 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
               <li><b>Dress-shop demo</b> — a vanilla e-commerce app becomes agent-operable in three commits</li>
             </ul>
             <p class="cite" style="margin-top:18px"><a href="https://footprintjs.github.io/hcifootprint/" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px dashed var(--accent)">Read the docs ↗</a> &nbsp;·&nbsp; <a href="https://www.npmjs.com/package/hcifootprint" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">npm ↗</a> &nbsp;·&nbsp; <a href="https://youtu.be/vx5amF94ipI" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">37s demo ↗</a> &nbsp;·&nbsp; <a href="https://github.com/footprintjs/hcifootprint-demo" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">demo source ↗</a></p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <article class="project reveal">
+      <div>
+        <span class="cell-label">In[4] — intent</span>
+        <div class="id">No. 04 / Open source · pre-alpha</div>
+        <h3>VizFootprint <em>·</em></h3>
+        <h3 style="font-style:italic;color:var(--ink-mute);font-size:.6em;margin-top:4px" data-view-copy="vizTagline">preserve every human and agent analysis path</h3>
+        <div class="tag">
+          <span>TypeScript</span>·<span>research system</span>·<b>pre-alpha</b>
+        </div>
+        <div class="install">$ record the trail, not only the answer</div>
+      </div>
+      <div>
+        <span class="cell-label out">Out[4] — artifact</span>
+        <p class="desc" data-view-copy="vizDescription">Keep every human and agent branch of an exploration, including the paths that did not become the final story. Compare routes, replay findings, adopt useful branches, and preserve statistical obligations when the analysis changes direction.</p>
+        <details class="disclose">
+          <summary data-view-copy="projectSummary">See what it enables</summary>
+          <div class="reveal-body">
+            <ul>
+              <li><b>Append-only, parent-linked trail</b> — moving back and acting creates a branch without erasing the old future</li>
+              <li><b>Human and agent principals</b> — every interaction carries its actor and cause</li>
+              <li><b>Named paths</b> — compare, replay, adopt, archive, restore, and cite complete analysis journeys</li>
+              <li><b>Statistical memory</b> — online-FDR obligations remain attached to the full history, including abandoned paths</li>
+            </ul>
+            <p class="cite" style="margin-top:18px"><a href="https://github.com/footprintjs/vizfootprint" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px dashed var(--accent)">Explore on GitHub ↗</a> &nbsp;·&nbsp; <a href="https://footprintjs.github.io/blog/the-trail-pattern/" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute)">Read The Trail Pattern ↗</a></p>
           </div>
         </details>
       </div>
@@ -1477,28 +1514,28 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
       <button type="button" class="link" data-copy="writing" aria-live="polite">↘ permalink</button>
     </div>
     <div class="writing-head">
-      <h2 class="reveal">Writing <em>— in public.</em></h2>
+      <h2 class="reveal" data-view-copy="writingTitle">Writing <em>— making the ideas useful.</em></h2>
       <div class="mono reveal"><a href="https://www.linkedin.com/newsletters/enterprise-gen-ai-application-7270536688406802432/" target="_blank" rel="noopener" style="color:var(--ink);border-bottom:1px dashed var(--ink-mute);text-decoration:none">Enterprise Gen AI Application ↗</a> · 320+ subscribers</div>
     </div>
     <div class="post-row reveal" data-row tabindex="0" role="button" aria-expanded="false">
       <div class="n">01</div>
       <div class="t">From Supply-Driven to Demand-Driven</div>
       <div class="arrow">↗</div>
-      <div class="c">The chatbot should drive the UX, not assist it. A re-framing of how conversational interfaces should orchestrate the surface area of an enterprise app.</div>
+      <div class="c" data-view-copy="writingOne">Why conversational products should shape the surrounding experience instead of being added as another feature inside it.</div>
     </div>
 
     <div class="post-row reveal" data-row tabindex="0" role="button" aria-expanded="false">
       <div class="n">02</div>
       <div class="t">Make Search the First Tool</div>
       <div class="arrow">↗</div>
-      <div class="c">A protocol — STAY / SWITCH plus a Focus Token — for keeping retrieval interactions coherent across multi-turn agent sessions.</div>
+      <div class="c" data-view-copy="writingTwo">A practical interaction protocol for helping people stay oriented as an agent searches, changes focus, and continues across turns.</div>
     </div>
 
     <div class="post-row reveal" data-row tabindex="0" role="button" aria-expanded="false">
       <div class="n">03</div>
       <div class="t">The Flowchart Pattern</div>
       <div class="arrow">↗</div>
-      <div class="c">Why backend code should be designed as a graph the model can read. The thesis behind FootPrint, written for an enterprise audience.</div>
+      <div class="c" data-view-copy="writingThree">Why software should preserve the path behind a result instead of asking people and agents to reconstruct it afterward.</div>
     </div>
 
     <a class="news-cta reveal" href="https://www.linkedin.com/in/sanjay-krishna-anbalagan/" target="_blank" rel="noopener">Subscribe to the newsletter <b>↗</b></a>
@@ -1516,8 +1553,8 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
       <button type="button" class="link" data-copy="research" aria-live="polite">↘ permalink</button>
     </div>
     <div class="res-head">
-      <h2 class="reveal">Research</h2>
-      <div class="mono reveal">Peer-reviewed · Springer · HCI International</div>
+      <h2 class="reveal" data-view-copy="researchTitle">Research <em>— evidence behind the systems.</em></h2>
+      <div class="mono reveal" data-view-copy="researchMeta">Two peer-reviewed steps toward trustworthy human–agent interaction</div>
     </div>
     <article class="paper reveal">
       <div class="y">2025</div>
@@ -1527,7 +1564,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
         <details class="disclose">
           <summary>Read the abstract</summary>
           <div class="reveal-body">
-            <p>Applying form-based interaction principles — Submit/Reset → STAY/SWITCH — to the design of conversational agents. A bridge between fifty years of GUI affordances and the new conversational surface.</p>
+            <p data-view-copy="researchOne">A bridge between familiar interface behavior and conversational systems: helping people control whether an agent stays with the current task or deliberately switches focus.</p>
           </div>
         </details>
       </div>
@@ -1542,7 +1579,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
         <details class="disclose">
           <summary>Read the abstract</summary>
           <div class="reveal-body">
-            <p>A framework for deterministic LLM agent transparency — proposed as a third paradigm distinct from chain-of-thought and LLM-as-judge. The academic backbone of agentfootprint.</p>
+            <p data-view-copy="researchTwo">A framework for showing people recorded decision evidence rather than asking a model to narrate or judge its own reasoning. The research foundation for AgentFootprint.</p>
           </div>
         </details>
       </div>
@@ -1586,7 +1623,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
       </div>
     </div>
 
-    <div class="colossal reveal">Let's<br/>build<br/><em>something</em><br/>legible.</div>
+    <div class="colossal reveal" data-view-copy="contactTitle">Let's<br/>build<br/><em>something</em><br/>legible.</div>
 
     <div class="row">
       <div class="links">
@@ -1597,8 +1634,8 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
       </div>
       <div class="meta">
         <div>Open to —</div>
-        <div style="color:var(--ink)">Speaking · Advisory</div>
-        <div style="color:var(--ink)">Collaborations on explainable AI</div>
+        <div style="color:var(--ink)" data-view-copy="contactOpenOne">Speaking · Advisory</div>
+        <div style="color:var(--ink)" data-view-copy="contactOpenTwo">Product collaborations on trustworthy AI</div>
       </div>
     </div>
 
@@ -1616,6 +1653,136 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
 (function(){
 'use strict';
 var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- Portfolio view: the page stays fixed; only its language changes ---------- */
+var viewParam = null;
+try{ viewParam = new URLSearchParams(window.location.search).get('view'); }catch(e){}
+var PORTFOLIO_VIEW = viewParam === 'technical' ? 'technical' : 'product';
+var PORTFOLIO_COPY = {
+  product: {
+    title: 'Sanjay Krishna Anbalagan — Provenance-native human–agent systems',
+    description: 'Senior Engineer at AWS and PhD in Computer Science building open-source systems that help people inspect, replay, challenge, and safely act with AI.',
+    traceRailCaption: 'this page records its own run — every step, with its cause. like the systems I build.',
+    heroStatus: 'now: building four provenance journeys — <b>backend execution</b> · agent reasoning · application interaction · visual analysis · published at <b>HCII 2026</b>',
+    heroLede: 'I build software that records evidence as it runs — so people can understand what happened, challenge why it happened, and decide what to do next. <em>Across backends, agents, applications, and analysis.</em>',
+    traceLabel: 'live evidence · <b>footprint v1</b>',
+    traceTraits: 'understand · replay · <b>challenge</b>',
+    traceLegend: 'every result → <b>explainable</b> · every path → <b>preserved</b>',
+    tracePrompt: 'why was this outcome produced?',
+    manifestoTitle: 'AI systems are becoming more capable. The people using them still deserve to know <em>what happened — and why.</em> <br/><span class="hand-note">Trust needs evidence.</span>',
+    manifestoLead: 'A reliable system should not ask people to trust a story reconstructed afterward. It should preserve the real path as work happens: the information used, the choices made, the actions taken, and the causes behind the result.',
+    manifestoBodyOne: 'I build provenance-native systems for human–agent software: products that create trustworthy evidence during execution and interaction instead of trying to infer it later.',
+    manifestoBodyTwo: 'The same evidence can help a person understand an outcome, an engineer debug a failure, an agent choose a safe next action, and an organization audit what occurred.',
+    manifestoQuote: '— Record the path at the moment it happens. Never reconstruct it afterward.',
+    aboutTitle: 'The projects changed. <em>The question did not.</em>',
+    aboutLead: 'My path moved from HCI and visual analytics, through state architecture and production engineering, into human–agent systems. At every stage I kept asking the same thing: <em>how can complex software make its path understandable?</em>',
+    lessonSummary: 'The thread — how the work evolved',
+    lessonBodyOne: 'My HCI and visual-analytics work began at the interface: help people understand a complex exploration. StateTree moved the question underneath the interface: make the state transitions behind that experience inspectable, comparable, and reversible. Production engineering made the same need operational at scale.',
+    lessonBodyTwo: 'That path now spans four journeys. FootPrint preserves backend execution. AgentFootprint preserves agent context and decisions. HACI Footprint makes application capabilities safe and legible to agents. VizFootprint preserves open-ended human and agent analysis.',
+    lessonBodyThree: 'The systems differ, but the design rule is the same: <em>record trustworthy evidence while the path is happening, then give each person or agent the right lens to inspect it.</em>',
+    workTitle: 'Work <em>— four journeys.</em>',
+    workCount: '03 shipped · 01 pre-alpha · open source',
+    projectSummary: 'See what it enables',
+    footprintTagline: 'understand why a backend produced a result',
+    footprintDescription: 'Turn backend logic into a path people and agents can inspect. Rewind any output or state value to the reads, writes, branches, and routing decisions that produced it — without reconstructing the story from logs.',
+    agentTagline: 'find the context that changed an answer',
+    agentDescription: 'Debug why an agent failed instead of guessing from its final answer. Find the context that changed the result, narrow the suspects, remove one, replay the run, and confirm whether it caused the failure.',
+    haciTagline: 'make applications safely agent-operable',
+    haciDescription: 'Give agents a typed map of an application\'s real capabilities while preserving permissions, preconditions, confirmation gates, and the signed-in user\'s control. Start read-only, then add actions when the product is ready.',
+    vizTagline: 'preserve every human and agent analysis path',
+    vizDescription: 'Keep every human and agent branch of an exploration, including the paths that did not become the final story. Compare routes, replay findings, adopt useful branches, and preserve statistical obligations when the analysis changes direction.',
+    writingTitle: 'Writing <em>— making the ideas useful.</em>',
+    writingOne: 'Why conversational products should shape the surrounding experience instead of being added as another feature inside it.',
+    writingTwo: 'A practical interaction protocol for helping people stay oriented as an agent searches, changes focus, and continues across turns.',
+    writingThree: 'Why software should preserve the path behind a result instead of asking people and agents to reconstruct it afterward.',
+    researchTitle: 'Research <em>— evidence behind the systems.</em>',
+    researchMeta: 'Two peer-reviewed steps toward trustworthy human–agent interaction',
+    researchOne: 'A bridge between familiar interface behavior and conversational systems: helping people control whether an agent stays with the current task or deliberately switches focus.',
+    researchTwo: 'A framework for showing people recorded decision evidence rather than asking a model to narrate or judge its own reasoning. The research foundation for AgentFootprint.',
+    contactTitle: 'Let\'s<br/>build<br/><em>something</em><br/>legible.',
+    contactOpenOne: 'Speaking · Advisory',
+    contactOpenTwo: 'Product collaborations on trustworthy AI',
+    eras: [
+      { year:'PhD', era:'HCI + visual analytics', doing:'making complex exploration understandable', html:'What if the interface preserved not only the answer, but the path a person took to reach it?' },
+      { year:'State', era:'State architecture', doing:'making interaction state inspectable and reversible', html:'If state drives the experience, its transitions should be visible, comparable, and reversible.' },
+      { year:'Prod', era:'Production engineering', doing:'finding causes across large software systems', html:'Logs show fragments. People need the causal path connecting a result to the decisions that produced it.' },
+      { year:'Now', era:'Provenance-native systems', doing:'building shared evidence for humans and agents', html:'Record the path while it happens. Let people and agents inspect, replay, challenge, and safely act on the same evidence.' }
+    ]
+  },
+  technical: {
+    title: 'Sanjay Krishna Anbalagan — Provenance runtimes and evidence systems',
+    description: 'Senior Engineer at AWS and PhD in Computer Science building provenance runtimes, context abstractions, capability graphs, and evidence lenses for human-agent systems.',
+    traceRailCaption: 'this page emits an append-only session trace — time, section, action, and cause stay attached.',
+    heroStatus: 'now: shipping <b>AgentFootprint</b> context provenance · <b>HACI Footprint</b> capability graphs · VizFootprint exploration provenance · FootPrint v1',
+    heroLede: 'I build provenance runtimes, context abstractions, capability graphs, and evidence lenses that make execution and interaction inspectable by construction. <em>The record is created inline, not inferred later.</em>',
+    traceLabel: 'live trace · <b>footprint v1</b>',
+    traceTraits: 'causal · auditable · <b>AI-readable</b>',
+    traceLegend: 'every decision → <b>traceable</b> · every answer → <b>citable</b>',
+    tracePrompt: 'does the policy cover pre-existing conditions?',
+    manifestoTitle: 'The model output is only the end of the run. The evidence lives in the <em>context, decisions, tools, state, and branches</em> before it. <br/><span class="hand-note">Preserve the structure.</span>',
+    manifestoLead: 'Logs describe fragments. Provenance preserves typed causal structure at the boundary where each read, write, injection, decision, and interaction occurs.',
+    manifestoBodyOne: 'Each system records its own footprint during traversal: execution provenance for backends, context provenance for agents, capability provenance for applications, and branchable provenance for exploration.',
+    manifestoBodyTwo: 'Backward slicing, replay, comparison, MCP tools, and evidence lenses consume the recorded structure directly. They do not parse logs or ask another model to reconstruct what happened.',
+    manifestoQuote: '— Inline recording is truth. Post-processing is reconstruction.',
+    aboutTitle: 'I kept moving down the stack. <em>The provenance question followed.</em>',
+    aboutLead: 'HCI began with human understanding. Visual analytics exposed the importance of interaction history. State architecture made transitions explicit. Production engineering turned the same idea into a runtime requirement for human–agent software.',
+    lessonSummary: 'The architecture — how the systems connect',
+    lessonBodyOne: 'Weave explored human-facing visual analytics. StateTree treated application state as an inspectable structure rather than an incidental implementation detail. Large production systems then exposed the limit of logs: they preserve events, but rarely the causal graph required to explain a result.',
+    lessonBodyTwo: 'FootPrint records typed execution evidence. AgentFootprint adds context injection, model, tool, cost, and decision evidence. HACI Footprint exposes a live capability graph over MCP. VizFootprint adds append-only, parent-linked trails for mixed human and agent exploration.',
+    lessonBodyThree: 'The shared substrate is provenance created at the boundary where an action occurs. <em>Slicing, replay, comparison, debugging, auditing, and agent consumption are evidence lenses over that substrate.</em>',
+    workTitle: 'Work <em>— provenance stack.</em>',
+    workCount: '04 systems · TypeScript · open source',
+    projectSummary: 'See the spec',
+    footprintTagline: 'execution provenance runtime',
+    footprintDescription: 'A pre-declared flowchart runtime with transactional state, typed reads and writes, decision evidence, variable-first backward slicing, replay, and generated tool descriptions.',
+    agentTagline: 'context provenance runtime',
+    agentDescription: 'Captures context injections, execution state, decisions, model calls, tools, and cost. Influence ranking, ablation, causal slicing, and counterfactual replay localize failures.',
+    haciTagline: 'typed capability and action graph',
+    haciDescription: 'Exposes live application capabilities as a typed skill graph over MCP, with preconditions, permissions, guide mode, action boundaries, confirmation gates, and signed-in-user authority.',
+    vizTagline: 'branchable exploration provenance',
+    vizDescription: 'Append-only parent-linked commits, mixed-principal causes, named branches, comparison, replay and adoption, declared analyses, and a shared online-FDR ledger for human–agent visual analysis.',
+    writingTitle: 'Writing <em>— patterns and protocols.</em>',
+    writingOne: 'A demand-driven interaction architecture in which the conversational layer orchestrates the application surface instead of merely assisting it.',
+    writingTwo: 'STAY / SWITCH plus a Focus Token: an explicit control protocol for coherent retrieval across multi-turn agent sessions.',
+    writingThree: 'The architectural thesis behind FootPrint: backend behavior should be a traversable graph that records causal execution evidence.',
+    researchTitle: 'Research <em>— technical foundations.</em>',
+    researchMeta: 'Peer-reviewed · Springer · HCI International',
+    researchOne: 'Maps Submit/Reset interaction semantics to STAY/SWITCH for conversational systems, with a Focus Token that preserves retrieval scope across turns.',
+    researchTwo: 'A deterministic transparency framework based on runtime-owned decision evidence, proposed as a third paradigm distinct from chain-of-thought and LLM-as-judge.',
+    contactTitle: 'Let\'s<br/>build<br/><em>systems</em><br/>that explain themselves.',
+    contactOpenOne: 'Architecture reviews · Advisory',
+    contactOpenTwo: 'Research and open-source collaborations',
+    eras: [
+      { year:'PhD', era:'HCI + visual analytics', doing:'building Weave interaction and analysis surfaces', html:'Make the analytical state visible enough that a person can inspect how an exploration produced a finding.' },
+      { year:'State', era:'State architecture', doing:'making state transitions first-class', html:'Represent transitions explicitly so application behavior can be compared, reversed, and explained.' },
+      { year:'Prod', era:'Production engineering', doing:'recovering causality from distributed behavior', html:'Logs capture events. The missing abstraction is a typed causal graph connecting state, decisions, and outputs.' },
+      { year:'Now', era:'Provenance-native systems', doing:'recording execution, context, capabilities, and trails', html:'FootPrint records execution; AgentFootprint records context; HACI records capabilities; VizFootprint records exploration.' }
+    ]
+  }
+};
+var portfolioCopy = PORTFOLIO_COPY[PORTFOLIO_VIEW];
+(function applyPortfolioView(){
+  document.documentElement.setAttribute('data-view', PORTFOLIO_VIEW);
+  document.title = portfolioCopy.title;
+  var descriptionMeta = document.querySelector('meta[name="description"]');
+  if(descriptionMeta) descriptionMeta.setAttribute('content', portfolioCopy.description);
+  var socialTitles = document.querySelectorAll('meta[property="og:title"],meta[name="twitter:title"]');
+  var socialDescriptions = document.querySelectorAll('meta[property="og:description"],meta[name="twitter:description"]');
+  Array.prototype.forEach.call(socialTitles, function(meta){ meta.setAttribute('content', portfolioCopy.title); });
+  Array.prototype.forEach.call(socialDescriptions, function(meta){ meta.setAttribute('content', portfolioCopy.description); });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-view-copy]'), function(el){
+    var value = portfolioCopy[el.getAttribute('data-view-copy')];
+    if(typeof value === 'string') el.innerHTML = value;
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-view-nav]'), function(link){
+    var target = link.getAttribute('data-view-nav');
+    var label = target === 'technical' ? 'Technical' : 'Product';
+    var active = target === PORTFOLIO_VIEW;
+    link.textContent = active ? '[' + label + ']' : label;
+    if(active) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
+  });
+})();
 
 /* ============ SESSION TRACE — the page records its own run ============ */
 var T0 = performance.now();
@@ -1680,7 +1847,7 @@ function record(kind, detail, cause, mark){
   var e = { t: +t.toFixed(2), kind: kind, detail: detail, cause: cause||null };
   if(mark) e.replay = true;      /* honest flag: this event IS a replay interaction, not a page event */
   events.push(e);
-  evtMeta.push({ y: Math.round(window.pageYOffset||0), sec: currentSec||null, theme: document.documentElement.getAttribute('data-theme')||'dark' });
+  evtMeta.push({ y: Math.round(window.pageYOffset||0), sec: currentSec||null, theme: document.documentElement.getAttribute('data-theme')||'dark', view: PORTFOLIO_VIEW });
   if(logEl){
     var d = document.createElement('div');
     d.className = 'tr-evt' + (rm ? '' : ' new');
@@ -1704,7 +1871,7 @@ setInterval(function(){
 
 var refHost = '';
 try{ refHost = document.referrer ? new URL(document.referrer).hostname : ''; }catch(e){}
-record('run.start', 'index.html', refHost ? 'from ' + refHost : 'direct visit');
+record('run.start', 'index.html · ' + PORTFOLIO_VIEW + ' view', refHost ? 'from ' + refHost : 'direct visit');
 
 /* ---------- Theme (light/dark, defaults to system) ---------- */
 (function initTheme(){
@@ -1993,7 +2160,8 @@ if(exportBtn){
   exportBtn.addEventListener('click', function(){
     var payload = JSON.stringify({
       page: 'sanjay1909.github.io',
-      thesis: 'I make complex systems legible.',
+      thesis: portfolioCopy.manifestoQuote.replace(/^—\s*/, ''),
+      view: PORTFOLIO_VIEW,
       started: new Date(Date.now() - (performance.now()-T0)).toISOString(),
       events: events
     }, null, 2);
@@ -2059,7 +2227,7 @@ document.querySelectorAll('[data-row]').forEach(function(row){
 
 /* ---------- LIVE TRACE CARD ORCHESTRATION (hero demo) ---------- */
 (function trace(){
-  var prompt = 'does the policy cover pre-existing conditions?';
+  var prompt = portfolioCopy.tracePrompt;
   var promptEl = document.getElementById('tracePrompt');
   var caretEl = document.getElementById('traceCaret');
   if(!promptEl) return;
@@ -2178,16 +2346,7 @@ document.querySelectorAll('[data-row]').forEach(function(row){
   var doingEl = document.getElementById('growDoing');
   if(!figures.length || !fill || !textEl) return;
 
-  var ERAS = [
-    { year:'2020', era:'Highlight era',        doing:'wrapping the world in tags',
-      html:'Wrap the facts in &lt;highlight&gt; or I&rsquo;ll forget them before the end of this sentence.' },
-    { year:'2022', era:'Chain-of-Thought era', doing:'teaching it to count out loud',
-      html:'Let&rsquo;s think <span class="hl">step by step</span>. One thing. Then the next. Then the one after that.' },
-    { year:'2023', era:'Tree-of-Thought era',  doing:'grading three candidate plans',
-      html:'Generate three candidate paths. Score each. Keep the winner, prune the rest.' },
-    { year:'2024+', era:'Orchestration era',   doing:'shipping apps with causal traces',
-      html:'Call <code>search()</code> &rarr; verify &rarr; respond. Emit a causal trace so the audit passes.' }
-  ];
+  var ERAS = portfolioCopy.eras;
   var pinPct = [12.5, 37.5, 62.5, 87.5];
   var idx = 0, running = false, stepTimer = null, typeTimer = null, resumeTimer = null;
 

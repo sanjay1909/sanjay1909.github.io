@@ -1,10 +1,12 @@
 # Sanjay Krishna Anbalagan
 
-> Senior Engineer @ AWS · PhD in Computer Science. Builds open-source developer abstractions that make enterprise generative-AI applications explainable by construction.
+> Senior Engineer at AWS and PhD in Computer Science building provenance-native systems for human-agent software.
 
-This file is the canonical machine-readable summary of this site. The page at
-https://sanjay1909.github.io/ carries the same content for humans, with JSON-LD
-structured data embedded for machines.
+This file is the canonical machine-readable summary of https://sanjay1909.github.io/.
+The human-facing page offers two readings of the same work:
+
+- Product: https://sanjay1909.github.io/?view=product
+- Technical: https://sanjay1909.github.io/?view=technical
 
 ## Identity
 
@@ -14,40 +16,94 @@ structured data embedded for machines.
 - Username: sanjay1909 (GitHub, Medium, LinkedIn)
 - ORCID: https://orcid.org/0000-0002-9083-2921
 - Homepage: https://sanjay1909.github.io/
+- GitHub: https://github.com/sanjay1909
+- Ecosystem: https://footprintjs.github.io/
 
-## Thesis
+## Current focus
 
-Explainability is a property of the substrate, not a feature layered on top. If a backend can produce a causal trace of every decision it made, the same artifact is debuggable by engineers, reasonable-over by models, and auditable by regulators. This portfolio is itself an instance of that thesis — the page is narrative, index, graph, and machine-readable source at the same time.
+I build software that records evidence as it runs so humans and agents can inspect,
+replay, challenge, and safely act on what happened.
 
-## Journey (the "About" section)
+The core design rule is:
 
-I have been shipping LLM-backed applications since the early days of GPT-3, growing alongside the models through every era. Four eras, four lessons:
+**Record the path at the moment it happens. Never reconstruct it afterward.**
 
-1. **2020 — Highlight era (baby bot).** Wrap every important fact in `<highlight>` tags or the model forgot it before the end of its own sentence.
-2. **2022 — Chain-of-Thought era (toddler).** "Think step by step." One rung at a time.
-3. **2023 — Tree-of-Thought era (high-schooler).** Generate three candidate plans, score each, prune the rest.
-4. **2024 → now — Orchestration era (junior employee).** Tool graphs, ReAct, RAG, routing, evaluation per iteration. Emit a causal trace so the audit passes.
+The footprintjs ecosystem applies that rule to four journeys:
 
-Every prompt-engineering hack we invented to teach the model became baked-in instinct in the next generation of weights. The prompts died. The shape they were compensating for did not — a graph of decisions, each with a cause. **FootPrint** is that graph, honest. **agentfootprint** is what happens when you let the graph host an LLM as one of its operators. Both are the condensed form of what a decade of raising these applications taught me. Companion essay: https://medium.com/data-science-collective/llms-from-baby-bots-to-expert-employees-e99aa5553ed6
+1. Backend execution — FootPrint
+2. Agent reasoning — AgentFootprint
+3. Application interaction — HACI Footprint
+4. Exploratory analysis — VizFootprint
 
-## Projects
+## Systems
 
-- [FootPrint](https://github.com/sanjay1909/footprintjs) — 2024 — TypeScript framework that turns backend business logic into a directed graph and produces causal execution traces. Variable-first backward slicing walks any variable back to its birth (sliceForKey); element provenance and pause/resume checkpoints included. `npm install footprintjs`.
-- [agentfootprint](https://github.com/sanjay1909/agentfootprint) — 2025 — TypeScript framework for explainable AI agents, built on FootPrint. Supports LLM Call / ReAct / RAG / Sequential / Parallel / Routing patterns with per-iteration evaluation. Context-bug localization pinpoints which injected context caused a bad answer; 'why this tool?' scoring rates every tool the agent could have picked. `npm install agentfootprint`.
-- [hcifootprint](https://footprintjs.github.io/hcifootprint/) — 2026 — TypeScript framework that turns a web app's interaction surface into a typed, traversable skill graph an LLM agent plans over and operates over MCP — the agent acts as the signed-in user through the app's own handlers. The agent-computer interface (ACI): read-only guide-mode adoption rung, llms.txt for agent consumers, requiredStateKeys() projector API. Dress-shop demo: a vanilla e-commerce app becomes agent-operable in three commits (37s video https://youtu.be/vx5amF94ipI). `npm install hcifootprint`.
+### FootPrint — execution provenance
 
-## Papers
+- Source: https://github.com/footprintjs/footPrint
+- npm: https://www.npmjs.com/package/footprintjs
+- Turns business logic into a directed graph whose execution record is created inline.
+- Records typed reads, writes, branches, state changes, decisions, and causes.
+- Supports transactional state, parallel fork/join, streaming, checkpoints, replay, and variable-first backward slicing.
 
-- "Bridging UI Design and Chatbot Interactions" — HCI International 2025, Springer Proceedings.
-- "Visible Reasoning" — HCI International 2026, LNCS 16745, pp. 3–21, Springer, Cham (published). https://doi.org/10.1007/978-3-032-30849-8_1 — A framework for deterministic LLM agent transparency.
+### AgentFootprint — context provenance
+
+- Source: https://github.com/footprintjs/agentfootprint
+- npm: https://www.npmjs.com/package/agentfootprint
+- Playground: https://footprintjs.github.io/agent-playground/
+- Records context injections, model calls, tool decisions, execution state, cost, and failure causes.
+- Context-bug localization combines slicing, influence ranking, ablation, and counterfactual replay.
+- Supports multiple providers, MCP, causal memory, pause/resume, and typed event streams.
+
+### HACI Footprint — application capability provenance
+
+- Source: https://github.com/footprintjs/hcifootprint
+- Docs: https://footprintjs.github.io/hcifootprint/
+- npm: https://www.npmjs.com/package/hcifootprint
+- Demo: https://youtu.be/vx5amF94ipI
+- Turns a web application's real interaction surface into a typed capability graph served over MCP.
+- Preserves permissions, preconditions, confirmation gates, and the signed-in user's authority.
+- Supports a read-only guide mode for incremental adoption.
+
+### VizFootprint — exploration provenance (pre-alpha)
+
+- Source: https://github.com/footprintjs/vizfootprint
+- Trail Pattern: https://footprintjs.github.io/blog/the-trail-pattern/
+- Records exploratory visual analysis as an append-only, parent-linked trail shared by humans and agents.
+- Preserves abandoned branches instead of erasing them when an analysis changes direction.
+- Supports named paths, comparison, replay, adoption, archive/restore, and statistical memory across the complete history.
+
+## Research
+
+### Visible Reasoning
+
+Reliable agent transparency should come from recorded decision evidence owned by the
+runtime, not from asking a model to narrate or judge its own reasoning.
+
+Visible Reasoning: User-Facing Decision Transparency for Generative AI Systems —
+HCI International 2026, LNCS 16745, pp. 3–21, Springer.
+
+- DOI: https://doi.org/10.1007/978-3-032-30849-8_1
+- Reference implementations: https://github.com/footprintjs/visible-reasoning
+
+Earlier work: Bridging UI Design and Chatbot Interactions — HCI International 2025.
+
+## Career evolution
+
+1. HCI and visual analytics — made complex data-exploration sessions understandable to people through PhD work and Weave.
+2. State architecture — StateTree made interaction state inspectable, comparable, and reversible.
+3. Production engineering — large systems exposed the limits of logs that preserve events without causal structure.
+4. Execution provenance — FootPrint made backend code record its own reads, writes, branches, and causes.
+5. Context provenance — AgentFootprint and Visible Reasoning extended recorded evidence to context, models, tools, and replay.
+6. Application interaction — HACI Footprint defined what agents can safely see and do inside real applications.
+7. Exploration provenance — VizFootprint extended the work to open-ended human and agent analysis.
+8. Current focus — provenance-native human-agent systems with evidence created during execution and interaction.
 
 ## Writing
 
-Newsletter: *Enterprise Gen AI Application* on LinkedIn, 320+ subscribers.
-
-- № 01 · From Supply-Driven to Demand-Driven — the chatbot should drive the UX, not assist it.
-- № 02 · Make Search the First Tool — STAY/SWITCH plus a Focus Token for multi-turn agent sessions.
-- № 03 · The Flowchart Pattern — why backend code should be designed as a graph the model can read.
+- Newsletter: https://www.linkedin.com/newsletters/enterprise-gen-ai-application-7270536688406802432/
+- The Flowchart Pattern: https://footprintjs.github.io/blog/the-flowchart-pattern/
+- The Trail Pattern: https://footprintjs.github.io/blog/the-trail-pattern/
+- Visible Reasoning: https://footprintjs.github.io/blog/visible-reasoning/
 
 ## Contact
 
