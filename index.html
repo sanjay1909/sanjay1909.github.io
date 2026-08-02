@@ -324,6 +324,17 @@ html[data-theme="light"] .theme-toggle .w-paper{opacity:1}
   transition:left .3s var(--ease);box-shadow:0 1px 2px rgba(0,0,0,.3)}
 html[data-theme="light"] .theme-toggle .knob{left:4px}
 .theme-toggle .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---- portfolio view switcher: always reachable, never moves page content ---- */
+.view-switcher{position:fixed;top:72px;left:50%;transform:translateX(-50%);z-index:64;display:inline-flex;align-items:center;
+  padding:3px;border:1.5px solid var(--line);border-radius:999px;background:var(--nav-bg);backdrop-filter:blur(9px);box-shadow:0 5px 18px rgba(0,0,0,.12)}
+.view-switcher button{appearance:none;border:0;border-radius:999px;background:transparent;color:var(--ink-mute);cursor:pointer;
+  min-width:92px;height:30px;padding:0 14px;font:700 11.5px var(--mono)}
+.view-switcher button:hover{color:var(--ink)}
+html[data-view="product"] .view-switcher [data-view-nav="product"]{background:var(--hot);color:var(--on-hot)}
+html[data-view="technical"] .view-switcher [data-view-nav="technical"]{background:var(--cool);color:var(--on-cool)}
+@media (max-width:880px){.view-switcher{top:68px}.view-switcher button{min-width:84px;height:28px;padding:0 11px;font-size:11px}}
+
 /* ≤880: the top-right pill leaves the bar — its button node relocates into the mobile
    menu's theme row (relocateThemeToggle), so the bar leads with the brand again */
 @media (max-width:880px){.theme-wrap{display:none}}
@@ -814,7 +825,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
   html,body{background:#fff}
   body::before,body::after{display:none} /* grid + grain layers */
   /* fixed chrome off the page */
-  nav.bar,.theme-wrap,.mobile-menu,.trace-rail,.tr-chip,.progress,.skip,
+  nav.bar,.theme-wrap,.view-switcher,.mobile-menu,.trace-rail,.tr-chip,.progress,.skip,
   .replay-slot,.replay-panel.pinned,
   .hero-chart{display:none !important} /* live-motion strip — its caption is mid-type at print time */
   /* every reveal-hidden block forced visible — and no transition to wait out: print is instant */
@@ -888,6 +899,11 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
   </button>
 </div>
 
+<div class="view-switcher" role="group" aria-label="Portfolio view">
+  <button type="button" data-view-nav="product" aria-pressed="true">Product</button>
+  <button type="button" data-view-nav="technical" aria-pressed="false">Technical</button>
+</div>
+
 <!-- ============ SESSION TRACE — the page records its own run ============ -->
 <aside class="trace-rail" id="traceRail" aria-label="Live session trace of this visit">
   <div class="tr-top">
@@ -949,7 +965,7 @@ nav.bar ul a:hover,.mobile-menu .footer .left a:hover,footer .links a:hover,.tr-
     <div class="meta-row">
       <div class="left">
         <div class="eyebrow">Sanjay Krishna Anbalagan</div>
-        <div class="acts">view: <a href="?view=product" data-view-nav="product">[Product]</a> · <a href="?view=technical" data-view-nav="technical">Technical</a></div>
+        <div class="acts">a portfolio in three acts: build · write · research</div>
       </div>
       <div class="stack">
         <div><b>2026</b></div>
@@ -1761,7 +1777,9 @@ var PORTFOLIO_COPY = {
   }
 };
 var portfolioCopy = PORTFOLIO_COPY[PORTFOLIO_VIEW];
-(function applyPortfolioView(){
+function applyPortfolioView(nextView, updateUrl){
+  PORTFOLIO_VIEW = nextView === 'technical' ? 'technical' : 'product';
+  portfolioCopy = PORTFOLIO_COPY[PORTFOLIO_VIEW];
   document.documentElement.setAttribute('data-view', PORTFOLIO_VIEW);
   document.title = portfolioCopy.title;
   var descriptionMeta = document.querySelector('meta[name="description"]');
@@ -1774,15 +1792,31 @@ var portfolioCopy = PORTFOLIO_COPY[PORTFOLIO_VIEW];
     var value = portfolioCopy[el.getAttribute('data-view-copy')];
     if(typeof value === 'string') el.innerHTML = value;
   });
-  Array.prototype.forEach.call(document.querySelectorAll('[data-view-nav]'), function(link){
-    var target = link.getAttribute('data-view-nav');
+  Array.prototype.forEach.call(document.querySelectorAll('[data-view-nav]'), function(button){
+    var target = button.getAttribute('data-view-nav');
     var label = target === 'technical' ? 'Technical' : 'Product';
     var active = target === PORTFOLIO_VIEW;
-    link.textContent = active ? '[' + label + ']' : label;
-    if(active) link.setAttribute('aria-current', 'page');
-    else link.removeAttribute('aria-current');
+    button.textContent = label;
+    button.setAttribute('aria-pressed', active ? 'true' : 'false');
   });
-})();
+  if(updateUrl){
+    try{
+      var url = new URL(window.location.href);
+      url.searchParams.set('view', PORTFOLIO_VIEW);
+      history.replaceState(null, '', url.pathname + url.search + url.hash);
+    }catch(e){}
+    document.dispatchEvent(new CustomEvent('portfolio:viewchange', { detail:{ view:PORTFOLIO_VIEW } }));
+  }
+}
+applyPortfolioView(PORTFOLIO_VIEW, false);
+Array.prototype.forEach.call(document.querySelectorAll('[data-view-nav]'), function(button){
+  button.addEventListener('click', function(){
+    var nextView = button.getAttribute('data-view-nav');
+    if(nextView === PORTFOLIO_VIEW) return;
+    applyPortfolioView(nextView, true);
+    record('view.set', nextView, 'you clicked the floating switcher');
+  });
+});
 
 /* ============ SESSION TRACE — the page records its own run ============ */
 var T0 = performance.now();
@@ -2237,6 +2271,10 @@ document.querySelectorAll('[data-row]').forEach(function(row){
   var packets = ['pkt1','pkt2','pkt3'].map(n);
   var edges = ['edge1','edge2','edge3'].map(n);
   var sleep = function(ms){ return new Promise(function(r){ setTimeout(r, ms); }); };
+  document.addEventListener('portfolio:viewchange', function(){
+    prompt = portfolioCopy.tracePrompt;
+    if(rm) promptEl.textContent = prompt;
+  });
 
   if(rm){
     promptEl.textContent = prompt;
@@ -2349,6 +2387,15 @@ document.querySelectorAll('[data-row]').forEach(function(row){
   var ERAS = portfolioCopy.eras;
   var pinPct = [12.5, 37.5, 62.5, 87.5];
   var idx = 0, running = false, stepTimer = null, typeTimer = null, resumeTimer = null;
+  document.addEventListener('portfolio:viewchange', function(){
+    ERAS = portfolioCopy.eras;
+    clearInterval(typeTimer); typeTimer = null; bubbleTyping = false;
+    var currentEra = ERAS[idx];
+    yearEl.textContent = currentEra.year;
+    eraEl.textContent = currentEra.era;
+    doingEl.textContent = currentEra.doing;
+    textEl.innerHTML = currentEra.html;
+  });
 
   function typewrite(html, done){
     clearInterval(typeTimer); typeTimer = null;
