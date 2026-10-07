@@ -11,3 +11,5 @@
 .featured .source.star{color:#fff}
 .featured .star-glyph{color:#ffd451}
 @media(max-width:560px){h1{font-size:40px}.intro>p{margin-bottom:22px}.from-talk{margin-bottom:26px}}
+/* the link from "Behind the talk" to the talk page */
+.note-link{color:var(--ink);font-weight:650;white-space:nowrap}.note-link:hover{text-decoration:underline;text-underline-offset:4px}

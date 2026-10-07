@@ -1,0 +1,48 @@
+{
+  "title": "Your app just got a second user",
+  "event": "Open Source Conference Luxembourg 2026",
+  "eventShort": "OSCL 2026",
+  "date": "2026-10-07",
+  "place": "Luxembourg",
+  "summary": "Chat lets people ask an app for more than its screens were built for, and an AI agent becomes its second user. This talk shows how HCI Footprint lets that agent work only through the actions you open to it: the user sees every step, approves what matters, and every step is logged.",
+  "speaker": {
+    "name": "Sanjay Krishna Anbalagan",
+    "profile": "https://sanjay1909.github.io/knowme/",
+    "linkedin": "https://www.linkedin.com/in/sanjay-krishna-anbalagan/"
+  },
+  "slides": "slides.html",
+  "teaser": null,
+  "recording": null,
+  "libraries": [
+    {
+      "name": "HCI Footprint",
+      "package": "hcifootprint",
+      "about": "A structured map of your app’s actions, navigation and permissions for AI agents.",
+      "url": "https://footprintjs.github.io/hcifootprint/",
+      "source": "https://github.com/footprintjs/hcifootprint"
+    },
+    {
+      "name": "AgentFootprint",
+      "package": "agentfootprint",
+      "about": "Build and debug TypeScript agents with connected records of context, tools and outcomes.",
+      "url": "https://agentfootprint.dev/",
+      "source": "https://github.com/footprintjs/agentfootprint"
+    }
+  ],
+  "madeWith": [
+    {
+      "name": "StoryDeck",
+      "for": "The slides",
+      "package": "storydeck",
+      "about": "Write a talk once and show it as a deck, a scroll story or an article. These slides, with their click-by-click focus, run on it.",
+      "url": "https://github.com/footprintjs/storydeck"
+    },
+    {
+      "name": "StoryReel",
+      "for": "The teaser video",
+      "package": "footprint-storyreel",
+      "about": "Films from a storyboard: every drawing tied to the phrase that says it, rendered to video. The talk’s teaser was made with it.",
+      "url": "https://github.com/footprintjs/storyreel"
+    }
+  ]
+}

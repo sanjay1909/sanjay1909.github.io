@@ -1,0 +1,22 @@
+/* The talks pages: knowme's style (../knowme/style.css) plus what a talk needs — a way back, the things to watch
+   or read as buttons (a dashed one is still to come), an embedded video, and the cards on the talks index. */
+.crumbs{font-size:13px;font-weight:650;color:var(--muted)}
+.crumbs a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.intro .eyebrow{display:block;margin-top:34px}
+.intro h1{margin-top:18px}
+.talk-actions{display:flex;flex-wrap:wrap;gap:10px;margin:-8px 0 34px}
+.action{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:12px 20px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:14px;font-weight:650}
+.action.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.action.soon{background:transparent;border-style:dashed;color:var(--muted);font-weight:500}
+.video{position:relative;margin:0 0 30px;aspect-ratio:16/9;max-width:100%;border-radius:14px;overflow:hidden;background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.more{margin-top:28px}
+.section-note{font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 14px;max-width:620px}
+.talk-list{display:grid;gap:14px}
+.talk-card h3{font-size:28px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:11px;font-weight:650;padding:6px 11px;border-radius:999px;background:#eceee7}
+.chip.soon{background:transparent;border:1px dashed var(--line);color:var(--muted);font-weight:500}
+@media(hover:hover){.action:not(.soon):not(.primary):hover{background:#eceee7}.action.primary:hover{filter:brightness(1.08)}}
+@media(max-width:560px){.talk-actions{gap:8px}.action{min-height:44px;padding:10px 16px}.talk-card h3{font-size:24px}}
+.intro .eyebrow,.project-type{text-transform:uppercase}
