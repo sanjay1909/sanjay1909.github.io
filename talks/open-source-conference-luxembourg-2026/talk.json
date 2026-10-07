@@ -11,8 +11,23 @@
     "linkedin": "https://www.linkedin.com/in/sanjay-krishna-anbalagan/"
   },
   "slides": "slides.html",
-  "teaser": null,
-  "recording": null,
+  "videos": [
+    {
+      "label": "Teaser",
+      "title": "Your App Just Got a Second User — and It Doesn’t Need Its Own UI",
+      "url": "https://www.youtube.com/watch?v=UILTuazxfp4"
+    },
+    {
+      "label": "The opener film",
+      "title": "Bring the model to your app, not your data to the model",
+      "url": null
+    },
+    {
+      "label": "The talk, narrated",
+      "title": "Your app just got a second user · OSCL 2026 talk",
+      "url": null
+    }
+  ],
   "libraries": [
     {
       "name": "HCI Footprint",

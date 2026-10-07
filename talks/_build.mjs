@@ -1,6 +1,7 @@
 // Builds the talks pages from their data: `node talks/_build.mjs` (Node 18+, no packages).
 //
-// Every talk is a folder, talks/<slug>/, holding talk.json (its facts and links) and its slides. This writes
+// Every talk is a folder, talks/<slug>/, holding talk.json (its facts and links: `videos` is a list of {label,
+// title, url} — a YouTube url is embedded, a null one shows as coming) and its slides. This writes
 // talks/<slug>/index.html (the talk's page) and talks/index.html (one card per talk, newest first) from those
 // files, so the pages work without JavaScript and link previews read real titles. Edit a talk.json, run this,
 // commit both. The leading underscore keeps this script off the published site (GitHub Pages runs Jekyll).
@@ -60,21 +61,21 @@ const footer = root => `    <footer><span>Small libraries. Connected ideas.</spa
 </html>
 `;
 
-/** What a talk has to watch or read: the slides, the teaser, the recording — or when each is coming. */
+/** What a talk has to watch or read: the slides, then each video in talk.json's order — or that it is coming. */
 function actions(t) {
-  const link = (url, label) => `<a class="action" href="${esc(url)}" ${NEW_TAB}>${label} <span aria-hidden="true">↗</span>${SR_NEW_TAB}</a>`;
+  const link = (url, label) => `<a class="action" href="${esc(url)}" ${NEW_TAB}>${esc(label)} <span aria-hidden="true">↗</span>${SR_NEW_TAB}</a>`;
   return [
     `<a class="action primary" href="${esc(t.slides)}"><span aria-hidden="true">▶</span> View the slides</a>`,
-    t.teaser ? link(t.teaser, 'Teaser video') : '<span class="action soon">Teaser video · soon</span>',
-    t.recording ? link(t.recording, 'Talk recording') : '<span class="action soon">Talk recording · after the conference</span>',
+    ...(t.videos ?? []).map(v => v.url ? link(v.url, v.label) : `<span class="action soon">${esc(v.label)} · soon</span>`),
   ].join('\n        ');
 }
 
-/** A video from YouTube, played from the privacy-enhanced domain; nothing when the link is not a YouTube one. */
-function video(url, label) {
+/** A video from YouTube, played from the privacy-enhanced domain, its title under it; nothing for a link that is
+ *  not a YouTube one (or no link yet). */
+function video({url, title}) {
   const id = youtubeId(url);
   return id ? `
-    <figure class="video"><iframe src="https://www.youtube-nocookie.com/embed/${id}" title="${esc(label)}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></figure>` : '';
+    <figure class="clip"><div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${id}" title="${esc(title)}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div><figcaption>${esc(title)}</figcaption></figure>` : '';
 }
 
 /** A card in the knowme style: a type label, a name, its package, a line about it, where it goes. */
@@ -102,7 +103,7 @@ function talkPage(t) {
         ${actions(t)}
       </div>
     </header>
-${video(t.teaser, `${t.title}: teaser`)}${video(t.recording, `${t.title}: the talk`)}
+${(t.videos ?? []).map(video).join('')}
     <section class="more" aria-labelledby="libraries-title">
       <div class="section-heading"><h2 id="libraries-title">In this talk</h2><span>THE LIBRARIES</span></div>
       <div class="project-grid">
@@ -131,8 +132,7 @@ ${t.madeWith.map(m => card({type: m.for, name: m.name, pkg: m.package, about: m.
 function talksIndex(talks) {
   const chips = t => [
     '<span class="chip">Slides</span>',
-    `<span class="chip${t.teaser ? '' : ' soon'}">Teaser${t.teaser ? '' : ' · soon'}</span>`,
-    `<span class="chip${t.recording ? '' : ' soon'}">Recording${t.recording ? '' : ' · soon'}</span>`,
+    ...(t.videos ?? []).map(v => `<span class="chip${v.url ? '' : ' soon'}">${esc(v.label)}${v.url ? '' : ' · soon'}</span>`),
   ].join('');
   return head({title: 'Talks — Sanjay Krishna Anbalagan', description: 'Talks by Sanjay Krishna Anbalagan: the slides, the videos and the libraries behind them.', url: `${SITE}/talks/`, root: '../'}) + `    <nav class="crumbs"><a href="../knowme/">← Sanjay Krishna Anbalagan</a></nav>
     <header class="intro">
@@ -155,4 +155,4 @@ ${talks.map(t => `      <article class="project talk-card">
 const talks = readTalks();
 for (const t of talks) writeFileSync(path.join(here, t.slug, 'index.html'), talkPage(t));
 writeFileSync(path.join(here, 'index.html'), talksIndex(talks));
-console.log(`talks: ${talks.length} — ${talks.map(t => `${t.slug} (slides ✓ · teaser ${t.teaser ? '✓' : 'soon'} · recording ${t.recording ? '✓' : 'soon'})`).join(', ')}`);
+console.log(`talks: ${talks.length} — ${talks.map(t => `${t.slug} (slides ✓ · ${(t.videos ?? []).map(v => `${v.label} ${v.url ? '✓' : 'soon'}`).join(' · ')})`).join(', ')}`);
