@@ -21,3 +21,5 @@
 @media(hover:hover){.action:not(.soon):not(.primary):hover{background:#eceee7}.action.primary:hover{filter:brightness(1.08)}}
 @media(max-width:560px){.talk-actions{gap:8px}.action{min-height:44px;padding:10px 16px}.talk-card h3{font-size:24px}}
 .intro .eyebrow,.project-type{text-transform:uppercase}
+.clip-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 30px}.clip-grid .clip{margin:0}
+@media(max-width:560px){.clip-grid{grid-template-columns:1fr}}

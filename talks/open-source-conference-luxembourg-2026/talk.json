@@ -13,9 +13,9 @@
   "slides": "slides.html",
   "videos": [
     {
-      "label": "Teaser",
-      "title": "Your App Just Got a Second User — and It Doesn’t Need Its Own UI",
-      "url": "https://www.youtube.com/watch?v=UILTuazxfp4"
+      "label": "The talk, narrated",
+      "title": "Your app just got a second user: AI agents that work through your app (OSCL 2026 talk)",
+      "url": "https://youtu.be/BoybbQ0hOVg"
     },
     {
       "label": "The opener film",
@@ -23,9 +23,9 @@
       "url": "https://youtu.be/rod18JGqfr0"
     },
     {
-      "label": "The talk, narrated",
-      "title": "Your app just got a second user: AI agents that work through your app (OSCL 2026 talk)",
-      "url": "https://youtu.be/BoybbQ0hOVg"
+      "label": "Teaser",
+      "title": "Your App Just Got a Second User — and It Doesn’t Need Its Own UI",
+      "url": "https://www.youtube.com/watch?v=UILTuazxfp4"
     }
   ],
   "libraries": [

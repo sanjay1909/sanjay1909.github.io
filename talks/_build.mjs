@@ -75,7 +75,17 @@ function actions(t) {
 function video({url, title}) {
   const id = youtubeId(url);
   return id ? `
-    <figure class="clip"><div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${id}" title="${esc(title)}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div><figcaption>${esc(title)}</figcaption></figure>` : '';
+    <figure class="clip"><div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${id}" title="${esc(title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div><figcaption>${esc(title)}</figcaption></figure>` : '';
+}
+
+/** The talk's videos with a link: the first one full width (talk.json lists the talk itself first), the rest
+ *  side by side under it. */
+function videos(list) {
+  const [first, ...rest] = list.filter(v => youtubeId(v.url));
+  if (!first) return '';
+  return video(first) + (rest.length ? `
+    <div class="clip-grid">${rest.map(video).join('')}
+    </div>` : '');
 }
 
 /** A card in the knowme style: a type label, a name, its package, a line about it, where it goes. */
@@ -103,7 +113,7 @@ function talkPage(t) {
         ${actions(t)}
       </div>
     </header>
-${(t.videos ?? []).map(video).join('')}
+${videos(t.videos ?? [])}
     <section class="more" aria-labelledby="libraries-title">
       <div class="section-heading"><h2 id="libraries-title">In this talk</h2><span>THE LIBRARIES</span></div>
       <div class="project-grid">
