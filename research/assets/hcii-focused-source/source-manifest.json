@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "package": "hcii-focused-playgrounds",
+  "version": "1.0.0",
+  "fileListExcludesManifestItself": true,
+  "dependencies": {
+    "agentfootprint": "7.7.0",
+    "footprintjs": "9.11.0",
+    "zod": "4.4.3",
+    "esbuild": "0.28.1"
+  },
+  "verification": {
+    "node": "v24.19.0",
+    "freshNpmCi": true,
+    "installScriptsExecuted": false,
+    "testCommand": "node --test test-demo.mjs test-trail.mjs test-capture-trail.mjs test-controller.mjs",
+    "testFilesPassed": 4,
+    "testFilesFailed": 0,
+    "paidModelRequests": 0,
+    "browserBuildModules": 342,
+    "bundleBytes": 403720,
+    "bundleSha256": "6b6e4077b0823fe22b8b161e64a8812ac43d3b857ac73e343c4ce5224466ebd2",
+    "rebuiltBundleByteIdentical": true,
+    "rebuiltStylesheetByteIdentical": true,
+    "compactJsonExport": true,
+    "postPolishTestFilesPassed": 4
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6451,
+      "sha256": "07667675d7e0da2b86160ce5b4c20fa71d890c87533442ba19929d2880fa0f2f"
+    },
+    {
+      "path": "build.mjs",
+      "bytes": 1653,
+      "sha256": "8d373b007c0bebf3568cfce87e8b7a086ef030c3efe91ee15b7101b603e8be22"
+    },
+    {
+      "path": "demo-core.mjs",
+      "bytes": 9036,
+      "sha256": "f5c08ead790baa66c5d43d1c63d1dbc06667566106a5eaf308361770ba6e0142"
+    },
+    {
+      "path": "focused-browser.mjs",
+      "bytes": 19594,
+      "sha256": "e47fcf3fbad998f78a623268851eae0f1eeba1e7145e06a4438e324e4ce90755"
+    },
+    {
+      "path": "hcii-focus.css",
+      "bytes": 10034,
+      "sha256": "6343476230ee06377e3aa3888fb074c0e89258db785193ad4dc9c1031eb85ebf"
+    },
+    {
+      "path": "licenses/agentfootprint-LICENSE.txt",
+      "bytes": 1089,
+      "sha256": "69efc6154da14ec63e8bfe0bf3c6a3c945a8b3481e6fe8536144d8cc696000ee"
+    },
+    {
+      "path": "licenses/esbuild-LICENSE.txt",
+      "bytes": 1069,
+      "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681"
+    },
+    {
+      "path": "licenses/footprintjs-LICENSE.txt",
+      "bytes": 1089,
+      "sha256": "69efc6154da14ec63e8bfe0bf3c6a3c945a8b3481e6fe8536144d8cc696000ee"
+    },
+    {
+      "path": "licenses/zod-LICENSE.txt",
+      "bytes": 1072,
+      "sha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 17601,
+      "sha256": "266f154f13fcca07130d0d0a357bd5bdfd66cefd731e21003abd10c6433618cf"
+    },
+    {
+      "path": "package.json",
+      "bytes": 570,
+      "sha256": "308421bb59238265c9fb1551ed735851a730f08aa74e1668cf9a257bc5d933d3"
+    },
+    {
+      "path": "test-capture-trail.mjs",
+      "bytes": 10149,
+      "sha256": "b5d7c3eda8a5a21f2902f36553d4143354750b2a94570406d84b703e5f1c294e"
+    },
+    {
+      "path": "test-controller.mjs",
+      "bytes": 14696,
+      "sha256": "64eec20c6906e10dc00886554a853d82fcf4ea3fcd126bb8b12bbc8d2cf05bbc"
+    },
+    {
+      "path": "test-demo.mjs",
+      "bytes": 5171,
+      "sha256": "fbb6dfc30f9b272e81ee31d8fa3ecec410580f59fb39099a24348057f66260b7"
+    },
+    {
+      "path": "test-trail.mjs",
+      "bytes": 10747,
+      "sha256": "d849437055761eca638ce12a72c4ad514ceb2f5d2f25c5031fa42b020cb66bdd"
+    },
+    {
+      "path": "trail.mjs",
+      "bytes": 10623,
+      "sha256": "4bf9fb45c43f39608ff1191305742128c0387fd58523cab31cc68a34a9798336"
+    }
+  ]
+}

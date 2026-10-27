@@ -1,0 +1,22 @@
+{
+  "name": "hcii-focused-playgrounds",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Focused browser companions to the HCII 2025 and 2026 papers, with captured-state exploration history.",
+  "engines": {
+    "node": ">=20.6"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test-demo.mjs test-trail.mjs test-capture-trail.mjs test-controller.mjs"
+  },
+  "dependencies": {
+    "agentfootprint": "7.7.0",
+    "footprintjs": "9.11.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.1"
+  }
+}
