@@ -1,0 +1,22 @@
+{
+  "name": "ramachandran-reference-demo-source",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portable source for the VizFootprint Ramachandran linked-view reference demo",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "test:science": "node --test tests/science/science.test.mjs",
+    "test:runtime": "node tests/runtime/build-test.mjs && node tests/runtime/integration.bundle.mjs",
+    "test": "npm run test:science && npm run test:runtime && npm run test:browser",
+    "test:browser": "node --test tests/browser/plot-coordinates.test.mjs"
+  },
+  "dependencies": {
+    "esbuild": "0.28.1",
+    "footprintjs": "10.0.0",
+    "foottrace": "1.0.3"
+  }
+}

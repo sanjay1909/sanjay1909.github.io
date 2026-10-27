@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Interactive Ramachandran Plot in Weave · 2011 · Sanjay Krishna Anbalagan</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Explore crambin in linked Ramachandran, sequence, composition and residue views. A modern VizFootprint companion to the 2011 Weave paper, with motif search and replay.">
+  <meta name="theme-color" content="#1f2a26">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://sanjay1909.github.io/research/ramachandran-plot-weave/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Development of an Interactive Ramachandran Plot in Weave">
+  <meta property="og:description" content="The 2011 paper and a modern companion: linked protein views, literal motif search and a replayable exploration trail powered by VizFootprint.">
+  <meta property="og:url" content="https://sanjay1909.github.io/research/ramachandran-plot-weave/">
+  <meta property="og:image" content="https://sanjay1909.github.io/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../assets/fonts.css">
+  <link rel="stylesheet" href="../assets/research.css">
+  <link rel="stylesheet" href="assets/demo.css">
+  <meta name="citation_title" content="Development of an Interactive Ramachandran Plot in Weave">
+  <meta name="citation_author" content="Shweta Purushe">
+  <meta name="citation_author" content="Sanjay Krishna Anbalagan">
+  <meta name="citation_author" content="Georges Grinstein">
+  <meta name="citation_publication_date" content="2011">
+  <meta name="citation_conference_title" content="2011 15th International Conference on Information Visualisation">
+  <meta name="citation_firstpage" content="232">
+  <meta name="citation_lastpage" content="236">
+  <meta name="citation_publisher" content="IEEE">
+  <meta name="citation_doi" content="10.1109/IV.2011.109">
+  <meta name="citation_abstract_html_url" content="https://sanjay1909.github.io/research/ramachandran-plot-weave/">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "name": "Development of an Interactive Ramachandran Plot in Weave", "headline": "Development of an Interactive Ramachandran Plot in Weave", "url": "https://sanjay1909.github.io/research/ramachandran-plot-weave/", "mainEntityOfPage": "https://sanjay1909.github.io/research/ramachandran-plot-weave/", "datePublished": "2011", "author": [{"@type": "Person", "name": "Shweta Purushe"}, {"@type": "Person", "name": "Sanjay Krishna Anbalagan"}, {"@type": "Person", "name": "Georges Grinstein"}], "abstract": "Current software systems having Ramachandran Plots do not support interactivity with the visualization. Current web-based Ramachandran Plot tools provide only primitive analysis and simple report generation features. In Weave (Web-based Analysis and Visualization Environment), we have developed an improved Ramachandran Plot with interactivity that facilitates better analysis, sequence searching features and supplementary visualizations. Weave provides essential features facilitating broader amino acid analysis, statistical computations and the advantages of a more general web-based application.", "description": "The 2011 Weave paper and a modern VizFootprint companion for linked protein exploration, motif search and replay.", "pagination": "232-236", "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.1109/IV.2011.109"}, "sameAs": ["https://doi.org/10.1109/IV.2011.109"], "isPartOf": {"@type": "PublicationVolume", "name": "2011 15th International Conference on Information Visualisation"}, "publisher": {"@type": "Organization", "name": "IEEE"}, "image": "https://sanjay1909.github.io/research/ramachandran-plot-weave/assets/example-1crn.svg"}</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to paper</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/">Sanjay Krishna Anbalagan</a>
+      <nav class="topnav" aria-label="Main navigation">
+        <a href="/#research">All research</a>
+        <a class="desktop" href="/talks/">Talks</a>
+        <button id="theme-toggle" class="theme" aria-pressed="false">Light paper</button>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <header class="hero">
+      <p class="eyebrow">Research / Information Visualisation 2011</p>
+      <h1>Interactive Ramachandran Plot<span class="subtitle">Linked protein exploration in Weave</span></h1>
+      <p class="authors">Shweta Purushe · Sanjay Krishna Anbalagan · Georges Grinstein</p>
+      <p class="venue">2011 15th International Conference on Information Visualisation · pp. 232–236 · IEEE</p>
+      <div class="actions">
+        <a class="button primary" href="demo/">Open interactive demo ↗</a>
+        <a class="button" href="https://doi.org/10.1109/IV.2011.109">Published paper ↗</a>
+        <a class="button" href="#cite">Cite the paper ↓</a>
+        <a class="button" href="assets/source/README.md">Data &amp; source ↗</a>
+      </div>
+    </header>
+    <nav class="jumpnav" aria-label="On this page">
+      <a href="#abstract">Original abstract</a>
+      <a href="#idea">The idea</a>
+      <a href="#demo">Interactive companion</a>
+      <a href="#methods">Data &amp; scope</a>
+      <a href="#cite">Citation</a>
+    </nav>
+
+    <section id="abstract" class="section">
+      <div class="section-head"><span class="section-no">01</span><h2>Original abstract</h2></div>
+      <p class="paper-source-note">Published in 2011. The statements below describe the software landscape at that time.</p>
+      <div class="abstract"><p>Current software systems having Ramachandran Plots do not support interactivity with the visualization. Current web-based Ramachandran Plot tools provide only primitive analysis and simple report generation features. In Weave (Web-based Analysis and Visualization Environment), we have developed an improved Ramachandran Plot with interactivity that facilitates better analysis, sequence searching features and supplementary visualizations. Weave provides essential features facilitating broader amino acid analysis, statistical computations and the advantages of a more general web-based application.</p></div>
+    </section>
+
+    <section id="idea" class="section">
+      <div class="section-head"><span class="section-no">02</span><h2>Keep the views connected</h2></div>
+      <p class="lede">A residue is more useful to explore when its position in the angle plot stays connected to its place in the protein sequence and the surrounding data.</p>
+      <ul class="points">
+        <li>The original Weave work linked the Ramachandran plot with subsets, tables, supplementary visualizations and motif searches.</li>
+        <li>This modern companion recreates those core interactions for one verified protein example.</li>
+        <li>VizFootprint adds a recorded exploration trail: revisit a selection, keep alternative paths, compare their residue sets, and replay a saved session.</li>
+      </ul>
+      <figure class="rama-static-figure">
+        <a href="assets/example-1crn.svg"><img src="assets/example-1crn.svg" alt="Ramachandran scatterplot of the 44 complete phi and psi angle pairs in the crambin 1CRN reference fixture, with phi horizontal and psi vertical." width="1000" height="620" loading="lazy"></a>
+        <figcaption>A new figure drawn from the pinned 1CRN coordinate data. The protein has 46 residues; the first φ and final ψ are undefined, leaving 44 complete pairs. This figure supplies no empirical validation contours or structural-quality classifications.</figcaption>
+      </figure>
+    </section>
+
+    <section id="demo" class="section">
+      <div class="section-head"><span class="section-no">03</span><h2>Explore the protein</h2></div>
+      <p class="lede">Open the linked views to brush the angle plot, choose a residue, or search a sequence motif. Every view follows the same selection.</p>
+      <p class="note">This companion uses real crambin data and runs locally in your browser with <a href="https://github.com/footprintjs/vizfootprint">VizFootprint</a>. A saved session includes the pinned data and exploration trail. The companion is a new implementation, separate from the 2011 Weave software.</p>
+      <noscript><p class="note">The interactive demo needs JavaScript. The original abstract, static figure, data, methods and citation remain available here.</p></noscript>
+
+      <div class="abstract">
+        <h3>Open the linked exploration</h3>
+        <p>Explore the angle plot, protein sequence, amino-acid composition and residue table together. Search PG, CPG or overlapping II motifs, then revisit or save your exploration path.</p>
+        <div class="actions"><a class="button primary" id="launch-demo" href="demo/">Launch interactive demo ↗</a><a class="button" href="assets/source/README.md">Data &amp; source ↗</a></div>
+        <p class="helper">Crambin · 46 residues · 44 complete angle pairs. The demo runs locally in your browser.</p>
+      </div>
+    </section>
+
+    <section id="methods" class="section">
+      <div class="section-head"><span class="section-no">04</span><h2>Data, checks &amp; scope</h2></div>
+      <p>The example is <a href="https://www.rcsb.org/structure/1CRN">crambin, RCSB PDB 1CRN</a>, entry version 1.5. The coordinate file was retrieved on 27 October 2026. Backbone torsions are calculated from atom coordinates, with residue identities and missing values retained.</p>
+      <p>All 90 defined angles were cross-checked against Biopython 1.86. The maximum circular difference was 0.0001492°, within the 0.001° comparison tolerance. The protein contains 46 residues and 44 complete φ/ψ pairs.</p>
+      <p class="note">This is an exploratory visualization companion. It supplies no favoured/allowed/outlier classifications or empirical validation contours. The first release covers the pinned 1CRN example, linked selection, literal motif search and replay. General protein-file import, the original R editor and a linked 3D viewer are outside this release.</p>
+      <div class="actions">
+        <a class="button" href="assets/source/science/data/1CRN.pdb" download>Coordinate source</a>
+        <a class="button" href="assets/source/science/data/1crn-residues.json" download>Residue data</a>
+        <a class="button" href="assets/source/science/data/angle-verification.json">Angle verification</a>
+        <a class="button" href="assets/source/README.md">Source &amp; rebuild guide</a>
+      </div>
+      <p class="data-facts">Coordinate SHA-256: <code>42199a30a0701864a2a5cc76cd7f35cc544cd0e65fbcf63e03c166543249b811</code><br>Runtime: VizFootprint 0.1.0 · FootPrint 10.0.0 · foottrace 1.0.3. The saved view definition pins the library source and data versions.</p>
+      <p class="paper-source-note">The plot figure and interactive companion on this page were newly produced from the attributed PDB data. The original paper credits Purushe, Anbalagan and Grinstein, and lists a linked 3D viewer as future work.</p>
+      <h3>Historical Weave source · 2017 archive</h3>
+      <p>The <a href="https://github.com/WeaveTeam/Weave/tree/db83f8a54c66c1e6a62f843ec7eb44649c62e2f0">30 June 2017 archived Weave snapshot</a> includes the <a href="https://github.com/WeaveTeam/Weave/blob/db83f8a54c66c1e6a62f843ec7eb44649c62e2f0/WeaveUI/src/weave/visualization/tools/RamachandranPlotTool.mxml#L65">Ramachandran plot tool</a>, <a href="https://github.com/WeaveTeam/Weave/blob/db83f8a54c66c1e6a62f843ec7eb44649c62e2f0/WeaveUISpark/src/weave/visualization/plotters/RamachandranBackgroundPlotter.as#L39">background renderer</a> and <a href="https://github.com/WeaveTeam/Weave/blob/db83f8a54c66c1e6a62f843ec7eb44649c62e2f0/WeaveData/src/weave/services/WeavePDBServlet.as#L29">PDB service client</a>. The source shows that implementation’s scatterplot, histogram and sequence selections, with an embedded image supplying the plot background.</p>
+    </section>
+
+    <section id="cite" class="section">
+      <div class="section-head"><span class="section-no">05</span><h2>Cite the paper</h2></div>
+      <p class="citation-note">Use the original conference paper citation when discussing the 2011 Weave work. For this companion, also identify the data and software versions supplied with your saved session.</p>
+      <pre class="citation" id="bibtex">@inproceedings{purushe2011ramachandran,
+  author = {Purushe, Shweta and Anbalagan, Sanjay Krishna and Grinstein, Georges},
+  title = {Development of an Interactive {Ramachandran} Plot in {Weave}},
+  booktitle = {2011 15th International Conference on Information Visualisation},
+  year = {2011},
+  pages = {232--236},
+  publisher = {IEEE},
+  doi = {10.1109/IV.2011.109},
+  url = {https://doi.org/10.1109/IV.2011.109}
+}
+</pre>
+      <div class="actions"><button id="copy-citation" class="button">Copy BibTeX</button><a class="button" href="citation.bib" download>Download BibTeX</a><a class="button" href="https://doi.org/10.1109/IV.2011.109">Published paper ↗</a></div>
+      <p id="citation-status" class="helper" role="status"></p>
+    </section>
+    <section class="section" aria-labelledby="related-title">
+      <h2 id="related-title">Continue exploring</h2>
+      <div class="related"><a href="../bridging-ui-chatbot-interactions/"><span>HCII 2025 Posters</span><strong>Bridging UI Design and Chatbot Interactions ↗</strong></a><a href="../visible-reasoning/"><span>HCII 2026</span><strong>Visible Reasoning ↗</strong></a></div>
+    </section>
+    <footer><span>A paper, connected views, and an exploration worth keeping.</span><a href="/#research">All research ↗</a></footer>
+  </main>
+  <script src="assets/paper-ui.js" defer></script>
+</body>
+</html>

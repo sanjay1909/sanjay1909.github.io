@@ -1,0 +1,1455 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "pdbId": "1CRN",
+    "name": "Crambin",
+    "sourceUrl": "https://files.rcsb.org/download/1CRN.pdb",
+    "structureUrl": "https://www.rcsb.org/structure/1CRN",
+    "structureDoi": "10.2210/pdb1CRN/pdb",
+    "sourceSha256": "42199a30a0701864a2a5cc76cd7f35cc544cd0e65fbcf63e03c166543249b811",
+    "entryVersion": "1.5",
+    "pdbRevision": "REVDAT 9, 30-OCT-2024",
+    "retrievedOn": "2026-10-27",
+    "sourceDescription": "RCSB PDB coordinate file, deposited by W. A. Hendrickson and M. M. Teeter; use the linked PDB entry for full source attribution.",
+    "calculation": "Signed backbone torsions: phi=C(i-1),N(i),CA(i),C(i); psi=N(i),CA(i),C(i),N(i+1). Degrees in [-180,180); unavailable angles are null.",
+    "connectivity": "Same model/chain/TER segment, compatible selected atom altlocs, and C–N distance <1.8 Å; uses the Bio.PDB.PPBuilder default radius. This reader conservatively breaks incompatible independently chosen conformers rather than mixing them.",
+    "altLocPolicy": "One backbone conformer: most complete N/CA/C set, then highest mean occupancy, then A, then lexical label. Shared blank-altloc atoms allowed. All selected backbone atom serials/altlocs retained.",
+    "readerScope": "Curated PDB ATOM records for the twenty canonical amino acids; not a general mmCIF/modified-residue parser.",
+    "contours": "No empirical validation contours or automatic favoured/allowed/outlier classification are supplied.",
+    "rowCount": 46,
+    "plottableCount": 44,
+    "sequence": "TTCCPSIVARSNFNVCRLPGTPEAICATYTGCIIIPGATCPGDYAN"
+  },
+  "rows": [
+    {
+      "id": "1CRN:1:A:1:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 1,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "THR",
+      "oneLetter": "T",
+      "sequenceIndex": 0,
+      "segmentIndex": 0,
+      "segmentId": "1CRN:1:A:0",
+      "phi": null,
+      "psi": 147.660026,
+      "plotAvailable": false,
+      "missingReason": [
+        "Phi unavailable at segment start or broken peptide bond"
+      ],
+      "backboneAtomSerials": {
+        "N": 1,
+        "CA": 2,
+        "C": 3
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:2:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 2,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "THR",
+      "oneLetter": "T",
+      "sequenceIndex": 1,
+      "segmentIndex": 1,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -107.832573,
+      "psi": 144.346241,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 8,
+        "CA": 9,
+        "C": 10
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:3:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 3,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "CYS",
+      "oneLetter": "C",
+      "sequenceIndex": 2,
+      "segmentIndex": 2,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -131.170389,
+      "psi": 133.291143,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 15,
+        "CA": 16,
+        "C": 17
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:4:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 4,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "CYS",
+      "oneLetter": "C",
+      "sequenceIndex": 3,
+      "segmentIndex": 3,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -118.896523,
+      "psi": 151.202717,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 21,
+        "CA": 22,
+        "C": 23
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:5:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 5,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "PRO",
+      "oneLetter": "P",
+      "sequenceIndex": 4,
+      "segmentIndex": 4,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -76.181506,
+      "psi": -18.979386,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 27,
+        "CA": 28,
+        "C": 29
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:6:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 6,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "SER",
+      "oneLetter": "S",
+      "sequenceIndex": 5,
+      "segmentIndex": 5,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -157.924288,
+      "psi": 166.027161,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 34,
+        "CA": 35,
+        "C": 36
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:7:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 7,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ILE",
+      "oneLetter": "I",
+      "sequenceIndex": 6,
+      "segmentIndex": 6,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -63.579524,
+      "psi": -42.100632,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 40,
+        "CA": 41,
+        "C": 42
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:8:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 8,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "VAL",
+      "oneLetter": "V",
+      "sequenceIndex": 7,
+      "segmentIndex": 7,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -55.930329,
+      "psi": -44.561332,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 48,
+        "CA": 49,
+        "C": 50
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:9:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 9,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ALA",
+      "oneLetter": "A",
+      "sequenceIndex": 8,
+      "segmentIndex": 8,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -61.364845,
+      "psi": -43.779138,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 55,
+        "CA": 56,
+        "C": 57
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:10:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 10,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ARG",
+      "oneLetter": "R",
+      "sequenceIndex": 9,
+      "segmentIndex": 9,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -63.193412,
+      "psi": -43.303486,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 60,
+        "CA": 61,
+        "C": 62
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:11:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 11,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "SER",
+      "oneLetter": "S",
+      "sequenceIndex": 10,
+      "segmentIndex": 10,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -61.2088,
+      "psi": -42.430336,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 71,
+        "CA": 72,
+        "C": 73
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:12:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 12,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ASN",
+      "oneLetter": "N",
+      "sequenceIndex": 11,
+      "segmentIndex": 11,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -64.9204,
+      "psi": -39.489513,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 77,
+        "CA": 78,
+        "C": 79
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:13:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 13,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "PHE",
+      "oneLetter": "F",
+      "sequenceIndex": 12,
+      "segmentIndex": 12,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -59.102393,
+      "psi": -47.211965,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 85,
+        "CA": 86,
+        "C": 87
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:14:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 14,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ASN",
+      "oneLetter": "N",
+      "sequenceIndex": 13,
+      "segmentIndex": 13,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -62.823308,
+      "psi": -35.231846,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 96,
+        "CA": 97,
+        "C": 98
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:15:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 15,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "VAL",
+      "oneLetter": "V",
+      "sequenceIndex": 14,
+      "segmentIndex": 14,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -69.239667,
+      "psi": -41.218779,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 104,
+        "CA": 105,
+        "C": 106
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:16:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 16,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "CYS",
+      "oneLetter": "C",
+      "sequenceIndex": 15,
+      "segmentIndex": 15,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -56.671614,
+      "psi": -36.000832,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 111,
+        "CA": 112,
+        "C": 113
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:17:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 17,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ARG",
+      "oneLetter": "R",
+      "sequenceIndex": 16,
+      "segmentIndex": 16,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -77.068519,
+      "psi": -16.126707,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 117,
+        "CA": 118,
+        "C": 119
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:18:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 18,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "LEU",
+      "oneLetter": "L",
+      "sequenceIndex": 17,
+      "segmentIndex": 17,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -53.208796,
+      "psi": -46.167676,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 128,
+        "CA": 129,
+        "C": 130
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:19:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 19,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "PRO",
+      "oneLetter": "P",
+      "sequenceIndex": 18,
+      "segmentIndex": 18,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -77.189679,
+      "psi": -7.597741,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 136,
+        "CA": 137,
+        "C": 138
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:20:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 20,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "GLY",
+      "oneLetter": "G",
+      "sequenceIndex": 19,
+      "segmentIndex": 19,
+      "segmentId": "1CRN:1:A:0",
+      "phi": 106.257207,
+      "psi": 7.311793,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 143,
+        "CA": 144,
+        "C": 145
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:21:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 21,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "THR",
+      "oneLetter": "T",
+      "sequenceIndex": 20,
+      "segmentIndex": 20,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -52.674731,
+      "psi": 136.344219,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 147,
+        "CA": 148,
+        "C": 149
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:22:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 22,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "PRO",
+      "oneLetter": "P",
+      "sequenceIndex": 21,
+      "segmentIndex": 21,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -56.977153,
+      "psi": 146.617514,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 154,
+        "CA": 155,
+        "C": 156
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:23:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 23,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "GLU",
+      "oneLetter": "E",
+      "sequenceIndex": 22,
+      "segmentIndex": 22,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -56.41284,
+      "psi": -36.191815,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 161,
+        "CA": 162,
+        "C": 163
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:24:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 24,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ALA",
+      "oneLetter": "A",
+      "sequenceIndex": 23,
+      "segmentIndex": 23,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -63.430344,
+      "psi": -34.86066,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 170,
+        "CA": 171,
+        "C": 172
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:25:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 25,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ILE",
+      "oneLetter": "I",
+      "sequenceIndex": 24,
+      "segmentIndex": 24,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -74.76662,
+      "psi": -37.894498,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 175,
+        "CA": 176,
+        "C": 177
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:26:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 26,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "CYS",
+      "oneLetter": "C",
+      "sequenceIndex": 25,
+      "segmentIndex": 25,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -64.948033,
+      "psi": -31.686198,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 183,
+        "CA": 184,
+        "C": 185
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:27:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 27,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ALA",
+      "oneLetter": "A",
+      "sequenceIndex": 26,
+      "segmentIndex": 26,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -62.036226,
+      "psi": -54.031875,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 189,
+        "CA": 190,
+        "C": 191
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:28:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 28,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "THR",
+      "oneLetter": "T",
+      "sequenceIndex": 27,
+      "segmentIndex": 27,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -68.778289,
+      "psi": -25.486562,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 194,
+        "CA": 195,
+        "C": 196
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:29:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 29,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "TYR",
+      "oneLetter": "Y",
+      "sequenceIndex": 28,
+      "segmentIndex": 28,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -67.592836,
+      "psi": -36.300194,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 201,
+        "CA": 202,
+        "C": 203
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:30:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 30,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "THR",
+      "oneLetter": "T",
+      "sequenceIndex": 29,
+      "segmentIndex": 29,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -108.956767,
+      "psi": -18.473152,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 213,
+        "CA": 214,
+        "C": 215
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:31:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 31,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "GLY",
+      "oneLetter": "G",
+      "sequenceIndex": 30,
+      "segmentIndex": 30,
+      "segmentId": "1CRN:1:A:0",
+      "phi": 91.815951,
+      "psi": -3.067675,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 220,
+        "CA": 221,
+        "C": 222
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:32:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 32,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "CYS",
+      "oneLetter": "C",
+      "sequenceIndex": 31,
+      "segmentIndex": 31,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -69.515392,
+      "psi": 164.375577,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 224,
+        "CA": 225,
+        "C": 226
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:33:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 33,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ILE",
+      "oneLetter": "I",
+      "sequenceIndex": 32,
+      "segmentIndex": 32,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -129.761553,
+      "psi": 157.032715,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 230,
+        "CA": 231,
+        "C": 232
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:34:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 34,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ILE",
+      "oneLetter": "I",
+      "sequenceIndex": 33,
+      "segmentIndex": 33,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -111.563161,
+      "psi": 129.588363,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 238,
+        "CA": 239,
+        "C": 240
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:35:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 35,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ILE",
+      "oneLetter": "I",
+      "sequenceIndex": 34,
+      "segmentIndex": 34,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -124.130558,
+      "psi": 158.12732,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 246,
+        "CA": 247,
+        "C": 248
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:36:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 36,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "PRO",
+      "oneLetter": "P",
+      "sequenceIndex": 35,
+      "segmentIndex": 35,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -78.150912,
+      "psi": -24.351838,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 254,
+        "CA": 255,
+        "C": 256
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:37:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 37,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "GLY",
+      "oneLetter": "G",
+      "sequenceIndex": 36,
+      "segmentIndex": 36,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -89.73976,
+      "psi": -161.711226,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 261,
+        "CA": 262,
+        "C": 263
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:38:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 38,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ALA",
+      "oneLetter": "A",
+      "sequenceIndex": 37,
+      "segmentIndex": 37,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -120.806412,
+      "psi": 1.238816,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 265,
+        "CA": 266,
+        "C": 267
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:39:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 39,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "THR",
+      "oneLetter": "T",
+      "sequenceIndex": 38,
+      "segmentIndex": 38,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -114.625917,
+      "psi": 104.511918,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 270,
+        "CA": 271,
+        "C": 272
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:40:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 40,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "CYS",
+      "oneLetter": "C",
+      "sequenceIndex": 39,
+      "segmentIndex": 39,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -75.525053,
+      "psi": 145.356696,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 277,
+        "CA": 278,
+        "C": 279
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:41:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 41,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "PRO",
+      "oneLetter": "P",
+      "sequenceIndex": 40,
+      "segmentIndex": 40,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -71.200027,
+      "psi": 162.749132,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 283,
+        "CA": 284,
+        "C": 285
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:42:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 42,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "GLY",
+      "oneLetter": "G",
+      "sequenceIndex": 41,
+      "segmentIndex": 41,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -61.887021,
+      "psi": -23.112126,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 290,
+        "CA": 291,
+        "C": 292
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:43:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 43,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ASP",
+      "oneLetter": "D",
+      "sequenceIndex": 42,
+      "segmentIndex": 42,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -89.704786,
+      "psi": -2.008555,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 294,
+        "CA": 295,
+        "C": 296
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:44:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 44,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "TYR",
+      "oneLetter": "Y",
+      "sequenceIndex": 43,
+      "segmentIndex": 43,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -130.332598,
+      "psi": 60.007908,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 302,
+        "CA": 303,
+        "C": 304
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:45:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 45,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ALA",
+      "oneLetter": "A",
+      "sequenceIndex": 44,
+      "segmentIndex": 44,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -88.769547,
+      "psi": -2.529881,
+      "plotAvailable": true,
+      "missingReason": [],
+      "backboneAtomSerials": {
+        "N": 314,
+        "CA": 315,
+        "C": 316
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    },
+    {
+      "id": "1CRN:1:A:46:::0",
+      "sourceId": "1CRN",
+      "model": 1,
+      "chain": "A",
+      "resSeq": 46,
+      "insertionCode": "",
+      "altLoc": "",
+      "resName": "ASN",
+      "oneLetter": "N",
+      "sequenceIndex": 45,
+      "segmentIndex": 45,
+      "segmentId": "1CRN:1:A:0",
+      "phi": -112.851383,
+      "psi": null,
+      "plotAvailable": false,
+      "missingReason": [
+        "Psi unavailable at segment end or broken peptide bond"
+      ],
+      "backboneAtomSerials": {
+        "N": 319,
+        "CA": 320,
+        "C": 321
+      },
+      "backboneAtomAltLocs": {
+        "N": "",
+        "CA": "",
+        "C": ""
+      },
+      "availableAltLocs": [
+        ""
+      ]
+    }
+  ]
+}

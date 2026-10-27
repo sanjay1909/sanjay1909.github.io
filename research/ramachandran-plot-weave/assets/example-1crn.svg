@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
+<title id="title">Crambin backbone angles with a CPG motif highlighted</title>
+<desc id="desc">Forty-four complete phi and psi pairs from 46 residues in PDB 1CRN. Cysteine 40, proline 41 and glycine 42 form the exact sequence motif CPG and are highlighted. No validation contours are shown.</desc>
+<rect width="1000" height="620" fill="#112d29"/>
+<path d="M82.0 65V525 M82 525.0H542" stroke="#34564f" stroke-width="1"/>
+<text x="82.0" y="552" font-family="Arial,sans-serif" font-size="13" fill="#eee9d9" text-anchor="middle">-180</text>
+<text x="67" y="530.0" font-family="Arial,sans-serif" font-size="13" fill="#eee9d9" text-anchor="end">-180</text>
+<path d="M197.0 65V525 M82 410.0H542" stroke="#34564f" stroke-width="1"/>
+<text x="197.0" y="552" font-family="Arial,sans-serif" font-size="13" fill="#eee9d9" text-anchor="middle">-90</text>
+<text x="67" y="415.0" font-family="Arial,sans-serif" font-size="13" fill="#eee9d9" text-anchor="end">-90</text>
+<path d="M312.0 65V525 M82 295.0H542" stroke="#34564f" stroke-width="1"/>
+<text x="312.0" y="552" font-family="Arial,sans-serif" font-size="13" fill="#eee9d9" text-anchor="middle">0</text>
+<text x="67" y="300.0" font-family="Arial,sans-serif" font-size="13" fill="#eee9d9" text-anchor="end">0</text>
+<path d="M427.0 65V525 M82 180.0H542" stroke="#34564f" stroke-width="1"/>
+<text x="427.0" y="552" font-family="Arial,sans-serif" font-size="13" fill="#eee9d9" text-anchor="middle">90</text>
+<text x="67" y="185.0" font-family="Arial,sans-serif" font-size="13" fill="#eee9d9" text-anchor="end">90</text>
+<path d="M542.0 65V525 M82 65.0H542" stroke="#34564f" stroke-width="1"/>
+<text x="542.0" y="552" font-family="Arial,sans-serif" font-size="13" fill="#eee9d9" text-anchor="middle">180</text>
+<text x="67" y="70.0" font-family="Arial,sans-serif" font-size="13" fill="#eee9d9" text-anchor="end">180</text>
+<rect x="82" y="65" width="460" height="460" fill="none" stroke="#85988a"/>
+<circle cx="174.214" cy="110.558" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="144.393" cy="124.684" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="160.077" cy="101.797" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="214.657" cy="319.251" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="110.208" cy="82.854" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="230.759" cy="348.795" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="240.533" cy="351.939" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="233.589" cy="350.940" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="231.253" cy="350.332" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="233.789" cy="349.217" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="229.046" cy="345.459" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="236.480" cy="355.326" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="231.726" cy="340.018" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="223.527" cy="347.668" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="239.586" cy="341.001" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="213.524" cy="315.606" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="244.011" cy="353.992" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="213.369" cy="304.708" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="447.773" cy="285.657" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="244.693" cy="120.782" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="239.196" cy="107.655" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="239.917" cy="341.245" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="230.950" cy="339.544" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="216.465" cy="343.421" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="229.011" cy="335.488" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="232.731" cy="364.041" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="224.117" cy="327.566" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="225.631" cy="341.384" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="172.777" cy="318.605" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="429.320" cy="298.920" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="223.175" cy="84.965" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="146.194" cy="94.347" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="169.447" cy="129.415" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="153.389" cy="92.948" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="212.141" cy="326.116" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="197.333" cy="501.631" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="157.636" cy="293.417" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="165.534" cy="161.457" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="215.496" cy="109.266" r="6" fill="#e6b86e" fill-opacity="1"/>
+<text x="224.4957656111111" y="102.266444" font-family="Arial,sans-serif" font-size="14" fill="#e6b86e" >C40</text>
+<circle cx="221.022" cy="87.043" r="6" fill="#e6b86e" fill-opacity="1"/>
+<text x="230.0221877222222" y="80.04277577777778" font-family="Arial,sans-serif" font-size="14" fill="#e6b86e" >P41</text>
+<circle cx="232.922" cy="324.532" r="6" fill="#e6b86e" fill-opacity="1"/>
+<text x="241.92213983333335" y="317.53216100000003" font-family="Arial,sans-serif" font-size="14" fill="#e6b86e" >G42</text>
+<circle cx="197.377" cy="297.566" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="145.464" cy="218.323" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<circle cx="198.572" cy="298.233" r="4" fill="#8aa89d" fill-opacity="0.7"/>
+<text x="312" y="584" font-family="Arial,sans-serif" font-size="18" fill="#eee9d9" text-anchor="middle">φ (degrees)</text>
+<text x="25" y="295" font-family="Arial,sans-serif" font-size="18" fill="#eee9d9" transform="rotate(-90 25 295)" text-anchor="middle">ψ (degrees)</text>
+<text x="610" y="112" font-family="Arial,sans-serif" font-size="28" fill="#eee9d9" >One selection. Linked evidence.</text>
+<text x="610" y="153" font-family="Arial,sans-serif" font-size="18" fill="#eee9d9" >Crambin · PDB 1CRN · chain A</text>
+<text x="610" y="214" font-family="Arial,sans-serif" font-size="20" fill="#e6b86e" >46 residues / 44 plotted pairs</text>
+<text x="610" y="250" font-family="Arial,sans-serif" font-size="20" fill="#e6b86e" >CPG → residues 40–42</text>
+<text x="610" y="302" font-family="Arial,sans-serif" font-size="15" fill="#eee9d9" >A sequence motif selects the same residue IDs</text>
+<text x="610" y="332" font-family="Arial,sans-serif" font-size="15" fill="#eee9d9" >across the plot, sequence, histogram and table.</text>
+<text x="610" y="362" font-family="Arial,sans-serif" font-size="15" fill="#eee9d9" >VizFootprint records the path for replay.</text>
+<text x="610" y="392" font-family="Arial,sans-serif" font-size="15" fill="#eee9d9" ></text>
+<text x="610" y="422" font-family="Arial,sans-serif" font-size="15" fill="#eee9d9" >New reference companion to the 2011 paper.</text>
+<text x="610" y="452" font-family="Arial,sans-serif" font-size="15" fill="#eee9d9" >No favoured/allowed/outlier classification.</text>
+</svg>

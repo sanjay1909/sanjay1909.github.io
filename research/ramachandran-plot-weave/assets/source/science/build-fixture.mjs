@@ -1,0 +1,11 @@
+import { readFile,writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { fileURLToPath } from 'node:url';
+import { parsePdbBackbone } from './geometry.mjs';
+const raw=await readFile(new URL('./data/1CRN.pdb',import.meta.url));
+const rows=parsePdbBackbone(raw.toString('utf8'),{sourceId:'1CRN'});
+const metadata={pdbId:'1CRN',name:'Crambin',sourceUrl:'https://files.rcsb.org/download/1CRN.pdb',structureUrl:'https://www.rcsb.org/structure/1CRN',structureDoi:'10.2210/pdb1CRN/pdb',sourceSha256:createHash('sha256').update(raw).digest('hex'),entryVersion:'1.5',pdbRevision:'REVDAT 9, 30-OCT-2024',retrievedOn:'2026-10-27',sourceDescription:'RCSB PDB coordinate file, deposited by W. A. Hendrickson and M. M. Teeter; use the linked PDB entry for full source attribution.',calculation:'Signed backbone torsions: phi=C(i-1),N(i),CA(i),C(i); psi=N(i),CA(i),C(i),N(i+1). Degrees in [-180,180); unavailable angles are null.',connectivity:'Same model/chain/TER segment, compatible selected atom altlocs, and C–N distance <1.8 Å; uses the Bio.PDB.PPBuilder default radius. This reader conservatively breaks incompatible independently chosen conformers rather than mixing them.',altLocPolicy:'One backbone conformer: most complete N/CA/C set, then highest mean occupancy, then A, then lexical label. Shared blank-altloc atoms allowed. All selected backbone atom serials/altlocs retained.',readerScope:'Curated PDB ATOM records for the twenty canonical amino acids; not a general mmCIF/modified-residue parser.',contours:'No empirical validation contours or automatic favoured/allowed/outlier classification are supplied.',rowCount:rows.length,plottableCount:rows.filter(r=>r.plotAvailable).length,sequence:rows.map(r=>r.oneLetter).join('')};
+const fixture={schemaVersion:1,metadata,rows};
+const out=new URL('./data/1crn-residues.json',import.meta.url);
+await writeFile(out,JSON.stringify(fixture,null,2)+'\n');
+console.log(JSON.stringify({path:fileURLToPath(out),...metadata},null,2));

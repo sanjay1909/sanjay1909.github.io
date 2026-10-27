@@ -1,0 +1,34 @@
+const app=document.querySelector('.rama-app');
+const el=(tag,cls)=>{const n=document.createElement(tag);n.className=cls;return n;};
+const summary=el('div','focus-summary');
+const heading=app.querySelector(':scope > .rama-panel-head');heading.querySelector('h3').textContent='Crambin · 1CRN';
+summary.append(heading,app.querySelector('.rama-metrics'),app.querySelector(':scope > .rama-controls'));
+const status=app.querySelector('#rama-status');
+const workspace=el('div','focus-workspace');
+const columns=app.querySelectorAll('.rama-column');
+const plot=el('div','focus-column focus-plot');plot.dataset.focusPane='plot';plot.append(...columns[0].children);
+const data=el('div','focus-column focus-data');data.dataset.focusPane='data';data.append(...columns[1].children);
+const trail=app.querySelector('.rama-trail');trail.dataset.focusPane='trail';trail.classList.add('focus-column','focus-history');
+const helper=trail.querySelector(':scope > .helper');const controls=trail.querySelector(':scope > .rama-controls');
+const layout=trail.querySelector('.trail-layout');const list=layout.children[0];const paths=layout.children[1];const save=trail.querySelector('.session-files');
+const replay=el('div','focus-replay');replay.dataset.trailPane='replay';replay.append(helper,controls,list);paths.dataset.trailPane='paths';save.dataset.trailPane='save';
+const tabs=el('div','focus-tabs');tabs.setAttribute('role','group');tabs.setAttribute('aria-label','Exploration tools');
+for(const [key,label] of [['replay','Replay'],['paths','Paths'],['save','Save / open']]){const b=el('button','focus-tab');b.type='button';b.textContent=label;b.setAttribute('aria-pressed',String(key==='replay'));b.addEventListener('click',()=>{trail.dataset.trailTab=key;for(const button of tabs.children)button.setAttribute('aria-pressed',String(button===b));});tabs.append(b);}
+const travel=el('section','time-travel');travel.id='time-travel-panel';travel.hidden=true;travel.setAttribute('aria-label','Time travel through recorded steps');
+const travelHead=el('div','time-travel-head');const travelTitle=el('strong','');travelTitle.textContent='Time travel';const travelOutput=el('output','');travelOutput.id='time-travel-readout';travelHead.append(travelTitle,travelOutput);
+const travelSlider=el('input','');travelSlider.type='range';travelSlider.id='time-travel-slider';travelSlider.min='0';travelSlider.max='0';travelSlider.value='0';travelSlider.setAttribute('aria-label','Recorded step on the current exploration path');
+const beats=el('div','time-travel-beats');beats.id='time-travel-beats';const travelNote=el('p','helper');travelNote.textContent='Drag to a recorded beat, then release to restore that selection. New selections from the past keep an alternative path.';
+travel.append(travelHead,travelSlider,beats,travelNote);replay.prepend(travel);
+const travelButton=el('button','button time-travel-launch');travelButton.type='button';travelButton.id='time-travel-toggle';travelButton.textContent='Time travel';travelButton.setAttribute('aria-controls','time-travel-panel');travelButton.setAttribute('aria-expanded','false');
+travelButton.addEventListener('click',()=>{const opening=travel.hidden;travel.hidden=!opening;travelButton.setAttribute('aria-expanded',String(opening));if(opening){trail.dataset.trailTab='replay';for(const b of tabs.children)b.setAttribute('aria-pressed',String(b.textContent==='Replay'));app.dataset.mobilePane='trail';for(const b of mobile.children)b.setAttribute('aria-pressed',String(b.textContent==='Trail & replay'));travelSlider.focus();}});
+document.querySelector('.focus-header nav').prepend(travelButton);
+trail.dataset.trailTab='replay';trail.append(tabs,replay,paths,save);layout.remove();
+workspace.append(plot,data,trail);
+const mobile=el('div','focus-mobile-tabs');mobile.setAttribute('role','group');mobile.setAttribute('aria-label','Dashboard views');
+for(const [key,label] of [['plot','Angle plot'],['data','Residues & motif'],['trail','Trail & replay']]){const b=el('button','focus-tab');b.type='button';b.textContent=label;b.setAttribute('aria-pressed',String(key==='plot'));b.addEventListener('click',()=>{app.dataset.mobilePane=key;for(const button of mobile.children)button.setAttribute('aria-pressed',String(button===b));});mobile.append(b);}
+app.dataset.mobilePane='plot';app.replaceChildren(summary,mobile,workspace,status);
+plot.querySelector('#plot-guide').textContent='Brush a region or select a point. All views share one selection.';
+plot.querySelector('.rama-note').textContent='44 complete φ/ψ pairs · terminal residues stay in the other views. No validation contours.';
+plot.querySelector('#composition-title').textContent='Amino-acid composition';
+data.querySelector('#motif-help').textContent='Exact one-letter motifs; overlapping occurrences are retained.';
+await import('./demo.js');

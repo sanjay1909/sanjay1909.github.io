@@ -1,0 +1,658 @@
+{
+  "status": "passed",
+  "independentImplementation": "Bio.PDB.PPBuilder.get_phi_psi_list",
+  "biopythonVersion": "1.86",
+  "sourceSha256": "42199a30a0701864a2a5cc76cd7f35cc544cd0e65fbcf63e03c166543249b811",
+  "fixtureSha256": "5b969050fbbdff9d9cf7a586f9071e163c89961a1ca3066e50b78df421777ed4",
+  "javascriptImplementationSha256": "c77e871e92528b3c5564e50274059bbef38ee278b2bf21942cb38106c21c2f5e",
+  "residues": 46,
+  "anglesCompared": 90,
+  "missingAngles": [
+    {
+      "rowId": "1CRN:1:A:1:::0",
+      "angle": "phi"
+    },
+    {
+      "rowId": "1CRN:1:A:46:::0",
+      "angle": "psi"
+    }
+  ],
+  "maxAbsoluteCircularErrorDegrees": 0.00014919990209705247,
+  "toleranceDegrees": 0.001,
+  "notes": [
+    "JavaScript calculates with parsed double-precision coordinates; Bio.PDB stores coordinates as float32, causing tiny expected numerical differences.",
+    "This checks backbone-angle arithmetic and matching terminal-null handling for this curated fixture. It does not validate structural quality or general PDB/mmCIF ingestion."
+  ],
+  "comparisons": [
+    {
+      "rowId": "1CRN:1:A:1:::0",
+      "angle": "psi",
+      "javascriptDegrees": 147.660026,
+      "biopythonDegrees": 147.66003438522588,
+      "absoluteCircularErrorDegrees": 8.385225896745396e-06
+    },
+    {
+      "rowId": "1CRN:1:A:2:::0",
+      "angle": "phi",
+      "javascriptDegrees": -107.832573,
+      "biopythonDegrees": -107.8325445792896,
+      "absoluteCircularErrorDegrees": 2.842071040731753e-05
+    },
+    {
+      "rowId": "1CRN:1:A:2:::0",
+      "angle": "psi",
+      "javascriptDegrees": 144.346241,
+      "biopythonDegrees": 144.34620458650588,
+      "absoluteCircularErrorDegrees": 3.641349411509509e-05
+    },
+    {
+      "rowId": "1CRN:1:A:3:::0",
+      "angle": "phi",
+      "javascriptDegrees": -131.170389,
+      "biopythonDegrees": -131.17036636636865,
+      "absoluteCircularErrorDegrees": 2.263363134602514e-05
+    },
+    {
+      "rowId": "1CRN:1:A:3:::0",
+      "angle": "psi",
+      "javascriptDegrees": 133.291143,
+      "biopythonDegrees": 133.29118757117408,
+      "absoluteCircularErrorDegrees": 4.45711740724164e-05
+    },
+    {
+      "rowId": "1CRN:1:A:4:::0",
+      "angle": "phi",
+      "javascriptDegrees": -118.896523,
+      "biopythonDegrees": -118.89656655627246,
+      "absoluteCircularErrorDegrees": 4.3556272458999956e-05
+    },
+    {
+      "rowId": "1CRN:1:A:4:::0",
+      "angle": "psi",
+      "javascriptDegrees": 151.202717,
+      "biopythonDegrees": 151.2027386499888,
+      "absoluteCircularErrorDegrees": 2.164998878129154e-05
+    },
+    {
+      "rowId": "1CRN:1:A:5:::0",
+      "angle": "phi",
+      "javascriptDegrees": -76.181506,
+      "biopythonDegrees": -76.18154302631591,
+      "absoluteCircularErrorDegrees": 3.7026315908406104e-05
+    },
+    {
+      "rowId": "1CRN:1:A:5:::0",
+      "angle": "psi",
+      "javascriptDegrees": -18.979386,
+      "biopythonDegrees": -18.97939018700488,
+      "absoluteCircularErrorDegrees": 4.1870048903547286e-06
+    },
+    {
+      "rowId": "1CRN:1:A:6:::0",
+      "angle": "phi",
+      "javascriptDegrees": -157.924288,
+      "biopythonDegrees": -157.92429521048612,
+      "absoluteCircularErrorDegrees": 7.210486131725702e-06
+    },
+    {
+      "rowId": "1CRN:1:A:6:::0",
+      "angle": "psi",
+      "javascriptDegrees": 166.027161,
+      "biopythonDegrees": 166.02720954344727,
+      "absoluteCircularErrorDegrees": 4.854344726368254e-05
+    },
+    {
+      "rowId": "1CRN:1:A:7:::0",
+      "angle": "phi",
+      "javascriptDegrees": -63.579524,
+      "biopythonDegrees": -63.57953211367573,
+      "absoluteCircularErrorDegrees": 8.11367573305688e-06
+    },
+    {
+      "rowId": "1CRN:1:A:7:::0",
+      "angle": "psi",
+      "javascriptDegrees": -42.100632,
+      "biopythonDegrees": -42.10065539558576,
+      "absoluteCircularErrorDegrees": 2.3395585770913385e-05
+    },
+    {
+      "rowId": "1CRN:1:A:8:::0",
+      "angle": "phi",
+      "javascriptDegrees": -55.930329,
+      "biopythonDegrees": -55.93033649853503,
+      "absoluteCircularErrorDegrees": 7.4985350124734396e-06
+    },
+    {
+      "rowId": "1CRN:1:A:8:::0",
+      "angle": "psi",
+      "javascriptDegrees": -44.561332,
+      "biopythonDegrees": -44.561307744541956,
+      "absoluteCircularErrorDegrees": 2.425545804385365e-05
+    },
+    {
+      "rowId": "1CRN:1:A:9:::0",
+      "angle": "phi",
+      "javascriptDegrees": -61.364845,
+      "biopythonDegrees": -61.36486235346255,
+      "absoluteCircularErrorDegrees": 1.7353462538949316e-05
+    },
+    {
+      "rowId": "1CRN:1:A:9:::0",
+      "angle": "psi",
+      "javascriptDegrees": -43.779138,
+      "biopythonDegrees": -43.779135084883755,
+      "absoluteCircularErrorDegrees": 2.9151162550533627e-06
+    },
+    {
+      "rowId": "1CRN:1:A:10:::0",
+      "angle": "phi",
+      "javascriptDegrees": -63.193412,
+      "biopythonDegrees": -63.19343059151053,
+      "absoluteCircularErrorDegrees": 1.8591510524856858e-05
+    },
+    {
+      "rowId": "1CRN:1:A:10:::0",
+      "angle": "psi",
+      "javascriptDegrees": -43.303486,
+      "biopythonDegrees": -43.30348380438378,
+      "absoluteCircularErrorDegrees": 2.1956162186143047e-06
+    },
+    {
+      "rowId": "1CRN:1:A:11:::0",
+      "angle": "phi",
+      "javascriptDegrees": -61.2088,
+      "biopythonDegrees": -61.208792917594955,
+      "absoluteCircularErrorDegrees": 7.082405033997929e-06
+    },
+    {
+      "rowId": "1CRN:1:A:11:::0",
+      "angle": "psi",
+      "javascriptDegrees": -42.430336,
+      "biopythonDegrees": -42.43035865908385,
+      "absoluteCircularErrorDegrees": 2.265908386789306e-05
+    },
+    {
+      "rowId": "1CRN:1:A:12:::0",
+      "angle": "phi",
+      "javascriptDegrees": -64.9204,
+      "biopythonDegrees": -64.92038064745933,
+      "absoluteCircularErrorDegrees": 1.9352540675754426e-05
+    },
+    {
+      "rowId": "1CRN:1:A:12:::0",
+      "angle": "psi",
+      "javascriptDegrees": -39.489513,
+      "biopythonDegrees": -39.48952427171216,
+      "absoluteCircularErrorDegrees": 1.1271712168081649e-05
+    },
+    {
+      "rowId": "1CRN:1:A:13:::0",
+      "angle": "phi",
+      "javascriptDegrees": -59.102393,
+      "biopythonDegrees": -59.10236791489104,
+      "absoluteCircularErrorDegrees": 2.5085108973144088e-05
+    },
+    {
+      "rowId": "1CRN:1:A:13:::0",
+      "angle": "psi",
+      "javascriptDegrees": -47.211965,
+      "biopythonDegrees": -47.21196742462698,
+      "absoluteCircularErrorDegrees": 2.424626984520728e-06
+    },
+    {
+      "rowId": "1CRN:1:A:14:::0",
+      "angle": "phi",
+      "javascriptDegrees": -62.823308,
+      "biopythonDegrees": -62.82330903982575,
+      "absoluteCircularErrorDegrees": 1.0398257472843397e-06
+    },
+    {
+      "rowId": "1CRN:1:A:14:::0",
+      "angle": "psi",
+      "javascriptDegrees": -35.231846,
+      "biopythonDegrees": -35.23182858474513,
+      "absoluteCircularErrorDegrees": 1.7415254859542983e-05
+    },
+    {
+      "rowId": "1CRN:1:A:15:::0",
+      "angle": "phi",
+      "javascriptDegrees": -69.239667,
+      "biopythonDegrees": -69.23967345750418,
+      "absoluteCircularErrorDegrees": 6.457504184709251e-06
+    },
+    {
+      "rowId": "1CRN:1:A:15:::0",
+      "angle": "psi",
+      "javascriptDegrees": -41.218779,
+      "biopythonDegrees": -41.218770383889485,
+      "absoluteCircularErrorDegrees": 8.616110505954566e-06
+    },
+    {
+      "rowId": "1CRN:1:A:16:::0",
+      "angle": "phi",
+      "javascriptDegrees": -56.671614,
+      "biopythonDegrees": -56.67162042705792,
+      "absoluteCircularErrorDegrees": 6.427057911650991e-06
+    },
+    {
+      "rowId": "1CRN:1:A:16:::0",
+      "angle": "psi",
+      "javascriptDegrees": -36.000832,
+      "biopythonDegrees": -36.00083151206115,
+      "absoluteCircularErrorDegrees": 4.879388484368974e-07
+    },
+    {
+      "rowId": "1CRN:1:A:17:::0",
+      "angle": "phi",
+      "javascriptDegrees": -77.068519,
+      "biopythonDegrees": -77.06849780732084,
+      "absoluteCircularErrorDegrees": 2.1192679156456506e-05
+    },
+    {
+      "rowId": "1CRN:1:A:17:::0",
+      "angle": "psi",
+      "javascriptDegrees": -16.126707,
+      "biopythonDegrees": -16.126722376609585,
+      "absoluteCircularErrorDegrees": 1.5376609582062883e-05
+    },
+    {
+      "rowId": "1CRN:1:A:18:::0",
+      "angle": "phi",
+      "javascriptDegrees": -53.208796,
+      "biopythonDegrees": -53.20879390943031,
+      "absoluteCircularErrorDegrees": 2.090569694246369e-06
+    },
+    {
+      "rowId": "1CRN:1:A:18:::0",
+      "angle": "psi",
+      "javascriptDegrees": -46.167676,
+      "biopythonDegrees": -46.16765886039612,
+      "absoluteCircularErrorDegrees": 1.71396038695093e-05
+    },
+    {
+      "rowId": "1CRN:1:A:19:::0",
+      "angle": "phi",
+      "javascriptDegrees": -77.189679,
+      "biopythonDegrees": -77.18968921941057,
+      "absoluteCircularErrorDegrees": 1.0219410569334286e-05
+    },
+    {
+      "rowId": "1CRN:1:A:19:::0",
+      "angle": "psi",
+      "javascriptDegrees": -7.597741,
+      "biopythonDegrees": -7.597736345369523,
+      "absoluteCircularErrorDegrees": 4.654630487266331e-06
+    },
+    {
+      "rowId": "1CRN:1:A:20:::0",
+      "angle": "phi",
+      "javascriptDegrees": 106.257207,
+      "biopythonDegrees": 106.2571973480067,
+      "absoluteCircularErrorDegrees": 9.651993309489626e-06
+    },
+    {
+      "rowId": "1CRN:1:A:20:::0",
+      "angle": "psi",
+      "javascriptDegrees": 7.311793,
+      "biopythonDegrees": 7.311815965765475,
+      "absoluteCircularErrorDegrees": 2.296576548133089e-05
+    },
+    {
+      "rowId": "1CRN:1:A:21:::0",
+      "angle": "phi",
+      "javascriptDegrees": -52.674731,
+      "biopythonDegrees": -52.67475200889099,
+      "absoluteCircularErrorDegrees": 2.1008890996654372e-05
+    },
+    {
+      "rowId": "1CRN:1:A:21:::0",
+      "angle": "psi",
+      "javascriptDegrees": 136.344219,
+      "biopythonDegrees": 136.34422494550714,
+      "absoluteCircularErrorDegrees": 5.945507126625671e-06
+    },
+    {
+      "rowId": "1CRN:1:A:22:::0",
+      "angle": "phi",
+      "javascriptDegrees": -56.977153,
+      "biopythonDegrees": -56.97716393954093,
+      "absoluteCircularErrorDegrees": 1.0939540914023382e-05
+    },
+    {
+      "rowId": "1CRN:1:A:22:::0",
+      "angle": "psi",
+      "javascriptDegrees": 146.617514,
+      "biopythonDegrees": 146.61753298055623,
+      "absoluteCircularErrorDegrees": 1.898055623428263e-05
+    },
+    {
+      "rowId": "1CRN:1:A:23:::0",
+      "angle": "phi",
+      "javascriptDegrees": -56.41284,
+      "biopythonDegrees": -56.41285059240607,
+      "absoluteCircularErrorDegrees": 1.059240605627565e-05
+    },
+    {
+      "rowId": "1CRN:1:A:23:::0",
+      "angle": "psi",
+      "javascriptDegrees": -36.191815,
+      "biopythonDegrees": -36.191807484746874,
+      "absoluteCircularErrorDegrees": 7.515253116707754e-06
+    },
+    {
+      "rowId": "1CRN:1:A:24:::0",
+      "angle": "phi",
+      "javascriptDegrees": -63.430344,
+      "biopythonDegrees": -63.43036367162646,
+      "absoluteCircularErrorDegrees": 1.9671626461104097e-05
+    },
+    {
+      "rowId": "1CRN:1:A:24:::0",
+      "angle": "psi",
+      "javascriptDegrees": -34.86066,
+      "biopythonDegrees": -34.86063934330533,
+      "absoluteCircularErrorDegrees": 2.0656694687204435e-05
+    },
+    {
+      "rowId": "1CRN:1:A:25:::0",
+      "angle": "phi",
+      "javascriptDegrees": -74.76662,
+      "biopythonDegrees": -74.76664620401604,
+      "absoluteCircularErrorDegrees": 2.620401602371203e-05
+    },
+    {
+      "rowId": "1CRN:1:A:25:::0",
+      "angle": "psi",
+      "javascriptDegrees": -37.894498,
+      "biopythonDegrees": -37.89447818536407,
+      "absoluteCircularErrorDegrees": 1.9814635919601642e-05
+    },
+    {
+      "rowId": "1CRN:1:A:26:::0",
+      "angle": "phi",
+      "javascriptDegrees": -64.948033,
+      "biopythonDegrees": -64.9480490318866,
+      "absoluteCircularErrorDegrees": 1.6031886616474367e-05
+    },
+    {
+      "rowId": "1CRN:1:A:26:::0",
+      "angle": "psi",
+      "javascriptDegrees": -31.686198,
+      "biopythonDegrees": -31.68619876709492,
+      "absoluteCircularErrorDegrees": 7.670949173643749e-07
+    },
+    {
+      "rowId": "1CRN:1:A:27:::0",
+      "angle": "phi",
+      "javascriptDegrees": -62.036226,
+      "biopythonDegrees": -62.03623450006715,
+      "absoluteCircularErrorDegrees": 8.500067167460656e-06
+    },
+    {
+      "rowId": "1CRN:1:A:27:::0",
+      "angle": "psi",
+      "javascriptDegrees": -54.031875,
+      "biopythonDegrees": -54.03185386301754,
+      "absoluteCircularErrorDegrees": 2.1136982468306087e-05
+    },
+    {
+      "rowId": "1CRN:1:A:28:::0",
+      "angle": "phi",
+      "javascriptDegrees": -68.778289,
+      "biopythonDegrees": -68.77828580186593,
+      "absoluteCircularErrorDegrees": 3.1981340669062774e-06
+    },
+    {
+      "rowId": "1CRN:1:A:28:::0",
+      "angle": "psi",
+      "javascriptDegrees": -25.486562,
+      "biopythonDegrees": -25.486547829363843,
+      "absoluteCircularErrorDegrees": 1.4170636148946869e-05
+    },
+    {
+      "rowId": "1CRN:1:A:29:::0",
+      "angle": "phi",
+      "javascriptDegrees": -67.592836,
+      "biopythonDegrees": -67.59286435936119,
+      "absoluteCircularErrorDegrees": 2.835936118117388e-05
+    },
+    {
+      "rowId": "1CRN:1:A:29:::0",
+      "angle": "psi",
+      "javascriptDegrees": -36.300194,
+      "biopythonDegrees": -36.30017910571129,
+      "absoluteCircularErrorDegrees": 1.4894288710820547e-05
+    },
+    {
+      "rowId": "1CRN:1:A:30:::0",
+      "angle": "phi",
+      "javascriptDegrees": -108.956767,
+      "biopythonDegrees": -108.9567653316228,
+      "absoluteCircularErrorDegrees": 1.6683771946190973e-06
+    },
+    {
+      "rowId": "1CRN:1:A:30:::0",
+      "angle": "psi",
+      "javascriptDegrees": -18.473152,
+      "biopythonDegrees": -18.473144755877424,
+      "absoluteCircularErrorDegrees": 7.244122571137268e-06
+    },
+    {
+      "rowId": "1CRN:1:A:31:::0",
+      "angle": "phi",
+      "javascriptDegrees": 91.815951,
+      "biopythonDegrees": 91.81590241354183,
+      "absoluteCircularErrorDegrees": 4.858645814920237e-05
+    },
+    {
+      "rowId": "1CRN:1:A:31:::0",
+      "angle": "psi",
+      "javascriptDegrees": -3.067675,
+      "biopythonDegrees": -3.0676402803031424,
+      "absoluteCircularErrorDegrees": 3.4719696856200244e-05
+    },
+    {
+      "rowId": "1CRN:1:A:32:::0",
+      "angle": "phi",
+      "javascriptDegrees": -69.515392,
+      "biopythonDegrees": -69.51539134335793,
+      "absoluteCircularErrorDegrees": 6.566420722720068e-07
+    },
+    {
+      "rowId": "1CRN:1:A:32:::0",
+      "angle": "psi",
+      "javascriptDegrees": 164.375577,
+      "biopythonDegrees": 164.37561008601654,
+      "absoluteCircularErrorDegrees": 3.308601654339327e-05
+    },
+    {
+      "rowId": "1CRN:1:A:33:::0",
+      "angle": "phi",
+      "javascriptDegrees": -129.761553,
+      "biopythonDegrees": -129.76155805125936,
+      "absoluteCircularErrorDegrees": 5.051259364563521e-06
+    },
+    {
+      "rowId": "1CRN:1:A:33:::0",
+      "angle": "psi",
+      "javascriptDegrees": 157.032715,
+      "biopythonDegrees": 157.03274339800458,
+      "absoluteCircularErrorDegrees": 2.8398004587870673e-05
+    },
+    {
+      "rowId": "1CRN:1:A:34:::0",
+      "angle": "phi",
+      "javascriptDegrees": -111.563161,
+      "biopythonDegrees": -111.56315422173623,
+      "absoluteCircularErrorDegrees": 6.7782637529489875e-06
+    },
+    {
+      "rowId": "1CRN:1:A:34:::0",
+      "angle": "psi",
+      "javascriptDegrees": 129.588363,
+      "biopythonDegrees": 129.58837073932708,
+      "absoluteCircularErrorDegrees": 7.739327088529535e-06
+    },
+    {
+      "rowId": "1CRN:1:A:35:::0",
+      "angle": "phi",
+      "javascriptDegrees": -124.130558,
+      "biopythonDegrees": -124.13059943614941,
+      "absoluteCircularErrorDegrees": 4.14361494165405e-05
+    },
+    {
+      "rowId": "1CRN:1:A:35:::0",
+      "angle": "psi",
+      "javascriptDegrees": 158.12732,
+      "biopythonDegrees": 158.12729074338426,
+      "absoluteCircularErrorDegrees": 2.9256615732720093e-05
+    },
+    {
+      "rowId": "1CRN:1:A:36:::0",
+      "angle": "phi",
+      "javascriptDegrees": -78.150912,
+      "biopythonDegrees": -78.15084343981336,
+      "absoluteCircularErrorDegrees": 6.856018666212549e-05
+    },
+    {
+      "rowId": "1CRN:1:A:36:::0",
+      "angle": "psi",
+      "javascriptDegrees": -24.351838,
+      "biopythonDegrees": -24.35187562272389,
+      "absoluteCircularErrorDegrees": 3.7622723880303965e-05
+    },
+    {
+      "rowId": "1CRN:1:A:37:::0",
+      "angle": "phi",
+      "javascriptDegrees": -89.73976,
+      "biopythonDegrees": -89.73972368701261,
+      "absoluteCircularErrorDegrees": 3.6312987390374474e-05
+    },
+    {
+      "rowId": "1CRN:1:A:37:::0",
+      "angle": "psi",
+      "javascriptDegrees": -161.711226,
+      "biopythonDegrees": -161.71125075376887,
+      "absoluteCircularErrorDegrees": 2.4753768855134695e-05
+    },
+    {
+      "rowId": "1CRN:1:A:38:::0",
+      "angle": "phi",
+      "javascriptDegrees": -120.806412,
+      "biopythonDegrees": -120.80644602465043,
+      "absoluteCircularErrorDegrees": 3.4024650432229464e-05
+    },
+    {
+      "rowId": "1CRN:1:A:38:::0",
+      "angle": "psi",
+      "javascriptDegrees": 1.238816,
+      "biopythonDegrees": 1.2389651999020863,
+      "absoluteCircularErrorDegrees": 0.00014919990209705247
+    },
+    {
+      "rowId": "1CRN:1:A:39:::0",
+      "angle": "phi",
+      "javascriptDegrees": -114.625917,
+      "biopythonDegrees": -114.62598113364717,
+      "absoluteCircularErrorDegrees": 6.41336471858267e-05
+    },
+    {
+      "rowId": "1CRN:1:A:39:::0",
+      "angle": "psi",
+      "javascriptDegrees": 104.511918,
+      "biopythonDegrees": 104.51190873410218,
+      "absoluteCircularErrorDegrees": 9.265897801924439e-06
+    },
+    {
+      "rowId": "1CRN:1:A:40:::0",
+      "angle": "phi",
+      "javascriptDegrees": -75.525053,
+      "biopythonDegrees": -75.52507603637149,
+      "absoluteCircularErrorDegrees": 2.3036371487705765e-05
+    },
+    {
+      "rowId": "1CRN:1:A:40:::0",
+      "angle": "psi",
+      "javascriptDegrees": 145.356696,
+      "biopythonDegrees": 145.35676094341224,
+      "absoluteCircularErrorDegrees": 6.494341224083655e-05
+    },
+    {
+      "rowId": "1CRN:1:A:41:::0",
+      "angle": "phi",
+      "javascriptDegrees": -71.200027,
+      "biopythonDegrees": -71.20008233997883,
+      "absoluteCircularErrorDegrees": 5.533997881457253e-05
+    },
+    {
+      "rowId": "1CRN:1:A:41:::0",
+      "angle": "psi",
+      "javascriptDegrees": 162.749132,
+      "biopythonDegrees": 162.74913458366268,
+      "absoluteCircularErrorDegrees": 2.583662677579923e-06
+    },
+    {
+      "rowId": "1CRN:1:A:42:::0",
+      "angle": "phi",
+      "javascriptDegrees": -61.887021,
+      "biopythonDegrees": -61.886974407448584,
+      "absoluteCircularErrorDegrees": 4.659255142769325e-05
+    },
+    {
+      "rowId": "1CRN:1:A:42:::0",
+      "angle": "psi",
+      "javascriptDegrees": -23.112126,
+      "biopythonDegrees": -23.11210811329888,
+      "absoluteCircularErrorDegrees": 1.7886701130009897e-05
+    },
+    {
+      "rowId": "1CRN:1:A:43:::0",
+      "angle": "phi",
+      "javascriptDegrees": -89.704786,
+      "biopythonDegrees": -89.70481679389621,
+      "absoluteCircularErrorDegrees": 3.079389620097572e-05
+    },
+    {
+      "rowId": "1CRN:1:A:43:::0",
+      "angle": "psi",
+      "javascriptDegrees": -2.008555,
+      "biopythonDegrees": -2.0085196214812084,
+      "absoluteCircularErrorDegrees": 3.5378518788320434e-05
+    },
+    {
+      "rowId": "1CRN:1:A:44:::0",
+      "angle": "phi",
+      "javascriptDegrees": -130.332598,
+      "biopythonDegrees": -130.33263221304279,
+      "absoluteCircularErrorDegrees": 3.4213042795272486e-05
+    },
+    {
+      "rowId": "1CRN:1:A:44:::0",
+      "angle": "psi",
+      "javascriptDegrees": 60.007908,
+      "biopythonDegrees": 60.0079320154706,
+      "absoluteCircularErrorDegrees": 2.401547061481324e-05
+    },
+    {
+      "rowId": "1CRN:1:A:45:::0",
+      "angle": "phi",
+      "javascriptDegrees": -88.769547,
+      "biopythonDegrees": -88.76951427160061,
+      "absoluteCircularErrorDegrees": 3.272839938972538e-05
+    },
+    {
+      "rowId": "1CRN:1:A:45:::0",
+      "angle": "psi",
+      "javascriptDegrees": -2.529881,
+      "biopythonDegrees": -2.5299508664177432,
+      "absoluteCircularErrorDegrees": 6.986641773210067e-05
+    },
+    {
+      "rowId": "1CRN:1:A:46:::0",
+      "angle": "phi",
+      "javascriptDegrees": -112.851383,
+      "biopythonDegrees": -112.85136334062464,
+      "absoluteCircularErrorDegrees": 1.965937536851925e-05
+    }
+  ]
+}

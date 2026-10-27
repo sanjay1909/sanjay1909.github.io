@@ -1,0 +1,111 @@
+<!doctype html><html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'"><title>Ramachandran Explorer · VizFootprint</title><meta name="description" content="A focused linked-view protein dashboard with motif search, exploration paths and replay. A VizFootprint companion to the 2011 Weave paper."><link rel="canonical" href="https://sanjay1909.github.io/research/ramachandran-plot-weave/demo/"><link rel="stylesheet" href="../../assets/fonts.css"><link rel="stylesheet" href="../../assets/research.css"><link rel="stylesheet" href="../assets/demo.css"><link rel="stylesheet" href="../assets/focus.css"></head><body class="focus-body"><header class="focus-header"><div><span class="focus-brand">VIZFOOTPRINT / REFERENCE EXPLORER</span><h1>Ramachandran <em>Explorer</em></h1></div><nav aria-label="Explorer links"><a href="../">Paper ↗</a><a href="../assets/source/README.md">Source ↗</a><button id="theme-toggle" type="button" class="button" aria-pressed="false">Light paper</button></nav></header><main id="focus-main"><div class="rama-app" aria-label="Linked crambin exploration">
+        <div class="rama-panel-head"><h3>Crambin · 1CRN</h3><span class="label">Chain A · 46 residues</span></div>
+        <div class="rama-metrics" aria-label="Current selection counts">
+          <div class="rama-metric"><strong id="selected-count">—</strong><span>Residues selected</span></div>
+          <div class="rama-metric"><strong id="plotted-count">—</strong><span>Selected plot points</span></div>
+          <div class="rama-metric"><strong id="step-count">—</strong><span>Recorded steps</span></div>
+        </div>
+        <div class="rama-controls">
+          <p id="selection-summary" class="helper">The full protein is the starting view.</p>
+          <button id="show-all" class="button" data-session-control disabled>Show all residues</button>
+          <button id="download-selection" class="button" data-session-control disabled>Download selected rows</button>
+        </div>
+        <p id="rama-status" class="status" role="status" aria-live="polite">Loading the linked views…</p>
+
+        <div class="rama-main-grid">
+          <div class="rama-column">
+            <section class="rama-panel" aria-labelledby="plot-title">
+              <div class="rama-panel-head"><h3 id="plot-title">Ramachandran plot</h3><span class="label">φ / ψ</span></div>
+              <p id="plot-guide" class="helper">Drag a rectangle to select a region. Select a point or focus it and press Enter to choose one residue.</p>
+              <svg id="rama-plot" role="group" aria-labelledby="plot-title" aria-describedby="plot-guide"></svg>
+              <div class="plot-key"><span><span class="key-dot" aria-hidden="true"></span>Selected residues</span><span><span class="key-dot muted" aria-hidden="true"></span>Other residues</span></div>
+              <p class="rama-note">Only complete φ/ψ pairs appear here. The two terminal residues remain available in the sequence, composition and table views.</p>
+            </section>
+            <section class="rama-panel" aria-labelledby="composition-title">
+              <div class="rama-panel-head"><h3 id="composition-title">Amino-acid composition</h3><span class="label">Selected / full count</span></div>
+              <p class="helper">Choose a bar or select an amino-acid type below.</p>
+              <svg id="rama-histogram" role="group" aria-labelledby="composition-title"></svg>
+              <div class="rama-controls">
+                <label class="helper" for="aa-select">Amino-acid type</label>
+                <select id="aa-select" aria-label="Amino-acid type" data-session-control disabled></select>
+                <button id="select-aa" class="button" data-session-control disabled>Select type</button>
+              </div>
+            </section>
+          </div>
+          <div class="rama-column">
+            <section class="rama-panel" aria-labelledby="sequence-title">
+              <div class="rama-panel-head"><h3 id="sequence-title">Protein sequence</h3><span class="label">One-letter codes</span></div>
+              <div id="rama-sequence" class="rama-sequence" role="group" aria-label="All 46 residues in sequence order"></div>
+              <form id="motif-form" class="motif-form">
+                <label class="helper" for="motif-query">Sequence motif</label>
+                <input id="motif-query" name="motif" autocomplete="off" spellcheck="false" maxlength="100" placeholder="For example, PG" aria-describedby="motif-help" data-session-control disabled>
+                <button class="button primary" type="submit" data-session-control disabled>Find motif</button>
+              </form>
+              <p id="motif-help" class="helper">Literal one-letter amino-acid codes. Overlapping occurrences are retained.</p>
+              <div class="motif-examples" aria-label="Example motifs"><button type="button" data-motif="PG" data-session-control disabled>PG</button><button type="button" data-motif="CPG" data-session-control disabled>CPG</button><button type="button" data-motif="II" data-session-control disabled>II · overlaps</button></div>
+              <p id="motif-result" class="helper" role="status">Search a sequence to highlight its residues across the linked views.</p>
+              <div id="motif-matches" aria-label="Motif occurrences"></div>
+            </section>
+            <section class="rama-panel" aria-labelledby="table-title">
+              <div class="rama-panel-head"><h3 id="table-title">Residue table</h3><span class="label">Degrees</span></div>
+              <p class="helper">Choose a residue name for a single selection, or use the checkboxes to adjust the current subset.</p>
+              <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable residue table">
+                <table class="residue-table"><thead><tr><th scope="col">Pick</th><th scope="col">Residue</th><th scope="col">Code</th><th scope="col">φ</th><th scope="col">ψ</th></tr></thead><tbody id="residue-table-body"></tbody></table>
+              </div>
+              <p class="rama-note">A dash marks an undefined angle. Downloaded CSV files preserve those values as empty fields.</p>
+            </section>
+          </div>
+        </div>
+
+        <section class="rama-panel rama-trail" aria-labelledby="trail-title">
+          <div class="rama-panel-head"><h3 id="trail-title">Your exploration trail</h3><span class="label">Recorded by VizFootprint</span></div>
+          <p class="helper">Revisit a recorded step or play the current path. Making a new selection from an earlier step preserves an alternative exploration path.</p>
+          <div class="rama-controls">
+            <button id="start-trail" class="button" data-session-control disabled>First step</button>
+            <button id="step-back" class="button" data-session-control disabled>Previous</button>
+            <button id="step-forward" class="button" data-session-control disabled>Next</button>
+            <button id="latest-trail" class="button" data-session-control disabled>Latest</button>
+            <button id="play-trail" class="button primary" data-session-control disabled>Play recorded steps</button>
+            <button id="stop-replay" class="button" hidden>Stop replay</button>
+          </div>
+          <div class="trail-layout">
+            <div><ol id="trail-list" class="trail-list" aria-label="Recorded exploration steps"></ol></div>
+            <div>
+              <h4>Keep an exploration path</h4>
+              <p class="helper">Name the current step so you can return to it and compare selections.</p>
+              <form id="path-form" class="path-form">
+                <label class="helper" for="path-name">Path name</label>
+                <input id="path-name" name="path" placeholder="For example, PG motif" autocomplete="off" maxlength="60" data-session-control disabled>
+                <button id="save-path" type="submit" class="button" data-session-control disabled>Save path</button>
+              </form>
+              <p class="helper">Current path: <strong id="current-path">—</strong></p>
+              <div class="path-switch"><label class="helper" for="path-switch">Saved path</label><select id="path-switch" data-session-control disabled></select><button id="switch-path" class="button" data-session-control disabled>Open path</button></div>
+              <h4>Compare paths</h4>
+              <div class="path-pair"><label>First path<select id="compare-a" data-session-control disabled></select></label><label>Second path<select id="compare-b" data-session-control disabled></select></label></div>
+              <button id="compare-paths" class="button" data-session-control disabled>Compare residue sets</button>
+              <div id="path-comparison" class="path-comparison" role="status" aria-live="polite"></div>
+            </div>
+          </div>
+          <div class="session-files">
+            <h4>Save and replay this session</h4>
+            <p class="helper">Keep the input data, view definition and trail together. Open the saved file here to reconstruct the same exploration.</p>
+            <div class="actions">
+              <button id="fresh-replay" class="button" data-session-control disabled>Replay in a fresh session</button>
+              <button id="download-session" class="button" data-session-control disabled>Download session</button>
+              <label class="button file-button">Open saved session<input id="open-session" type="file" accept="application/json,.json" aria-label="Open a saved Ramachandran session" data-session-control disabled></label>
+              <button id="new-session" class="button" data-session-control disabled>Start a new session</button>
+            </div>
+            <p class="rama-note">Open a saved exploration session for the same pinned crambin data. The session file preserves its input, view definition and trail together.</p>
+          </div>
+        </section>
+      </div></main><aside hidden><pre id="bibtex">@inproceedings{purushe2011ramachandran,
+  author = {Purushe, Shweta and Anbalagan, Sanjay Krishna and Grinstein, Georges},
+  title = {Development of an Interactive {Ramachandran} Plot in {Weave}},
+  booktitle = {2011 15th International Conference on Information Visualisation},
+  year = {2011},
+  pages = {232--236},
+  publisher = {IEEE},
+  doi = {10.1109/IV.2011.109},
+  url = {https://doi.org/10.1109/IV.2011.109}
+}
+</pre><button id="copy-citation">Copy citation</button><span id="citation-status"></span></aside><noscript>Enable JavaScript for this interactive dashboard. <a href="../">Read the paper page.</a></noscript><script type="module" src="../assets/focus.js"></script></body></html>

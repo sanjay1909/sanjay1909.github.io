@@ -1,0 +1,7 @@
+node_modules/
+.vendor/
+.verify/
+tests/runtime/integration.bundle.mjs
+science/python-deps/
+__pycache__/
+*.pyc
