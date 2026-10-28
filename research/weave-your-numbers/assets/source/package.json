@@ -1,0 +1,22 @@
+{
+  "name": "weave-your-numbers-reference-source",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portable source for a linked synthetic diary reference using VizFootprint",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "test:data": "node --test data/test-fixture.mjs",
+    "test:views": "node --test source/test-views.mjs",
+    "test:runtime": "node tests/runtime/build-test.mjs && node tests/runtime/integration.bundle.mjs",
+    "test": "npm run test:data && npm run test:views && npm run test:runtime"
+  },
+  "dependencies": {
+    "esbuild": "0.28.1",
+    "footprintjs": "10.0.0",
+    "foottrace": "1.0.3"
+  }
+}

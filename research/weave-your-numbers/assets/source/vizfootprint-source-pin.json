@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/footprintjs/vizfootprint.git",
+  "commit": "992104dcd45326a42b8ac6c476e88bc95776b7f9",
+  "sourceDirectory": "src",
+  "sourceTreeSha256": "6158e25a2365683944f359a7a9f641a8021f2d8b609fcccdf895776aac37bc2d",
+  "algorithm": "SHA-256 of each relative POSIX path, NUL, decimal byte length, NUL, and file bytes; files sorted by relative path"
+}

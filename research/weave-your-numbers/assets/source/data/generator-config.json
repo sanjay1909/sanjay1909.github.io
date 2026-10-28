@@ -1,0 +1,25 @@
+{
+  "persona": "Avery",
+  "dateStart": "2026-01-05",
+  "dateEnd": "2026-03-01",
+  "days": 56,
+  "generatorVersion": "1.0.0",
+  "stepsBase": 4400,
+  "stepsModulo": 7100,
+  "stepsMultiplier": 1379,
+  "stepsOffset": 2200,
+  "sleepWeekPattern": [7.2, 6.8, 7.6, 7.1, 6.4, 8.1, 7.8],
+  "sleepWeekOffsets": [0, 0.3, -0.2, 0.1, -0.4, 0.2, -0.1, 0.4],
+  "moodWeekPattern": [3, 4, 2, 4, 3, 5, 4],
+  "travelRanges": [
+    ["2026-01-20", "2026-01-23"],
+    ["2026-02-11", "2026-02-14"]
+  ],
+  "missing": {
+    "2026-01-11": ["sleepHours"],
+    "2026-01-22": ["steps"],
+    "2026-02-03": ["mood"],
+    "2026-02-17": ["steps", "sleepHours"],
+    "2026-02-25": ["mood"]
+  }
+}

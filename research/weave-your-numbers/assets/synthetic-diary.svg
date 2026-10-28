@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">Avery’s synthetic diary: daily steps and sleep versus mood, linked by date</title>
+<desc id="desc">Fifty-six fictional dates from 5 January to 1 March 2026. The steps timeline has 54 defined values and gaps for missing measurements. The sleep and mood scatter has 52 complete pairs. Eight Travel dates are highlighted across both plots; one has no step measurement. All values are invented and provide no health or causal evidence.</desc>
+<rect width="1200" height="720" fill="#112d29"/>
+<text x="60" y="58" fill="#eee9d9" font-family="Arial,sans-serif" font-size="29" >One fictional diary. Connected views.</text>
+<text x="60" y="91" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="17" >Avery · 56 dates · 5 Jan – 1 Mar 2026 · all values synthetic</text>
+<text x="85" y="135" fill="#eee9d9" font-family="Arial,sans-serif" font-size="20" >Daily steps</text>
+<text x="850" y="135" fill="#eee9d9" font-family="Arial,sans-serif" font-size="20" >Sleep &amp; mood</text>
+<path d="M85 485.0H705" stroke="#34564f"/>
+<text x="72" y="490.0" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="end">0</text>
+<path d="M85 376.6666666666667H705" stroke="#34564f"/>
+<text x="72" y="381.6666666666667" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="end">4,000</text>
+<path d="M85 268.33333333333337H705" stroke="#34564f"/>
+<text x="72" y="273.33333333333337" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="end">8,000</text>
+<path d="M85 160.0H705" stroke="#34564f"/>
+<text x="72" y="165.0" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="end">12,000</text>
+<path d="M85.0 160V485" stroke="#34564f"/>
+<text x="85.0" y="511" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">5 Jan</text>
+<path d="M242.8181818181818 160V485" stroke="#34564f"/>
+<text x="242.8181818181818" y="511" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">19 Jan</text>
+<path d="M400.6363636363636 160V485" stroke="#34564f"/>
+<text x="400.6363636363636" y="511" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">2 Feb</text>
+<path d="M558.4545454545455 160V485" stroke="#34564f"/>
+<text x="558.4545454545455" y="511" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">16 Feb</text>
+<path d="M705.0 160V485" stroke="#34564f"/>
+<text x="705.0" y="511" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">1 Mar</text>
+<path d="M890.7142857142857 160V485" stroke="#34564f"/>
+<text x="890.7142857142857" y="511" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">6</text>
+<path d="M972.1428571428571 160V485" stroke="#34564f"/>
+<text x="972.1428571428571" y="511" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">7</text>
+<path d="M1053.5714285714287 160V485" stroke="#34564f"/>
+<text x="1053.5714285714287" y="511" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">8</text>
+<path d="M1135.0 160V485" stroke="#34564f"/>
+<text x="1135.0" y="511" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">9</text>
+<path d="M850 452.5H1135" stroke="#34564f"/>
+<text x="836" y="457.5" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="end">1</text>
+<path d="M850 387.5H1135" stroke="#34564f"/>
+<text x="836" y="392.5" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="end">2</text>
+<path d="M850 322.5H1135" stroke="#34564f"/>
+<text x="836" y="327.5" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="end">3</text>
+<path d="M850 257.5H1135" stroke="#34564f"/>
+<text x="836" y="262.5" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="end">4</text>
+<path d="M850 192.5H1135" stroke="#34564f"/>
+<text x="836" y="197.5" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="13" text-anchor="end">5</text>
+<rect x="85" y="160" width="620" height="325" fill="none" stroke="#78948a"/>
+<rect x="850" y="160" width="285" height="325" fill="none" stroke="#78948a"/>
+<text x="33" y="325" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="15" transform="rotate(-90 33 325)" text-anchor="middle">Steps / day</text>
+<text x="793" y="325" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="15" transform="rotate(-90 793 325)" text-anchor="middle">Mood · fictional 1–5 rating</text>
+<text x="992.5" y="540" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="15" text-anchor="middle">Sleep · hours / night</text>
+<polyline points="85.000,306.250 96.273,268.333 107.545,230.417 118.818,195.208 130.091,349.583 141.364,311.667 152.636,273.750 163.909,235.833 175.182,200.625 186.455,355.000 197.727,317.083 209.000,279.167 220.273,243.958 231.545,206.042 242.818,360.417 254.091,322.500 265.364,284.583" fill="none" stroke="#78948a" stroke-width="1.4"/>
+<polyline points="287.909,211.458 299.182,365.833 310.455,327.917 321.727,290.000 333.000,254.792 344.273,216.875 355.545,178.958 366.818,333.333 378.091,295.417 389.364,260.208 400.636,222.292 411.909,184.375 423.182,338.750 434.455,303.542 445.727,265.625 457.000,227.708 468.273,189.792 479.545,344.167 490.818,308.958 502.091,271.042 513.364,233.125 524.636,195.208 535.909,349.583 547.182,314.375 558.455,276.458" fill="none" stroke="#78948a" stroke-width="1.4"/>
+<polyline points="581.000,200.625 592.273,355.000 603.545,319.792 614.818,281.875 626.091,243.958 637.364,206.042 648.636,360.417 659.909,325.208 671.182,287.292 682.455,249.375 693.727,211.458 705.000,176.250" fill="none" stroke="#78948a" stroke-width="1.4"/>
+<circle data-view="steps" data-row-id="demo-2026-01-05" data-selected="false" cx="85.000" cy="306.250" r="3.4" fill="#9bb3a8"><title>2026-01-05: 6600 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-05" data-selected="false" cx="988.429" cy="322.500" r="3.4" fill="#9bb3a8"><title>2026-01-05: 7.2 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-06" data-selected="false" cx="96.273" cy="268.333" r="3.4" fill="#9bb3a8"><title>2026-01-06: 8000 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-06" data-selected="false" cx="955.857" cy="257.500" r="3.4" fill="#9bb3a8"><title>2026-01-06: 6.8 hours, mood 4</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-07" data-selected="false" cx="107.545" cy="230.417" r="3.4" fill="#9bb3a8"><title>2026-01-07: 9400 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-07" data-selected="false" cx="1021.000" cy="387.500" r="3.4" fill="#9bb3a8"><title>2026-01-07: 7.6 hours, mood 2</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-08" data-selected="false" cx="118.818" cy="195.208" r="3.4" fill="#9bb3a8"><title>2026-01-08: 10700 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-08" data-selected="false" cx="980.286" cy="257.500" r="3.4" fill="#9bb3a8"><title>2026-01-08: 7.1 hours, mood 4</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-09" data-selected="false" cx="130.091" cy="349.583" r="3.4" fill="#9bb3a8"><title>2026-01-09: 5000 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-09" data-selected="false" cx="923.286" cy="322.500" r="3.4" fill="#9bb3a8"><title>2026-01-09: 6.4 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-10" data-selected="false" cx="141.364" cy="311.667" r="3.4" fill="#9bb3a8"><title>2026-01-10: 6400 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-10" data-selected="false" cx="1061.714" cy="192.500" r="3.4" fill="#9bb3a8"><title>2026-01-10: 8.1 hours, mood 5</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-11" data-selected="false" cx="152.636" cy="273.750" r="3.4" fill="#9bb3a8"><title>2026-01-11: 7800 steps</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-12" data-selected="false" cx="163.909" cy="235.833" r="3.4" fill="#9bb3a8"><title>2026-01-12: 9200 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-12" data-selected="false" cx="1012.857" cy="387.500" r="3.4" fill="#9bb3a8"><title>2026-01-12: 7.5 hours, mood 2</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-13" data-selected="false" cx="175.182" cy="200.625" r="3.4" fill="#9bb3a8"><title>2026-01-13: 10500 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-13" data-selected="false" cx="980.286" cy="322.500" r="3.4" fill="#9bb3a8"><title>2026-01-13: 7.1 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-14" data-selected="false" cx="186.455" cy="355.000" r="3.4" fill="#9bb3a8"><title>2026-01-14: 4800 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-14" data-selected="false" cx="1045.429" cy="452.500" r="3.4" fill="#9bb3a8"><title>2026-01-14: 7.9 hours, mood 1</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-15" data-selected="false" cx="197.727" cy="317.083" r="3.4" fill="#9bb3a8"><title>2026-01-15: 6200 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-15" data-selected="false" cx="1004.714" cy="322.500" r="3.4" fill="#9bb3a8"><title>2026-01-15: 7.4 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-16" data-selected="false" cx="209.000" cy="279.167" r="3.4" fill="#9bb3a8"><title>2026-01-16: 7600 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-16" data-selected="false" cx="947.714" cy="387.500" r="3.4" fill="#9bb3a8"><title>2026-01-16: 6.7 hours, mood 2</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-17" data-selected="false" cx="220.273" cy="243.958" r="3.4" fill="#9bb3a8"><title>2026-01-17: 8900 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-17" data-selected="false" cx="1086.143" cy="257.500" r="3.4" fill="#9bb3a8"><title>2026-01-17: 8.4 hours, mood 4</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-18" data-selected="false" cx="231.545" cy="206.042" r="3.4" fill="#9bb3a8"><title>2026-01-18: 10300 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-18" data-selected="false" cx="1061.714" cy="322.500" r="3.4" fill="#9bb3a8"><title>2026-01-18: 8.1 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-19" data-selected="false" cx="242.818" cy="360.417" r="3.4" fill="#9bb3a8"><title>2026-01-19: 4600 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-19" data-selected="false" cx="972.143" cy="257.500" r="3.4" fill="#9bb3a8"><title>2026-01-19: 7 hours, mood 4</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-24" data-selected="false" cx="299.182" cy="365.833" r="3.4" fill="#9bb3a8"><title>2026-01-24: 4400 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-24" data-selected="false" cx="1045.429" cy="192.500" r="3.4" fill="#9bb3a8"><title>2026-01-24: 7.9 hours, mood 5</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-25" data-selected="false" cx="310.455" cy="327.917" r="3.4" fill="#9bb3a8"><title>2026-01-25: 5800 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-25" data-selected="false" cx="1021.000" cy="192.500" r="3.4" fill="#9bb3a8"><title>2026-01-25: 7.6 hours, mood 5</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-26" data-selected="false" cx="321.727" cy="290.000" r="3.4" fill="#9bb3a8"><title>2026-01-26: 7200 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-26" data-selected="false" cx="996.571" cy="322.500" r="3.4" fill="#9bb3a8"><title>2026-01-26: 7.3 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-27" data-selected="false" cx="333.000" cy="254.792" r="3.4" fill="#9bb3a8"><title>2026-01-27: 8500 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-27" data-selected="false" cx="964.000" cy="257.500" r="3.4" fill="#9bb3a8"><title>2026-01-27: 6.9 hours, mood 4</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-28" data-selected="false" cx="344.273" cy="216.875" r="3.4" fill="#9bb3a8"><title>2026-01-28: 9900 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-28" data-selected="false" cx="1029.143" cy="387.500" r="3.4" fill="#9bb3a8"><title>2026-01-28: 7.7 hours, mood 2</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-29" data-selected="false" cx="355.545" cy="178.958" r="3.4" fill="#9bb3a8"><title>2026-01-29: 11300 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-29" data-selected="false" cx="988.429" cy="257.500" r="3.4" fill="#9bb3a8"><title>2026-01-29: 7.2 hours, mood 4</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-30" data-selected="false" cx="366.818" cy="333.333" r="3.4" fill="#9bb3a8"><title>2026-01-30: 5600 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-30" data-selected="false" cx="931.429" cy="322.500" r="3.4" fill="#9bb3a8"><title>2026-01-30: 6.5 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-31" data-selected="false" cx="378.091" cy="295.417" r="3.4" fill="#9bb3a8"><title>2026-01-31: 7000 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-31" data-selected="false" cx="1069.857" cy="192.500" r="3.4" fill="#9bb3a8"><title>2026-01-31: 8.2 hours, mood 5</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-01" data-selected="false" cx="389.364" cy="260.208" r="3.4" fill="#9bb3a8"><title>2026-02-01: 8300 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-01" data-selected="false" cx="1045.429" cy="257.500" r="3.4" fill="#9bb3a8"><title>2026-02-01: 7.9 hours, mood 4</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-02" data-selected="false" cx="400.636" cy="222.292" r="3.4" fill="#9bb3a8"><title>2026-02-02: 9700 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-02" data-selected="false" cx="955.857" cy="387.500" r="3.4" fill="#9bb3a8"><title>2026-02-02: 6.8 hours, mood 2</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-03" data-selected="false" cx="411.909" cy="184.375" r="3.4" fill="#9bb3a8"><title>2026-02-03: 11100 steps</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-04" data-selected="false" cx="423.182" cy="338.750" r="3.4" fill="#9bb3a8"><title>2026-02-04: 5400 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-04" data-selected="false" cx="988.429" cy="452.500" r="3.4" fill="#9bb3a8"><title>2026-02-04: 7.2 hours, mood 1</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-05" data-selected="false" cx="434.455" cy="303.542" r="3.4" fill="#9bb3a8"><title>2026-02-05: 6700 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-05" data-selected="false" cx="947.714" cy="322.500" r="3.4" fill="#9bb3a8"><title>2026-02-05: 6.7 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-06" data-selected="false" cx="445.727" cy="265.625" r="3.4" fill="#9bb3a8"><title>2026-02-06: 8100 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-06" data-selected="false" cx="890.714" cy="387.500" r="3.4" fill="#9bb3a8"><title>2026-02-06: 6 hours, mood 2</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-07" data-selected="false" cx="457.000" cy="227.708" r="3.4" fill="#9bb3a8"><title>2026-02-07: 9500 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-07" data-selected="false" cx="1029.143" cy="257.500" r="3.4" fill="#9bb3a8"><title>2026-02-07: 7.7 hours, mood 4</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-08" data-selected="false" cx="468.273" cy="189.792" r="3.4" fill="#9bb3a8"><title>2026-02-08: 10900 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-08" data-selected="false" cx="1004.714" cy="322.500" r="3.4" fill="#9bb3a8"><title>2026-02-08: 7.4 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-09" data-selected="false" cx="479.545" cy="344.167" r="3.4" fill="#9bb3a8"><title>2026-02-09: 5200 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-09" data-selected="false" cx="1004.714" cy="257.500" r="3.4" fill="#9bb3a8"><title>2026-02-09: 7.4 hours, mood 4</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-10" data-selected="false" cx="490.818" cy="308.958" r="3.4" fill="#9bb3a8"><title>2026-02-10: 6500 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-10" data-selected="false" cx="972.143" cy="192.500" r="3.4" fill="#9bb3a8"><title>2026-02-10: 7 hours, mood 5</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-15" data-selected="false" cx="547.182" cy="314.375" r="3.4" fill="#9bb3a8"><title>2026-02-15: 6300 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-15" data-selected="false" cx="1053.571" cy="192.500" r="3.4" fill="#9bb3a8"><title>2026-02-15: 8 hours, mood 5</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-16" data-selected="false" cx="558.455" cy="276.458" r="3.4" fill="#9bb3a8"><title>2026-02-16: 7700 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-16" data-selected="false" cx="980.286" cy="322.500" r="3.4" fill="#9bb3a8"><title>2026-02-16: 7.1 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-18" data-selected="false" cx="581.000" cy="200.625" r="3.4" fill="#9bb3a8"><title>2026-02-18: 10500 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-18" data-selected="false" cx="1012.857" cy="387.500" r="3.4" fill="#9bb3a8"><title>2026-02-18: 7.5 hours, mood 2</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-19" data-selected="false" cx="592.273" cy="355.000" r="3.4" fill="#9bb3a8"><title>2026-02-19: 4800 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-19" data-selected="false" cx="972.143" cy="257.500" r="3.4" fill="#9bb3a8"><title>2026-02-19: 7 hours, mood 4</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-20" data-selected="false" cx="603.545" cy="319.792" r="3.4" fill="#9bb3a8"><title>2026-02-20: 6100 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-20" data-selected="false" cx="915.143" cy="322.500" r="3.4" fill="#9bb3a8"><title>2026-02-20: 6.3 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-21" data-selected="false" cx="614.818" cy="281.875" r="3.4" fill="#9bb3a8"><title>2026-02-21: 7500 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-21" data-selected="false" cx="1053.571" cy="192.500" r="3.4" fill="#9bb3a8"><title>2026-02-21: 8 hours, mood 5</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-22" data-selected="false" cx="626.091" cy="243.958" r="3.4" fill="#9bb3a8"><title>2026-02-22: 8900 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-22" data-selected="false" cx="1029.143" cy="257.500" r="3.4" fill="#9bb3a8"><title>2026-02-22: 7.7 hours, mood 4</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-23" data-selected="false" cx="637.364" cy="206.042" r="3.4" fill="#9bb3a8"><title>2026-02-23: 10300 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-23" data-selected="false" cx="1021.000" cy="387.500" r="3.4" fill="#9bb3a8"><title>2026-02-23: 7.6 hours, mood 2</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-24" data-selected="false" cx="648.636" cy="360.417" r="3.4" fill="#9bb3a8"><title>2026-02-24: 4600 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-24" data-selected="false" cx="988.429" cy="322.500" r="3.4" fill="#9bb3a8"><title>2026-02-24: 7.2 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-25" data-selected="false" cx="659.909" cy="325.208" r="3.4" fill="#9bb3a8"><title>2026-02-25: 5900 steps</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-26" data-selected="false" cx="671.182" cy="287.292" r="3.4" fill="#9bb3a8"><title>2026-02-26: 7300 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-26" data-selected="false" cx="1012.857" cy="322.500" r="3.4" fill="#9bb3a8"><title>2026-02-26: 7.5 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-27" data-selected="false" cx="682.455" cy="249.375" r="3.4" fill="#9bb3a8"><title>2026-02-27: 8700 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-27" data-selected="false" cx="955.857" cy="387.500" r="3.4" fill="#9bb3a8"><title>2026-02-27: 6.8 hours, mood 2</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-28" data-selected="false" cx="693.727" cy="211.458" r="3.4" fill="#9bb3a8"><title>2026-02-28: 10100 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-28" data-selected="false" cx="1094.286" cy="257.500" r="3.4" fill="#9bb3a8"><title>2026-02-28: 8.5 hours, mood 4</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-03-01" data-selected="false" cx="705.000" cy="176.250" r="3.4" fill="#9bb3a8"><title>2026-03-01: 11400 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-03-01" data-selected="false" cx="1069.857" cy="322.500" r="3.4" fill="#9bb3a8"><title>2026-03-01: 8.2 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-20" data-selected="true" cx="254.091" cy="322.500" r="5" fill="#e6b86e"><title>2026-01-20: 6000 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-20" data-selected="true" cx="939.571" cy="192.500" r="5" fill="#e6b86e"><title>2026-01-20: 6.6 hours, mood 5</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-21" data-selected="true" cx="265.364" cy="284.583" r="5" fill="#e6b86e"><title>2026-01-21: 7400 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-21" data-selected="true" cx="1004.714" cy="322.500" r="5" fill="#e6b86e"><title>2026-01-21: 7.4 hours, mood 3</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-22" data-selected="true" cx="964.000" cy="192.500" r="5" fill="#e6b86e"><title>2026-01-22: 6.9 hours, mood 5</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-01-23" data-selected="true" cx="287.909" cy="211.458" r="5" fill="#e6b86e"><title>2026-01-23: 10100 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-01-23" data-selected="true" cx="907.000" cy="257.500" r="5" fill="#e6b86e"><title>2026-01-23: 6.2 hours, mood 4</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-11" data-selected="true" cx="502.091" cy="271.042" r="5" fill="#e6b86e"><title>2026-02-11: 7900 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-11" data-selected="true" cx="1037.286" cy="322.500" r="5" fill="#e6b86e"><title>2026-02-11: 7.8 hours, mood 3</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-12" data-selected="true" cx="513.364" cy="233.125" r="5" fill="#e6b86e"><title>2026-02-12: 9300 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-12" data-selected="true" cx="996.571" cy="192.500" r="5" fill="#e6b86e"><title>2026-02-12: 7.3 hours, mood 5</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-13" data-selected="true" cx="524.636" cy="195.208" r="5" fill="#e6b86e"><title>2026-02-13: 10700 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-13" data-selected="true" cx="939.571" cy="257.500" r="5" fill="#e6b86e"><title>2026-02-13: 6.6 hours, mood 4</title></circle>
+<circle data-view="steps" data-row-id="demo-2026-02-14" data-selected="true" cx="535.909" cy="349.583" r="5" fill="#e6b86e"><title>2026-02-14: 5000 steps</title></circle>
+<circle data-view="sleep-mood" data-row-id="demo-2026-02-14" data-selected="true" cx="1078.000" cy="192.500" r="5" fill="#e6b86e"><title>2026-02-14: 8.3 hours, mood 5</title></circle>
+<circle cx="85" cy="580" r="5" fill="#e6b86e"/>
+<text x="103" y="586" fill="#e6b86e" font-family="Arial,sans-serif" font-size="18" >8 Travel dates selected · the same date IDs connect both views</text>
+<text x="85" y="622" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="16" >54 step values · 52 complete sleep/mood pairs · missing values remain missing</text>
+<text x="85" y="658" fill="#9bb3a8" font-family="Arial,sans-serif" font-size="15" >New VizFootprint companion to the 2014 paper. Invented patterns are not behavioral or medical evidence.</text>
+</svg>

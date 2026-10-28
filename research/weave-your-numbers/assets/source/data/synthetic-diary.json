@@ -1,0 +1,524 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "title": "Avery’s fictional daily diary",
+    "synthetic": true,
+    "persona": "Avery",
+    "dateStart": "2026-01-05",
+    "dateEnd": "2026-03-01",
+    "units": {
+      "steps": "steps/day",
+      "sleepHours": "hours/night",
+      "mood": "ordinal self-rating, 1–5 (fictional)"
+    },
+    "description": "Deterministic invented records for one fictional person. Values and context labels illustrate linked exploration; they are not observations, medical evidence or a model of cause and effect. Missing measurements are explicit null values.",
+    "generatorVersion": "1.0.0",
+    "sourceSha256": "145d35af902224a82ec24a13cfa2c587039931831bf21ae3f13ffe92e3165edc"
+  },
+  "rows": [
+    {
+      "id": "demo-2026-01-05",
+      "date": "2026-01-05",
+      "dayIndex": 0,
+      "steps": 6600,
+      "sleepHours": 7.2,
+      "mood": 3,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-06",
+      "date": "2026-01-06",
+      "dayIndex": 1,
+      "steps": 8000,
+      "sleepHours": 6.8,
+      "mood": 4,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-07",
+      "date": "2026-01-07",
+      "dayIndex": 2,
+      "steps": 9400,
+      "sleepHours": 7.6,
+      "mood": 2,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-08",
+      "date": "2026-01-08",
+      "dayIndex": 3,
+      "steps": 10700,
+      "sleepHours": 7.1,
+      "mood": 4,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-09",
+      "date": "2026-01-09",
+      "dayIndex": 4,
+      "steps": 5000,
+      "sleepHours": 6.4,
+      "mood": 3,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-10",
+      "date": "2026-01-10",
+      "dayIndex": 5,
+      "steps": 6400,
+      "sleepHours": 8.1,
+      "mood": 5,
+      "context": "Weekend"
+    },
+    {
+      "id": "demo-2026-01-11",
+      "date": "2026-01-11",
+      "dayIndex": 6,
+      "steps": 7800,
+      "sleepHours": null,
+      "mood": 4,
+      "context": "Weekend"
+    },
+    {
+      "id": "demo-2026-01-12",
+      "date": "2026-01-12",
+      "dayIndex": 7,
+      "steps": 9200,
+      "sleepHours": 7.5,
+      "mood": 2,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-13",
+      "date": "2026-01-13",
+      "dayIndex": 8,
+      "steps": 10500,
+      "sleepHours": 7.1,
+      "mood": 3,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-14",
+      "date": "2026-01-14",
+      "dayIndex": 9,
+      "steps": 4800,
+      "sleepHours": 7.9,
+      "mood": 1,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-15",
+      "date": "2026-01-15",
+      "dayIndex": 10,
+      "steps": 6200,
+      "sleepHours": 7.4,
+      "mood": 3,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-16",
+      "date": "2026-01-16",
+      "dayIndex": 11,
+      "steps": 7600,
+      "sleepHours": 6.7,
+      "mood": 2,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-17",
+      "date": "2026-01-17",
+      "dayIndex": 12,
+      "steps": 8900,
+      "sleepHours": 8.4,
+      "mood": 4,
+      "context": "Weekend"
+    },
+    {
+      "id": "demo-2026-01-18",
+      "date": "2026-01-18",
+      "dayIndex": 13,
+      "steps": 10300,
+      "sleepHours": 8.1,
+      "mood": 3,
+      "context": "Weekend"
+    },
+    {
+      "id": "demo-2026-01-19",
+      "date": "2026-01-19",
+      "dayIndex": 14,
+      "steps": 4600,
+      "sleepHours": 7,
+      "mood": 4,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-20",
+      "date": "2026-01-20",
+      "dayIndex": 15,
+      "steps": 6000,
+      "sleepHours": 6.6,
+      "mood": 5,
+      "context": "Travel"
+    },
+    {
+      "id": "demo-2026-01-21",
+      "date": "2026-01-21",
+      "dayIndex": 16,
+      "steps": 7400,
+      "sleepHours": 7.4,
+      "mood": 3,
+      "context": "Travel"
+    },
+    {
+      "id": "demo-2026-01-22",
+      "date": "2026-01-22",
+      "dayIndex": 17,
+      "steps": null,
+      "sleepHours": 6.9,
+      "mood": 5,
+      "context": "Travel"
+    },
+    {
+      "id": "demo-2026-01-23",
+      "date": "2026-01-23",
+      "dayIndex": 18,
+      "steps": 10100,
+      "sleepHours": 6.2,
+      "mood": 4,
+      "context": "Travel"
+    },
+    {
+      "id": "demo-2026-01-24",
+      "date": "2026-01-24",
+      "dayIndex": 19,
+      "steps": 4400,
+      "sleepHours": 7.9,
+      "mood": 5,
+      "context": "Weekend"
+    },
+    {
+      "id": "demo-2026-01-25",
+      "date": "2026-01-25",
+      "dayIndex": 20,
+      "steps": 5800,
+      "sleepHours": 7.6,
+      "mood": 5,
+      "context": "Weekend"
+    },
+    {
+      "id": "demo-2026-01-26",
+      "date": "2026-01-26",
+      "dayIndex": 21,
+      "steps": 7200,
+      "sleepHours": 7.3,
+      "mood": 3,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-27",
+      "date": "2026-01-27",
+      "dayIndex": 22,
+      "steps": 8500,
+      "sleepHours": 6.9,
+      "mood": 4,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-28",
+      "date": "2026-01-28",
+      "dayIndex": 23,
+      "steps": 9900,
+      "sleepHours": 7.7,
+      "mood": 2,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-29",
+      "date": "2026-01-29",
+      "dayIndex": 24,
+      "steps": 11300,
+      "sleepHours": 7.2,
+      "mood": 4,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-30",
+      "date": "2026-01-30",
+      "dayIndex": 25,
+      "steps": 5600,
+      "sleepHours": 6.5,
+      "mood": 3,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-01-31",
+      "date": "2026-01-31",
+      "dayIndex": 26,
+      "steps": 7000,
+      "sleepHours": 8.2,
+      "mood": 5,
+      "context": "Weekend"
+    },
+    {
+      "id": "demo-2026-02-01",
+      "date": "2026-02-01",
+      "dayIndex": 27,
+      "steps": 8300,
+      "sleepHours": 7.9,
+      "mood": 4,
+      "context": "Weekend"
+    },
+    {
+      "id": "demo-2026-02-02",
+      "date": "2026-02-02",
+      "dayIndex": 28,
+      "steps": 9700,
+      "sleepHours": 6.8,
+      "mood": 2,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-03",
+      "date": "2026-02-03",
+      "dayIndex": 29,
+      "steps": 11100,
+      "sleepHours": 6.4,
+      "mood": null,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-04",
+      "date": "2026-02-04",
+      "dayIndex": 30,
+      "steps": 5400,
+      "sleepHours": 7.2,
+      "mood": 1,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-05",
+      "date": "2026-02-05",
+      "dayIndex": 31,
+      "steps": 6700,
+      "sleepHours": 6.7,
+      "mood": 3,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-06",
+      "date": "2026-02-06",
+      "dayIndex": 32,
+      "steps": 8100,
+      "sleepHours": 6,
+      "mood": 2,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-07",
+      "date": "2026-02-07",
+      "dayIndex": 33,
+      "steps": 9500,
+      "sleepHours": 7.7,
+      "mood": 4,
+      "context": "Weekend"
+    },
+    {
+      "id": "demo-2026-02-08",
+      "date": "2026-02-08",
+      "dayIndex": 34,
+      "steps": 10900,
+      "sleepHours": 7.4,
+      "mood": 3,
+      "context": "Weekend"
+    },
+    {
+      "id": "demo-2026-02-09",
+      "date": "2026-02-09",
+      "dayIndex": 35,
+      "steps": 5200,
+      "sleepHours": 7.4,
+      "mood": 4,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-10",
+      "date": "2026-02-10",
+      "dayIndex": 36,
+      "steps": 6500,
+      "sleepHours": 7,
+      "mood": 5,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-11",
+      "date": "2026-02-11",
+      "dayIndex": 37,
+      "steps": 7900,
+      "sleepHours": 7.8,
+      "mood": 3,
+      "context": "Travel"
+    },
+    {
+      "id": "demo-2026-02-12",
+      "date": "2026-02-12",
+      "dayIndex": 38,
+      "steps": 9300,
+      "sleepHours": 7.3,
+      "mood": 5,
+      "context": "Travel"
+    },
+    {
+      "id": "demo-2026-02-13",
+      "date": "2026-02-13",
+      "dayIndex": 39,
+      "steps": 10700,
+      "sleepHours": 6.6,
+      "mood": 4,
+      "context": "Travel"
+    },
+    {
+      "id": "demo-2026-02-14",
+      "date": "2026-02-14",
+      "dayIndex": 40,
+      "steps": 5000,
+      "sleepHours": 8.3,
+      "mood": 5,
+      "context": "Travel"
+    },
+    {
+      "id": "demo-2026-02-15",
+      "date": "2026-02-15",
+      "dayIndex": 41,
+      "steps": 6300,
+      "sleepHours": 8,
+      "mood": 5,
+      "context": "Weekend"
+    },
+    {
+      "id": "demo-2026-02-16",
+      "date": "2026-02-16",
+      "dayIndex": 42,
+      "steps": 7700,
+      "sleepHours": 7.1,
+      "mood": 3,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-17",
+      "date": "2026-02-17",
+      "dayIndex": 43,
+      "steps": null,
+      "sleepHours": null,
+      "mood": 4,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-18",
+      "date": "2026-02-18",
+      "dayIndex": 44,
+      "steps": 10500,
+      "sleepHours": 7.5,
+      "mood": 2,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-19",
+      "date": "2026-02-19",
+      "dayIndex": 45,
+      "steps": 4800,
+      "sleepHours": 7,
+      "mood": 4,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-20",
+      "date": "2026-02-20",
+      "dayIndex": 46,
+      "steps": 6100,
+      "sleepHours": 6.3,
+      "mood": 3,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-21",
+      "date": "2026-02-21",
+      "dayIndex": 47,
+      "steps": 7500,
+      "sleepHours": 8,
+      "mood": 5,
+      "context": "Weekend"
+    },
+    {
+      "id": "demo-2026-02-22",
+      "date": "2026-02-22",
+      "dayIndex": 48,
+      "steps": 8900,
+      "sleepHours": 7.7,
+      "mood": 4,
+      "context": "Weekend"
+    },
+    {
+      "id": "demo-2026-02-23",
+      "date": "2026-02-23",
+      "dayIndex": 49,
+      "steps": 10300,
+      "sleepHours": 7.6,
+      "mood": 2,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-24",
+      "date": "2026-02-24",
+      "dayIndex": 50,
+      "steps": 4600,
+      "sleepHours": 7.2,
+      "mood": 3,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-25",
+      "date": "2026-02-25",
+      "dayIndex": 51,
+      "steps": 5900,
+      "sleepHours": 8,
+      "mood": null,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-26",
+      "date": "2026-02-26",
+      "dayIndex": 52,
+      "steps": 7300,
+      "sleepHours": 7.5,
+      "mood": 3,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-27",
+      "date": "2026-02-27",
+      "dayIndex": 53,
+      "steps": 8700,
+      "sleepHours": 6.8,
+      "mood": 2,
+      "context": "Routine"
+    },
+    {
+      "id": "demo-2026-02-28",
+      "date": "2026-02-28",
+      "dayIndex": 54,
+      "steps": 10100,
+      "sleepHours": 8.5,
+      "mood": 4,
+      "context": "Weekend"
+    },
+    {
+      "id": "demo-2026-03-01",
+      "date": "2026-03-01",
+      "dayIndex": 55,
+      "steps": 11400,
+      "sleepHours": 8.2,
+      "mood": 3,
+      "context": "Weekend"
+    }
+  ]
+}
