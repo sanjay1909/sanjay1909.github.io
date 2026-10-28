@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "title": "Fictional community planning notes",
+    "synthetic": true,
+    "description": "Twenty-four newly authored fictional planning notes for a deterministic document-exploration companion. Topics and years are invented. The map axes show year and token count, not semantic similarity or a reconstruction of the 2012 InfoMaps layout.",
+    "generatorVersion": "1.0.0",
+    "sourceSha256": "96900e5302818d385bd1b52272c5622ed1f3c2eb2a23140aa24dd744016d7cf0",
+    "topics": [
+      "Mobility",
+      "Housing",
+      "Green space",
+      "Energy"
+    ],
+    "keywords": [
+      "bus",
+      "housing",
+      "park",
+      "water",
+      "bicycle",
+      "rent",
+      "trees",
+      "energy",
+      "station",
+      "flood",
+      "garden",
+      "solar"
+    ],
+    "tokenization": "lowercase ASCII alphabetic tokens of length >=2; title and text; no stemming"
+  },
+  "rows": [
+    {
+      "id": "doc-01",
+      "title": "Bus stops beside mixed housing",
+      "topic": "Mobility",
+      "year": 2020,
+      "text": "The planning group sketches a bus route beside a mixed housing block. A bus shelter shares a paved edge with a small park, while residents ask for a safer crossing to the station. The note compares the bus stop location with bicycle parking and evening lighting. It records possible connections for discussion, rather than a measured travel outcome or an approved construction plan.",
+      "wordCount": 61
+    },
+    {
+      "id": "doc-02",
+      "title": "Bicycle links to the central station",
+      "topic": "Mobility",
+      "year": 2021,
+      "text": "A proposed bicycle link connects the central station to housing on the east side. The drawing leaves room for trees and a short bus interchange, but its widths are only placeholders. Participants want a route that can be read clearly in rain and after dark. A later meeting would compare the map with access needs before deciding which path should receive more detailed design.",
+      "wordCount": 66
+    },
+    {
+      "id": "doc-03",
+      "title": "Park access on a weekend route",
+      "topic": "Mobility",
+      "year": 2022,
+      "text": "This note considers a weekend bus route serving a public park and a community garden. The route could connect the station with an existing bicycle path without using the narrow garden entrance. People in the sketch session mark places where signs might be useful. The proposed timetable is fictional, and the note contains no passenger counts or evidence that the route would change how residents travel.",
+      "wordCount": 68
+    },
+    {
+      "id": "doc-04",
+      "title": "Flood detours and a water crossing",
+      "topic": "Mobility",
+      "year": 2023,
+      "text": "A route sketch highlights a low water crossing and a possible flood detour. A bus would use the higher street in this scenario, while a bicycle connection would remain outside the marked storage area. The group lists questions about signs, access and trees along the alternate route. These are discussion prompts for a fictional district, with no engineering assessment of actual flood depth or road safety.",
+      "wordCount": 65
+    },
+    {
+      "id": "doc-05",
+      "title": "Solar canopies at the bus station",
+      "topic": "Mobility",
+      "year": 2024,
+      "text": "The station drawing includes a solar canopy above a bus waiting area. A second bus bay sits beside a bicycle rack, and the solar equipment is represented by a simple shaded rectangle. The group wants to compare shade, access and space for queues before choosing a layout. Energy generation and construction costs are intentionally absent, so the diagram supports discussion rather than an investment estimate.",
+      "wordCount": 65
+    },
+    {
+      "id": "doc-06",
+      "title": "Trees along the shared mobility path",
+      "topic": "Mobility",
+      "year": 2025,
+      "text": "The shared path proposal places trees between a bicycle lane and a bus stop near the station. A park entrance and a drinking water point appear on the same drawing to help connect separate planning conversations. Participants compare two possible crossings and retain both as alternatives. Nothing in this note reports a completed project, a survey result or a prediction of how the path would be used.",
+      "wordCount": 66
+    },
+    {
+      "id": "doc-07",
+      "title": "Rent notices and the neighborhood bus",
+      "topic": "Housing",
+      "year": 2020,
+      "text": "A housing workshop compares where rent notices could be displayed near a neighborhood bus stop. The bus connection matters to the discussion because the fictional housing block is separated from the station by a large road. Residents also suggest space for a garden notice board. The record captures proposed communication channels and access questions, without describing real rents, tenants or travel patterns.",
+      "wordCount": 64
+    },
+    {
+      "id": "doc-08",
+      "title": "Shared housing around a small garden",
+      "topic": "Housing",
+      "year": 2021,
+      "text": "The housing sketch arranges shared entrances around a small garden with a water collection barrel. A path leads to the bus stop, and a separate bicycle store remains visible from the courtyard. The group records preferences for shade and common space as ideas to revisit. It does not rank household needs or claim that a garden would improve any measured social or health outcome.",
+      "wordCount": 64
+    },
+    {
+      "id": "doc-09",
+      "title": "Energy costs in a rental building",
+      "topic": "Housing",
+      "year": 2022,
+      "text": "This fictional housing note lists questions about rent and shared energy costs in a rental building. A garden room and a solar roof are optional parts of the sketch, not promised improvements. The group wants clearer labels for individual and common areas before comparing alternatives. No bills, resident records or market prices are present, and the document makes no claim about actual savings.",
+      "wordCount": 65
+    },
+    {
+      "id": "doc-10",
+      "title": "Solar roofs for a housing cooperative",
+      "topic": "Housing",
+      "year": 2023,
+      "text": "A housing cooperative drawing explores where solar panels might fit above several shared meeting rooms. The discussion also covers trees, roof access and a water tank serving the garden. Members propose keeping both a shaded roof option and an open roof option for later comparison. Energy output, permission and cost would require separate work; this note only preserves the alternatives raised in the fictional meeting.",
+      "wordCount": 67
+    },
+    {
+      "id": "doc-11",
+      "title": "Park boundaries beside new housing",
+      "topic": "Housing",
+      "year": 2024,
+      "text": "A new tentative housing outline meets the edge of a park near a bus corridor. The planning group marks a bicycle gate, a row of trees and a possible shared garden entrance. Questions about rent and public access are recorded beside the drawing rather than resolved. The note is designed to connect housing and open space discussions, with no real development proposal or impact assessment behind it.",
+      "wordCount": 66
+    },
+    {
+      "id": "doc-12",
+      "title": "Flood readiness for ground floor homes",
+      "topic": "Housing",
+      "year": 2025,
+      "text": "The housing group annotates a fictional block to discuss flood readiness and water storage near ground floor homes. A raised path leads toward the station, and trees are drawn outside the marked access route. Participants ask which details belong in a later design review. The sketch includes no household identities, measured flood levels or conclusions about whether a particular building would be safe.",
+      "wordCount": 65
+    },
+    {
+      "id": "doc-13",
+      "title": "Park paths and quiet station access",
+      "topic": "Green space",
+      "year": 2020,
+      "text": "The park note maps a quiet path from the station to a garden and a nearby bus stop. Trees separate the path from an open lawn, while bicycle parking sits outside the narrow entrance. The group records where signs could help visitors choose a route. These connections are invented for a planning exercise and provide no observed visitor counts or evidence about the effects of the path.",
+      "wordCount": 68
+    },
+    {
+      "id": "doc-14",
+      "title": "Garden water collection near the park",
+      "topic": "Green space",
+      "year": 2021,
+      "text": "A garden drawing places a water collection tank beside a park maintenance corner. The group compares a solar pump option with a simpler manual watering arrangement and keeps both in the record. A short path connects the garden to nearby housing. The diagram contains no measured water demand, energy use or planting results; its purpose is to make related design questions easy to find together.",
+      "wordCount": 65
+    },
+    {
+      "id": "doc-15",
+      "title": "Trees and shared space for renters",
+      "topic": "Green space",
+      "year": 2022,
+      "text": "This note connects trees, a shared garden and questions raised during a housing workshop about rent notices. The fictional park boundary leaves room for seating and a bicycle stand. Participants want to compare a possible shaded edge with an open edge before moving any paths on the drawing. The document records alternatives only and does not estimate changes in rent, comfort or neighborhood use.",
+      "wordCount": 66
+    },
+    {
+      "id": "doc-16",
+      "title": "Bicycle parking beside the park entrance",
+      "topic": "Green space",
+      "year": 2023,
+      "text": "The park entrance sketch adds bicycle parking between a bus stop and a garden path. Trees and a water point appear as separate markers so they can be discussed without losing the entrance layout. The group asks whether solar lighting should be considered in a later design round. All locations are fictional, and the note does not contain a tested lighting plan or a transport recommendation.",
+      "wordCount": 66
+    },
+    {
+      "id": "doc-17",
+      "title": "Solar shade in the neighborhood garden",
+      "topic": "Green space",
+      "year": 2024,
+      "text": "A garden workshop sketches a solar shade structure near a park gathering area. The roof outline is compared with a group of trees and a covered water point. Participants also note the path toward housing so a future discussion can connect access and shared space. The sketch is exploratory; it reports neither energy production nor evidence that either shade option is better for users.",
+      "wordCount": 64
+    },
+    {
+      "id": "doc-18",
+      "title": "Flood storage beside the wetland park",
+      "topic": "Green space",
+      "year": 2025,
+      "text": "A fictional wetland park plan marks flood storage, trees and a small temporary water edge beside a garden path. A raised bicycle route is retained as an alternative line rather than a finished design. The group records questions about where visitors might pause and which areas need clearer labels. No ecological measurements or engineering conclusions are included, and the planned storage area has no calculated capacity.",
+      "wordCount": 67
+    },
+    {
+      "id": "doc-19",
+      "title": "Solar plans around the central station",
+      "topic": "Energy",
+      "year": 2020,
+      "text": "The energy group considers solar equipment above the station and a nearby bus shelter. A housing connection and a bicycle route remain visible on the map to keep the discussion grounded in shared space. Participants identify questions about shade, maintenance and water drainage. The note has no production forecast or cost model, and it does not choose a preferred technology for the fictional site.",
+      "wordCount": 66
+    },
+    {
+      "id": "doc-20",
+      "title": "Energy review for shared housing rooms",
+      "topic": "Energy",
+      "year": 2021,
+      "text": "This energy note reviews labels for common rooms in a housing sketch. A solar roof and a garden water pump are shown as possible shared services, while rent accounting remains a separate question. The group wants to keep equipment access visible when comparing room layouts. No meter readings, bills or household data are used, so the document supports navigation among ideas rather than a savings calculation.",
+      "wordCount": 67
+    },
+    {
+      "id": "doc-21",
+      "title": "Water systems serving a shared garden",
+      "topic": "Energy",
+      "year": 2022,
+      "text": "A garden maintenance sketch compares a water tank and a solar pump beside a small station service building. The energy discussion keeps nearby trees and a bicycle path visible because both affect where equipment could be placed. Participants retain more than one location for a later review. This is an invented planning note, with no measured demand, technical sizing or recommendation to install a particular system.",
+      "wordCount": 64
+    },
+    {
+      "id": "doc-22",
+      "title": "Bus depot options for solar charging",
+      "topic": "Energy",
+      "year": 2023,
+      "text": "The early local energy planning group sketches solar charging space at a bus depot near the station. A bus turning area and a separate bus waiting area are kept as different shapes to make the conversation easier to follow. Nearby housing appears only as context. The note contains no vehicle specifications, demand forecast or charging calculation; it records the layout alternatives proposed for a fictional site.",
+      "wordCount": 68
+    },
+    {
+      "id": "doc-23",
+      "title": "Trees and access around rooftop energy",
+      "topic": "Energy",
+      "year": 2024,
+      "text": "An early shared energy sketch places a solar roof beside trees and a small park edge. A housing access stair and a garden water tank are shown to connect maintenance questions across the documents. The group keeps the shaded and open versions available for comparison. These drawings contain no observations about actual performance, and no conclusion is made about which arrangement would produce more power.",
+      "wordCount": 67
+    },
+    {
+      "id": "doc-24",
+      "title": "Rent rebates and an energy retrofit",
+      "topic": "Energy",
+      "year": 2025,
+      "text": "A fictional housing discussion lists questions about rent rebates during an energy retrofit. Solar panels, a shared garden room and a route to the station are included as optional context on the sketch. The group records which questions need further information before comparing alternatives. There are no real tenants, prices or projected returns in this note, and no claim that the proposed work would reduce costs.",
+      "wordCount": 69
+    }
+  ]
+}

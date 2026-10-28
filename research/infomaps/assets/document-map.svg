@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">Fictional InfoMaps companion: a metadata map and linked document-frequency bars</title>
+<desc id="desc">Twenty-four newly authored planning notes plotted by fictional year horizontally and title-plus-text token count vertically. Seven documents matching both bus and housing are highlighted. Bars show selected and whole-corpus document frequencies for six example keywords. Position does not encode semantic similarity or reconstruct the 2012 paper’s layout.</desc>
+<rect width="1200" height="720" fill="#112d29"/>
+<text x="60" y="58" font-family="Arial,sans-serif" font-size="29" fill="#eee9d9" >Search a corpus. Keep the exploration.</text>
+<text x="60" y="92" font-family="Arial,sans-serif" font-size="17" fill="#9bb3a8" >24 fictional community-planning notes · an illustrative metadata map</text>
+<text x="85" y="137" font-family="Arial,sans-serif" font-size="20" fill="#eee9d9" >Document map</text>
+<text x="800" y="137" font-family="Arial,sans-serif" font-size="20" fill="#eee9d9" >Documents mentioning each term</text>
+<path d="M135.0 165V515" stroke="#34564f"/>
+<text x="135.0" y="542" font-family="Arial,sans-serif" font-size="13" fill="#9bb3a8" text-anchor="middle">2020</text>
+<path d="M235.0 165V515" stroke="#34564f"/>
+<text x="235.0" y="542" font-family="Arial,sans-serif" font-size="13" fill="#9bb3a8" text-anchor="middle">2021</text>
+<path d="M335.0 165V515" stroke="#34564f"/>
+<text x="335.0" y="542" font-family="Arial,sans-serif" font-size="13" fill="#9bb3a8" text-anchor="middle">2022</text>
+<path d="M435.0 165V515" stroke="#34564f"/>
+<text x="435.0" y="542" font-family="Arial,sans-serif" font-size="13" fill="#9bb3a8" text-anchor="middle">2023</text>
+<path d="M535.0 165V515" stroke="#34564f"/>
+<text x="535.0" y="542" font-family="Arial,sans-serif" font-size="13" fill="#9bb3a8" text-anchor="middle">2024</text>
+<path d="M635.0 165V515" stroke="#34564f"/>
+<text x="635.0" y="542" font-family="Arial,sans-serif" font-size="13" fill="#9bb3a8" text-anchor="middle">2025</text>
+<path d="M85 465.0H685" stroke="#34564f"/>
+<text x="71" y="470.0" font-family="Arial,sans-serif" font-size="13" fill="#9bb3a8" text-anchor="end">60</text>
+<path d="M85 365.0H685" stroke="#34564f"/>
+<text x="71" y="370.0" font-family="Arial,sans-serif" font-size="13" fill="#9bb3a8" text-anchor="end">64</text>
+<path d="M85 265.0H685" stroke="#34564f"/>
+<text x="71" y="270.0" font-family="Arial,sans-serif" font-size="13" fill="#9bb3a8" text-anchor="end">68</text>
+<path d="M85 165.0H685" stroke="#34564f"/>
+<text x="71" y="170.0" font-family="Arial,sans-serif" font-size="13" fill="#9bb3a8" text-anchor="end">72</text>
+<rect x="85" y="165" width="600" height="350" fill="none" stroke="#78948a"/>
+<text x="385" y="575" font-family="Arial,sans-serif" font-size="15" fill="#9bb3a8" text-anchor="middle">Fictional document year</text>
+<text x="30" y="340" font-family="Arial,sans-serif" font-size="15" fill="#9bb3a8" transform="rotate(-90 30 340)" text-anchor="middle">Title + text token count</text>
+<circle data-row-id="doc-03" data-selected="false" cx="335.000" cy="265.000" r="4.5" fill="#9bb3a8"><title>doc-03: Park access on a weekend route</title></circle>
+<circle data-row-id="doc-04" data-selected="false" cx="435.000" cy="340.000" r="4.5" fill="#9bb3a8"><title>doc-04: Flood detours and a water crossing</title></circle>
+<circle data-row-id="doc-05" data-selected="false" cx="535.000" cy="340.000" r="4.5" fill="#9bb3a8"><title>doc-05: Solar canopies at the bus station</title></circle>
+<circle data-row-id="doc-06" data-selected="false" cx="635.000" cy="315.000" r="4.5" fill="#9bb3a8"><title>doc-06: Trees along the shared mobility path</title></circle>
+<circle data-row-id="doc-09" data-selected="false" cx="335.000" cy="340.000" r="4.5" fill="#9bb3a8"><title>doc-09: Energy costs in a rental building</title></circle>
+<circle data-row-id="doc-10" data-selected="false" cx="435.000" cy="290.000" r="4.5" fill="#9bb3a8"><title>doc-10: Solar roofs for a housing cooperative</title></circle>
+<circle data-row-id="doc-12" data-selected="false" cx="635.000" cy="340.000" r="4.5" fill="#9bb3a8"><title>doc-12: Flood readiness for ground floor homes</title></circle>
+<circle data-row-id="doc-13" data-selected="false" cx="135.000" cy="265.000" r="4.5" fill="#9bb3a8"><title>doc-13: Park paths and quiet station access</title></circle>
+<circle data-row-id="doc-14" data-selected="false" cx="235.000" cy="340.000" r="4.5" fill="#9bb3a8"><title>doc-14: Garden water collection near the park</title></circle>
+<circle data-row-id="doc-15" data-selected="false" cx="335.000" cy="315.000" r="4.5" fill="#9bb3a8"><title>doc-15: Trees and shared space for renters</title></circle>
+<circle data-row-id="doc-16" data-selected="false" cx="435.000" cy="315.000" r="4.5" fill="#9bb3a8"><title>doc-16: Bicycle parking beside the park entrance</title></circle>
+<circle data-row-id="doc-17" data-selected="false" cx="535.000" cy="365.000" r="4.5" fill="#9bb3a8"><title>doc-17: Solar shade in the neighborhood garden</title></circle>
+<circle data-row-id="doc-18" data-selected="false" cx="635.000" cy="290.000" r="4.5" fill="#9bb3a8"><title>doc-18: Flood storage beside the wetland park</title></circle>
+<circle data-row-id="doc-20" data-selected="false" cx="235.000" cy="290.000" r="4.5" fill="#9bb3a8"><title>doc-20: Energy review for shared housing rooms</title></circle>
+<circle data-row-id="doc-21" data-selected="false" cx="335.000" cy="365.000" r="4.5" fill="#9bb3a8"><title>doc-21: Water systems serving a shared garden</title></circle>
+<circle data-row-id="doc-23" data-selected="false" cx="535.000" cy="290.000" r="4.5" fill="#9bb3a8"><title>doc-23: Trees and access around rooftop energy</title></circle>
+<circle data-row-id="doc-24" data-selected="false" cx="635.000" cy="240.000" r="4.5" fill="#9bb3a8"><title>doc-24: Rent rebates and an energy retrofit</title></circle>
+<circle data-row-id="doc-01" data-selected="true" cx="135.000" cy="440.000" r="6" fill="#e6b86e"><title>doc-01: Bus stops beside mixed housing</title></circle>
+<text x="145.0" y="433.0" font-family="Arial,sans-serif" font-size="12" fill="#e6b86e" >doc-01</text>
+<circle data-row-id="doc-02" data-selected="true" cx="235.000" cy="315.000" r="6" fill="#e6b86e"><title>doc-02: Bicycle links to the central station</title></circle>
+<text x="245.0" y="308.0" font-family="Arial,sans-serif" font-size="12" fill="#e6b86e" >doc-02</text>
+<circle data-row-id="doc-07" data-selected="true" cx="135.000" cy="365.000" r="6" fill="#e6b86e"><title>doc-07: Rent notices and the neighborhood bus</title></circle>
+<text x="145.0" y="358.0" font-family="Arial,sans-serif" font-size="12" fill="#e6b86e" >doc-07</text>
+<circle data-row-id="doc-08" data-selected="true" cx="235.000" cy="365.000" r="6" fill="#e6b86e"><title>doc-08: Shared housing around a small garden</title></circle>
+<text x="245.0" y="358.0" font-family="Arial,sans-serif" font-size="12" fill="#e6b86e" >doc-08</text>
+<circle data-row-id="doc-11" data-selected="true" cx="535.000" cy="315.000" r="6" fill="#e6b86e"><title>doc-11: Park boundaries beside new housing</title></circle>
+<text x="545.0" y="308.0" font-family="Arial,sans-serif" font-size="12" fill="#e6b86e" >doc-11</text>
+<circle data-row-id="doc-19" data-selected="true" cx="135.000" cy="315.000" r="6" fill="#e6b86e"><title>doc-19: Solar plans around the central station</title></circle>
+<text x="145.0" y="308.0" font-family="Arial,sans-serif" font-size="12" fill="#e6b86e" >doc-19</text>
+<circle data-row-id="doc-22" data-selected="true" cx="435.000" cy="265.000" r="6" fill="#e6b86e"><title>doc-22: Bus depot options for solar charging</title></circle>
+<text x="445.0" y="258.0" font-family="Arial,sans-serif" font-size="12" fill="#e6b86e" >doc-22</text>
+<text x="800" y="184" font-family="Arial,sans-serif" font-size="16" fill="#eee9d9" >bus</text>
+<text x="1140" y="184" font-family="Arial,sans-serif" font-size="14" fill="#e6b86e" text-anchor="end">7 / 13</text>
+<rect data-term="bus" data-count="total" data-documents="13" x="800" y="195" width="184.167" height="12" fill="#9bb3a8" opacity=".35"/>
+<rect data-term="bus" data-count="selected" data-documents="7" x="800" y="195" width="99.167" height="12" fill="#e6b86e"/>
+<text x="800" y="241" font-family="Arial,sans-serif" font-size="16" fill="#eee9d9" >housing</text>
+<text x="1140" y="241" font-family="Arial,sans-serif" font-size="14" fill="#e6b86e" text-anchor="end">7 / 16</text>
+<rect data-term="housing" data-count="total" data-documents="16" x="800" y="252" width="226.667" height="12" fill="#9bb3a8" opacity=".35"/>
+<rect data-term="housing" data-count="selected" data-documents="7" x="800" y="252" width="99.167" height="12" fill="#e6b86e"/>
+<text x="800" y="298" font-family="Arial,sans-serif" font-size="16" fill="#eee9d9" >solar</text>
+<text x="1140" y="298" font-family="Arial,sans-serif" font-size="14" fill="#e6b86e" text-anchor="end">2 / 12</text>
+<rect data-term="solar" data-count="total" data-documents="12" x="800" y="309" width="170.000" height="12" fill="#9bb3a8" opacity=".35"/>
+<rect data-term="solar" data-count="selected" data-documents="2" x="800" y="309" width="28.333" height="12" fill="#e6b86e"/>
+<text x="800" y="355" font-family="Arial,sans-serif" font-size="16" fill="#eee9d9" >park</text>
+<text x="1140" y="355" font-family="Arial,sans-serif" font-size="14" fill="#e6b86e" text-anchor="end">2 / 11</text>
+<rect data-term="park" data-count="total" data-documents="11" x="800" y="366" width="155.833" height="12" fill="#9bb3a8" opacity=".35"/>
+<rect data-term="park" data-count="selected" data-documents="2" x="800" y="366" width="28.333" height="12" fill="#e6b86e"/>
+<text x="800" y="412" font-family="Arial,sans-serif" font-size="16" fill="#eee9d9" >station</text>
+<text x="1140" y="412" font-family="Arial,sans-serif" font-size="14" fill="#e6b86e" text-anchor="end">5 / 12</text>
+<rect data-term="station" data-count="total" data-documents="12" x="800" y="423" width="170.000" height="12" fill="#9bb3a8" opacity=".35"/>
+<rect data-term="station" data-count="selected" data-documents="5" x="800" y="423" width="70.833" height="12" fill="#e6b86e"/>
+<text x="800" y="469" font-family="Arial,sans-serif" font-size="16" fill="#eee9d9" >garden</text>
+<text x="1140" y="469" font-family="Arial,sans-serif" font-size="14" fill="#e6b86e" text-anchor="end">3 / 16</text>
+<rect data-term="garden" data-count="total" data-documents="16" x="800" y="480" width="226.667" height="12" fill="#9bb3a8" opacity=".35"/>
+<rect data-term="garden" data-count="selected" data-documents="3" x="800" y="480" width="42.500" height="12" fill="#e6b86e"/>
+<text x="800" y="556" font-family="Arial,sans-serif" font-size="15" fill="#9bb3a8" >Selected / all documents</text>
+<circle cx="85" cy="621" r="6" fill="#e6b86e"/>
+<text x="104" y="627" font-family="Arial,sans-serif" font-size="20" fill="#e6b86e" >bus AND housing → 7 shared document IDs</text>
+<text x="85" y="666" font-family="Arial,sans-serif" font-size="16" fill="#9bb3a8" >Each bar counts a document once. Map position is metadata, not semantic similarity.</text>
+</svg>
